@@ -52,6 +52,18 @@ body {
     color: rgb(214, 72, 62);
 }
 
+.epicfont {
+    color: rgb(201, 144, 248);
+}
+
+.rarefont {
+    color: rgb(144, 201, 248);
+}
+
+.uncommonfont {
+    color: rgb(186, 248, 144);
+}
+
 hr {
     height: 2px;
     border: none;
