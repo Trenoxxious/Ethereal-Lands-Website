@@ -15,6 +15,13 @@
 
 body {
     background-color: rgb(26, 26, 26);
+    background-image: url(images/sky.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom right;
+    background-blend-mode: soft-light;
+    backdrop-filter: hue-rotate(90deg);
 }
 
 hr {
@@ -61,9 +68,10 @@ ul li {
 }
 
 .button-main {
+    user-select: none;
     font-size: 1.5em;
     padding: 10px 20px;
-    background: -webkit-linear-gradient(#fccf6f, #ffc824);
+    background: -webkit-linear-gradient(#ffd19d, #ffba24);
     color: rgb(28, 28, 28);
     border: none;
     border-radius: 0.2em;
