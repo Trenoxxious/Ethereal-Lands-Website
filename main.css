@@ -9,6 +9,10 @@
     font-size: 12px;
 }
 
+#intro-button {
+    display: none;
+}
+
 body {
     background-color: rgb(26, 26, 26);
 }
@@ -20,15 +24,30 @@ hr {
     filter: drop-shadow(rgb(255, 255, 255) 0rem 0rem 5px);
 }
 
+ul li {
+    font-size: 2em;
+    font-weight: 400;
+    font-family: "Teko", "Libre Baskerville", serif;
+    text-align: center;
+    align-self: center;
+    list-style-position: inside;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0px 0px 10px #ffe380;
+}
+
 .topbar {
+    z-index: 999;
     width: 100%;
     display: flex;
     position: fixed;
+    justify-content: center;
 }
 
 .mainbar {
     display: flex;
-    width: 100%;
+    width: 60%;
     border-radius: 0.5em;
     align-items: center;
     justify-content: space-around;
@@ -50,6 +69,8 @@ hr {
     border-radius: 0.2em;
     cursor: pointer;
     transition-duration: 0.1s;
+    font-family: "Teko", "Libre Baskerville", serif;
+    font-weight: 500;
 }
 
 .button-main:hover {
@@ -64,6 +85,7 @@ hr {
 }
 
 .logo {
+    cursor: pointer;
     background-image: url(images/transparentlogo2.png);
     background-position: center;
     overflow: visible;
@@ -72,18 +94,9 @@ hr {
     background-size: 200px;
 }
 
-.mainbar h1 {
-    /* user-select: none;
-    font-size: 6em;
-    font-weight: bold;
-    font-family: "Whisper", serif;
-    background: -webkit-linear-gradient(#eaeaea, #929292);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
-}
-
 .mainbar a {
     background: linear-gradient(0deg, rgb(255, 176, 4) 35%, rgb(255, 240, 185) 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2.5em;
@@ -97,6 +110,7 @@ hr {
 
 .mainbar a:hover {
     background: linear-gradient(0deg, rgb(207, 207, 207) 35%, rgb(255, 253, 245) 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -104,12 +118,16 @@ hr {
 #intro {
     height: 750px;
     background-image: url(images/pic1.png);
-    background-size: cover;
+    object-fit: cover;
+    background-size: 1920px;
+    background-position: center;
+    background-repeat: no-repeat;
     background-position-y: -200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    overflow-y: hidden;
 }
 
 #intro {
@@ -119,13 +137,16 @@ hr {
 
 #intro h1 {
     background: linear-gradient(0deg, rgb(255, 176, 4) 35%, rgb(255, 240, 185) 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 500;
-    margin-top: 150px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 125px;
     font-family: "Teko", "Libre Baskerville", serif;
-    font-size: 8em;
-    text-shadow: 0px 0px 10px #ffebbc;
+    font-size: 6em;
+    filter: drop-shadow(rgb(255, 237, 180) 0rem 0rem 10px);
 }
 
 #intro p {
@@ -141,7 +162,7 @@ hr {
     width: 80%;
     text-align: center;
     color: rgb(255, 213, 141);
-    font-size: 2em;
+    font-size: 1.5em;
     text-shadow: 0px 0px 5px #171717;
 }
 
@@ -154,36 +175,187 @@ hr {
     font-family: "Libre Baskerville", serif;
     cursor: default;
     color: white;
+    overflow-y: hidden;
 }
 
 .slide h1 {
     margin-top: 50px;
     background: linear-gradient(0deg, rgb(255, 176, 4) 35%, rgb(255, 240, 185) 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 5em;
-    text-shadow: 0px 0px 15px #ffe380;
-}
-
-.slide p:nth-of-type(1) {
-    margin-top: 50px;
+    font-size: 3em;
+    font-weight: 700;
+    filter: drop-shadow(rgb(255, 237, 180) 0rem 0rem 10px);
 }
 
 .slide p {
+    color: rgb(255, 246, 218);
     margin: 15px;
     font-size: 1.5em;
     text-shadow: 0px 0px 5px #171717;
+    width: 66%;
 }
 
 #slide1 {
-    height: 720px;
-    background-size: 100%;
-    background-position-y: -150px;
+    min-height: 890px;
+    max-height: 1100px;
     background-image: url(images/pic2.png);
+    object-fit: cover;
+    background-size: 1920px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: -200px;
 }
 
 #slide2 {
-    height: 500px;
-    background-size: 100%;
+    min-height: 600px;
+    max-height: 1100px;
     background-image: url(images/pic3.png);
+    object-fit: cover;
+    background-size: 1920px;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 1600px) {
+    .mainbar {
+        height: 60px;
+        width: 100%;
+    }
+
+    .logo {
+        height: 100px;
+        width: 150px;
+        background-size: 150px;
+    }
+
+    .mainbar a {
+        font-size: 1.5em;
+    }
+
+    #intro p {
+        font-size: 2em;
+    }
+
+    #intro .story {
+        font-size: 1.6em;
+    }
+
+    .slide h1 {
+        font-size: 2.5em;
+    }
+
+    .slide p {
+        font-size: 1.3em;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .mainbar {
+        height: 50px;
+    }
+
+    .mainbar a {
+        font-size: 1.5em;
+    }
+
+    .button-div {
+        transform:scale(0.66);
+    }
+
+    .button-main:hover {
+        transform:scale(1.1);
+    }
+
+    .logo {
+        height: 75px;
+        width: 125px;
+        background-size: 125px;
+    }
+
+    #intro h1 {
+        margin-top: 100px;
+        font-size: 5em;
+    }
+
+    #intro p {
+        font-size: 1.2em;
+    }
+
+    #intro .story {
+        font-size: 1.2em;
+    }
+
+    .slide h1 {
+        font-size: 2.5em;
+    }
+
+    .slide p {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 692px) {
+    .mainbar {
+        justify-content: space-evenly;
+        height: 40px;
+    }
+
+    .mainbar nav {
+        width: auto;
+    }
+
+    .mainbar a {
+        margin: 0;
+        font-size: 1em;
+    }
+
+    .button-div {
+        display: none;
+    }
+
+    #intro-button {
+        transform: scale(1);
+        margin-top: 5px;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .logo {
+        height: 50px;
+        width: 100px;
+        background-size: 100px;
+    }
+
+    #intro h1 {
+        font-size: 3em;
+    }
+
+    #intro p {
+        font-size: 1em;
+    }
+
+    #intro .story {
+        font-size: 1em;
+    }
+
+    .slide h1 {
+        font-size: 2em;
+    }
+
+    .slide p {
+        font-size: 1em;
+        width: 85%;
+    }
+
+    ul li {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+   .mainbar #navlinks {
+    display: none;
+   }
 }
