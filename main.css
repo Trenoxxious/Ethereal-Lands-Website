@@ -111,18 +111,20 @@ li {
     margin: 3px;
     word-wrap: normal;
     background: rgb(109, 109, 109);
+    overflow: hidden;
 }
 
 .updatebox .updatetitle {
+    font-size: 1.3em;
     display: block;
-    padding: 5px;
+    padding: 10px;
     margin: 5px 5px 5px 0;
-    width: 100%;
-    background: rgb(71, 71, 71);
+    width: 80%;
+    background: linear-gradient(to right, rgb(71, 71, 71, 1), rgb(109, 109, 109, 0));
 }
 
 .updatebox .updateheader {
-    color: rgb(255, 252, 222);
+    color: rgb(255, 255, 255);
     font-size: 1.4em;
     font-weight: bold;
 }
@@ -147,7 +149,7 @@ li {
     box-sizing: border-box;
     width: 100%;
     height: 40px;
-    background: rgb(68, 68, 68);
+    background: rgb(86, 40, 95);
 }
 
 .topbarupdates p {
