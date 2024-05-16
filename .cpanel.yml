@@ -1,4 +1,3 @@
 deployment:
   tasks:
-      - export DEPLOYPATH=/home/playethe/public_html/
       - /bin/cp -R * $DEPLOYPATH
