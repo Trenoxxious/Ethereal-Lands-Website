@@ -1,9 +1,15 @@
+# deployment:
+#   tasks:
+#     - echo "Starting deployment..."
+#     - export DEPLOYPATH=/home/playethe/public_html
+#     - echo "Deploy path is $DEPLOYPATH"
+#     - /bin/cp -r . $DEPLOYPATH
+#     - /bin/find $DEPLOYPATH -type d -exec chmod 755 {} \;
+#     - /bin/find $DEPLOYPATH -type f -exec chmod 644 {} \;
+#     - echo "Deployment completed successfully."
+
 deployment:
   tasks:
-    - echo "Starting deployment..."
-    - export DEPLOYPATH=/home/playethe/public_html
-    - echo "Deploy path is $DEPLOYPATH"
-    - /bin/cp -r . $DEPLOYPATH
-    - /bin/find $DEPLOYPATH -type d -exec chmod 755 {} \;
-    - /bin/find $DEPLOYPATH -type f -exec chmod 644 {} \;
-    - echo "Deployment completed successfully."
+    - export DEPLOYPATH=/home/playethe/public_html/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH
