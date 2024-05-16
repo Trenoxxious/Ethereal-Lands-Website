@@ -1,5 +1,5 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/public_html
+    - export DEPLOYPATH=/home/playethe/public_html
     - /bin/cp -r . $DEPLOYPATH
     - /bin/chmod -R 755 $DEPLOYPATH
