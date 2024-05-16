@@ -44,6 +44,20 @@ i {
     top: 10%;
 }
 
+.blanktop {
+    height: 85px;
+}
+
+.character-counter {
+    color: white;
+    font-family: "Teko", "Libre Baskerville", serif;
+    font-size: 2em;
+}
+
+#totalAccounts {
+    font-size: inherit;
+}
+
 body {
     user-select: none;
     background-color: rgb(26, 26, 26);
@@ -278,7 +292,7 @@ li {
     font-weight: 500;
     text-align: center;
     text-transform: uppercase;
-    margin-top: 125px;
+    margin-top: 15px;
     font-family: "Teko", "Libre Baskerville", serif;
     font-size: 6em;
     filter: drop-shadow(rgb(255, 237, 180) 0rem 0rem 10px);
@@ -407,7 +421,7 @@ li {
     }
 
     #expandedmenu {
-        visibility:hidden;
+        visibility: hidden;
     }
 }
 
@@ -421,11 +435,11 @@ li {
     }
 
     .button-div {
-        transform:scale(0.66);
+        transform: scale(0.66);
     }
 
     .button-main:hover {
-        transform:scale(1.1);
+        transform: scale(1.1);
     }
 
     .logo {
@@ -515,19 +529,19 @@ li {
 }
 
 @media only screen and (max-width: 450px) {
-   .mainbar #navlinks {
-    display: none;
-   }
+    .mainbar #navlinks {
+        display: none;
+    }
 
-   .mainbar {
-    justify-content: space-between;
-   }
+    .mainbar {
+        justify-content: space-between;
+    }
 
-   #menuexpand {
-    display: block;
-   }
+    #menuexpand {
+        display: block;
+    }
 
-   #expandedmenu {
-    visibility:visible;
-   }
+    #expandedmenu {
+        visibility: visible;
+    }
 }
