@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Check if username contains "Mod" or "Admin" (case-insensitive)
     if (stripos($username, 'mod') !== false || stripos($username, 'admin') !== false) {
-        echo json_encode(['status' => 'error', 'message' => 'Username should not contain "Mod" or "Admin".']);
+        echo json_encode(['status' => 'error', 'message' => 'Username cannot contain "Mod" or "Admin".']);
         exit;
     }
 
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validate email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo json_encode(['status' => 'error', 'message' => 'Invalid email address.']);
+        echo json_encode(['status' => 'error', 'message' => 'Invalid email address entered.']);
         exit;
     }
 

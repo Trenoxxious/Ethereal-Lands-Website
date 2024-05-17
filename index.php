@@ -55,8 +55,8 @@
     </script>
     <div id="intro">
         <div class="blanktop"></div>
-        <div class="character-counter">There are <span id="totalAccounts">#</span>
-            heroes awaiting release into the Ethereal Lands...</div>
+        <div class="character-counter">Currently, <span id="totalAccounts">#</span>
+            heroes stand at the portal to Gielinor, primed to snuff the evil that is Del'araz...</div>
         <h1>A new threat looms...</h1>
         <button class="button-main" id="introregisterbutton">
             Register Account
@@ -82,6 +82,7 @@
         <div class="popup-header" id="popup-header-text">
             <h2>Create a Character</h2>
         </div>
+        <p>Note: Ethereal Lands is not yet available, but this will create and claim your character name.</p>
         <form class="popup-form" id="registration-form">
             <input type="text" id="username" name="username" maxlength="12" pattern="[A-Za-z0-9 ]{1,12}"
                 placeholder="Character Name" required>
@@ -176,13 +177,11 @@
     </div>
     <div class="slide" id="slide2">
         <h1>Graveyards</h1>
-        <p>Gone are the days of respawning in Lumbridge... at least all the time. We're ripping a page from World of
-            Warcraft's playbook here.<br><br>New to all accessible areas are <b>graveyards</b>, respawn points with
-            <i>possible</i> bank access to get you back into what you were doing quicker!
+        <p>Gone are the days of respawning in Lumbridge... at least all the time.<br><br>New to all accessible areas are <b>graveyards</b>, respawn points with <i>possible</i> bank access to get you back into what you were doing quicker! You may have to complete a task or two in order to get access to these graveyard banks, however.
         </p>
         <h1>New Skill: Huntsman</h1>
         <p>Very similar to the much-beloved Slayer skill, the Huntsman skill focuses on retrieving items or completing
-            specific tasks instead of simply killing creatures. This system opens up an entire new dynamic to the game. <br><br>Rewards for Huntsman bounties, or formally acquisitions, are based on the bounty
+            specific tasks instead of simply killing creatures. Huntsman offers many awesome, and also gives us the ability to grant players with items that can help with leveling other skills.<br><br>Rewards for Huntsman bounties, or formally acquisitions, are based on the bounty
             given. For example, a bounty to collect rat eyes will reward either gold, an experience lamp or several Eye
             of Newts, based on the player's choice.<br><br>Bounty points are rewarded for fulfilling bounties and can be
             spent for rewards or tossing away a bounty.</p>
@@ -200,11 +199,11 @@
             go-around, so make sure to post to Discord with your thoughts!
         </p>
         <p>The first Ethereal Dungeon is <b class="epicfont">Crypt of Dread</b>, found in Al'Kharid!</p>
-        <h1>Be a Creator</h1>
+        <h1>Be a Creator!</h1>
         <p>We're going to be providing resources and rewards for anyone looking to take a stab at creating items for
             Ethereal Lands' cosmetic crates. Along with living on in the "examine" text of an item forever, if picked,
-            you'll be rewarded for your chosen submission! Don't worry, cosmetic crates are entirely free. The cases and
-            keys have a chance to drop from all monsters within a specific range of your combat level.</p>
+            you'll be rewarded for your chosen submission! Don't worry, cosmetic crates are entirely free. While we may explore paid cosmetics in the future, the cases and
+            keys (which we consider gambling) have a chance to drop from all monsters within a specific range of your combat level just by playing the game. Cases rotate out yearly and will be discontinued. We won't ever sell gambling.</p>
     </div>
 </body>
 

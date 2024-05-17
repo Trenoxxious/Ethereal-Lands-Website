@@ -53,6 +53,7 @@ i {
     font-family: "Libre Baskerville", serif;
     font-size: 1.5em;
     text-align: center;
+    width: 75%;
 }
 
 #totalAccounts {
@@ -429,6 +430,15 @@ li {
     margin: 0;
 }
 
+.popup p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    font-family: "Libre Baskerville", serif;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
 .popup-form {
     display: flex;
     align-items: center;
@@ -443,10 +453,14 @@ li {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ffc74f;
-    color: #ffc74f;
+    color: #ffc353;
     background-color: rgb(29, 29, 29);
     font-family: "Libre Baskerville", serif;
     outline: none;
+}
+
+.popup-form input::placeholder {
+    color: rgba(255, 180, 94, 0.671);
 }
 
 .popup-form input[type="text"]:focus,
@@ -487,11 +501,12 @@ li {
     cursor: pointer;
     font-size: 40px;
     font-weight: bold;
-    color: #ff2f2f;
+    color: #ffc353;
 }
 
 .popup-close:hover {
-    color: #ffffff;
+    color: #ff2f2f;
+    
 }
 
 .overlay {
@@ -597,7 +612,7 @@ li {
 
     .mainbar {
         justify-content: space-evenly;
-        height: 40px;
+        height: 50px;
     }
 
     .mainbar nav {
@@ -660,16 +675,13 @@ li {
     .mainbar {
         margin: 0;
         border-radius: none;
+        justify-content: space-between;
     }
 
     .logo {
         height: 75px;
         width: 80px;
         background-size: 80px;
-    }
-
-    .mainbar {
-        justify-content: space-between;
     }
 
     #menuexpand {
