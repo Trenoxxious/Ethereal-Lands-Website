@@ -647,6 +647,11 @@ li {
         display: none;
     }
 
+    .mainbar {
+        margin: 0;
+        border-radius: none;
+    }
+
     .logo {
         height: 75px;
         width: 80px;
