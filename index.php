@@ -172,7 +172,7 @@
         <p>The wilderness has had many, many changes. Notably, there are two new <b>cities</b>, linked by a deadly,
             inescapable path between them. This path is known as <b class="redfont">Bloodshed Span</b>.<br><br>Along
             with our wilderness redesign, we're also introducing PvP ranks and rank-specific rewards within months of
-            initial release.</p>
+            initial release. We will be asking for feedback and gauging interest between a couple systems for this before implementation.</p>
     </div>
     <div class="slide" id="slide2">
         <h1>Graveyards</h1>
@@ -182,9 +182,7 @@
         </p>
         <h1>New Skill: Huntsman</h1>
         <p>Very similar to the much-beloved Slayer skill, the Huntsman skill focuses on retrieving items or completing
-            specific tasks instead of simply killing creatures. This system opens up an entire new dynamic that was not
-            previously possible. This lets us restrict content, areas and quests to people who have achieved a certain
-            Huntsman level.<br><br>Rewards for Huntsman bounties, or formally acquisitions, are based on the bounty
+            specific tasks instead of simply killing creatures. This system opens up an entire new dynamic to the game. <br><br>Rewards for Huntsman bounties, or formally acquisitions, are based on the bounty
             given. For example, a bounty to collect rat eyes will reward either gold, an experience lamp or several Eye
             of Newts, based on the player's choice.<br><br>Bounty points are rewarded for fulfilling bounties and can be
             spent for rewards or tossing away a bounty.</p>

@@ -25,16 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $email = $_POST['email'];
-    $confirmpassword = $_POST['confirm-password'];
 
     // Validate username
     if (!preg_match("/^[A-Za-z0-9 ]{2,12}$/", $username)) {
         echo json_encode(['status' => 'error', 'message' => 'Invalid username. It should only contain letters, numbers, or spaces, and be between 2 and 12 characters long.']);
-        exit;
-    }
-
-    if ($password !== $confirmpassword) {
-        echo json_encode(['status' => 'error', 'message' => 'Passwords do not match.']);
         exit;
     }
 

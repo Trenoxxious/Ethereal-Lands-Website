@@ -124,6 +124,7 @@ li {
     font-family: "Courier Prime", "Libre Baskerville", serif;
     width: 100%;
     margin: 3px;
+    margin-bottom: 10px;
     word-wrap: normal;
     background: rgb(109, 109, 109);
     overflow: hidden;
@@ -238,7 +239,7 @@ li {
     margin: 15px;
     font-family: "DM Sans", serif;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
 }
 
@@ -259,7 +260,7 @@ li {
     margin: 5px;
     font-family: "DM Sans", serif;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
 }
 
