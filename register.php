@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Commit transaction
         $conn->commit();
-        echo json_encode(['status' => 'success', 'message' => "New character created successfully"]);
+        echo json_encode(['status' => 'success', 'message' => "New character created successfully! We'll see you soon!"]);
     } catch (Exception $e) {
         $conn->rollback();
         error_log($e->getMessage());

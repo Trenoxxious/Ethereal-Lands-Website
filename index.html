@@ -16,8 +16,8 @@
             <div class="logo" id="toplogo">
             </div>
             <div id="navlinks">
-                <a href="#">Discord</a>
-                <a href="updates.html">Game Updates</a>
+                <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
+                <a href="updates">Game Updates</a>
             </div>
             <div class="button-div">
                 <button class="button-main" id="registerbutton">
@@ -32,8 +32,8 @@
             </div>
         </nav>
         <div id="expandedmenu">
-            <a href="#">Discord</a>
-            <a href="updates.html">Game Updates</a>
+            <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
+            <a href="updates">Game Updates</a>
         </div>
     </div>
     <script>
@@ -130,7 +130,12 @@
             })
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('errorsuccessmessage').innerText = data.message;
+                    if (data.status === 'success') {
+                        document.getElementById('registration-form').style.display = 'none';
+                        document.getElementById('errorsuccessmessage').innerText = 'You\'ve successfully created a character! We\'ll see you in Gielinor shortly!';
+                    } else {
+                        document.getElementById('errorsuccessmessage').innerText = data.message;
+                    }
                 })
                 .catch(error => {
                     document.getElementById('errorsuccessmessage').innerText = 'An error occurred.';
