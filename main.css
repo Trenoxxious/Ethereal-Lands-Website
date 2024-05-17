@@ -424,7 +424,7 @@ li {
 
 .popup-header h2 {
     font-family: "Libre Baskerville", serif;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0;
 }
 
@@ -441,8 +441,17 @@ li {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid #ffc74f;
+    color: #ffc74f;
+    background-color: rgb(29, 29, 29);
+    font-family: "Libre Baskerville", serif;
+    outline: none;
+}
+
+.popup-form input[type="text"]:focus,
+.popup-form input[type="password"]:focus,
+.popup-form input[type="email"]:focus {
+    outline: 1px solid rgb(255, 230, 162);
 }
 
 .popup-form input[type="submit"] {
