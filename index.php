@@ -19,6 +19,7 @@
                 <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
                 <a href="updates">Game Updates</a>
                 <a href="#">Leaderboard</a>
+                <a href="#">Store</a>
             </div>
             <div class="button-div">
                 <button class="button-main" id="registerbutton">
@@ -36,6 +37,7 @@
             <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             <a href="updates">Game Updates</a>
             <a href="#">Leaderboard</a>
+            <a href="#">Store</a>
         </div>
     </div>
     <script>
