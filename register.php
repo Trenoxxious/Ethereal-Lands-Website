@@ -81,59 +81,59 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Start a transaction
     $conn->begin_transaction();
 
-    try {
-        // Insert into players table
-        $stmt = $conn->prepare("INSERT INTO players (username, group_id, email, pass, salt, combat, skill_total, x, y, fatigue, combatstyle, block_chat, block_private, block_trade, block_duel, cameraauto, onemouse, soundoff, haircolour, topcolour, trousercolour, skincolour, headsprite, bodysprite, male, creation_date, creation_ip, banned, offences, muted, kills, npc_kills, deaths, online, quest_points, lastRecoveryTryId, transfer, bounty_set_amount, bounty_kill_count, bounty_item_id, bounty_points, current_bounty) VALUES (?, 10, ?, ?, '', 3, 27, 311, 902, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 8, 14, 0, 1, 2, 1, UNIX_TIMESTAMP(), ?, 0, '0.0.0.0', 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0, 0, 0, 0, 0)");
-        if (!$stmt) {
-            throw new Exception("Prepare failed (INSERT into players): " . $conn->error);
-        }
-        $stmt->bind_param("ssss", $username, $email, $hashedPassword, $_SERVER['REMOTE_ADDR']);
-        if (!$stmt->execute()) {
-            throw new Exception("Execute failed (INSERT into players): " . $stmt->error);
-        }
-        $playerID = $stmt->insert_id;
-        $stmt->close();
-
-        // Insert into curstats table
-        $stmt = $conn->prepare("INSERT INTO curstats (playerID, attack, defense, strength, hits, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman) VALUES (?, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
-        if (!$stmt) {
-            throw new Exception("Prepare failed (INSERT into curstats): " . $conn->error);
-        }
-        $stmt->bind_param("i", $playerID);
-        if (!$stmt->execute()) {
-            throw new Exception("Execute failed (INSERT into curstats): " . $stmt->error);
-        }
-        $stmt->close();
-
-        // Insert into experience table
-        $stmt = $conn->prepare("INSERT INTO experience (playerID, attack, defense, strength, hits, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman) VALUES (?, 0, 0, 0, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)");
-        if (!$stmt) {
-            throw new Exception("Prepare failed (INSERT into experience): " . $conn->error);
-        }
-        $stmt->bind_param("i", $playerID);
-        if (!$stmt->execute()) {
-            throw new Exception("Execute failed (INSERT into experience): " . $stmt->error);
-        }
-        $stmt->close();
-
-        // Insert into maxstats table
-        $stmt = $conn->prepare("INSERT INTO maxstats (playerID, attack, defense, strength, hits, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman) VALUES (?, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
-        if (!$stmt) {
-            throw new Exception("Prepare failed (INSERT into maxstats): " . $conn->error);
-        }
-        $stmt->bind_param("i", $playerID);
-        if (!$stmt->execute()) {
-            throw new Exception("Execute failed (INSERT into maxstats): " . $stmt->error);
-        }
-        $stmt->close();
-
-        // Commit transaction
-        $conn->commit();
-        echo json_encode(['status' => 'success', 'message' => "New character created successfully"]);
-    } catch (Exception $e) {
-        $conn->rollback();
-        echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+try {
+    // Insert into players table
+    $stmt = $conn->prepare("INSERT INTO players (username, group_id, email, pass, salt, combat, skill_total, x, y, fatigue, combatstyle, block_chat, block_private, block_trade, block_duel, cameraauto, onemouse, soundoff, haircolour, topcolour, trousercolour, skincolour, headsprite, bodysprite, male, creation_date, creation_ip, banned, offences, muted, kills, npc_kills, deaths, online, quest_points, lastRecoveryTryId, transfer, bounty_set_amount, bounty_kill_count, bounty_item_id, bounty_points, current_bounty) VALUES (?, 10, ?, ?, '', 3, 27, 311, 902, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 8, 14, 0, 1, 2, 1, UNIX_TIMESTAMP(), ?, 0, '0.0.0.0', 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0, 0, 0, 0, 0)");
+    if (!$stmt) {
+        throw new Exception("Prepare failed (INSERT into players): " . $conn->error);
     }
+    $stmt->bind_param("ssss", $username, $email, $hashedPassword, $_SERVER['REMOTE_ADDR']);
+    if (!$stmt->execute()) {
+        throw new Exception("Execute failed (INSERT into players): " . $stmt->error);
+    }
+    $playerID = $stmt->insert_id;
+    $stmt->close();
+
+    // Insert into curstats table
+    $stmt = $conn->prepare("INSERT INTO curstats (playerID, attack, defense, strength, hits, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman) VALUES (?, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
+    if (!$stmt) {
+        throw new Exception("Prepare failed (INSERT into curstats): " . $conn->error);
+    }
+    $stmt->bind_param("i", $playerID);
+    if (!$stmt->execute()) {
+        throw new Exception("Execute failed (INSERT into curstats): " . $stmt->error);
+    }
+    $stmt->close();
+
+    // Insert into experience table
+    $stmt = $conn->prepare("INSERT INTO experience (playerID, attack, defense, strength, hits, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman) VALUES (?, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)");
+    if (!$stmt) {
+        throw new Exception("Prepare failed (INSERT into experience): " . $conn->error);
+    }
+    $stmt->bind_param("i", $playerID);
+    if (!$stmt->execute()) {
+        throw new Exception("Execute failed (INSERT into experience): " . $stmt->error);
+    }
+    $stmt->close();
+
+    // Insert into maxstats table
+    $stmt = $conn->prepare("INSERT INTO maxstats (playerID, attack, defense, strength, hits, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman) VALUES (?, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
+    if (!$stmt) {
+        throw new Exception("Prepare failed (INSERT into maxstats): " . $conn->error);
+    }
+    $stmt->bind_param("i", $playerID);
+    if (!$stmt->execute()) {
+        throw new Exception("Execute failed (INSERT into maxstats): " . $stmt->error);
+    }
+    $stmt->close();
+
+    // Commit transaction
+    $conn->commit();
+    echo json_encode(['status' => 'success', 'message' => "New character created successfully"]);
+} catch (Exception $e) {
+    $conn->rollback();
+    echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+}
 }
 
 $conn->close();
