@@ -38,6 +38,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 
+    // Check if username already exists (non-case-sensitive)
+    $stmt = $conn->prepare("SELECT COUNT(*) FROM players WHERE LOWER(username) = LOWER(?)");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->bind_result($count);
+    $stmt->fetch();
+    $stmt->close();
+
+    if ($count > 0) {
+        echo json_encode(['status' => 'error', 'message' => 'Username is already taken.']);
+        exit;
+    }
+
     // Generate salt and hash the password
     $salt = bin2hex(random_bytes(16));
     $hashedPassword = hash('sha512', $password . $salt);
