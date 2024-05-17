@@ -130,11 +130,7 @@
             })
                 .then(response => response.json())
                 .then(data => {
-                    if (data.status === 'error') {
-                        document.getElementById('errorsuccessmessage').innerText = data.message;
-                    } else {
-                        document.getElementById('errorsuccessmessage').innerText = data.message;
-                    }
+                    document.getElementById('errorsuccessmessage').innerText = data.message;
                 })
                 .catch(error => {
                     document.getElementById('errorsuccessmessage').innerText = 'An error occurred.';
