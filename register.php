@@ -44,6 +44,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 
+    if (strlen($password) < 8) {
+        echo json_encode(['status' => 'error', 'message' => 'Password needs to be at least 8 characters in length.']);
+        exit;
+    }
+
     // Validate email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo json_encode(['status' => 'error', 'message' => 'Invalid email address.']);
