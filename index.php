@@ -61,8 +61,7 @@
         <button class="button-main" id="introregisterbutton">
             Register Account
         </button>
-        <p>Ethereal Lands features a completely unique Runescape Classic adventure unlike any other. You'll soon be able
-            to explore a world that has been mishapen by the noxious invasion...</p>
+        <p>Ethereal Lands features a completely unique Runescape Classic adventure unlike any other. You'll soon be able to explore a world that has been mishapen by the noxious invasion...</p>
         <p class="story">
             In the realm of Gielinor, a malignant force is stirring. The malevolent demon general, Del'araz, has
             unleashed his noxious lords upon the land, spreading a virulent plague that darkens the skies and withers
