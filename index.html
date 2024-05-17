@@ -56,7 +56,7 @@
         <div class="character-counter">Total Characters Created: <span id="totalAccounts">(Loading Players...)</span>
             awaiting release...</div>
         <h1>A new adventure awaits!</h1>
-        <button class="button-main" id="intro-button">
+        <button class="button-main" id="introregisterbutton">
             Register Account
         </button>
         <p>Ethereal Lands features a completely unique Runescape Classic adventure unlike any other. You'll soon be able
@@ -73,6 +73,75 @@
             their world from being irrevocably conquered by the forces of Del'araz.
         </p>
     </div>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="popup" id="popup">
+        <span class="popup-close" id="popup-close">&times;</span>
+        <div class="popup-header">
+            <h2>Register Account</h2>
+        </div>
+        <form class="popup-form" id="registration-form">
+            <input type="text" id="username" name="username" maxlength="12" pattern="[A-Za-z0-9 ]{1,12}"
+                placeholder="Character Name" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+            <input type="email" id="email" name="email" placeholder="Email Address" required>
+            <input type="submit" value="Register">
+        </form>
+        <div class="registrationmessage" id="errorsuccessmessage"></div>
+    </div>
+
+    <script>
+        document.getElementById('introregisterbutton').addEventListener('click', function () {
+            document.getElementById('popup').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        });
+
+        document.getElementById('registerbutton').addEventListener('click', function () {
+            document.getElementById('popup').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        });
+
+        document.getElementById('popup-close').addEventListener('click', function () {
+            document.getElementById('popup').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        });
+
+        document.getElementById('overlay').addEventListener('click', function () {
+            document.getElementById('popup').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        });
+
+        document.getElementById('registration-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                document.getElementById('errorsuccessmessage').innerText = 'The passwords entered do not match.';
+                return;
+            }
+
+            var formData = new FormData(this);
+
+            fetch('register.php', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'error') {
+                        document.getElementById('errorsuccessmessage').innerText = data.message;
+                    } else {
+                        document.getElementById('errorsuccessmessage').innerText = data.message;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('errorsuccessmessage').innerText = 'An error occurred.';
+                    console.error('Error:', error);
+                });
+        });
+    </script>
     <hr>
     <div class="slide" id="slide1">
         <h1>New Maximum Level</h1>
