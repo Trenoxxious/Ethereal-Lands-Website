@@ -85,14 +85,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo json_encode(['status' => 'error', 'message' => "Prepare failed (INSERT): " . $conn->error]);
         exit;
     }
-    $stmt->bind_param("ssssss", $username, $email, $hashedPassword, $salt, $_SERVER['REMOTE_ADDR']);
+    $stmt->bind_param("sssss", $username, $email, $hashedPassword, $salt, $_SERVER['REMOTE_ADDR']);
 
     if (!$stmt->execute()) {
         echo json_encode(['status' => 'error', 'message' => "Execute failed (INSERT): " . $stmt->error]);
         exit;
     }
 
-    echo json_encode(['status' => 'success', 'message' => "New character created successfully"]);
+    echo json_encode(['status' => 'success', 'message' => "New character created successfully!"]);
     $stmt->close();
 }
 
