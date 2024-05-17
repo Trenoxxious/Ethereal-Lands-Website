@@ -66,8 +66,7 @@
         <p class="story">
             In the realm of Gielinor, a malignant force is stirring. The malevolent demon general, Del'araz, has
             unleashed his noxious lords upon the land, spreading a virulent plague that darkens the skies and withers
-            the earth. With Lumbridge in his sights, Del'araz is amassing a terrifying demonic army, intent on sundering
-            the town to ashes to lay the foundations for a dark uprising.
+            the earth. With Lumbridge in his sights, Del'araz is amassing a terrifying demonic army, intent on sundering the town to ashes to lay the foundations for a dark uprising.
             <br><br>
             If the relentless advance of Del'araz and his legion is not halted, the entire world risks falling into
             chaos, with every corner of Gielinor surrendering under his tyrannical rule. The call to arms rings out
