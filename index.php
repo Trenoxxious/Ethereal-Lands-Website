@@ -79,8 +79,8 @@
 
     <div class="popup" id="popup">
         <span class="popup-close" id="popup-close">&times;</span>
-        <div class="popup-header">
-            <h2>Register Account</h2>
+        <div class="popup-header" id="popup-header-text">
+            <h2>Create a Character</h2>
         </div>
         <form class="popup-form" id="registration-form">
             <input type="text" id="username" name="username" maxlength="12" pattern="[A-Za-z0-9 ]{1,12}"
@@ -134,6 +134,7 @@
                 .then(data => {
                     if (data.status === 'success') {
                         document.getElementById('registration-form').style.display = 'none';
+                        document.getElementById('popup-header-text').style.display = 'none';
                         document.getElementById('errorsuccessmessage').innerText = 'You\'ve successfully created a character! We\'ll see you in Gielinor shortly!';
                     } else {
                         document.getElementById('errorsuccessmessage').innerText = data.message;
