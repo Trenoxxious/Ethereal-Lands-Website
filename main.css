@@ -506,7 +506,7 @@ li {
 
 .popup-close:hover {
     color: #ff2f2f;
-    
+
 }
 
 .overlay {
@@ -674,7 +674,7 @@ li {
 
     .mainbar {
         margin: 0;
-        border-radius: none;
+        border-radius: 0;
         justify-content: space-between;
     }
 
