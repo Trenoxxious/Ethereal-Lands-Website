@@ -198,8 +198,8 @@
         <h2>Seasonal Activity:</h2>
         <h1>Ethereal Dungeons</h1>
         <p>Lasting for <b>3 months each</b> (the first lasting longer), an Ethereal Dungeon allows you to enter and
-            defeat monsters and bosses to earn a bit of Huntsman experience and <b>epic</b> seasonal rewards! These
-            dungeons will last for at least 3 months each.<br><br>Ethereal Dungeons are activities that grant cosmetic
+            defeat monsters and bosses to earn a bit of Huntsman experience and <b>epic</b> seasonal
+            rewards!<br><br>Ethereal Dungeons are activities that grant cosmetic
             <b>and</b> non-cosmetic, non-tradable rewards.<br><br>Monsters and bosses within the dungeon will <b>scale
                 its stats to a player based on their combat level once engaged</b>, but still provide a desirable
             challenge for any worthy adversary! We'll be looking for lots of feedback and ideas on these the first
