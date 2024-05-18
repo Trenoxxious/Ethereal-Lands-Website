@@ -576,7 +576,7 @@ li {
 
     .logo {
         height: 75px;
-        width: 125px;
+        min-width: 125px;
         background-size: 125px;
     }
 
@@ -637,7 +637,7 @@ li {
 
     .logo {
         height: 70px;
-        width: 100px;
+        min-width: 100px;
         background-size: 100px;
     }
 
@@ -680,7 +680,7 @@ li {
 
     .logo {
         height: 75px;
-        width: 65px;
+        min-width: 65px;
         background-size: 65px;
     }
 
