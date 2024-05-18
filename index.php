@@ -63,11 +63,13 @@
         <button class="button-main" id="introregisterbutton">
             Register Account
         </button>
-        <p>Ethereal Lands features a completely unique Runescape Classic adventure unlike any other. You'll soon be able to explore a world that has been mishapen by the noxious invasion...</p>
+        <p>Ethereal Lands features a completely unique Runescape Classic adventure unlike any other. You'll soon be able
+            to explore a world that has been mishapen by the noxious invasion...</p>
         <p class="story">
             In the realm of Gielinor, a malignant force is stirring. The malevolent demon general, Del'araz, has
             unleashed his noxious lords upon the land, spreading a virulent plague that darkens the skies and withers
-            the earth. With Lumbridge in his sights, Del'araz is amassing a terrifying demonic army, intent on sundering the town to ashes to lay the foundations for a dark uprising.
+            the earth. With Lumbridge in his sights, Del'araz is amassing a terrifying demonic army, intent on sundering
+            the town to ashes to lay the foundations for a dark uprising.
             <br><br>
             If the relentless advance of Del'araz and his legion is not halted, the entire world risks falling into
             chaos, with every corner of Gielinor surrendering under his tyrannical rule. The call to arms rings out
@@ -173,15 +175,20 @@
         <p>The wilderness has had many, many changes. Notably, there are two new <b>cities</b>, linked by a deadly,
             inescapable path between them. This path is known as <b class="redfont">Bloodshed Span</b>.<br><br>Along
             with our wilderness redesign, we're also introducing PvP ranks and rank-specific rewards within months of
-            initial release. We will be asking for feedback and gauging interest between a couple systems for this before implementation.</p>
+            initial release. We will be asking for feedback and gauging interest between a couple systems for this
+            before implementation.</p>
     </div>
     <div class="slide" id="slide2">
         <h1>Graveyards</h1>
-        <p>Gone are the days of respawning in Lumbridge... at least all the time.<br><br>New to all accessible areas are <b>graveyards</b>, respawn points with <i>possible</i> bank access to get you back into what you were doing quicker! You may have to complete a task or two in order to get access to these graveyard banks, however.
+        <p>Gone are the days of respawning in Lumbridge... at least all the time.<br><br>New to all accessible areas are
+            <b>graveyards</b>, respawn points with <i>possible</i> bank access to get you back into what you were doing
+            quicker! You may have to complete a task or two in order to get access to these graveyard banks, however.
         </p>
         <h1>New Skill: Huntsman</h1>
         <p>Very similar to the much-beloved Slayer skill, the Huntsman skill focuses on retrieving items or completing
-            specific tasks instead of simply killing creatures. Huntsman offers many awesome, and also gives us the ability to grant players with items that can help with leveling other skills.<br><br>Rewards for Huntsman bounties, or formally acquisitions, are based on the bounty
+            specific tasks instead of simply killing creatures. Huntsman offers many awesome, and also gives us the
+            ability to grant players with items that can help with leveling other skills.<br><br>Rewards for Huntsman
+            bounties, or formally acquisitions, are based on the bounty
             given. For example, a bounty to collect rat eyes will reward either gold, an experience lamp or several Eye
             of Newts, based on the player's choice.<br><br>Bounty points are rewarded for fulfilling bounties and can be
             spent for rewards or tossing away a bounty.</p>
@@ -202,8 +209,11 @@
         <h1>Be a Creator!</h1>
         <p>We're going to be providing resources and rewards for anyone looking to take a stab at creating items for
             Ethereal Lands' cosmetic crates. Along with living on in the "examine" text of an item forever, if picked,
-            you'll be rewarded for your chosen submission! Don't worry, cosmetic crates are entirely free. While we may explore paid cosmetics in the future, the cases and
-            keys (which we consider gambling) have a chance to drop from all monsters within a specific range of your combat level just by playing the game. Cases rotate out yearly and will be discontinued. We won't ever sell gambling.</p>
+            you'll be rewarded for your chosen submission! Don't worry, cosmetic crates are entirely free. While we are
+            going to explore paid cosmetics in the store, the cases and
+            keys (which we consider gambling) have a chance to drop from all monsters within a specific range of your
+            combat level just by playing the game. Cases rotate out yearly and will be discontinued. Rest assured, we
+            won't ever sell gambling.</p>
     </div>
 </body>
 
