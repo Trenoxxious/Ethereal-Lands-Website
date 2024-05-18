@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Ethereal Lands</title>
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
-    <script defer src="script.js"></script>
+    <script defer src="script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
