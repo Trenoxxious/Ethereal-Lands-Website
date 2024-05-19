@@ -28,23 +28,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Fetch user from database
-    $sql = "SELECT id, pass FROM players WHERE username='$username'";
-    $result = $conn->query($sql);
+    $sql = "SELECT id, username, pass FROM players WHERE username = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         // Check if the password matches
         $row = $result->fetch_assoc();
+
+        // Debug: Output the stored hash and the entered password
+        echo "Stored Hash: " . $row['pass'] . "<br>";
+        echo "Entered Password: " . $password . "<br>";
+
         if (password_verify($password, $row['pass'])) {
-            // Password is correct, start the session
+            // Password is correct, store user information in session
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
+
+            // Redirect to account.php
             header("Location: account.php");
+            exit;
         } else {
             echo "Invalid password.";
         }
     } else {
-        echo "No account found with that character name.";
+        echo "No user found with that username.";
     }
 
+    $stmt->close();
     $conn->close();
 }
