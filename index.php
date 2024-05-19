@@ -62,7 +62,8 @@
         <button class="button-main" id="introregisterbutton">
             Register Account
         </button>
-        <h1>Ethereal Lands</h1>
+        <!-- <h1>Ethereal Lands</h1> -->
+        <div class="intro-logo"></div>
         <h2>A Runescape Classic Adventure</h2>
         <p>Explore a world that's been sundered by the noxious invasion...</p>
         <!-- <p class="story">
