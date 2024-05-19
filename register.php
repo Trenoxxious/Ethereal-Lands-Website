@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $recaptchaSecret = '6LeVveEpAAAAALSfsxEV2rOKYDkXzb0JKee8w_qT';
 
     // Verify reCAPTCHA v3
-    $recaptchaUrl = "https://recaptchaenterprise.googleapis.com/v1/projects/teak-strength-375318/assessments?key=$recaptchaSecret";
+    $recaptchaUrl = "https://recaptchaenterprise.googleapis.com/v1/projects/6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR/assessments?key=$recaptchaSecret";
     $recaptchaData = json_encode([
         'event' => [
             'token' => $recaptchaResponse,
