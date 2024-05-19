@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script defer
+    <script
         src="https://www.google.com/recaptcha/enterprise.js?render=6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR"></script>
 
 </head>
