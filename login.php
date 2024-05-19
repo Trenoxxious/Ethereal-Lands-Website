@@ -38,10 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Check if the password matches
         $row = $result->fetch_assoc();
 
-        // Debug: Output the stored hash and the entered password
-        echo "Stored Hash: " . $row['pass'] . "<br>";
-        echo "Entered Password: " . $password . "<br>";
-
         if (password_verify($password, $row['pass'])) {
             // Password is correct, store user information in session
             $_SESSION['user_id'] = $row['id'];
