@@ -300,10 +300,20 @@ li {
     font-weight: 400;
     text-align: center;
     /* text-transform: uppercase; */
-    margin-top: 15px;
+    margin-top: 100px;
     font-family: "Oswald", "Teko", sans-serif, serif;
     font-size: 4em;
     filter: drop-shadow(rgb(0, 0, 0) 0rem 0rem 15px);
+}
+
+#intro h2 {
+    font-weight: 400;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 100px;
+    font-size: 3em;
+    color: white;
+    font-family: "Oswald", "Teko", sans-serif, serif;
 }
 
 #intro p {
@@ -346,13 +356,13 @@ li {
 }
 
 .slide:nth-child(even) {
-    align-items: flex-start;
-    text-align: left;
+    align-items: flex-end;
+    text-align: right;
 }
 
 .slide:nth-child(odd) {
-    align-items: flex-end;
-    text-align: right;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .slide-content {
@@ -367,11 +377,11 @@ li {
     width: 33%;
 }
 
-.slide-content:nth-child(odd) {
+.slide:nth-child(even) .slide-content {
     background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
 }
 
-.slide-content:nth-child(even) {
+.slide:nth-child(odd) .slide-content {
     background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
 }
 
@@ -407,19 +417,18 @@ li {
     background-image: url(images/pic4.png);
     object-fit: cover;
     background-size: 1920px;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
-    background-position-y: -400px;
+    background-position-y: -300px;
 }
 
 #slide2 {
-    min-height: 600px;
-    max-height: 1100px;
     background-image: url(images/pic3.png);
     object-fit: cover;
     background-size: 1920px;
     background-position: top;
     background-repeat: no-repeat;
+    background-position-y: -100px;
 }
 
 #slide3 {
@@ -675,7 +684,7 @@ li {
 
     #introregisterbutton {
         transform: scale(1);
-        margin-top: 5px;
+        margin-top: 25px;
         margin-bottom: 10px;
         display: block;
     }
