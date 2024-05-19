@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         // Check if the password matches
         $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
+        if (password_verify($password, $row['pass'])) {
             // Password is correct, start the session
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
