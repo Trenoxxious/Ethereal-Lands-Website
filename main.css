@@ -563,7 +563,7 @@ li {
 }
 
 .popup-form input[type="submit"]:hover {
-    background-color: #218838;
+    background-color: var(--middle-grad-color);
 }
 
 .popup-close {
