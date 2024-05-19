@@ -302,14 +302,15 @@ li {
     /* text-transform: uppercase; */
     margin-top: 100px;
     font-family: "Oswald", "Teko", sans-serif, serif;
-    font-size: 4em;
+    font-size: 6em;
     filter: drop-shadow(rgb(0, 0, 0) 0rem 0rem 15px);
 }
 
 #intro h2 {
     font-weight: 400;
     padding: 0;
-    margin-top: 0;
+    margin-top: -25px;
+    text-align: center;
     margin-bottom: 100px;
     font-size: 3em;
     color: white;
@@ -319,7 +320,7 @@ li {
 #intro p {
     font-family: "Montserrat", sans-serif, serif;
     color: rgb(241, 241, 241);
-    font-size: 1.5em;
+    font-size: 2em;
     width: 60%;
     text-align: center;
     text-shadow: 0px 0px 5px #171717;
@@ -432,9 +433,7 @@ li {
 }
 
 #slide3 {
-    min-height: 600px;
-    max-height: 1200px;
-    background-image: url(images/pic4.png);
+    background-image: url(images/graveyards.png);
     object-fit: cover;
     background-size: 1920px;
     background-position: center;
@@ -586,7 +585,7 @@ li {
     }
 
     #intro p {
-        font-size: 1.5em;
+        font-size: 2em;
     }
 
     #intro .story {
@@ -634,7 +633,7 @@ li {
     }
 
     #intro p {
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
 
     #intro .story {
@@ -696,11 +695,7 @@ li {
     }
 
     #intro h1 {
-        font-size: 3em;
-    }
-
-    #intro p {
-        font-size: 1em;
+        font-size: 5em;
     }
 
     #intro .story {
@@ -724,6 +719,14 @@ li {
     .slide-content {
         width: 60%;
         margin: 5%;
+    }
+
+    #intro h1 {
+        font-size: 4em;
+    }
+
+    #intro h2 {
+        font-size: 2em;
     }
 
     .mainbar {
