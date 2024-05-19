@@ -28,24 +28,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $recaptchaResponse = $_POST['g-recaptcha-response'];
     $recaptchaSecret = '6LeVveEpAAAAALSfsxEV2rOKYDkXzb0JKee8w_qT';
 
-    // Verify reCAPTCHA v3
-    $recaptchaUrl = "https://recaptchaenterprise.googleapis.com/v1/projects/6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR/assessments?key=$recaptchaSecret";
-    $recaptchaData = json_encode([
-        'event' => [
-            'token' => $recaptchaResponse,
-            'siteKey' => '6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR',
-            'expectedAction' => 'submit'
-        ]
-    ]);
-    $recaptchaOptions = [
+    // Verify reCAPTCHA v3 using the siteverify API
+    $recaptchaUrl = "https://www.google.com/recaptcha/api/siteverify";
+    $recaptchaData = [
+        'secret' => $recaptchaSecret,
+        'response' => $recaptchaResponse,
+        'remoteip' => $_SERVER['REMOTE_ADDR']
+    ];
+
+    $options = [
         'http' => [
-            'method' => 'POST',
-            'header' => 'Content-Type: application/json',
-            'content' => $recaptchaData
+            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method'  => 'POST',
+            'content' => http_build_query($recaptchaData)
         ]
     ];
-    $recaptchaContext = stream_context_create($recaptchaOptions);
-    $recaptchaResponse = file_get_contents($recaptchaUrl, false, $recaptchaContext);
+
+    $context  = stream_context_create($options);
+    $recaptchaResponse = file_get_contents($recaptchaUrl, false, $context);
 
     if ($recaptchaResponse === false) {
         echo json_encode(['status' => 'error', 'message' => 'Failed to verify CAPTCHA.']);
@@ -54,13 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $responseKeys = json_decode($recaptchaResponse, true);
 
-    if ($responseKeys === null) {
-        error_log("reCAPTCHA API response is null or not valid JSON: $recaptchaResponse");
-        echo json_encode(['status' => 'error', 'message' => 'Failed to verify CAPTCHA.']);
-        exit;
-    }
-
-    if (!isset($responseKeys['tokenProperties']['valid']) || $responseKeys['tokenProperties']['valid'] !== true || $responseKeys['riskAnalysis']['score'] < 0.5) {
+    if ($responseKeys === null || !$responseKeys['success']) {
         echo json_encode(['status' => 'error', 'message' => 'Please complete the CAPTCHA to proceed.']);
         exit;
     }
