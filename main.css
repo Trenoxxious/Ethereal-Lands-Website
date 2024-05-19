@@ -67,13 +67,14 @@ i {
 
 .character-counter {
     color: white;
-    font-family: "Courier Prime", serif, sans-serif;
-    font-size: 1.25em;
+    font-family: "Teko", serif, sans-serif;
+    font-size: 1.5em;
     text-align: center;
     width: 75%;
 }
 
 #totalAccounts {
+    color: var(--middle-grad-color);
     font-size: inherit;
 }
 
@@ -459,6 +460,14 @@ li {
     background-repeat: no-repeat;
 }
 
+#slide4 {
+    background-image: url(images/pic2.png);
+    object-fit: cover;
+    background-size: 1920px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
 .popup {
     display: none;
     position: fixed;
@@ -648,7 +657,7 @@ li {
     }
 
     .character-counter {
-        font-size: 1em;
+        font-size: 1.25em;
     }
 
     #intro p {
@@ -733,6 +742,11 @@ li {
 @media only screen and (max-width: 600px) {
     .mainbar #navlinks {
         display: none;
+    }
+
+    .button-main {
+        font-size: 1.5em;
+        min-width: 125px;
     }
 
     .intro-logo {

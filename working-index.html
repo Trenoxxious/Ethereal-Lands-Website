@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
             </div>
             <div class="button-div">
                 <button class="button-main" id="registerbutton">
-                    Register Account
+                    Pre-register
                 </button>
             </div>
             <div id="menuexpand">
@@ -60,7 +61,7 @@
         <div class="character-counter">Currently, <span id="totalAccounts">#</span>
             heroes stand at the portal to Gielinor, primed to snuff the evil that is Del'araz...</div>
         <button class="button-main" id="introregisterbutton">
-            Register Account
+            Pre-register
         </button>
         <!-- <h1>Ethereal Lands</h1> -->
         <div class="intro-logo"></div>
@@ -93,6 +94,7 @@
             <input type="password" id="password" name="password" placeholder="Password" required>
             <input type="password" id="confirm-password" placeholder="Confirm Password" required>
             <input type="email" id="email" name="email" placeholder="Email Address" required>
+            <div class="g-recaptcha" data-sitekey="6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR"></div>
             <input type="submit" value="Register">
         </form>
         <div class="registrationmessage" id="errorsuccessmessage"></div>
@@ -189,6 +191,18 @@
         </div>
         <div class="slide-fade"></div>
     </div>
+    <div class="slide" id="slide4">
+        <div class="slide-content">
+            <h1>New Skill: Huntsman</h1>
+            <p>Very similar to the much-beloved Slayer skill, the Huntsman skill focuses on retrieving items or
+                completing
+                specific tasks instead of simply killing creatures. Huntsman offers many awesome rewards, and also gives
+                us the
+                ability to grant players with items that can help with leveling other skills.
+            </p>
+        </div>
+        <div class="slide-fade"></div>
+    </div>
     <!--
     <div class="slide" id="slide2">
         <h1>Graveyards</h1>
@@ -198,7 +212,7 @@
         </p>
         <h1>New Skill: Huntsman</h1>
         <p>Very similar to the much-beloved Slayer skill, the Huntsman skill focuses on retrieving items or completing
-            specific tasks instead of simply killing creatures. Huntsman offers many awesome, and also gives us the
+            specific tasks instead of simply killing creatures. Huntsman offers many awesome rewards, and also gives us the
             ability to grant players with items that can help with leveling other skills.<br><br>Rewards for Huntsman
             bounties, or formally acquisitions, are based on the bounty
             given. For example, a bounty to collect rat eyes will reward either gold, an experience lamp or several Eye

@@ -25,6 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $email = $_POST['email'];
+    $recaptchaResponse = $_POST['g-recaptcha-response'];
+    $recaptchaSecret = '6LeVveEpAAAAALSfsxEV2rOKYDkXzb0JKee8w_qT';
+
+    // Verify reCAPTCHA
+    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptchaSecret&response=$recaptchaResponse");
+    $responseKeys = json_decode($response, true);
+
+    if (intval($responseKeys["success"]) !== 1) {
+        echo json_encode(['status' => 'error', 'message' => 'Please complete the CAPTCHA before proceeding.']);
+        exit;
+    }
 
     // Validate username
     if (!preg_match("/^[A-Za-z0-9 ]{2,12}$/", $username)) {
