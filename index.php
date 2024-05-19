@@ -177,7 +177,7 @@
     </div>
     <div class="slide" id="slide3">
         <div class="slide-content">
-            <h1>Graveayards</h1>
+            <h1>Graveyards</h1>
             <p>Gone are the days of respawning in Lumbridge... at least all the time.<br><br>New to all accessible areas
                 are
                 <b>graveyards</b>, respawn points with <i>possible</i> bank access to get you back into what you were
