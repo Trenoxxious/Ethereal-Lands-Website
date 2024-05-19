@@ -29,14 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $recaptchaSecret = '6LeVveEpAAAAALSfsxEV2rOKYDkXzb0JKee8w_qT';
 
     // Verify reCAPTCHA v3
-    $response = file_get_contents("https://recaptchaenterprise.googleapis.com/v1beta1/projects/YOUR_PROJECT_ID/assessments?key=$recaptchaSecret", false, stream_context_create([
+    $response = file_get_contents("https://recaptchaenterprise.googleapis.com/v1beta1/projects/teak-strength-375318/assessments?key=$recaptchaSecret", false, stream_context_create([
         'http' => [
             'method' => 'POST',
             'header' => 'Content-type: application/json',
             'content' => json_encode([
                 'event' => [
                     'token' => $recaptchaResponse,
-                    'siteKey' => 'YOUR_SITE_KEY',
+                    'siteKey' => '6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR',
                     'expectedAction' => 'submit'
                 ]
             ])
