@@ -28,12 +28,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $recaptchaResponse = $_POST['g-recaptcha-response'];
     $recaptchaSecret = '6LeVveEpAAAAALSfsxEV2rOKYDkXzb0JKee8w_qT';
 
-    // Verify reCAPTCHA
-    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptchaSecret&response=$recaptchaResponse");
+    // Verify reCAPTCHA v3
+    $response = file_get_contents("https://recaptchaenterprise.googleapis.com/v1beta1/projects/YOUR_PROJECT_ID/assessments?key=$recaptchaSecret", false, stream_context_create([
+        'http' => [
+            'method' => 'POST',
+            'header' => 'Content-type: application/json',
+            'content' => json_encode([
+                'event' => [
+                    'token' => $recaptchaResponse,
+                    'siteKey' => 'YOUR_SITE_KEY',
+                    'expectedAction' => 'submit'
+                ]
+            ])
+        ]
+    ]));
+
     $responseKeys = json_decode($response, true);
 
-    if (intval($responseKeys["success"]) !== 1) {
-        echo json_encode(['status' => 'error', 'message' => 'Please complete the CAPTCHA before proceeding.']);
+    if ($responseKeys['tokenProperties']['valid'] !== true || $responseKeys['score'] < 0.5) {
+        echo json_encode(['status' => 'error', 'message' => 'Please complete the CAPTCHA to proceed.']);
         exit;
     }
 

@@ -478,7 +478,7 @@ li {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
-    padding: 50px;
+    padding: 60px;
     border-radius: 0.5em;
     backdrop-filter: blur(4px);
     background-color: rgba(0, 0, 0, 0.5);

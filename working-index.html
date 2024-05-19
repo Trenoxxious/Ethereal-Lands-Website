@@ -7,8 +7,10 @@
     <title>Play Ethereal Lands</title>
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer
+        src="https://www.google.com/recaptcha/enterprise.js?render=6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR"></script>
+
 </head>
 
 <body>
@@ -94,11 +96,19 @@
             <input type="password" id="password" name="password" placeholder="Password" required>
             <input type="password" id="confirm-password" placeholder="Confirm Password" required>
             <input type="email" id="email" name="email" placeholder="Email Address" required>
-            <div class="g-recaptcha" data-sitekey="6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR"></div>
+            <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
             <input type="submit" value="Register">
         </form>
         <div class="registrationmessage" id="errorsuccessmessage"></div>
     </div>
+
+    <script>
+        grecaptcha.enterprise.ready(function () {
+            grecaptcha.enterprise.execute('6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR', { action: 'submit' }).then(function (token) {
+                document.getElementById('recaptchaResponse').value = token;
+            });
+        });
+    </script>
 
     <script>
         document.getElementById('introregisterbutton').addEventListener('click', function () {
