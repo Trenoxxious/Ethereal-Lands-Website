@@ -94,8 +94,8 @@
             <input type="password" id="password" name="password" placeholder="Password" required>
             <input type="password" id="confirm-password" placeholder="Confirm Password" required>
             <input type="email" id="email" name="email" placeholder="Email Address" required>
-            <input class="g-recaptcha" data-sitekey="6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR" data-callback='onSubmit'
-                type="submit" value="Register">
+            <input data-sitekey="6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR" data-callback='onSubmit'
+                type="submit" value="Create Character">
         </form>
         <div class="registrationmessage" id="errorsuccessmessage"></div>
     </div>
