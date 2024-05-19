@@ -29,23 +29,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $recaptchaSecret = '6LeVveEpAAAAALSfsxEV2rOKYDkXzb0JKee8w_qT';
 
     // Verify reCAPTCHA v3
-    $response = file_get_contents("https://recaptchaenterprise.googleapis.com/v1beta1/projects/teak-strength-375318/assessments?key=$recaptchaSecret", false, stream_context_create([
+    $recaptchaUrl = "https://recaptchaenterprise.googleapis.com/v1/projects/teak-strength-375318/assessments?key=$recaptchaSecret";
+    $recaptchaData = json_encode([
+        'event' => [
+            'token' => $recaptchaResponse,
+            'siteKey' => '6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR',
+            'expectedAction' => 'submit'
+        ]
+    ]);
+    $recaptchaOptions = [
         'http' => [
             'method' => 'POST',
-            'header' => 'Content-type: application/json',
-            'content' => json_encode([
-                'event' => [
-                    'token' => $recaptchaResponse,
-                    'siteKey' => '6LeVveEpAAAAAJ5-DX-GniKP3QgaZ6XJ5Vxy4RIR',
-                    'expectedAction' => 'submit'
-                ]
-            ])
+            'header' => 'Content-Type: application/json',
+            'content' => $recaptchaData
         ]
-    ]));
+    ];
+    $recaptchaContext = stream_context_create($recaptchaOptions);
+    $recaptchaResponse = file_get_contents($recaptchaUrl, false, $recaptchaContext);
 
-    $responseKeys = json_decode($response, true);
+    if ($recaptchaResponse === false) {
+        echo json_encode(['status' => 'error', 'message' => 'Failed to verify CAPTCHA.']);
+        exit;
+    }
 
-    if ($responseKeys['tokenProperties']['valid'] !== true || $responseKeys['score'] < 0.5) {
+    $responseKeys = json_decode($recaptchaResponse, true);
+
+    if ($responseKeys === null) {
+        error_log("reCAPTCHA API response is null or not valid JSON: $recaptchaResponse");
+        echo json_encode(['status' => 'error', 'message' => 'Failed to verify CAPTCHA.']);
+        exit;
+    }
+
+    if (!isset($responseKeys['tokenProperties']['valid']) || $responseKeys['tokenProperties']['valid'] !== true || $responseKeys['riskAnalysis']['score'] < 0.5) {
         echo json_encode(['status' => 'error', 'message' => 'Please complete the CAPTCHA to proceed.']);
         exit;
     }
