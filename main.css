@@ -227,6 +227,10 @@ li {
     font-weight: 400;
 }
 
+.margin-top-15 {
+    margin-top: 15px;
+}
+
 .button-main:hover {
     color: rgb(255, 214, 99);
     border-color: rgb(255, 214, 99);

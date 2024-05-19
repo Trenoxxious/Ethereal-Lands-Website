@@ -22,8 +22,8 @@
                 <a href="#">Store</a>
             </div>
             <div class="button-div">
-                <button class="button-main" id="registerbutton">
-                    Pre-register
+                <button class="button-main" id="accountbutton"> <!--registerbutton-->
+                    Account
                 </button>
             </div>
             <div id="menuexpand">
@@ -59,8 +59,8 @@
         <div class="blanktop"></div>
         <div class="character-counter">Currently, <span id="totalAccounts">#</span>
             heroes stand at the portal to Gielinor, primed to snuff the evil that is Del'araz...</div>
-        <button class="button-main" id="introregisterbutton">
-            Pre-register
+        <button class="button-main" id="introaccountbutton">
+            Account
         </button>
         <!-- <h1>Ethereal Lands</h1> -->
         <div class="intro-logo"></div>
@@ -98,14 +98,51 @@
         <div class="registrationmessage" id="errorsuccessmessage"></div>
     </div>
 
+    <div class="popup" id="popup-login">
+        <span class="popup-close" id="popup-login-close">&times;</span>
+        <div class="popup-header">
+            <h2>Login</h2>
+        </div>
+        <p>Use your Ethereal Lands username and password to login below.</p>
+        <form class="popup-form" method="post" id="login-form" action="login.php">
+            <input type="text" id="username" name="username" maxlength="12" pattern="[A-Za-z0-9 ]{1,12}"
+                placeholder="Character Name" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <div class=" loginmessage" id="errorsuccessmessage">
+        </div>
+    </div>
+
+    <div class="popup" id="popup-account">
+        <span class="popup-close" id="popup-account-close">&times;</span>
+        <div class="popup-header">
+            <h2>Login or Sign-up</h2>
+        </div>
+        <div class="button-main margin-top-15" id="registerbutton">Sign Up</div>
+        <div class="button-main margin-top-15" id="loginbutton">Login</div>
+    </div>
+
     <script>
-        document.getElementById('introregisterbutton').addEventListener('click', function () {
-            document.getElementById('popup').classList.add('active');
+        document.getElementById('introaccountbutton').addEventListener('click', function () {
+            document.getElementById('popup-account').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        });
+
+        document.getElementById('accountbutton').addEventListener('click', function () {
+            document.getElementById('popup-account').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        });
+
+        document.getElementById('loginbutton').addEventListener('click', function () {
+            document.getElementById('popup-login').classList.add('active');
+            document.getElementById('popup-account').classList.remove('active');
             document.getElementById('overlay').classList.add('active');
         });
 
         document.getElementById('registerbutton').addEventListener('click', function () {
             document.getElementById('popup').classList.add('active');
+            document.getElementById('popup-account').classList.remove('active');
             document.getElementById('overlay').classList.add('active');
         });
 
@@ -114,8 +151,15 @@
             document.getElementById('overlay').classList.remove('active');
         });
 
+        document.getElementById('popup-account-close').addEventListener('click', function () {
+            document.getElementById('popup-account').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        });
+
         document.getElementById('overlay').addEventListener('click', function () {
             document.getElementById('popup').classList.remove('active');
+            document.getElementById('popup-account').classList.remove('active');
+            document.getElementById('popup-login').classList.remove('active');
             document.getElementById('overlay').classList.remove('active');
         });
 
