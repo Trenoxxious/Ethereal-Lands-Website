@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
@@ -50,8 +51,8 @@ i {
 
 .character-counter {
     color: white;
-    font-family: "Libre Baskerville", serif;
-    font-size: 1.5em;
+    font-family: "Courier Prime", serif, sans-serif;
+    font-size: 1.25em;
     text-align: center;
     width: 75%;
 }
@@ -273,7 +274,6 @@ li {
 }
 
 #intro {
-    height: 750px;
     background-image: url(images/pic1.png);
     object-fit: cover;
     background-size: 1920px;
@@ -297,26 +297,27 @@ li {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin-top: 15px;
-    font-family: "Teko", "Libre Baskerville", serif;
-    font-size: 6em;
-    filter: drop-shadow(rgb(255, 237, 180) 0rem 0rem 2px);
+    font-family: "Oswald", "Teko", sans-serif, serif;
+    font-size: 4em;
+    filter: drop-shadow(rgb(0, 0, 0) 0rem 0rem 15px);
 }
 
 #intro p {
+    font-family: "Montserrat", sans-serif, serif;
     color: rgb(241, 241, 241);
-    font-size: 2em;
-    width: 80%;
+    font-size: 1.5em;
+    width: 60%;
     text-align: center;
     text-shadow: 0px 0px 5px #171717;
 }
 
 #intro .story {
     margin-top: 50px;
-    width: 80%;
+    width: 60%;
     text-align: center;
     color: rgb(255, 213, 141);
     font-size: 1.5em;
@@ -324,26 +325,63 @@ li {
 }
 
 .slide {
+    padding-top: 25px;
+    box-sizing: border-box;
     display: flex;
     text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    font-family: "Libre Baskerville", serif;
+    font-family: "Oswald", "Teko", serif;
     cursor: default;
     color: white;
     overflow-y: hidden;
 }
 
+.slide-fade {
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
+    height: 75px;
+}
+
+.slide:nth-child(even) {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.slide:nth-child(odd) {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.slide-content {
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-top: 30px;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 33%;
+}
+
+.slide-content:nth-child(odd) {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
+}
+
+.slide-content:nth-child(even) {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
+}
+
 .slide h1 {
-    margin-top: 25px;
     background: linear-gradient(0deg, rgb(255, 176, 4) 15%, rgb(255, 240, 185) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 3em;
     font-weight: 700;
-    filter: drop-shadow(rgb(255, 237, 180) 0rem 0rem 7px);
 }
 
 .slide h2 {
@@ -359,21 +397,19 @@ li {
 
 .slide p {
     color: rgb(255, 246, 218);
-    margin: 15px;
-    font-size: 1.5em;
+    margin-top: 15px;
+    font-size: 1em;
     text-shadow: 2px 2px 2px #171717;
-    width: 66%;
+    font-family: "Montserrat", sans-serif;
 }
 
 #slide1 {
-    min-height: 890px;
-    max-height: 1100px;
-    background-image: url(images/pic2.png);
+    background-image: url(images/pic4.png);
     object-fit: cover;
     background-size: 1920px;
     background-position: center;
     background-repeat: no-repeat;
-    background-position-y: -200px;
+    background-position-y: -400px;
 }
 
 #slide2 {
@@ -541,7 +577,7 @@ li {
     }
 
     #intro p {
-        font-size: 2em;
+        font-size: 1.5em;
     }
 
     #intro .story {
@@ -615,6 +651,15 @@ li {
         height: 50px;
     }
 
+    .slide-content {
+        width: 50%;
+        margin: 5%;
+    }
+
+    .slide p {
+        font-size: 0.8em;
+    }
+
     .mainbar nav {
         width: auto;
     }
@@ -657,11 +702,6 @@ li {
         font-size: 2em;
     }
 
-    .slide p {
-        font-size: 1em;
-        width: 85%;
-    }
-
     ul li {
         font-size: 1.4em;
     }
@@ -670,6 +710,11 @@ li {
 @media only screen and (max-width: 600px) {
     .mainbar #navlinks {
         display: none;
+    }
+
+    .slide-content {
+        width: 60%;
+        margin: 5%;
     }
 
     .mainbar {
