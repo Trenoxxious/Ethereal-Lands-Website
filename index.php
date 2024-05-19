@@ -59,7 +59,7 @@
         <div class="blanktop"></div>
         <div class="character-counter">Currently, <span id="totalAccounts">#</span>
             heroes stand at the portal to Gielinor, primed to snuff the evil that is Del'araz...</div>
-        <h1>A new threat looms...</h1>
+        <h1>Ethereal Lands is a Runescape Classic Adventure</h1>
         <button class="button-main" id="introregisterbutton">
             Register Account
         </button>
@@ -76,6 +76,7 @@
             across the land, beckoning heroes to rise against this encroaching darkness, in a desperate bid to save
             their world from being irrevocably conquered by the forces of Del'araz.
         </p>
+        <div class="slide-fade"></div>
     </div>
     <div class="overlay" id="overlay"></div>
 
@@ -149,16 +150,20 @@
                 });
         });
     </script>
-    <hr>
     <div class="slide" id="slide1">
-        <h1>New Maximum Level</h1>
-        <p>Ethereal Lands features a new story, quests, areas, monsters and so much more. To tell this new story,
-            <b>we've reduced the maximum level you can reach to 66</b>. Don't fret! You'll reach maximum level in no
-            time, and we're putting a considerable amount of effort into the development and health of our end-game
-            experience! Maximum level will gradually rise with each major expansion release, with the first expansion
-            set to raise the maximum level to 77.
-        </p>
-        <h1>New & Expanded Areas</h1>
+        <div class="slide-content">
+            <h1>New Maximum Level</h1>
+            <p>Ethereal Lands features a new story, quests, areas, monsters and so much more. To tell this new story,
+                <b>we've reduced the maximum level you can reach to 66</b>. Don't fret! You'll reach maximum level in no
+                time, and we're putting a considerable amount of effort into the development and health of our end-game
+                experience! Maximum level will gradually rise with each major expansion release, with the first
+                expansion
+                set to raise the maximum level to 77.
+            </p>
+        </div>
+        <div class="slide-fade"></div>
+    </div>
+    <!-- <h1>New & Expanded Areas</h1>
         <p>New and expanded areas are coming to Gielinor! Areas are built retaining the Classic touch, careful to not
             fall into the typical "private server" feel.</p>
         <ul>
@@ -214,7 +219,7 @@
             keys (which we consider gambling) have a chance to drop from all monsters within a specific range of your
             combat level just by playing the game. Cases rotate out yearly and will be discontinued. Rest assured, we
             won't ever sell gambling.</p>
-    </div>
+    </div> -->
 </body>
 
 </html>
