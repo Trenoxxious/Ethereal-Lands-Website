@@ -25,39 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $email = $_POST['email'];
-    $recaptchaResponse = $_POST['response'];
-    $recaptchaSecret = '6LeVveEpAAAAALSfsxEV2rOKYDkXzb0JKee8w_qT';
-
-    // Verify reCAPTCHA v3 using the siteverify API
-    $recaptchaUrl = "https://www.google.com/recaptcha/api/siteverify";
-    $recaptchaData = [
-        'secret' => $recaptchaSecret,
-        'response' => $recaptchaResponse,
-        'remoteip' => $_SERVER['REMOTE_ADDR']
-    ];
-
-    $options = [
-        'http' => [
-            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-            'method'  => 'POST',
-            'content' => http_build_query($recaptchaData)
-        ]
-    ];
-
-    $context  = stream_context_create($options);
-    $recaptchaResponse = file_get_contents($recaptchaUrl, false, $context);
-
-    if ($recaptchaResponse === false) {
-        echo json_encode(['status' => 'error', 'message' => 'Failed to verify CAPTCHA.']);
-        exit;
-    }
-
-    $responseKeys = json_decode($recaptchaResponse, true);
-
-    if ($responseKeys === null || !$responseKeys['success']) {
-        echo json_encode(['status' => 'error', 'message' => 'Please complete the CAPTCHA to proceed.']);
-        exit;
-    }
 
     // Validate username
     if (!preg_match("/^[A-Za-z0-9 ]{2,12}$/", $username)) {
