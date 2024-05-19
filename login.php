@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Fetch user from database
-    $sql = "SELECT id, password FROM players WHERE username='$username'";
+    $sql = "SELECT id, pass FROM players WHERE username='$username'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
