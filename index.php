@@ -120,7 +120,7 @@
     </div>
 
     <script>
-        let loggedIn = <? php echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] ? 'true' : 'false'; ?>;
+        // let loggedIn = <? php echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] ? 'true' : 'false'; ?>;
 
         document.getElementById('introaccountbutton').addEventListener('click', function () {
             document.getElementById('popup-account').classList.add('active');
