@@ -131,9 +131,14 @@
         });
 
         document.getElementById('loginbutton').addEventListener('click', function () {
-            document.getElementById('popup-login').classList.add('active');
-            document.getElementById('popup-account').classList.remove('active');
-            document.getElementById('overlay').classList.add('active');
+            let loggedIn = <? php echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] ? 'true' : 'false'; ?>;
+            if (!loggedIn) {
+                document.getElementById('popup-login').classList.add('active');
+                document.getElementById('popup-account').classList.remove('active');
+                document.getElementById('overlay').classList.add('active');
+            } else {
+                window.location.href = 'account.php';
+            }
         });
 
         document.getElementById('registerbutton').addEventListener('click', function () {
@@ -166,8 +171,8 @@
 
         document.getElementById('registration-form').addEventListener('submit', function (event) {
             event.preventDefault();
-            var password = document.getElementById('password').value;
-            var confirmPassword = document.getElementById('confirm-password').value;
+            let password = document.getElementById('password').value;
+            let confirmPassword = document.getElementById('confirm-password').value;
 
             if (password !== confirmPassword) {
                 document.getElementById('errorsuccessmessage').innerText = 'The passwords entered do not match.';
