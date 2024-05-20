@@ -120,6 +120,8 @@
     </div>
 
     <script>
+        let loggedIn = <? php echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] ? 'true' : 'false'; ?>;
+
         document.getElementById('introaccountbutton').addEventListener('click', function () {
             document.getElementById('popup-account').classList.add('active');
             document.getElementById('overlay').classList.add('active');
@@ -131,7 +133,6 @@
         });
 
         document.getElementById('loginbutton').addEventListener('click', function () {
-            let loggedIn = <? php echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] ? 'true' : 'false'; ?>;
             if (loggedIn) {
                 window.location.href = 'account.php';
             } else {
@@ -251,44 +252,6 @@
         </div>
         <div class="slide-fade"></div>
     </div>
-    <!--
-    <div class="slide" id="slide2">
-        <h1>Graveyards</h1>
-        <p>Gone are the days of respawning in Lumbridge... at least all the time.<br><br>New to all accessible areas are
-            <b>graveyards</b>, respawn points with <i>possible</i> bank access to get you back into what you were doing
-            quicker! You may have to complete a task or two in order to get access to these graveyard banks, however.
-        </p>
-        <h1>New Skill: Huntsman</h1>
-        <p>Very similar to the much-beloved Slayer skill, the Huntsman skill focuses on retrieving items or completing
-            specific tasks instead of simply killing creatures. Huntsman offers many awesome rewards, and also gives us the
-            ability to grant players with items that can help with leveling other skills.<br><br>Rewards for Huntsman
-            bounties, or formally acquisitions, are based on the bounty
-            given. For example, a bounty to collect rat eyes will reward either gold, an experience lamp or several Eye
-            of Newts, based on the player's choice.<br><br>Bounty points are rewarded for fulfilling bounties and can be
-            spent for rewards or tossing away a bounty.</p>
-    </div>
-    <hr>
-    <div class="slide" id="slide3">
-        <h2>Seasonal Activity:</h2>
-        <h1>Ethereal Dungeons</h1>
-        <p>Lasting for <b>3 months each</b> (the first lasting longer), an Ethereal Dungeon allows you to enter and
-            defeat monsters and bosses to earn a bit of Huntsman experience and <b>epic</b> seasonal
-            rewards!<br><br>Ethereal Dungeons are activities that grant cosmetic
-            <b>and</b> non-cosmetic, non-tradable rewards.<br><br>Monsters and bosses within the dungeon will <b>scale
-                its stats to a player based on their combat level once engaged</b>, but still provide a desirable
-            challenge for any worthy adversary! We'll be looking for lots of feedback and ideas on these the first
-            go-around, so make sure to post to Discord with your thoughts!
-        </p>
-        <p>The first Ethereal Dungeon is <b class="epicfont">Crypt of Dread</b>, found in Al'Kharid!</p>
-        <h1>Be a Creator!</h1>
-        <p>We're going to be providing resources and rewards for anyone looking to take a stab at creating items for
-            Ethereal Lands' cosmetic crates. Along with living on in the "examine" text of an item forever, if picked,
-            you'll be rewarded for your chosen submission! Don't worry, cosmetic crates are entirely free. While we are
-            going to explore paid cosmetics in the store, the cases and
-            keys (which we consider gambling) have a chance to drop from all monsters within a specific range of your
-            combat level just by playing the game. Cases rotate out yearly and will be discontinued. Rest assured, we
-            won't ever sell gambling.</p>
-    </div> -->
 </body>
 
 </html>
