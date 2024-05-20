@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['loggedIn'] = true;
 
             // Redirect to account.php
-            header("Location: account.php");
+            header("Location: account");
             exit;
         } else {
             echo "Invalid password.";

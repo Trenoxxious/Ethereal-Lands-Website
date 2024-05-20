@@ -124,7 +124,7 @@ session_start();
 
     <script>
         var loggedIn = <?php echo json_encode(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']); ?>;
-        
+
         document.getElementById('introaccountbutton').addEventListener('click', function () {
             document.getElementById('popup-account').classList.add('active');
             document.getElementById('overlay').classList.add('active');
@@ -137,7 +137,7 @@ session_start();
 
         document.getElementById('loginbutton').addEventListener('click', function () {
             if (loggedIn) {
-                window.location.href = 'account.php';
+                window.location.href = 'account';
             } else {
                 document.getElementById('popup-login').classList.add('active');
                 document.getElementById('popup-account').classList.remove('active');
