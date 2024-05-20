@@ -20,8 +20,6 @@ $username = $_SESSION['username'];
 <body>
     <p>Your username: <?php echo htmlspecialchars($username); ?></p>
     <p>Your Player ID: <?php echo htmlspecialchars($user_id); ?></p>
-    <h1>Welcome to the protected page!</h1>
-    <p>This page is only accessible to logged-in users.</p>
     <a href="logout.php">Logout</a>
 </body>
 </html>

@@ -18,12 +18,10 @@
             <div id="navlinks">
                 <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
                 <a href="updates">Game Updates</a>
-                <a href="#">Leaderboard</a>
-                <a href="#">Store</a>
             </div>
             <div class="button-div">
-                <button class="button-main" id="accountbutton"> <!--registerbutton-->
-                    Account
+                <button class="button-main" id="accountbutton">
+                    Login
                 </button>
             </div>
             <div id="menuexpand">
@@ -36,8 +34,6 @@
         <div id="expandedmenu">
             <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             <a href="updates">Game Updates</a>
-            <a href="#">Leaderboard</a>
-            <a href="#">Store</a>
         </div>
     </div>
     <script>
@@ -60,7 +56,7 @@
         <div class="character-counter">Currently, <span id="totalAccounts">#</span>
             heroes stand at the portal to Gielinor, primed to snuff the evil that is Del'araz...</div>
         <button class="button-main" id="introaccountbutton">
-            Account
+            Login
         </button>
         <!-- <h1>Ethereal Lands</h1> -->
         <div class="intro-logo"></div>
@@ -117,7 +113,7 @@
     <div class="popup" id="popup-account">
         <span class="popup-close" id="popup-account-close">&times;</span>
         <div class="popup-header">
-            <h2>Login or Sign-up</h2>
+            <h2>Login or Sign Up</h2>
         </div>
         <div class="button-main margin-top-15" id="registerbutton">Sign Up</div>
         <div class="button-main margin-top-15" id="loginbutton">Login</div>
@@ -153,6 +149,11 @@
 
         document.getElementById('popup-account-close').addEventListener('click', function () {
             document.getElementById('popup-account').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        });
+
+        document.getElementById('popup-login-close').addEventListener('click', function () {
+            document.getElementById('popup-login').classList.remove('active');
             document.getElementById('overlay').classList.remove('active');
         });
 

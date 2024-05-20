@@ -482,7 +482,7 @@ li {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
-    padding: 60px;
+    padding: 30px;
     border-radius: 0.5em;
     backdrop-filter: blur(4px);
     background-color: rgba(0, 0, 0, 0.5);
@@ -497,7 +497,7 @@ li {
 .popup-header {
     text-align: center;
     margin-bottom: 20px;
-    color: rgb(255, 235, 107);
+    color: var(--middle-grad-color);
 }
 
 .popup-header h2 {
@@ -751,6 +751,10 @@ li {
     .button-main {
         font-size: 1.5em;
         min-width: 125px;
+    }
+
+    .slide h1 {
+        font-size: 1.8em;
     }
 
     .intro-logo {
