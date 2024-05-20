@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -120,6 +123,8 @@
     </div>
 
     <script>
+        var loggedIn = <?php echo json_encode(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']); ?>;
+        
         document.getElementById('introaccountbutton').addEventListener('click', function () {
             document.getElementById('popup-account').classList.add('active');
             document.getElementById('overlay').classList.add('active');
