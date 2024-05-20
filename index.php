@@ -132,12 +132,12 @@
 
         document.getElementById('loginbutton').addEventListener('click', function () {
             let loggedIn = <? php echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] ? 'true' : 'false'; ?>;
-            if (!loggedIn) {
+            if (loggedIn) {
+                window.location.href = 'account.php';
+            } else {
                 document.getElementById('popup-login').classList.add('active');
                 document.getElementById('popup-account').classList.remove('active');
                 document.getElementById('overlay').classList.add('active');
-            } else {
-                window.location.href = 'account.php';
             }
         });
 
