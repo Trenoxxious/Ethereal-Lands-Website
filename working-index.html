@@ -131,7 +131,7 @@
         });
 
         document.getElementById('loginbutton').addEventListener('click', function () {
-            var loggedIn = <? php echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] ? 'true' : 'false'; ?>;
+            // var loggedIn = <? php echo isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] ? 'true' : 'false'; ?>;
             if (!loggedIn) {
                 document.getElementById('popup-login').classList.add('active');
                 document.getElementById('popup-account').classList.remove('active');
