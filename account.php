@@ -49,6 +49,7 @@ $conn->close();
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
@@ -61,6 +62,9 @@ $conn->close();
             <div class="logo" id="toplogo">
             </div>
             <div id="navlinks">
+                <?php if ($isAdmin): ?>
+                    <a href="#">Admin Dashboard</a>
+                <?php endif; ?>
                 <a href="https://discord.gg/d6RtsDyRZX">My Account</a>
                 <a href="updates">Store</a>
             </div>
@@ -74,15 +78,15 @@ $conn->close();
             </div>
         </nav>
         <div id="expandedmenu">
+            <?php if ($isAdmin): ?>
+                <a href="#">Admin Dashboard</a>
+            <?php endif; ?>
             <a href="https://discord.gg/d6RtsDyRZX">My Account</a>
             <a href="updates">Store</a>
         </div>
     </div>
     <div id="intro">
         <div class="blanktop"></div>
-        <?php if ($isAdmin): ?>
-            <p>ADMIN ACCOUNT: <a href="admin_dashboard.php">Admin Dashboard</a></p>
-        <?php endif; ?>
         <p>Your username: <?php echo htmlspecialchars($username); ?></p>
         <p>Your Player ID: <?php echo htmlspecialchars($user_id); ?></p>
         <p>Your Current Ethereal Souls: <?php echo htmlspecialchars($formatted_esouls); ?></p>
@@ -91,4 +95,5 @@ $conn->close();
         <div class="slide-fade"></div>
     </div>
 </body>
+
 </html>
