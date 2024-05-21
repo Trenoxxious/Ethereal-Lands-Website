@@ -967,6 +967,10 @@ li {
         background-color: rgba(16, 16, 16, 0.85);
     }
 
+    .blanktop {
+        height: 60px;
+    }
+
     .accountbar {
         margin: 0;
         border-radius: 0;
