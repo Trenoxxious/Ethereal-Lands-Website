@@ -12,7 +12,7 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 15px;
+    padding: 10px;
 }
 
 .account-stats {
@@ -25,7 +25,7 @@ body {
     background: rgba(0, 0, 0, 0.5);
     -webkit-backdrop-filter: blur(4px) grayscale(80%);
     backdrop-filter: blur(4px) grayscale(80%);
-    border-radius: 0.2em;
+    border-radius: 0.5em;
 }
 
 .account-stats p {
