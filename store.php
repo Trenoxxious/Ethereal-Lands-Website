@@ -41,38 +41,8 @@ if ($amount_result->num_rows > 0) {
 $formatted_esouls = number_format($esouls);
 $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 
-$sql = "SELECT attack, defense, hits, strength, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman FROM maxstats WHERE playerID = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$result = $stmt->get_result();
-
-$stats = [];
-
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $stats = [
-        'Attack Level' => $row['attack'],
-        'Defense Level' => $row['defense'],
-        'Hits Level' => $row['hits'],
-        'Strength Level' => $row['strength'],
-        'Ranged Level' => $row['ranged'],
-        'Prayer Level' => $row['prayer'],
-        'Magic Level' => $row['magic'],
-        'Cooking Level' => $row['cooking'],
-        'Woodcutting Level' => $row['woodcut'],
-        'Fletching Level' => $row['fletching'],
-        'Fishing Level' => $row['fishing'],
-        'Firemaking Level' => $row['firemaking'],
-        'Crafting Level' => $row['crafting'],
-        'Smithing Level' => $row['smithing'],
-        'Mining Level' => $row['mining'],
-        'Herblaw Level' => $row['herblaw'],
-        'Agility Level' => $row['agility'],
-        'Thieving Level' => $row['thieving'],
-        'Huntsman Level' => $row['huntsman']
-    ];
-}
+$query = "SELECT * FROM etherealitems";
+$result = mysqli_query($conn, $query);
 
 $amount_stmt->close();
 $conn->close();
@@ -131,11 +101,19 @@ $conn->close();
         </div>
     </div>
     <div class="main-account-front">
-        <div class="account-stats">
-            <h1>Character Stats</h1>
-            <?php foreach ($stats as $statName => $statValue): ?>
-                <p><?php echo htmlspecialchars($statName . ': ' . $statValue); ?></p>
-            <?php endforeach; ?>
+        <div class="account-store">
+            <h1>Shop</h1>
+            <?php while ($item = mysqli_fetch_assoc($result)): ?>
+                <div>
+                    <h2><?php echo htmlspecialchars($item['name']); ?></h2>
+                    <p>Rarity: <?php echo htmlspecialchars($item['rarity']); ?></p>
+                    <p>Price: <?php echo htmlspecialchars($item['price']); ?> Ethereal Souls</p>
+                    <form action="purchase.php" method="post">
+                        <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
+                        <button type="submit">Buy</button>
+                    </form>
+                </div>
+            <?php endwhile; ?>
         </div>
     </div>
 </body>
