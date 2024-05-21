@@ -124,6 +124,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         $stmt->close();
 
+        // Insert into etherealsouls table
+        $stmt = $conn->prepare("INSERT INTO etherealsouls (id, amount) VALUES (?, 0)");
+        if (!$stmt) {
+            throw new Exception("Prepare failed (INSERT into etherealsouls): " . $conn->error);
+        }
+        $stmt->bind_param("i", $playerID);
+        if (!$stmt->execute()) {
+            throw new Exception("Execute failed (INSERT into etherealsouls): " . $stmt->error);
+        }
+        $stmt->close();
+
         // Commit transaction
         $conn->commit();
         echo json_encode(['status' => 'success', 'message' => "New character created successfully! We'll see you soon!"]);
@@ -135,4 +146,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $conn->close();
-?>

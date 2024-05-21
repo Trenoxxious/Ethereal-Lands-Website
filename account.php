@@ -41,19 +41,33 @@ if ($amount_result->num_rows > 0) {
 $formatted_esouls = number_format($esouls);
 $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 
-$sql = "SELECT attack, defense, hits, strength FROM maxstats WHERE playerID = ?";
+$sql = "SELECT attack, defense, hits, strength, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman FROM maxstats WHERE playerID = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    // Fetch the player's levels
     $row = $result->fetch_assoc();
     $attackLevel = $row['attack'];
     $strengthLevel = $row['strength'];
     $hitsLevel = $row['hits'];
     $defenseLevel = $row['defense'];
+    $rangedLevel = $row['ranged'];
+    $prayerLevel = $row['prayer'];
+    $magicLevel = $row['magic'];
+    $cookingLevel = $row['cooking'];
+    $woodcutLevel = $row['woodcut'];
+    $fletchingLevel = $row['fletching'];
+    $fishingLevel = $row['fishing'];
+    $firemakingLevel = $row['firemaking'];
+    $craftingLevel = $row['crafting'];
+    $smithingLevel = $row['smithing'];
+    $miningLevel = $row['mining'];
+    $herblawLevel = $row['herblaw'];
+    $agilityLevel = $row['agility'];
+    $thievingLevel = $row['thieving'];
+    $huntsmanLevel = $row['huntsman'];
 }
 
 $amount_stmt->close();
@@ -114,6 +128,7 @@ $conn->close();
     </div>
     <div class="main-account-front">
         <div class="account-stats">
+            <h1>Character Stats</h1>
             <p>Attack Level: <?php echo htmlspecialchars($attackLevel); ?></p>
             <p>Strength Level: <?php echo htmlspecialchars($strengthLevel); ?></p>
             <p>Hits Level: <?php echo htmlspecialchars($hitsLevel); ?></p>
