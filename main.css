@@ -293,7 +293,8 @@ li {
     text-transform: uppercase;
     font-family: "Montserrat", serif, sans-serif;
     color: rgb(218, 43, 218);
-    display: inherit;
+    display: flex;
+    align-items: center;
 }
 
 .souls-display::after {
@@ -831,7 +832,7 @@ li {
 }
 
 @media only screen and (max-width: 600px) {
-    .mainbar #navlinks {
+    #navlinks {
         display: none;
     }
 
