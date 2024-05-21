@@ -737,6 +737,7 @@ li {
     .mainbar a {
         font-size: 1.25em;
         padding: 5px;
+        margin: 5px;
     }
 
     .accountbar a {
