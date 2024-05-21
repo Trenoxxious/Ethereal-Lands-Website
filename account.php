@@ -37,6 +37,8 @@ if ($amount_result->num_rows > 0) {
     $esouls = 0; // Default value if no record is found
 }
 
+$formatted_esouls = number_format($esouls);
+
 $amount_stmt->close();
 $conn->close();
 ?>
@@ -49,7 +51,7 @@ $conn->close();
 <body>
     <p>Your username: <?php echo htmlspecialchars($username); ?></p>
     <p>Your Player ID: <?php echo htmlspecialchars($user_id); ?></p>
-    <p>Your Current Ethereal Souls: <?php echo number_fomrat(htmlspecialchars($esouls)); ?></p>
+    <p>Your Current Ethereal Souls: <?php echo htmlspecialchars($formatted_esouls); ?></p>
     <a href="logout.php">Logout</a>
     <a href="index">Home</a>
 </body>
