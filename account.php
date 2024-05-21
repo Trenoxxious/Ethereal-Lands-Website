@@ -63,17 +63,19 @@ $conn->close();
             </div>
             <style>
                 #toplogo::after {
-                    content:
-                        <?php $username; ?>;
+                    content: "<?php echo $username; ?>";
                     color: white;
+                    font-size: 2em;
+                    text-align: left;
+                    margin-left: 30px;
                 }
             </style>
             <div id="navlinks">
                 <?php if ($isAdmin): ?>
                     <a href="#">Admin Dashboard</a>
                 <?php endif; ?>
-                <a href="https://discord.gg/d6RtsDyRZX">My Account</a>
-                <a href="updates">Store</a>
+                <a href="account">My Account</a>
+                <a href="#">Store</a>
             </div>
             <div class="button-div">
             </div>
@@ -88,8 +90,8 @@ $conn->close();
             <?php if ($isAdmin): ?>
                 <a href="#">Admin Dashboard</a>
             <?php endif; ?>
-            <a href="https://discord.gg/d6RtsDyRZX">My Account</a>
-            <a href="updates">Store</a>
+            <a href="account">My Account</a>
+            <a href="#">Store</a>
         </div>
     </div>
     <div id="intro">
