@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Fetch user from database
-    $sql = "SELECT id, username, pass FROM players WHERE username = ?";
+    $sql = "SELECT id, username, group_id, pass FROM players WHERE username = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
     $stmt->execute();
