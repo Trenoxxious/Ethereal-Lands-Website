@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Store user information in session
                 $_SESSION['user_id'] = $row['id'];
                 $_SESSION['username'] = $row['username'];
-                $_SESSION['amount'] = $amount;
+                $_SESSION['esouls'] = $amount;
                 $_SESSION['loggedIn'] = true;
 
                 // Redirect to account.php
