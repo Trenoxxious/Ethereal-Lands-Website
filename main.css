@@ -212,6 +212,14 @@ li {
     overflow: visible;
 }
 
+.accountname {
+    background: linear-gradient(0deg, var(--bottom-grad-color) 35%, var(--top-grad-color) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3em;
+}
+
 .accountbar {
     display: flex;
     width: 100%;
@@ -235,11 +243,15 @@ li {
     font-family: "Montserrat", serif, sans-serif;
 }
 
-.mainbar #navlinks,
-.accountbar #navlinks {
+.mainbar #navlinks {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
+}
+
+.accountbar #navlinks a {
+    margin: 10px;
+    padding: 15px;
 }
 
 .souls-display {
@@ -247,6 +259,7 @@ li {
     text-transform: uppercase;
     font-family: "Montserrat", serif, sans-serif;
     color: rgb(218, 43, 218);
+    display: inherit;
 }
 
 .souls-display::after {

@@ -59,7 +59,7 @@ $conn->close();
 <body>
     <div class="topbar">
         <nav class="accountbar">
-            <h1><?php echo $username; ?></h1>
+            <h1 class="accountname"><?php echo $username; ?></h1>
             <div id="navlinks">
                 <a href="account">My Account</a>
                 <?php if ($isAdmin): ?>
