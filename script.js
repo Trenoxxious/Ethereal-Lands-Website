@@ -3,12 +3,14 @@ let expandMenuButton = document.getElementById('menuexpand');
 let expandedMenu = document.getElementById('expandedmenu');
 let menuOpen = false;
 
-topLogo.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+if (topLogo) {
+  topLogo.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
-});
+}
 
 expandMenuButton.addEventListener('click', () => {
   if (menuOpen == false) {
