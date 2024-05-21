@@ -5,14 +5,10 @@ error_reporting(E_ALL);
 ini_set('log_errors', 1);
 ini_set('error_log_login', '/home/playethe/public_html/error-login.log');
 
+require 'globals.php';
+
 // Start the session
 session_start();
-
-// Database credentials
-$servername = "localhost";
-$username = "playethe_root";
-$password = "imthebestmany0";
-$dbname = "playethe_ethereallands";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

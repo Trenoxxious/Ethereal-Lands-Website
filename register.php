@@ -7,10 +7,7 @@ ini_set('error_log', '/home/playethe/public_html/error.log');
 
 header('Content-Type: application/json');
 
-$servername = "localhost";
-$username = "playethe_root";
-$password = "imthebestmany0";
-$dbname = "playethe_ethereallands";
+require 'globals.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

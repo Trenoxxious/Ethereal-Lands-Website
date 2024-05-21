@@ -1,9 +1,6 @@
 <?php
 // Database credentials
-$servername = "localhost";
-$username = "playethe_root";
-$password = "imthebestmany0";
-$dbname = "playethe_ethereallands";
+require 'globals.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
