@@ -212,6 +212,21 @@ li {
     overflow: visible;
 }
 
+.accountbar {
+    display: flex;
+    width: 60%;
+    border-radius: 0.5em;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 10px;
+    backdrop-filter: blur(4px) grayscale(80%);
+    padding: 15px;
+    height: 75px;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: visible;
+}
+
 .accountname {
     background: linear-gradient(0deg, var(--bottom-grad-color) 35%, var(--top-grad-color) 100%);
     background-clip: text;
@@ -252,21 +267,6 @@ li {
 
 .add-souls:active {
     color: black;
-}
-
-.accountbar {
-    display: flex;
-    width: 100%;
-    border-radius: 0.5em;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    margin: 10px;
-    backdrop-filter: blur(4px) grayscale(80%);
-    padding: 15px;
-    height: 75px;
-    background-color: rgba(0, 0, 0, 0.4);
-    overflow: visible;
 }
 
 .accountbar a {
@@ -694,6 +694,11 @@ li {
         width: 100%;
     }
 
+    .accountbar {
+        height: 60px;
+        width: 100%;
+    }
+
     .logo {
         height: 100px;
         min-width: 150px;
@@ -731,6 +736,10 @@ li {
 
 @media only screen and (max-width: 1024px) {
     .mainbar {
+        height: 50px;
+    }
+
+    .accountbar {
         height: 50px;
     }
 
@@ -783,6 +792,11 @@ li {
     }
 
     .mainbar {
+        justify-content: space-evenly;
+        height: 50px;
+    }
+
+    .accountbar {
         justify-content: space-evenly;
         height: 50px;
     }
