@@ -51,9 +51,10 @@ $conn->close();
 <html>
 
 <head>
+    <title>Ethereal Lands - My Account</title>
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
-    <title>Ethereal Lands - My Account</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
