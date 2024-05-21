@@ -823,6 +823,10 @@ li {
         font-size: 1.2em;
     }
 
+    .accountbar a {
+        margin: 0;
+    }
+
     .button-div {
         display: none;
     }
