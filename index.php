@@ -67,9 +67,15 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         <div class="blanktop"></div>
         <div class="character-counter">Currently, <span id="totalAccounts">#</span>
             heroes stand at the portal to Gielinor, primed to snuff the evil that is Del'araz...</div>
-        <button class="button-main" id="introaccountbutton">
-            Login
-        </button>
+        <?php if ($loggedIn): ?>
+            <button class="button-main" id="introaccountbutton">
+                My Account
+            </button>
+        <?php else: ?>
+            <button class="button-main" id="introaccountbutton">
+                Login
+            </button>
+        <?php endif; ?>
         <!-- <h1>Ethereal Lands</h1> -->
         <div class="intro-logo"></div>
         <h2>A Runescape Classic Adventure</h2>
@@ -135,8 +141,12 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         let loggedIn = <?php echo json_encode(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']); ?>;
 
         document.getElementById('introaccountbutton').addEventListener('click', function () {
-            document.getElementById('popup-account').classList.add('active');
-            document.getElementById('overlay').classList.add('active');
+            if (loggedIn) {
+                window.location.href = 'account';
+            } else {
+                document.getElementById('popup-account').classList.add('active');
+                document.getElementById('overlay').classList.add('active');
+            }
         });
 
         document.getElementById('accountbutton').addEventListener('click', function () {
