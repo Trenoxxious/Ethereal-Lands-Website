@@ -787,6 +787,10 @@ li {
         height: 50px;
     }
 
+    .accountbar a {
+        font-size: 1em;
+    }
+
     .slide-content {
         width: 50%;
         margin: 5%;
