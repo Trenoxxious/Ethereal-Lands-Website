@@ -15,7 +15,8 @@ body {
     padding: 10px;
 }
 
-.account-stats {
+.account-stats,
+.account-store {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -28,14 +29,16 @@ body {
     border-radius: 0.5em;
 }
 
-.account-stats p {
+.account-stats p,
+.account-store p {
     color: white;
     font-size: 1.25em;
     font-family: "Libre Baskerville", serif;
     margin-bottom: 5px;
 }
 
-.account-stats h1 {
+.account-stats h1,
+.account-store h1 {
     text-align: center;
     font-size: 3em;
     margin-bottom: 15px;

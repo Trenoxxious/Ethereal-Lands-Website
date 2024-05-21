@@ -110,7 +110,7 @@ $conn->close();
                     <p>Price: <?php echo htmlspecialchars($item['price']); ?> Ethereal Souls</p>
                     <form action="purchase.php" method="post">
                         <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
-                        <button type="submit">Buy</button>
+                        <button type="submit" class="button-main">Buy</button>
                     </form>
                 </div>
             <?php endwhile; ?>
