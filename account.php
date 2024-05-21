@@ -61,11 +61,13 @@ $conn->close();
         <nav class="accountbar">
             <h1 class="accountname"><?php echo $username; ?></h1>
             <div id="navlinks">
+                <a href="index">Home</a>
                 <a href="account">My Account</a>
                 <?php if ($isAdmin): ?>
                     <a href="#">Admin Dashboard</a>
                 <?php endif; ?>
                 <a href="#">Store</a>
+                <a href="logout">Logout</a>
             </div>
             <div class="souls-display"><?php echo htmlspecialchars($formatted_esouls); ?></div>
             <div id="menuexpand">
@@ -76,18 +78,14 @@ $conn->close();
             </div>
         </nav>
         <div id="expandedmenu">
+            <a href="index">Home</a>
             <a href="account">My Account</a>
             <?php if ($isAdmin): ?>
                 <a href="#">Admin Dashboard</a>
             <?php endif; ?>
             <a href="#">Store</a>
+            <a href="logout">Logout</a>
         </div>
-    </div>
-    <div id="intro">
-        <div class="blanktop"></div>
-        <a href="logout.php">Logout</a>
-        <a href="index">Home</a>
-        <div class="slide-fade"></div>
     </div>
 </body>
 
