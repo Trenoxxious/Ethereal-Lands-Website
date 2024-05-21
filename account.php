@@ -47,27 +47,31 @@ $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 
+$stats = [];
+
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $attackLevel = $row['attack'];
-    $strengthLevel = $row['strength'];
-    $hitsLevel = $row['hits'];
-    $defenseLevel = $row['defense'];
-    $rangedLevel = $row['ranged'];
-    $prayerLevel = $row['prayer'];
-    $magicLevel = $row['magic'];
-    $cookingLevel = $row['cooking'];
-    $woodcutLevel = $row['woodcut'];
-    $fletchingLevel = $row['fletching'];
-    $fishingLevel = $row['fishing'];
-    $firemakingLevel = $row['firemaking'];
-    $craftingLevel = $row['crafting'];
-    $smithingLevel = $row['smithing'];
-    $miningLevel = $row['mining'];
-    $herblawLevel = $row['herblaw'];
-    $agilityLevel = $row['agility'];
-    $thievingLevel = $row['thieving'];
-    $huntsmanLevel = $row['huntsman'];
+    $stats = [
+        'Attack Level' => $row['attack'],
+        'Defense Level' => $row['defense'],
+        'Hits Level' => $row['hits'],
+        'Strength Level' => $row['strength'],
+        'Ranged Level' => $row['ranged'],
+        'Prayer Level' => $row['prayer'],
+        'Magic Level' => $row['magic'],
+        'Cooking Level' => $row['cooking'],
+        'Woodcutting Level' => $row['woodcut'],
+        'Fletching Level' => $row['fletching'],
+        'Fishing Level' => $row['fishing'],
+        'Firemaking Level' => $row['firemaking'],
+        'Crafting Level' => $row['crafting'],
+        'Smithing Level' => $row['smithing'],
+        'Mining Level' => $row['mining'],
+        'Herblaw Level' => $row['herblaw'],
+        'Agility Level' => $row['agility'],
+        'Thieving Level' => $row['thieving'],
+        'Huntsman Level' => $row['huntsman']
+    ];
 }
 
 $amount_stmt->close();
@@ -129,10 +133,9 @@ $conn->close();
     <div class="main-account-front">
         <div class="account-stats">
             <h1>Character Stats</h1>
-            <p>Attack Level: <?php echo htmlspecialchars($attackLevel); ?></p>
-            <p>Strength Level: <?php echo htmlspecialchars($strengthLevel); ?></p>
-            <p>Hits Level: <?php echo htmlspecialchars($hitsLevel); ?></p>
-            <p>Defense Level: <?php echo htmlspecialchars($defenseLevel); ?></p>
+            <?php foreach ($stats as $statName => $statValue): ?>
+                <p><?php echo htmlspecialchars($statName . ': ' . $statValue); ?></p>
+            <?php endforeach; ?>
         </div>
     </div>
 </body>
