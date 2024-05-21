@@ -73,6 +73,10 @@ i {
     width: 75%;
 }
 
+#toplogo {
+    font-family: "Teko", serif, sans-serif;
+}
+
 #totalAccounts {
     color: var(--middle-grad-color);
     font-size: inherit;

@@ -65,9 +65,11 @@ $conn->close();
                 #toplogo::after {
                     content: "<?php echo $username; ?>";
                     color: white;
-                    font-size: 2em;
+                    position: absolute;
+                    font-size: 1.5em;
                     text-align: left;
-                    margin-left: 30px;
+                    margin-left: 150px;
+                    margin-top: 40px;
                 }
             </style>
             <div id="navlinks">
