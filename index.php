@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+$loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,9 +26,15 @@ session_start();
                 <a href="updates">Game Updates</a>
             </div>
             <div class="button-div">
-                <button class="button-main" id="accountbutton">
-                    Login
-                </button>
+                <?php if ($loggedIn): ?>
+                    <button class="button-main" id="accountbutton">
+                        My Account
+                    </button>
+                <?php else: ?>
+                    <button class="button-main" id="accountbutton">
+                        Login
+                    </button>
+                <?php endif; ?>
             </div>
             <div id="menuexpand">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
@@ -131,18 +140,18 @@ session_start();
         });
 
         document.getElementById('accountbutton').addEventListener('click', function () {
-            document.getElementById('popup-account').classList.add('active');
-            document.getElementById('overlay').classList.add('active');
-        });
-
-        document.getElementById('loginbutton').addEventListener('click', function () {
             if (loggedIn) {
                 window.location.href = 'account';
             } else {
-                document.getElementById('popup-login').classList.add('active');
-                document.getElementById('popup-account').classList.remove('active');
+                document.getElementById('popup-account').classList.add('active');
                 document.getElementById('overlay').classList.add('active');
             }
+        });
+
+        document.getElementById('loginbutton').addEventListener('click', function () {
+            document.getElementById('popup-login').classList.add('active');
+            document.getElementById('popup-account').classList.remove('active');
+            document.getElementById('overlay').classList.add('active');
         });
 
         document.getElementById('registerbutton').addEventListener('click', function () {
