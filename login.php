@@ -38,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Password is correct, store user information in session
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
+            $_SESSION['accstatus'] = $row['group_id'];
             $_SESSION['loggedIn'] = true;
 
             // Redirect to account.php
