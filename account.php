@@ -91,7 +91,7 @@ $conn->close();
     <div class="accountmain">
         <div class="blanktop"></div>
         <div class="souls">
-            <div class="souls-display"><span class="color-white">Ethereal Souls:&nbsp;</span>
+            <div class="souls-display"><span class="color-white">My Ethereal Souls:&nbsp;</span>
                 <?php echo htmlspecialchars($formatted_esouls); ?></div>
             <span class="add-souls" id="buysouls">+</span>
         </div>
