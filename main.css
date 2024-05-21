@@ -58,6 +58,7 @@ i {
     width: auto;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid black;
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
     backdrop-filter: blur(4px) grayscale(80%);
     z-index: 999;
     transform: scale(0%);
@@ -75,6 +76,7 @@ i {
     width: auto;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid black;
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
     backdrop-filter: blur(4px) grayscale(80%);
     z-index: 999;
     transform: scale(0%);
@@ -226,6 +228,7 @@ li {
     justify-content: space-around;
     box-sizing: border-box;
     margin: 10px;
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
     backdrop-filter: blur(4px) grayscale(80%);
     padding: 15px;
     height: 75px;
@@ -241,6 +244,7 @@ li {
     justify-content: space-between;
     box-sizing: border-box;
     margin: 10px;
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
     backdrop-filter: blur(4px) grayscale(80%);
     padding: 15px;
     height: 75px;
@@ -607,6 +611,7 @@ li {
     width: 300px;
     padding: 30px;
     border-radius: 0.5em;
+    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

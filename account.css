@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+body {
+    background-image: url(images/pic1.png);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .main-account-front {
     display: flex;
     align-items: flex-start;
