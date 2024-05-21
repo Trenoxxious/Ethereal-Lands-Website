@@ -740,8 +740,6 @@ li {
 
     .accountbar a {
         font-size: 1.25em;
-        margin: 5px;
-        padding: 5px;
     }
 
     .button-div {
@@ -791,6 +789,8 @@ li {
 
     .accountbar a {
         font-size: 1em;
+        margin: 5px;
+        padding: 5px;
     }
 
     .slide-content {
