@@ -8,9 +8,37 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+// Include database connection details
+require 'globals.php';
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch user information from session
 $user_id = $_SESSION['user_id'];
 $username = $_SESSION['username'];
-$esouls = $_SESSION['esouls'];
+
+// Fetch the latest amount of ethereal souls from the database
+$amount_sql = "SELECT amount FROM etherealsouls WHERE id = ?";
+$amount_stmt = $conn->prepare($amount_sql);
+$amount_stmt->bind_param("i", $user_id);
+$amount_stmt->execute();
+$amount_result = $amount_stmt->get_result();
+
+if ($amount_result->num_rows > 0) {
+    $amount_row = $amount_result->fetch_assoc();
+    $esouls = $amount_row['amount'];
+} else {
+    $esouls = 0; // Default value if no record is found
+}
+
+$amount_stmt->close();
+$conn->close();
 ?>
 
 <!DOCTYPE html>

@@ -35,32 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
 
         if (password_verify($password, $row['pass'])) {
-            // Password is correct, fetch the amount from etherealsouls table
-            $player_id = $row['id'];
-            $amount_sql = "SELECT amount FROM etherealsouls WHERE id = ?";
-            $amount_stmt = $conn->prepare($amount_sql);
-            $amount_stmt->bind_param("i", $player_id);
-            $amount_stmt->execute();
-            $amount_result = $amount_stmt->get_result();
+            // Password is correct, store user information in session
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['loggedIn'] = true;
 
-            if ($amount_result->num_rows > 0) {
-                $amount_row = $amount_result->fetch_assoc();
-                $amount = $amount_row['amount'];
-
-                // Store user information in session
-                $_SESSION['user_id'] = $row['id'];
-                $_SESSION['username'] = $row['username'];
-                $_SESSION['esouls'] = $amount;
-                $_SESSION['loggedIn'] = true;
-
-                // Redirect to account.php
-                header("Location: account");
-                exit;
-            } else {
-                echo "No corresponding record found in etherealsouls.";
-            }
-
-            $amount_stmt->close();
+            // Redirect to account.php
+            header("Location: account");
+            exit;
         } else {
             echo "Invalid password.";
         }
@@ -71,4 +53,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 }
-?>
