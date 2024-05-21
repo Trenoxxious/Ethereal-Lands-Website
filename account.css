@@ -34,3 +34,9 @@
     color: white;
     font-family: "Montserrat", "Teko", serif, sans-serif;
 }
+
+@media only screen and (max-width: 600px) {
+    .account-stats h1 {
+        font-size: 2em;
+    }
+}
