@@ -23,6 +23,8 @@ body {
     padding: 15px;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
+    backdrop-filter: blur(4px) grayscale(80%);
     border-radius: 0.2em;
 }
 
@@ -41,7 +43,11 @@ body {
     font-family: "Montserrat", "Teko", serif, sans-serif;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
+    .account-stats {
+        width: 100%;
+    }
+
     .account-stats h1 {
         font-size: 2em;
     }
