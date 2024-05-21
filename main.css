@@ -27,6 +27,11 @@
     cursor: pointer;
 }
 
+#menuexpandaccount {
+    display: none;
+    cursor: pointer;
+}
+
 b {
     font-size: inherit;
 }
@@ -45,6 +50,23 @@ i {
 }
 
 #expandedmenu {
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: fixed;
+    padding: 30px;
+    width: auto;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
+    backdrop-filter: blur(4px) grayscale(80%);
+    z-index: 999;
+    transform: scale(0%);
+    transition: transform 0.1s ease;
+    top: 10%;
+}
+
+#expandedmenuaccount {
     display: none;
     align-items: center;
     justify-content: flex-start;
@@ -361,7 +383,8 @@ li {
     -webkit-text-fill-color: transparent;
 }
 
-#expandedmenu a {
+#expandedmenu a,
+#expandedmenuaccount a {
     background: linear-gradient(0deg, var(--bottom-grad-color) 35%, var(--top-grad-color) 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -375,7 +398,8 @@ li {
     text-transform: uppercase;
 }
 
-#expandedmenu a:hover {
+#expandedmenu a:hover,
+#expandedmenuaccount a:hover {
     background: linear-gradient(180deg, rgb(253, 213, 103) 35%, rgb(255, 174, 52)100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -743,6 +767,14 @@ li {
         height: 50px;
     }
 
+    #menuexpandaccount {
+        display: block;
+    }
+
+    #expandedmenuaccount {
+        visibility: visible;
+    }
+
     .mainbar a {
         font-size: 1.25em;
     }
@@ -791,14 +823,23 @@ li {
         width: 225px;
     }
 
+    .accountname {
+        font-size: 1.5em;
+        margin-left: 10px;
+    }
+
     .mainbar {
         justify-content: space-evenly;
         height: 50px;
     }
 
     .accountbar {
-        justify-content: space-evenly;
+        justify-content: space-between;
         height: 50px;
+    }
+
+    .accountbar #navlinks {
+        display: none;
     }
 
     .slide-content {
@@ -866,8 +907,9 @@ li {
         display: none;
     }
 
-    .accountbar #navlinks {
-        display: none;
+    .accountname {
+        font-size: 1.25em;
+        margin-left: 0;
     }
 
     .button-main {

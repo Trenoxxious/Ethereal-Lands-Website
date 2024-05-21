@@ -61,7 +61,7 @@ $conn->close();
 <body>
     <div class="topbar">
         <nav class="accountbar">
-            <h1 class="accountname"><?php echo $username; ?></h1>
+            <h1 class="accountname">Noxx<?php echo $username; ?></h1>
             <div id="navlinks">
                 <a href="index">Home</a>
                 <a href="account">My Account</a>
@@ -75,14 +75,14 @@ $conn->close();
                 <div class="souls-display"><?php echo htmlspecialchars($formatted_esouls); ?></div>
                 <span class="add-souls" id="buysouls">+</span>
             </div>
-            <div id="menuexpand">
+            <div id="menuexpandaccount">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
                     fill="#FFFFFF">
                     <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
                 </svg>
             </div>
         </nav>
-        <div id="expandedmenu">
+        <div id="expandedmenuaccount">
             <a href="index">Home</a>
             <a href="account">My Account</a>
             <?php if ($isAdmin): ?>
