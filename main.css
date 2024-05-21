@@ -801,12 +801,6 @@ li {
         height: 50px;
     }
 
-    .accountbar a {
-        font-size: 1em;
-        margin: 5px;
-        padding: 5px;
-    }
-
     .slide-content {
         width: 50%;
         margin: 5%;
@@ -817,6 +811,10 @@ li {
     }
 
     .mainbar nav {
+        width: auto;
+    }
+
+    .accountbar nav {
         width: auto;
     }
 
