@@ -1,6 +1,14 @@
 <?php
 session_start();
-require 'db_connection.php'; // Your database connection script
+
+require 'globals.php'; // Your database connection script
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: index'); // Redirect to login page if not logged in
