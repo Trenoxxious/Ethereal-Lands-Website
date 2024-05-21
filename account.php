@@ -69,7 +69,10 @@ $conn->close();
                 <a href="#">Store</a>
                 <a href="logout">Logout</a>
             </div>
-            <div class="souls-display"><?php echo htmlspecialchars($formatted_esouls); ?></div>
+            <div class="souls">
+                <div class="souls-display"><?php echo htmlspecialchars($formatted_esouls); ?></div>
+                <span class="add-souls" id="buysouls">+</span>
+            </div>
             <div id="menuexpand">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
                     fill="#FFFFFF">
