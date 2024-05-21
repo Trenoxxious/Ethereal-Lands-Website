@@ -39,6 +39,8 @@ if ($amount_result->num_rows > 0) {
 }
 
 $formatted_esouls = number_format($esouls);
+$isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
+
 
 $amount_stmt->close();
 $conn->close();
@@ -54,10 +56,6 @@ $conn->close();
 </head>
 
 <body>
-    <script>
-        const isAdmin = <?php echo json_encode(isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0); ?>;
-    </script>
-
     <div class="topbar">
         <nav class="mainbar">
             <div class="logo" id="toplogo">
