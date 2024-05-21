@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -304,6 +303,10 @@ li {
     font-size: 1.5em;
     text-transform: uppercase;
     font-family: "Montserrat", serif, sans-serif;
+}
+
+.accountbar a:hover {
+    color: rgb(255, 202, 162);
 }
 
 .mainbar #navlinks {

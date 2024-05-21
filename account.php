@@ -41,6 +41,20 @@ if ($amount_result->num_rows > 0) {
 $formatted_esouls = number_format($esouls);
 $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 
+$sql = "SELECT attack, defense, hits, strength FROM maxstats WHERE player_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    // Fetch the player's levels
+    $row = $result->fetch_assoc();
+    $attackLevel = $row['attack'];
+    $strengthLevel = $row['strength'];
+    $hitsLevel = $row['hits'];
+    $defenseLevel = $row['defense'];
+}
 
 $amount_stmt->close();
 $conn->close();
@@ -54,6 +68,7 @@ $conn->close();
     <title>Ethereal Lands - My Account</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
+    <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -95,6 +110,14 @@ $conn->close();
                 <?php echo htmlspecialchars($formatted_esouls); ?>
             </div>
             <span class="add-souls" id="buysouls">+</span>
+        </div>
+    </div>
+    <div class="main-account-front">
+        <div class="account-stats">
+            <p>Attack Level: <?php echo htmlspecialchars($attackLevel); ?></p>
+            <p>Strength Level: <?php echo htmlspecialchars($strengthLevel); ?></p>
+            <p>Hits Level: <?php echo htmlspecialchars($hitsLevel); ?></p>
+            <p>Defense Level: <?php echo htmlspecialchars($defenseLevel); ?></p>
         </div>
     </div>
 </body>

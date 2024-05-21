@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+.main-account-front {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 15px;
+}
+
+.account-stats {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.account-stats p {
+    color: white;
+    font-size: 1.25em;
+    font-family: "Libre Baskerville", serif;
+    margin-bottom: 5px;
+}
