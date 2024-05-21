@@ -41,7 +41,7 @@ if ($amount_result->num_rows > 0) {
 $formatted_esouls = number_format($esouls);
 $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 
-$sql = "SELECT attack, defense, hits, strength FROM maxstats WHERE player_id = ?";
+$sql = "SELECT attack, defense, hits, strength FROM maxstats WHERE playerID = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
