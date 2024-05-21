@@ -298,6 +298,7 @@ li {
 
 .souls-display::after {
     content: url(images/soul.png);
+    margin-top: 5px;
 }
 
 .button-main {
