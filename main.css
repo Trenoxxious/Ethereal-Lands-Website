@@ -736,12 +736,12 @@ li {
 
     .mainbar a {
         font-size: 1.25em;
-        padding: 5px;
-        margin: 5px;
     }
 
     .accountbar a {
         font-size: 1.25em;
+        margin: 5px;
+        padding: 5px;
     }
 
     .button-div {
