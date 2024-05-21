@@ -260,10 +260,16 @@ li {
 }
 
 .souls {
+    margin: 0 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: row;
+}
+
+.color-white {
+    color: white;
+    font-size: 0.9em;
 }
 
 .add-souls {
@@ -311,7 +317,7 @@ li {
 }
 
 .souls-display {
-    font-size: 1.5em;
+    font-size: 1.25em;
     text-transform: uppercase;
     font-family: "Montserrat", serif, sans-serif;
     color: rgb(218, 43, 218);
@@ -321,7 +327,6 @@ li {
 
 .souls-display::after {
     content: url(images/soul.png);
-    margin-top: 5px;
 }
 
 .button-main {
@@ -908,7 +913,7 @@ li {
     }
 
     .accountname {
-        font-size: 1.25em;
+        font-size: 1.5em;
         margin-left: 0;
     }
 
