@@ -51,6 +51,7 @@ if ($item_type == 'equippable') {
     // Update player's secondary attribute
     $query = "UPDATE players SET $secondary_attr = $item_id WHERE id = $user_id";
     mysqli_query($conn, $query);
+    echo "Purchase successful. Your appearance has been set!";
 } else if ($item_type == 'bank') {
     // Find the next available slot
     $query = "SELECT MAX(slot) as max_slot FROM bank WHERE playerID = $user_id";
@@ -61,6 +62,5 @@ if ($item_type == 'equippable') {
     // Insert item into bank
     $query = "INSERT INTO bank (playerID, itemID, slot) VALUES ($user_id, $item_id, $next_slot)";
     mysqli_query($conn, $query);
+    echo "Purchase successful. Item sent to your bank!";
 }
-
-echo "Purchase successful.";
