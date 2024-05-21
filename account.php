@@ -58,29 +58,16 @@ $conn->close();
 
 <body>
     <div class="topbar">
-        <nav class="mainbar">
-            <div class="logo" id="toplogo">
-            </div>
-            <style>
-                #toplogo::after {
-                    content: "<?php echo $username; ?>";
-                    color: white;
-                    position: absolute;
-                    font-size: 1.5em;
-                    text-align: left;
-                    margin-left: 150px;
-                    margin-top: 40px;
-                }
-            </style>
+        <nav class="accountbar">
+            <h1><?php echo $username; ?></h1>
             <div id="navlinks">
+                <a href="account">My Account</a>
                 <?php if ($isAdmin): ?>
                     <a href="#">Admin Dashboard</a>
                 <?php endif; ?>
-                <a href="account">My Account</a>
                 <a href="#">Store</a>
             </div>
-            <div class="button-div">
-            </div>
+            <div class="souls-display"><?php echo htmlspecialchars($formatted_esouls); ?></div>
             <div id="menuexpand">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
                     fill="#FFFFFF">
@@ -89,18 +76,15 @@ $conn->close();
             </div>
         </nav>
         <div id="expandedmenu">
+            <a href="account">My Account</a>
             <?php if ($isAdmin): ?>
                 <a href="#">Admin Dashboard</a>
             <?php endif; ?>
-            <a href="account">My Account</a>
             <a href="#">Store</a>
         </div>
     </div>
     <div id="intro">
         <div class="blanktop"></div>
-        <p>Your username: <?php echo htmlspecialchars($username); ?></p>
-        <p>Your Player ID: <?php echo htmlspecialchars($user_id); ?></p>
-        <p>Your Current Ethereal Souls: <?php echo htmlspecialchars($formatted_esouls); ?></p>
         <a href="logout.php">Logout</a>
         <a href="index">Home</a>
         <div class="slide-fade"></div>

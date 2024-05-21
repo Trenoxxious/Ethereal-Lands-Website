@@ -212,10 +212,45 @@ li {
     overflow: visible;
 }
 
-.mainbar #navlinks {
+.accountbar {
+    display: flex;
+    width: 100%;
+    border-radius: 0.5em;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 10px;
+    backdrop-filter: blur(4px) grayscale(80%);
+    padding: 15px;
+    height: 75px;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: visible;
+}
+
+.accountbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-family: "Montserrat", serif, sans-serif;
+}
+
+.mainbar #navlinks,
+.accountbar #navlinks {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
+}
+
+.souls-display {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-family: "Montserrat", serif, sans-serif;
+    color: rgb(218, 43, 218);
+}
+
+.souls-display::after {
+    content: url(images/soul.png);
 }
 
 .button-main {
