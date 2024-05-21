@@ -61,6 +61,13 @@ $conn->close();
         <nav class="mainbar">
             <div class="logo" id="toplogo">
             </div>
+            <style>
+                #toplog::after {
+                    content:
+                        <?php $username; ?>;
+                    color: white;
+                }
+            </style>
             <div id="navlinks">
                 <?php if ($isAdmin): ?>
                     <a href="#">Admin Dashboard</a>
