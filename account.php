@@ -62,7 +62,7 @@ $conn->close();
             <div class="logo" id="toplogo">
             </div>
             <style>
-                #toplog::after {
+                #toplogo::after {
                     content:
                         <?php $username; ?>;
                     color: white;
