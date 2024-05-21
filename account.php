@@ -21,6 +21,7 @@ $esouls = $_SESSION['esouls'];
 <body>
     <p>Your username: <?php echo htmlspecialchars($username); ?></p>
     <p>Your Player ID: <?php echo htmlspecialchars($user_id); ?></p>
+    <p>Your Current Ethereal Souls: <?php echo htmlspecialchars($esouls); ?></p>
     <a href="logout.php">Logout</a>
     <a href="index">Home</a>
 </body>
