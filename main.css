@@ -858,7 +858,11 @@ li {
 }
 
 @media only screen and (max-width: 600px) {
-    #navlinks {
+    .mainbar #navlinks {
+        display: none;
+    }
+
+    .accountbar #navlinks {
         display: none;
     }
 
