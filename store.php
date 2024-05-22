@@ -127,11 +127,11 @@ $conn->close();
                 var formData = $(this).serialize();
                 $.post('purchase.php', formData, function (response) {
                     // Display the response message
-                    $('#message').html(response);
+                    $('#message').html(response).css('display', 'block');
 
                     // Optionally, you can clear the message after a few seconds
                     setTimeout(function () {
-                        $('#message').html('');
+                        $('#message').html('').css('display', 'none');
                     }, 5000);
                 });
             });

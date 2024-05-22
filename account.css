@@ -105,6 +105,7 @@ p.artifact {
 }
 
 .purchase-message {
+    visibility: hidden;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -118,7 +119,6 @@ p.artifact {
     -webkit-backdrop-filter: blur(4px) grayscale(80%);
     backdrop-filter: blur(4px) grayscale(80%);
     box-sizing: border-box;
-    color: white;
     font-size: 1.5em;
     font-family: "Montserrat", serif, sans-serif;
 }
