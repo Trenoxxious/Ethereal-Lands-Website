@@ -44,7 +44,19 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 $query = "SELECT * FROM etherealitems";
 $result = mysqli_query($conn, $query);
 
+$purchased_items_sql = "SELECT item_id FROM user_purchases WHERE user_id = ?";
+$purchased_stmt = $conn->prepare($purchased_items_sql);
+$purchased_stmt->bind_param("i", $user_id);
+$purchased_stmt->execute();
+$purchased_result = $purchased_stmt->get_result();
+
+$purchased_items = [];
+while ($row = $purchased_result->fetch_assoc()) {
+    $purchased_items[] = $row['item_id'];
+}
+
 $amount_stmt->close();
+$purchased_stmt->close();
 $conn->close();
 ?>
 
@@ -105,6 +117,7 @@ $conn->close();
         <div class="account-store">
             <h1>Shop</h1>
             <?php while ($item = mysqli_fetch_assoc($result)): ?>
+                <?php $purchased = in_array($item['item_id'], $purchased_items); ?>
                 <div class="store-item <?php echo strtolower($item['rarity']); ?>-border">
                     <h2><?php echo htmlspecialchars($item['name']); ?></h2>
                     <img src="images/store-items/<?php echo $item['item_id']; ?>.png" alt="<?php echo $item['name']; ?>">
@@ -114,7 +127,9 @@ $conn->close();
                             alt="Ethereal Souls"></p>
                     <form class="purchase-form" method="post">
                         <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
-                        <button type="submit" class="button-main">Buy Item</button>
+                        <button type="submit" class="button-main" <?php echo $purchased ? 'disabled' : ''; ?>>
+                            <?php echo $purchased ? 'Purchased' : 'Buy Item'; ?>
+                        </button>
                     </form>
                 </div>
             <?php endwhile; ?>
