@@ -51,6 +51,7 @@ body {
     margin-bottom: 5px;
 }
 
+.main-account-front h1,
 .account-stats h1,
 .account-store h1 {
     text-align: center;
