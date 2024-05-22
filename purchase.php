@@ -105,7 +105,7 @@ if ($item_status && $item_type == 'bank') {
 
     if ($item_type == 'equippable') {
         // Update player's secondary attribute
-        $query = "UPDATE players SET $secondary_attr = $new_item_id WHERE id = $user_id";
+        $query = "UPDATE players SET $secondary_attr = $item_id WHERE id = $user_id";
         mysqli_query($conn, $query);
     } else if ($item_type == 'bank') {
         // Find the next available slot
