@@ -108,7 +108,7 @@ $conn->close();
                     <h2><?php echo htmlspecialchars($item['name']); ?></h2>
                     <p class="<?php echo strtolower($item['rarity']); ?>"><?php echo htmlspecialchars($item['rarity']); ?>
                     </p>
-                    <p class="price">Price: <?php echo htmlspecialchars($item['price']); ?> <img src="images/soul.png"
+                    <p class="price"><?php echo htmlspecialchars($item['price']); ?> <img src="images/soul.png"
                             alt="Ethereal Souls"></p>
                     <form action="purchase.php" method="post">
                         <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
