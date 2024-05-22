@@ -105,6 +105,19 @@ p.artifact {
 }
 
 .purchase-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5em;
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
+    backdrop-filter: blur(4px) grayscale(80%);
+    box-sizing: border-box;
     color: white;
     font-size: 1.5em;
     font-family: "Montserrat", serif, sans-serif;
