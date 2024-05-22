@@ -51,16 +51,27 @@ if ($item_type == 'equippable') {
     // Update player's secondary attribute
     $query = "UPDATE players SET $secondary_attr = $item_id WHERE id = $user_id";
     mysqli_query($conn, $query);
-    echo "Purchase successful. Your appearance has been set!";
 } else if ($item_type == 'bank') {
-    // Find the next available slot
-    $query = "SELECT MAX(slot) as max_slot FROM bank WHERE playerID = $user_id";
+    // Check if the item already exists in the bank
+    $query = "SELECT * FROM bank WHERE playerID = $user_id AND itemID = $item_id";
     $result = mysqli_query($conn, $query);
-    $row = mysqli_fetch_assoc($result);
-    $next_slot = isset($row['max_slot']) ? $row['max_slot'] + 1 : 1;
 
-    // Insert item into bank
-    $query = "INSERT INTO bank (playerID, itemID, slot) VALUES ($user_id, $item_id, $next_slot)";
-    mysqli_query($conn, $query);
-    echo "Purchase successful. Item sent to your bank!";
+    if (mysqli_num_rows($result) > 0) {
+        // Item already exists in the bank, increase quantity by 1
+        $query = "UPDATE bank SET quantity = quantity + 1 WHERE playerID = $user_id AND itemID = $item_id";
+        mysqli_query($conn, $query);
+    } else {
+        // Find the next available slot
+        $query = "SELECT MAX(slot) as max_slot FROM bank WHERE playerID = $user_id";
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_assoc($result);
+        $next_slot = isset($row['max_slot']) ? $row['max_slot'] + 1 : 1;
+
+        // Insert item into bank
+        $query = "INSERT INTO bank (playerID, itemID, slot, quantity) VALUES ($user_id, $item_id, $next_slot, 1)";
+        mysqli_query($conn, $query);
+    }
 }
+
+echo "Purchase successful.";
+?>
