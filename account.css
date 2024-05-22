@@ -60,7 +60,7 @@ body {
 
 .account-store h2 {
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: "Montserrat", "Teko", serif;
     font-weight: 700;
     margin-bottom: 10px;
@@ -72,13 +72,12 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to top, black, rgb(46, 46, 46));
     border-radius: 0.3em;
     border: 3px solid;
-    border-top: 15px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-color: black;
+    border-top: 15px solid;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     padding: 15px;
     box-sizing: border-box;
     margin: 15px;
