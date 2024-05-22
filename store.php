@@ -104,13 +104,14 @@ $conn->close();
         <div class="account-store">
             <h1>Shop</h1>
             <?php while ($item = mysqli_fetch_assoc($result)): ?>
-                <div>
+                <div class="store-item">
                     <h2><?php echo htmlspecialchars($item['name']); ?></h2>
                     <p>Rarity: <?php echo htmlspecialchars($item['rarity']); ?></p>
-                    <p>Price: <?php echo htmlspecialchars($item['price']); ?> Ethereal Souls</p>
+                    <p>Price: <?php echo htmlspecialchars($item['price']); ?> <img src="images/soul.png"
+                            alt="Ethereal Souls"></p>
                     <form action="purchase.php" method="post">
                         <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
-                        <button type="submit" class="button-main">Buy</button>
+                        <button type="submit" class="button-main">Buy Item</button>
                     </form>
                 </div>
             <?php endwhile; ?>
