@@ -48,7 +48,7 @@ body {
 
 .account-store h2 {
     color: white;
-    font-size: 2.5em;
+    font-size: 2em;
     font-family: "Teko", serif;
     margin-bottom: 10px;
     text-align: center;
@@ -64,6 +64,15 @@ body {
     border: 1px solid rgb(235, 96, 219);
     padding: 15px;
     box-sizing: border-box;
+    margin: 15px;
+    min-width: 250px;
+    height: 180px;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 600px) {
