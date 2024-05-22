@@ -61,7 +61,8 @@ body {
 .account-store h2 {
     color: white;
     font-size: 2em;
-    font-family: "Teko", serif;
+    font-family: "Montserrat", "Teko", serif;
+    font-weight: 700;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -73,12 +74,21 @@ body {
     flex-direction: column;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 0.3em;
-    border: 1px solid rgb(235, 96, 219);
+    border: 3px solid;
+    border-top: 15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-color: black;
     padding: 15px;
     box-sizing: border-box;
     margin: 15px;
     min-width: 250px;
     height: 180px;
+}
+
+.store-item:hover {
+    -webkit-filter: brightness(1.2);
+    filter: brightness(1.2);
 }
 
 .price {
@@ -88,20 +98,24 @@ body {
     font-weight: bold;
 }
 
-p.uncommon {
+.uncommon {
     color: rgb(19, 255, 94);
+    border-color: rgb(19, 255, 94);
 }
 
-p.rare {
+.rare {
     color: rgb(19, 153, 255);
+    border-color: rgb(19, 153, 255);
 }
 
-p.epic {
+.epic {
     color: rgb(208, 19, 255);
+    border-color: rgb(208, 19, 255);
 }
 
-p.artifact {
-    color: rgb(208, 19, 255);
+.artifact {
+    color: rgb(255, 19, 19);
+    border-color: rgb(255, 19, 19);
 }
 
 .purchase-message {
