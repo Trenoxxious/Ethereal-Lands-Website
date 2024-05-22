@@ -105,7 +105,9 @@ p.artifact {
 }
 
 .purchase-message {
-    display: none;
+    visibility: hidden;
+    color: white;
+    z-index: 1000;
     position: fixed;
     top: 50%;
     left: 50%;
