@@ -16,6 +16,17 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
+
+// Check if the user is 'online' in the players table
+$query = "SELECT online FROM players WHERE id = $user_id";
+$result = mysqli_query($conn, $query);
+$user_status = mysqli_fetch_assoc($result);
+
+if ($user_status && $user_status['online'] == 1) {
+    echo "You cannot make purchases while online. Please log off your character first.";
+    exit;
+}
+
 $item_id = intval($_POST['item_id']);
 
 // Fetch item details
