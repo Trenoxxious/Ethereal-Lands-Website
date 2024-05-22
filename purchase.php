@@ -47,20 +47,35 @@ $new_amount = $user['amount'] - $item_price;
 $query = "UPDATE etherealsouls SET amount = $new_amount WHERE id = $user_id";
 mysqli_query($conn, $query);
 
-if ($item_type == 'equippable') {
-    // Update player's secondary attribute
-    $query = "UPDATE players SET $secondary_attr = $item_id WHERE id = $user_id";
-    mysqli_query($conn, $query);
-} else if ($item_type == 'bank') {
-    // Check if the item already exists in the bank
-    $query = "SELECT * FROM bank WHERE playerID = $user_id AND itemID = $item_id";
-    $result = mysqli_query($conn, $query);
+// Search for the item in itemstatuses by catalogID
+$query = "SELECT itemID, amount FROM itemstatuses WHERE catalogID = $item_id";
+$result = mysqli_query($conn, $query);
+$item_status = mysqli_fetch_assoc($result);
 
-    if (mysqli_num_rows($result) > 0) {
-        // Item already exists in the bank, increase quantity by 1
-        $query = "UPDATE bank SET quantity = quantity + 1 WHERE playerID = $user_id AND itemID = $item_id";
+if ($item_status) {
+    $existing_item_id = $item_status['itemID'];
+    $new_amount = $item_status['amount'] + 1;
+
+    // Update the amount in itemstatuses
+    $query = "UPDATE itemstatuses SET amount = $new_amount WHERE itemID = $existing_item_id";
+    mysqli_query($conn, $query);
+} else {
+    // Find the highest itemID in the itemstatuses table
+    $query = "SELECT MAX(itemID) as max_item_id FROM itemstatuses";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    $new_item_id = isset($row['max_item_id']) ? $row['max_item_id'] + 1 : 1;
+
+    // Insert data into itemstatuses table
+    $query = "INSERT INTO itemstatuses (itemID, catalogID, amount, noted, wielded, durability) 
+              VALUES ($new_item_id, $item_id, 1, 0, 0, 100)";
+    mysqli_query($conn, $query);
+
+    if ($item_type == 'equippable') {
+        // Update player's secondary attribute
+        $query = "UPDATE players SET $secondary_attr = $new_item_id WHERE id = $user_id";
         mysqli_query($conn, $query);
-    } else {
+    } else if ($item_type == 'bank') {
         // Find the next available slot
         $query = "SELECT MAX(slot) as max_slot FROM bank WHERE playerID = $user_id";
         $result = mysqli_query($conn, $query);
@@ -68,10 +83,9 @@ if ($item_type == 'equippable') {
         $next_slot = isset($row['max_slot']) ? $row['max_slot'] + 1 : 1;
 
         // Insert item into bank
-        $query = "INSERT INTO bank (playerID, itemID, slot, quantity) VALUES ($user_id, $item_id, $next_slot, 1)";
+        $query = "INSERT INTO bank (playerID, itemID, slot) VALUES ($user_id, $new_item_id, $next_slot)";
         mysqli_query($conn, $query);
     }
 }
 
 echo "Purchase successful.";
-?>
