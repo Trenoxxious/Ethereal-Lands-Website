@@ -82,12 +82,12 @@ body {
     box-sizing: border-box;
     margin: 15px;
     min-width: 250px;
-    height: 180px;
+    height: 250px;
 }
 
 .store-item:hover {
-    -webkit-filter: brightness(1.2);
-    filter: brightness(1.2);
+    -webkit-filter: brightness(1.1);
+    filter: brightness(1.1);
 }
 
 .price {
