@@ -32,8 +32,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 15px;
+    max-width: 100%;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.5);
     -webkit-backdrop-filter: blur(4px) grayscale(80%);
@@ -157,6 +159,11 @@ body {
     .account-stats,
     .account-store {
         width: 100%;
+    }
+
+    .account-store {
+        flex-direction: column;
+        flex-wrap: nowrap;
     }
 
     .account-stats h1 {
