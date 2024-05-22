@@ -105,7 +105,7 @@ $conn->close();
         <div class="account-store">
             <h1>Shop</h1>
             <?php while ($item = mysqli_fetch_assoc($result)): ?>
-                <div class="store-item <?php echo strtolower($item['rarity']); ?>">
+                <div class="store-item <?php echo strtolower($item['rarity']); ?>-border">
                     <h2><?php echo htmlspecialchars($item['name']); ?></h2>
                     <p class="<?php echo strtolower($item['rarity']); ?>"><?php echo htmlspecialchars($item['rarity']); ?>
                     </p>

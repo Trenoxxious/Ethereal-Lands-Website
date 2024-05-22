@@ -98,24 +98,36 @@ body {
     font-weight: bold;
 }
 
-.store-item .uncommon {
-    color: rgb(19, 255, 94);
-    border-color: rgb(19, 255, 94);
+.uncommon {
+    color: rgb(19, 255, 94) !important;
 }
 
-.store-item .rare {
-    color: rgb(19, 153, 255);
-    border-color: rgb(19, 153, 255);
+.uncommon-border {
+    border-color: rgb(19, 255, 94) !important;
 }
 
-.store-item .epic {
-    color: rgb(208, 19, 255);
-    border-color: rgb(208, 19, 255);
+.rare {
+    color: rgb(19, 153, 255) !important;
 }
 
-.store-item .artifact {
-    color: rgb(255, 19, 19);
-    border-color: rgb(255, 19, 19);
+.rare-border {
+    border-color: rgb(19, 153, 255) !important;
+}
+
+.epic {
+    color: rgb(208, 19, 255) !important;
+}
+
+.epic-border {
+    border-color: rgb(208, 19, 255) !important;
+}
+
+.artifact {
+    color: rgb(255, 19, 19) !important;
+}
+
+.artifact-border {
+    border-color: rgb(255, 19, 19) !important;
 }
 
 .purchase-message {
