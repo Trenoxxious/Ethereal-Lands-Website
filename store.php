@@ -114,8 +114,8 @@ $conn->close();
         <div id="message" class="purchase-message"></div>
     </div>
     <div class="main-account-front">
+        <h1>Shop</h1>
         <div class="account-store">
-            <h1>Shop</h1>
             <?php while ($item = mysqli_fetch_assoc($result)): ?>
                 <?php $purchased = in_array($item['item_id'], $purchased_items); ?>
                 <div class="store-item <?php echo strtolower($item['rarity']); ?>-border">
