@@ -15,10 +15,22 @@ body {
     padding: 10px;
 }
 
-.account-stats,
-.account-store {
+.account-stats {
     display: flex;
     align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
+    backdrop-filter: blur(4px) grayscale(80%);
+    border-radius: 0.5em;
+}
+
+.account-store {
+    display: flex;
+    align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     padding: 15px;
@@ -90,6 +102,12 @@ p.epic {
 
 p.artifact {
     color: rgb(208, 19, 255);
+}
+
+.purchase-message {
+    color: white;
+    font-size: 1em;
+    font-family: "Montserrat", serif, sans-serif;
 }
 
 @media only screen and (max-width: 600px) {

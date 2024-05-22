@@ -103,7 +103,7 @@ $conn->close();
     <div class="main-account-front">
         <div class="account-store">
             <h1>Shop</h1>
-            <div id="message"></div>
+            <div id="message" class="purchase-message"></div>
             <?php while ($item = mysqli_fetch_assoc($result)): ?>
                 <div class="store-item">
                     <h2><?php echo htmlspecialchars($item['name']); ?></h2>
