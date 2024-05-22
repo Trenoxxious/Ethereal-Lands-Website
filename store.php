@@ -99,11 +99,11 @@ $conn->close();
             </div>
             <span class="add-souls" id="buysouls">+</span>
         </div>
+        <div id="message" class="purchase-message"></div>
     </div>
     <div class="main-account-front">
         <div class="account-store">
             <h1>Shop</h1>
-            <div id="message" class="purchase-message"></div>
             <?php while ($item = mysqli_fetch_assoc($result)): ?>
                 <div class="store-item">
                     <h2><?php echo htmlspecialchars($item['name']); ?></h2>
