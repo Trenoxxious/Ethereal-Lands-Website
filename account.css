@@ -61,6 +61,11 @@ body {
     font-family: "Montserrat", "Teko", serif, sans-serif;
 }
 
+.store-header {
+    width: 100%;
+    display: block;
+}
+
 .account-store h2 {
     color: white;
     font-size: 1.5em;
