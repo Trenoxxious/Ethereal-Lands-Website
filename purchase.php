@@ -29,6 +29,14 @@ if ($user_status && $user_status['online'] == 1) {
 
 $item_id = intval($_POST['item_id']);
 
+// Check if the item has already been purchased by the player
+$query = "SELECT * FROM user_purchases WHERE user_id = $user_id AND item_id = $item_id";
+$result = mysqli_query($conn, $query);
+if (mysqli_num_rows($result) > 0) {
+    echo "You have already purchased this item. Equip it from your inventory!";
+    exit;
+}
+
 // Fetch item details
 $query = "SELECT price, type, secondary_attr FROM etherealitems WHERE item_id = $item_id";
 $result = mysqli_query($conn, $query);
@@ -120,4 +128,8 @@ if ($item_status && $item_type == 'bank') {
     }
 }
 
-echo "Purchase successful.";
+// Log the purchase in the user_purchases table
+$query = "INSERT INTO user_purchases (user_id, item_id) VALUES ($user_id, $item_id)";
+mysqli_query($conn, $query);
+
+echo "Purchase successful. Equip the item from your inventory!";
