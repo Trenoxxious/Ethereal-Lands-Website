@@ -52,13 +52,34 @@ $query = "SELECT itemID, amount FROM itemstatuses WHERE catalogID = $item_id";
 $result = mysqli_query($conn, $query);
 $item_status = mysqli_fetch_assoc($result);
 
-if ($item_status) {
+if ($item_status && $item_type == 'bank') {
     $existing_item_id = $item_status['itemID'];
-    $new_amount = $item_status['amount'] + 1;
 
-    // Update the amount in itemstatuses
-    $query = "UPDATE itemstatuses SET amount = $new_amount WHERE itemID = $existing_item_id";
-    mysqli_query($conn, $query);
+    // Check if this itemID exists in the bank for this user
+    $query = "SELECT * FROM bank WHERE playerID = $user_id AND itemID = $existing_item_id";
+    $result = mysqli_query($conn, $query);
+
+    if (mysqli_num_rows($result) > 0) {
+        // Update the amount in itemstatuses
+        $new_amount = $item_status['amount'] + 1;
+        $query = "UPDATE itemstatuses SET amount = $new_amount WHERE itemID = $existing_item_id";
+        mysqli_query($conn, $query);
+    } else {
+        // Find the next available slot
+        $query = "SELECT MAX(slot) as max_slot FROM bank WHERE playerID = $user_id";
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_assoc($result);
+        $next_slot = isset($row['max_slot']) ? $row['max_slot'] + 1 : 1;
+
+        // Insert item into bank
+        $query = "INSERT INTO bank (playerID, itemID, slot) VALUES ($user_id, $existing_item_id, $next_slot)";
+        mysqli_query($conn, $query);
+
+        // Update the amount in itemstatuses
+        $new_amount = $item_status['amount'] + 1;
+        $query = "UPDATE itemstatuses SET amount = $new_amount WHERE itemID = $existing_item_id";
+        mysqli_query($conn, $query);
+    }
 } else {
     // Find the highest itemID in the itemstatuses table
     $query = "SELECT MAX(itemID) as max_item_id FROM itemstatuses";
