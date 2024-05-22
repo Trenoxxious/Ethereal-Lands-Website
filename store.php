@@ -106,8 +106,9 @@ $conn->close();
             <?php while ($item = mysqli_fetch_assoc($result)): ?>
                 <div class="store-item">
                     <h2><?php echo htmlspecialchars($item['name']); ?></h2>
-                    <p>Rarity: <?php echo htmlspecialchars($item['rarity']); ?></p>
-                    <p>Price: <?php echo htmlspecialchars($item['price']); ?> <img src="images/soul.png"
+                    <p class="<?php echo strtolower($item['rarity']); ?>"><?php echo htmlspecialchars($item['rarity']); ?>
+                    </p>
+                    <p class="price">Price: <?php echo htmlspecialchars($item['price']); ?> <img src="images/soul.png"
                             alt="Ethereal Souls"></p>
                     <form action="purchase.php" method="post">
                         <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">

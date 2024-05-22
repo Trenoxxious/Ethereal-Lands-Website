@@ -75,6 +75,22 @@ body {
     justify-content: center;
 }
 
+p.uncommon {
+    color: rgb(19, 255, 94);
+}
+
+p.rare {
+    color: rgb(19, 153, 255);
+}
+
+p.epic {
+    color: rgb(208, 19, 255);
+}
+
+p.artifact {
+    color: rgb(208, 19, 255);
+}
+
 @media only screen and (max-width: 600px) {
     .account-stats {
         width: 100%;
