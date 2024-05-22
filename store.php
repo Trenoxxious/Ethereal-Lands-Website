@@ -110,7 +110,7 @@ $conn->close();
                     </p>
                     <p class="price"><?php echo htmlspecialchars($item['price']); ?> <img src="images/soul.png"
                             alt="Ethereal Souls"></p>
-                    <form action="purchase.php" method="post">
+                    <form class="purchase-form" method="post">
                         <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
                         <button type="submit" class="button-main">Buy Item</button>
                     </form>
@@ -118,6 +118,25 @@ $conn->close();
             <?php endwhile; ?>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $('.purchase-form').on('submit', function (event) {
+                event.preventDefault(); // Prevent the form from submitting the traditional way
+                var formData = $(this).serialize();
+                $.post('purchase.php', formData, function (response) {
+                    // Display the response message
+                    $('#message').html(response);
+
+                    // Optionally, you can clear the message after a few seconds
+                    setTimeout(function () {
+                        $('#message').html('');
+                    }, 5000);
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
