@@ -131,7 +131,7 @@ $conn->close();
                         <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
                         <button type="submit" class="button-main" <?php echo $purchased ? 'disabled' : ''; ?>>
                             <?php if ($purchased): ?>
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                                     fill="#6ffd6f">
                                     <path d="M389-267 195-460l51-52 143 143 325-324 51 51-376 375Z" />
                                 </svg>

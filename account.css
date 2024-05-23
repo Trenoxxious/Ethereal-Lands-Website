@@ -159,6 +159,9 @@ body {
     border: 1px solid #6ffd6f;
     background: #41b441;
     text-shadow: 0px 1px 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .store-item .button-main:hover {
@@ -168,7 +171,7 @@ body {
 
 .store-item .button-main:disabled {
     opacity: 0.5;
-    background: rgb(41, 41, 41);
+    background: rgb(22, 22, 22);
 }
 
 @media only screen and (max-width: 600px) {
