@@ -97,6 +97,7 @@ body {
 .store-item:hover {
     -webkit-filter: contrast(1.2);
     filter: contrast(1.2);
+    transform: translateZ(1.05);
 }
 
 .price {
