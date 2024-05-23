@@ -156,7 +156,7 @@ body {
 
 .store-item .button-main {
     color: rgb(111, 253, 111);
-    border: 1px solid rgb(111, 253, 111);
+    border: 1px solid #6ffd6f;
     background: #41b441;
     text-shadow: 0px 1px 1px black;
 }
@@ -168,6 +168,7 @@ body {
 
 .store-item .button-main:disabled {
     opacity: 0.5;
+    background: rgb(41, 41, 41);
 }
 
 @media only screen and (max-width: 600px) {
