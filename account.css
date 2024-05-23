@@ -123,6 +123,13 @@ body {
     border-color: rgb(208, 19, 255) !important;
 }
 
+.epic-background {
+    background: rgb(208, 19, 255) !important;
+    color: rgb(41, 41, 41);
+    padding: 5px;
+    border-radius: 0.2em;
+}
+
 .artifact {
     color: rgb(255, 19, 19) !important;
 }
