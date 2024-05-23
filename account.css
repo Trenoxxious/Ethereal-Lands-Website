@@ -163,12 +163,12 @@ body {
 
 .store-item .button-main {
     color: rgb(111, 253, 111);
-    border: rgb(111, 253, 111);
+    border: 1px solid rgb(111, 253, 111);
 }
 
 .store-item .button-main:hover {
     color: rgb(149, 255, 149);
-    border: rgb(149, 255, 149);
+    border: 1px solid rgb(149, 255, 149);
 }
 
 .store-item .button-main:disabled {
