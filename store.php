@@ -124,7 +124,7 @@ $conn->close();
                     <h2><?php echo htmlspecialchars($item['name']); ?></h2>
                     <img src="images/store-items/<?php echo $item['item_id']; ?>.png" alt="<?php echo $item['name']; ?>">
                     <p class="<?php echo strtolower($item['rarity']); ?>-background">
-                        <?php echo htmlspecialchars($item['rarity']); ?>
+                        <?php echo htmlspecialchars($item['rarity']); ?> Cosmetic
                     </p>
                     <p class="price"><?php echo htmlspecialchars($item['price']); ?> <img src="images/soul.png"
                             alt="Ethereal Souls"></p>

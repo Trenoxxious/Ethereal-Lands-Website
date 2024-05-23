@@ -125,9 +125,10 @@ body {
 
 .epic-background {
     background: rgb(208, 19, 255) !important;
-    color: rgb(41, 41, 41);
-    padding: 5px;
+    color: rgb(41, 41, 41) !important;
+    padding: 7px;
     border-radius: 0.2em;
+    font-weight: bold;
 }
 
 .artifact {
