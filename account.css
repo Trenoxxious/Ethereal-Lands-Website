@@ -95,8 +95,8 @@ body {
 }
 
 .store-item:hover {
-    -webkit-filter: brightness(1.1) contrast(1.2);
-    filter: brightness(1.1) contrast(1.2);
+    -webkit-filter: contrast(1.2);
+    filter: contrast(1.2);
 }
 
 .price {
