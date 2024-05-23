@@ -109,7 +109,7 @@ $conn->close();
             <div class="souls-display">
                 <?php echo htmlspecialchars($formatted_esouls); ?>
             </div>
-            <span class="add-souls" id="buysouls">+</span>
+            <span class="add-souls" id="buysouls">Buy More</span>
         </div>
         <div id="message" class="purchase-message"></div>
     </div>

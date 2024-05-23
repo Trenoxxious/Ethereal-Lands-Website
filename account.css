@@ -47,7 +47,7 @@ body {
 .account-stats p,
 .account-store p {
     color: white;
-    font-size: 1.25em;
+    font-size: 1em;
     font-family: "Libre Baskerville", serif;
     margin-bottom: 5px;
 }
@@ -56,7 +56,7 @@ body {
 .account-stats h1,
 .account-store h1 {
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 15px;
     color: white;
     font-family: "Montserrat", "Teko", serif, sans-serif;
@@ -183,6 +183,6 @@ body {
     }
 
     .account-stats h1 {
-        font-size: 2em;
+        font-size: 1.5em;
     }
 }

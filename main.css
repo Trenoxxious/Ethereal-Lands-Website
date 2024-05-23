@@ -278,18 +278,18 @@ li {
 .add-souls {
     user-select: none;
     margin-left: 6px;
-    width: 22px;
-    height: 22px;
-    padding: 1px;
+    padding: 4px 10px;
     border-radius: 0.1em;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(to top, rgb(235, 149, 243), rgb(190, 52, 137));
     color: white;
-    font-size: 2em;
-    font-weight: bold;
+    font-size: 1.25em;
+    font-weight: 600;
     cursor: pointer;
+    font-family: "Montserrat";
+    text-transform: uppercase;
 }
 
 .add-souls:hover {
@@ -297,8 +297,7 @@ li {
 }
 
 .add-souls:active {
-    filter: brightness(1.2);
-    color: rgb(17, 163, 158);
+    filter: brightness(1.1);
 }
 
 .accountbar a {
@@ -325,11 +324,11 @@ li {
 }
 
 .souls-display {
-    font-size: 1.6em;
+    font-size: 1.5em;
     font-weight: bold;
     text-transform: uppercase;
     font-family: "Montserrat", serif, sans-serif;
-    color: rgb(246, 96, 246);
+    color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
 }
