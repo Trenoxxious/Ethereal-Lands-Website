@@ -130,7 +130,7 @@ $conn->close();
                     <form class="purchase-form" method="post">
                         <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
                         <button type="submit" class="button-main" <?php echo $purchased ? 'disabled' : ''; ?>>
-                            <?php echo $purchased ? 'Purchased' : 'Buy Item'; ?>
+                            <?php echo $purchased ? 'Owned' : 'Purchase'; ?>
                         </button>
                     </form>
                 </div>

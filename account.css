@@ -161,6 +161,10 @@ body {
     max-width: 66%;
 }
 
+.store-item .button-main {
+    color: white;
+}
+
 @media only screen and (max-width: 600px) {
 
     .account-stats,
