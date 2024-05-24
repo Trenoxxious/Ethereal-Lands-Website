@@ -161,7 +161,7 @@ $conn->close();
                     setTimeout(function () {
                         $('#message').html('');
                         $('.purchase-message').css('visibility', 'hidden');
-                    }, 5000);
+                    }, 2000);
                 });
             });
         });
