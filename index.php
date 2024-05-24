@@ -119,7 +119,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         </div>
         <p>Use your Ethereal Lands username and password to login below.</p>
         <form class="popup-form" method="post" id="login-form" action="login.php">
-            <input type="text" id="username" name="username" maxlength="12" pattern="[A-Za-z0-9 ]{1,12}"
+            <input type="text" id="username-login" name="username" maxlength="12" pattern="[A-Za-z0-9 ]{1,12}"
                 placeholder="Character Name" required>
             <input type="password" id="password" name="password" placeholder="Password" required>
             <input type="submit" value="Login">
@@ -189,7 +189,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             document.getElementById('popup-login').classList.add('active');
             document.getElementById('popup-account').classList.remove('active');
             document.getElementById('overlay').classList.add('active');
-            document.getElementById('username').focus();
+            document.getElementById('username-login').focus();
         });
 
         document.getElementById('registerbutton').addEventListener('click', function () {
