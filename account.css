@@ -23,7 +23,7 @@ body {
 
 .main-account-front {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     padding: 10px;
@@ -229,6 +229,9 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+    .main-account-front {
+        align-items: center;
+    }
 
     .account-stats,
     .account-store {
