@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    background-image: url(images/pic1.png);
+    background-image: url(images/LumbridgeBG.png);
     background-attachment: fixed;
     background-size: cover;
 }
@@ -59,7 +59,7 @@ body {
 
 .account-store .store-item p {
     color: white;
-    font-size: 1em;
+    font-size: 1em !important;
     font-family: "Libre Baskerville", serif;
     margin-bottom: 5px;
     text-transform: uppercase;
@@ -223,6 +223,7 @@ body {
 }
 
 .store-item .button-main:disabled {
+    color: rgb(232, 255, 232) !important;
     opacity: 0.5;
     background: rgb(22, 22, 22);
     cursor: default;
