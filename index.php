@@ -139,7 +139,6 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                     dataType: 'json',
                     success: function (response) {
                         $('#errorsuccessmessage').html(response.message);
-                        $('.loginmessage').css('display', 'block');
 
                         if (response.status === 'success') {
                             setTimeout(function () {
@@ -148,7 +147,6 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                         } else {
                             setTimeout(function () {
                                 $('#errorsuccessmessage').html('');
-                                $('.loginmessage').css('display', 'none');
                             }, 2000);
                         }
                     }
