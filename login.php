@@ -43,7 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Set success message
             $_SESSION['message'] = "Login successful!";
-            $_SESSION['message_type'] = "success";
 
             // Redirect to account.php
             header("Location: account");
@@ -51,12 +50,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // Set error message for invalid password
             $_SESSION['message'] = "Invalid password.";
-            $_SESSION['message_type'] = "error";
         }
     } else {
         // Set error message for no user found
         $_SESSION['message'] = "No user found with that username.";
-        $_SESSION['message_type'] = "error";
     }
 
     $stmt->close();

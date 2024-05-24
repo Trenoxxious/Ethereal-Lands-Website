@@ -128,8 +128,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <?php
             if (isset($_SESSION['message'])) {
                 $message = $_SESSION['message'];
-                $message_type = $_SESSION['message_type'];
-                echo "<div class='$message_type'>$message</div>";
+                echo "<div>$message</div>";
                 // Clear message after displaying
                 unset($_SESSION['message']);
                 unset($_SESSION['message_type']);
