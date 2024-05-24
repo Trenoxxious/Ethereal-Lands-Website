@@ -14,24 +14,6 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#login-form').submit(function(event) {
-                event.preventDefault(); // Prevent the default form submission
-
-                var formData = $(this).serialize(); // Serialize the form data
-
-                $.ajax({
-                    url: 'login.php',
-                    type: 'POST',
-                    data: formData,
-                    success: function(response) {
-                        $('#errorsuccessmessage').html(response);
-                    }
-                });
-            });
-        });
-    </script>
 </head>
 
 <body>
@@ -142,18 +124,28 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <input type="password" id="password" name="password" placeholder="Password" required>
             <input type="submit" value="Login">
         </form>
-        <div class=" loginmessage" id="errorsuccessmessage">
-            <?php
-            if (isset($_SESSION['message'])) {
-                $message = $_SESSION['message'];
-                echo "<div>$message</div>";
-                // Clear message after displaying
-                unset($_SESSION['message']);
-                unset($_SESSION['message_type']);
-            }
-            ?>
-        </div>
+        <div class="loginmessage" id="errorsuccessmessage"></div>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            $('.login-form').on('submit', function (event) {
+                event.preventDefault(); // Prevent the form from submitting the traditional way
+                var formData = $(this).serialize();
+                $.post('purchase.php', formData, function (response) {
+                    // Display the response message
+                    $('#errorsuccessmessage').html(response);
+                    $('.loginmessage').css('display', 'block');
+
+                    // Optionally, you can clear the message after a few seconds
+                    setTimeout(function () {
+                        $('#errorsuccessmessage').html('');
+                        $('.loginmessage').css('display', 'none');
+                    }, 2000);
+                });
+            });
+        });
+    </script>
 
     <div class="popup" id="popup-account">
         <span class="popup-close" id="popup-account-close">&times;</span>

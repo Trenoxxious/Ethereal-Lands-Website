@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ini_set('log_errors', 1);
-ini_set('error_log', '/home/playethe/public_html/error-login.log');
+ini_set('error_log_login', '/home/playethe/public_html/error-login.log');
 
 require 'globals.php';
 
@@ -15,8 +15,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
-    echo json_encode(['status' => 'error', 'message' => 'Connection failed: ' . $conn->connect_error]);
-    exit;
+    die("Connection failed: " . $conn->connect_error);
 }
 
 // Check if form is submitted
@@ -42,16 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['accstatus'] = $row['group_id'];
             $_SESSION['loggedIn'] = true;
 
-            // Return success message
-            echo json_encode(['status' => 'success', 'message' => 'Login successful! Redirecting...']);
-            echo "<script>setTimeout(function(){ window.location.href = 'account.php'; }, 2000);</script>";
+            // Redirect to account.php
+            header("Location: account");
+            exit;
         } else {
-            // Return error message for invalid password
-            echo json_encode(['status' => 'error', 'message' => 'Invalid password.']);
+            echo "Invalid password.";
         }
     } else {
-        // Return error message for no user found
-        echo json_encode(['status' => 'error', 'message' => 'No user found with that username.']);
+        echo "No user found with that username.";
     }
 
     $stmt->close();
