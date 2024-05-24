@@ -15,7 +15,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    echo json_encode(['status' => 'error', 'message' => 'Connection failed: ' . $conn->connect_error]);
+    exit;
 }
 
 // Check if form is submitted
@@ -41,14 +42,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['accstatus'] = $row['group_id'];
             $_SESSION['loggedIn'] = true;
 
-            // Redirect to account.php
-            echo "<div class='success'>Login successful! Redirecting...</div>";
+            // Return success message
+            echo json_encode(['status' => 'success', 'message' => 'Login successful! Redirecting...']);
             echo "<script>setTimeout(function(){ window.location.href = 'account.php'; }, 2000);</script>";
         } else {
-            echo "<div class='error'>Invalid password.</div>";
+            // Return error message for invalid password
+            echo json_encode(['status' => 'error', 'message' => 'Invalid password.']);
         }
     } else {
-        echo "<div class='error'>No user found with that username.</div>";
+        // Return error message for no user found
+        echo json_encode(['status' => 'error', 'message' => 'No user found with that username.']);
     }
 
     $stmt->close();
