@@ -125,6 +125,16 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <input type="submit" value="Login">
         </form>
         <div class=" loginmessage" id="errorsuccessmessage">
+            <?php
+            if (isset($_SESSION['message'])) {
+                $message = $_SESSION['message'];
+                $message_type = $_SESSION['message_type'];
+                echo "<div class='$message_type'>$message</div>";
+                // Clear message after displaying
+                unset($_SESSION['message']);
+                unset($_SESSION['message_type']);
+            }
+            ?>
         </div>
     </div>
 

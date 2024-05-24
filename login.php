@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ini_set('log_errors', 1);
-ini_set('error_log_login', '/home/playethe/public_html/error-login.log');
+ini_set('error_log', '/home/playethe/public_html/error-login.log');
 
 require 'globals.php';
 
@@ -41,16 +41,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['accstatus'] = $row['group_id'];
             $_SESSION['loggedIn'] = true;
 
+            // Set success message
+            $_SESSION['message'] = "Login successful!";
+            $_SESSION['message_type'] = "success";
+
             // Redirect to account.php
             header("Location: account");
             exit;
         } else {
-            echo "Invalid password.";
+            // Set error message for invalid password
+            $_SESSION['message'] = "Invalid password.";
+            $_SESSION['message_type'] = "error";
         }
     } else {
-        echo "No user found with that username.";
+        // Set error message for no user found
+        $_SESSION['message'] = "No user found with that username.";
+        $_SESSION['message_type'] = "error";
     }
 
     $stmt->close();
     $conn->close();
+
+    // Redirect back to index.php
+    header("Location: index.php");
+    exit;
 }
