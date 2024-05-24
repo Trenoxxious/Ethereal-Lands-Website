@@ -687,7 +687,8 @@ li {
     cursor: pointer;
 }
 
-.registrationmessage {
+.registrationmessage,
+.loginmessage {
     text-align: center;
     margin-top: 15px;
     font-family: "Libre Baskerville", serif;
