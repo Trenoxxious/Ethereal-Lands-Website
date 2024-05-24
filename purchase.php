@@ -28,6 +28,11 @@ if ($user_status && $user_status['online'] == 1) {
     exit;
 }
 
+if ($store_is_active != true) {
+    echo "The store is not enabled right now. Check back soon!";
+    exit;
+}
+
 $item_id = intval($_POST['item_id']);
 
 // Check if the item has already been purchased by the player
@@ -59,11 +64,6 @@ $user = mysqli_fetch_assoc($result);
 
 if (!$user || $user['amount'] < $item_price) {
     echo "Not enough Ethereal Souls.";
-    exit;
-}
-
-if ($store_is_active != true) {
-    echo "The store is not enabled right now. Check back soon!";
     exit;
 }
 
