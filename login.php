@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username-login'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
     // Fetch user from database
