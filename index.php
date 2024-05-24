@@ -189,12 +189,14 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             document.getElementById('popup-login').classList.add('active');
             document.getElementById('popup-account').classList.remove('active');
             document.getElementById('overlay').classList.add('active');
+            document.getElementById('username').focus();
         });
 
         document.getElementById('registerbutton').addEventListener('click', function () {
             document.getElementById('popup').classList.add('active');
             document.getElementById('popup-account').classList.remove('active');
             document.getElementById('overlay').classList.add('active');
+            document.getElementById('username').focus();
         });
 
         document.getElementById('popup-close').addEventListener('click', function () {
