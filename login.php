@@ -46,11 +46,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         } else {
             echo "Invalid password.";
+            $stmt->close();
+            $conn->close();
+            exit;
         }
     } else {
         echo "No user found with that username.";
+        $stmt->close();
+        $conn->close();
+        exit;
     }
-
-    $stmt->close();
-    $conn->close();
 }
