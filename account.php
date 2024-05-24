@@ -127,7 +127,7 @@ $conn->close();
             <div class="souls-display">
                 <?php echo htmlspecialchars($formatted_esouls); ?>
             </div>
-            <span class="add-souls" id="buysouls">Buy More</span>
+            <span class="add-souls" id="buysouls">Get More</span>
         </div>
     </div>
     <div class="main-account-front">
