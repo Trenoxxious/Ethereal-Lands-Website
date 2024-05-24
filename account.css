@@ -8,6 +8,18 @@ body {
     background-size: cover;
 }
 
+.page-header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-filter: blur(4px) grayscale(80%);
+    filter: blur(4px) grayscale(80%);
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .main-account-front {
     display: flex;
     align-items: center;
@@ -45,11 +57,13 @@ body {
 }
 
 .account-stats p,
-.account-store p {
+.account-store .store-item p {
     color: white;
     font-size: 1em;
     font-family: "Libre Baskerville", serif;
     margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .main-account-front h1,
@@ -106,12 +120,28 @@ body {
     border-color: rgb(19, 255, 94) !important;
 }
 
+.uncommon-background {
+    background: rgb(19, 255, 94) !important;
+    color: rgb(41, 41, 41) !important;
+    padding: 2px 6px;
+    border-radius: 0.2em;
+    font-weight: bold;
+}
+
 .rare {
     color: rgb(19, 153, 255) !important;
 }
 
 .rare-border {
     border-color: rgb(19, 153, 255) !important;
+}
+
+.rare-background {
+    background: rgb(19, 153, 255) !important;
+    color: rgb(41, 41, 41) !important;
+    padding: 2px 6px;
+    border-radius: 0.2em;
+    font-weight: bold;
 }
 
 .epic {
@@ -125,7 +155,7 @@ body {
 .epic-background {
     background: rgb(208, 19, 255) !important;
     color: rgb(41, 41, 41) !important;
-    padding: 7px;
+    padding: 2px 6px;
     border-radius: 0.2em;
     font-weight: bold;
 }
@@ -136,6 +166,14 @@ body {
 
 .artifact-border {
     border-color: rgb(255, 19, 19) !important;
+}
+
+.artifact-background {
+    background: rgb(255, 19, 19) !important;
+    color: rgb(41, 41, 41) !important;
+    padding: 2px 6px;
+    border-radius: 0.2em;
+    font-weight: bold;
 }
 
 .purchase-message {

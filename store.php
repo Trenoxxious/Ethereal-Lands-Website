@@ -115,7 +115,7 @@ $conn->close();
     </div>
     <div class="main-account-front">
         <div class="store-header">
-            <h1>Shop</h1>
+            <h1 class="page-header">Shop</h1>
         </div>
         <div class="account-store">
             <?php while ($item = mysqli_fetch_assoc($result)): ?>

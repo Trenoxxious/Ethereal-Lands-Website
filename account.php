@@ -131,8 +131,8 @@ $conn->close();
         </div>
     </div>
     <div class="main-account-front">
+        <h1 class="page-header">Character Stats</h1>
         <div class="account-stats">
-            <h1>Character Stats</h1>
             <?php foreach ($stats as $statName => $statValue): ?>
                 <p><?php echo htmlspecialchars($statName . ': ' . $statValue); ?></p>
             <?php endforeach; ?>
