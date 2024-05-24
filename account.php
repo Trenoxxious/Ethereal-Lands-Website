@@ -52,25 +52,25 @@ $stats = [];
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $stats = [
-        'Attack Level' => $row['attack'],
-        'Defense Level' => $row['defense'],
-        'Hits Level' => $row['hits'],
-        'Strength Level' => $row['strength'],
-        'Ranged Level' => $row['ranged'],
-        'Prayer Level' => $row['prayer'],
-        'Magic Level' => $row['magic'],
-        'Cooking Level' => $row['cooking'],
-        'Woodcutting Level' => $row['woodcut'],
-        'Fletching Level' => $row['fletching'],
-        'Fishing Level' => $row['fishing'],
-        'Firemaking Level' => $row['firemaking'],
-        'Crafting Level' => $row['crafting'],
-        'Smithing Level' => $row['smithing'],
-        'Mining Level' => $row['mining'],
-        'Herblaw Level' => $row['herblaw'],
-        'Agility Level' => $row['agility'],
-        'Thieving Level' => $row['thieving'],
-        'Huntsman Level' => $row['huntsman']
+        'Attack level' => $row['attack'],
+        'Defense level' => $row['defense'],
+        'Hits level' => $row['hits'],
+        'Strength level' => $row['strength'],
+        'Ranged level' => $row['ranged'],
+        'Prayer level' => $row['prayer'],
+        'Magic level' => $row['magic'],
+        'Cooking level' => $row['cooking'],
+        'Woodcutting level' => $row['woodcut'],
+        'Fletching level' => $row['fletching'],
+        'Fishing level' => $row['fishing'],
+        'Firemaking level' => $row['firemaking'],
+        'Crafting level' => $row['crafting'],
+        'Smithing level' => $row['smithing'],
+        'Mining level' => $row['mining'],
+        'Herblaw level' => $row['herblaw'],
+        'Agility level' => $row['agility'],
+        'Thieving level' => $row['thieving'],
+        'Huntsman level' => $row['huntsman']
     ];
 }
 
@@ -131,7 +131,7 @@ $conn->close();
         </div>
     </div>
     <div class="main-account-front">
-        <h1 class="page-header">Character Stats</h1>
+        <h1 class="page-header">Character Stats (<?php echo $username; ?>)</h1>
         <div class="account-stats">
             <?php foreach ($stats as $statName => $statValue): ?>
                 <p><?php echo htmlspecialchars($statName . ': ' . $statValue); ?></p>

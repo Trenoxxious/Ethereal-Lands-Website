@@ -263,11 +263,15 @@ li {
 }
 
 .souls {
-    margin: 0 20px;
+    margin: 0 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    background: #80008047;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 0.5em;
 }
 
 .color-white {
