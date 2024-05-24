@@ -41,25 +41,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['accstatus'] = $row['group_id'];
             $_SESSION['loggedIn'] = true;
 
-            // Set success message
-            $_SESSION['message'] = "Login successful!";
-
             // Redirect to account.php
-            header("Location: account");
-            exit;
+            echo "<div class='success'>Login successful! Redirecting...</div>";
+            echo "<script>setTimeout(function(){ window.location.href = 'account.php'; }, 2000);</script>";
         } else {
-            // Set error message for invalid password
-            $_SESSION['message'] = "Invalid password.";
+            echo "<div class='error'>Invalid password.</div>";
         }
     } else {
-        // Set error message for no user found
-        $_SESSION['message'] = "No user found with that username.";
+        echo "<div class='error'>No user found with that username.</div>";
     }
 
     $stmt->close();
     $conn->close();
-
-    // Redirect back to index.php
-    header("Location: index.php");
-    exit;
 }

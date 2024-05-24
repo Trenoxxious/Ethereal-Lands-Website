@@ -14,6 +14,24 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#login-form').submit(function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                var formData = $(this).serialize(); // Serialize the form data
+
+                $.ajax({
+                    url: 'login.php',
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        $('#errorsuccessmessage').html(response);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
