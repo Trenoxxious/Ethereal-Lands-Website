@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-require 'globals.php'; // Your database connection script
+require 'globals.php';
+require 'siteglobals.php';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -58,6 +59,11 @@ $user = mysqli_fetch_assoc($result);
 
 if (!$user || $user['amount'] < $item_price) {
     echo "Not enough Ethereal Souls.";
+    exit;
+}
+
+if ($store_is_active != true) {
+    echo "The store is not enabled right now. Check back soon!";
     exit;
 }
 

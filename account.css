@@ -56,13 +56,20 @@ body {
     border-radius: 0.5em;
 }
 
-.account-stats p,
 .account-store .store-item p {
     color: white;
     font-size: 1em;
     font-family: "Libre Baskerville", serif;
     margin-bottom: 5px;
     text-transform: uppercase;
+    font-weight: bold;
+}
+
+.account-stats p {
+    color: white;
+    font-size: 1em;
+    font-family: "Libre Baskerville", serif;
+    margin-bottom: 5px;
     font-weight: bold;
 }
 
