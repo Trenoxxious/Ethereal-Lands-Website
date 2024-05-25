@@ -162,62 +162,83 @@ li {
 }
 
 .updatebox {
+    cursor: pointer;
     display: block;
     padding: 15px;
     box-sizing: border-box;
     color: white;
-    font-size: 1.2em;
-    font-family: "Courier Prime", "Libre Baskerville", serif;
-    width: 100%;
-    margin: 3px;
+    font-family: "Montserrat", "Libre Baskerville", serif;
+    width: 60%;
+    margin: 15px;
     margin-bottom: 10px;
+    border-radius: 0.2em;
     word-wrap: normal;
-    background: rgb(109, 109, 109);
+    background: rgba(0, 0, 0, 0.5);
     overflow: hidden;
 }
 
-.updatebox .updatetitle {
-    font-size: 1.3em;
-    display: block;
-    padding: 10px;
-    margin: 5px 5px 5px 0;
-    width: 80%;
-    background: linear-gradient(to right, rgb(71, 71, 71, 1), rgb(109, 109, 109, 0));
+.updatetop {
+    display: flex;
+    align-items: space-between;
+    justify-content: flex-start;
+    flex-direction: row;
+    text-wrap: wrap;
 }
 
-.updatebox .updateheader {
-    color: rgb(255, 255, 255);
-    font-size: 1.4em;
-    font-weight: bold;
+.updatecontent h2 {
+    font-size: 1.5em;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    margin-top: 5px;
+    color: var(--middle-grad-color);
+    border-bottom: 1px solid var(--middle-grad-color);
 }
 
-.updatebox p::before {
-    content: "- ";
+.updatecontent p::before {
+    margin-left: 5px;
+    content: '- ';
+    margin-bottom: 3px;
 }
 
-.updatebox p {
-    margin: 5px;
+.patchnumber {
+    margin-bottom: 5px;
 }
 
-.updatebox:nth-child(even) {
-    background: rgb(141, 141, 141);
+.updatesummary {
+    font-style: italic;
+    color: var(--top-grad-color);
 }
 
-.topbarupdates {
-    margin: 3px;
+.updateimage img {
+    border-radius: 0.2em;
+    max-height: 125px;
+    margin-right: 15px;
+    border: 1.5px solid var(--bottom-grad-color);
+}
+
+.updatelist {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
-    width: 100%;
-    height: 40px;
-    background: rgb(86, 40, 95);
+    flex-direction: column;
 }
 
-.topbarupdates p {
-    color: white;
-    font-size: 2.5em;
-    font-family: "Teko", "Libre Baskerville", serif;
+.updatetitle {
+    color: var(--middle-grad-color);
+    font-size: 2em;
+}
+
+.updatebartop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.updatecontent {
+    display: none;
+    margin-top: 15px;
 }
 
 .mainbar {
@@ -847,6 +868,10 @@ li {
         width: 225px;
     }
 
+    .updatebox {
+        width: 85%;
+    }
+
     .accountname {
         font-size: 1.5em;
         margin-left: 10px;
@@ -929,6 +954,18 @@ li {
 @media only screen and (max-width: 600px) {
     .mainbar #navlinks {
         display: none;
+    }
+
+    .updatetitle {
+        font-size: 1.5em;
+    }
+
+    .updatesummary {
+        display: none;
+    }
+
+    .updateimage img {
+        max-height: 75px;
     }
 
     .accountname {
