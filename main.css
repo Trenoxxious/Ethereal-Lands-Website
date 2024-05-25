@@ -212,7 +212,7 @@ li {
 
 .updateimage img {
     border-radius: 0.2em;
-    max-height: 125px;
+    max-width: 150px;
     margin-right: 15px;
     border: 1.5px solid var(--bottom-grad-color);
 }
@@ -227,6 +227,10 @@ li {
 .updatetitle {
     color: var(--middle-grad-color);
     font-size: 2em;
+}
+
+.updatedate {
+    color: rgb(179, 179, 179);
 }
 
 .updatebartop {
@@ -965,7 +969,7 @@ li {
     }
 
     .updateimage img {
-        max-height: 75px;
+        max-width: 100px;
     }
 
     .accountname {
