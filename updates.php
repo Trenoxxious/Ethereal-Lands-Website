@@ -51,14 +51,19 @@
                 <p>The cosmetics store has been designed and is ready for when the game releases. Cosmetics will be able
                     to be earned entirely in-game by utilizing the website's daily task system to earn Ethereal Souls or
                     by purchasing Ethereal Souls directly.
-                    The tasks are completed in-game by the character you login with.
+                    The tasks are completed in-game by the character you login with. Currently, the store is disabled
+                    but fully functional. Next, we're working on adding an inventory system to manage your purchases
+                    and, eventually, purchasing Ethereal Souls using real currency.
                 </p>
                 <h2>Database Updates</h2>
                 <p>Database has been upgraded/migrated to MySQL to support web-server database hosting, player logins
                     and server hosting.</p>
+                <p>Several database upgrades have been made to support cosmetic item purchases and equipping.</p>
                 <h2>Server Updates</h2>
                 <p>The server has been updated to check for duplicate item_id's before processing and saving player
                     data. This has been updated to support cosmetic item delivery.</p>
+                <p>We've made some adjustments to logging that will disable logging .txt files for WARN and INFO
+                    messages while the game server is running.</p>
             </div>
         </div>
     </div>
