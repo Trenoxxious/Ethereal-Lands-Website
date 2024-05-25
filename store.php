@@ -81,7 +81,7 @@ $conn->close();
                 <a href="index">Home</a>
                 <a href="account">My Account</a>
                 <?php if ($isAdmin): ?>
-                    <a href="#">Admin Dashboard</a>
+                    <a href="adminpanel">Admin Dashboard</a>
                 <?php endif; ?>
                 <a href="store">Store</a>
                 <a href="logout">Logout</a>

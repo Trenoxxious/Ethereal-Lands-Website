@@ -41,39 +41,6 @@ if ($amount_result->num_rows > 0) {
 $formatted_esouls = number_format($esouls);
 $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 
-$sql = "SELECT attack, defense, hits, strength, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman FROM maxstats WHERE playerID = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$result = $stmt->get_result();
-
-$stats = [];
-
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $stats = [
-        'Attack level' => $row['attack'],
-        'Defense level' => $row['defense'],
-        'Hits level' => $row['hits'],
-        'Strength level' => $row['strength'],
-        'Ranged level' => $row['ranged'],
-        'Prayer level' => $row['prayer'],
-        'Magic level' => $row['magic'],
-        'Cooking level' => $row['cooking'],
-        'Woodcutting level' => $row['woodcut'],
-        'Fletching level' => $row['fletching'],
-        'Fishing level' => $row['fishing'],
-        'Firemaking level' => $row['firemaking'],
-        'Crafting level' => $row['crafting'],
-        'Smithing level' => $row['smithing'],
-        'Mining level' => $row['mining'],
-        'Herblaw level' => $row['herblaw'],
-        'Agility level' => $row['agility'],
-        'Thieving level' => $row['thieving'],
-        'Huntsman level' => $row['huntsman']
-    ];
-}
-
 $amount_stmt->close();
 $conn->close();
 ?>
@@ -83,7 +50,7 @@ $conn->close();
 <html>
 
 <head>
-    <title>Ethereal Lands - My Account</title>
+    <title>Ethereal Lands - Control Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
@@ -99,7 +66,7 @@ $conn->close();
                 <a href="index">Home</a>
                 <a href="account">My Account</a>
                 <?php if ($isAdmin): ?>
-                    <a href="adminpanel">Admin Dashboard</a>
+                    <a href="#">Admin Dashboard</a>
                 <?php endif; ?>
                 <a href="store">Store</a>
                 <a href="logout">Logout</a>
@@ -121,7 +88,7 @@ $conn->close();
             <a class="button-main" href="index">Home</a>
             <a class="button-main" href="account">My Account</a>
             <?php if ($isAdmin): ?>
-                <a class="button-main" href="#">Admin Dashboard</a>
+                <a class="button-main" href="adminpanel">Admin Dashboard</a>
             <?php endif; ?>
             <a class="button-main" href="store">Store</a>
             <a class="button-main" href="logout">Logout</a>
@@ -137,11 +104,8 @@ $conn->close();
         </div>
     </div>
     <div class="main-account-front">
-        <h1 class="page-header">Character Stats (<?php echo $username; ?>)</h1>
-        <div class="account-stats">
-            <?php foreach ($stats as $statName => $statValue): ?>
-                <p><?php echo htmlspecialchars($statName . ': ' . $statValue); ?></p>
-            <?php endforeach; ?>
+        <div class="adminpanel">
+            Admin control panel is under construction...
         </div>
     </div>
 </body>
