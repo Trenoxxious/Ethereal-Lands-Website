@@ -7,7 +7,8 @@
     <title>Ethereal Lands - Updates</title>
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
-    <script defer src="script.js?ver=<?= time(); ?>"></script>
+    <!-- <script defer src="script.js?ver=<?= time(); ?>"></script> -->
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -27,8 +28,14 @@
             </div>
         </nav>
         <div id="expandedmenu">
-            <a href="index">Home</a>
-            <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
+            <div id="menuclose">
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                    fill="#FFFFFF">
+                    <path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z" />
+                </svg>
+            </div>
+            <a class="button-main" href="index">Home</a>
+            <a class="button-main" href="https://discord.gg/d6RtsDyRZX">Discord</a>
         </div>
     </div>
     <div class="blanktop"></div>

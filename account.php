@@ -104,21 +104,21 @@ $conn->close();
                 <a href="store">Store</a>
                 <a href="logout">Logout</a>
             </div>
-            <div id="menuexpandaccount">
+            <div id="menuexpand">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
                     fill="#FFFFFF">
                     <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
                 </svg>
             </div>
         </nav>
-        <div id="expandedmenuaccount">
-            <a href="index">Home</a>
-            <a href="account">My Account</a>
+        <div id="expandedmenu">
+            <a class="button-main" href="index">Home</a>
+            <a class="button-main" href="account">My Account</a>
             <?php if ($isAdmin): ?>
-                <a href="#">Admin Dashboard</a>
+                <a class="button-main" href="#">Admin Dashboard</a>
             <?php endif; ?>
-            <a href="store">Store</a>
-            <a href="logout">Logout</a>
+            <a class="button-main" href="store">Store</a>
+            <a class="button-main" href="logout">Logout</a>
         </div>
     </div>
     <div class="accountmain">

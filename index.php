@@ -44,8 +44,14 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             </div>
         </nav>
         <div id="expandedmenu">
-            <a href="updates">Game Updates</a>
-            <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
+            <div id="menuclose">
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                    fill="#FFFFFF">
+                    <path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z" />
+                </svg>
+            </div>
+            <a class="button-main" href="updates">Game Updates</a>
+            <a class="button-main" href="https://discord.gg/d6RtsDyRZX">Discord</a>
         </div>
     </div>
     <script>
