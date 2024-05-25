@@ -62,6 +62,7 @@
                     Along with its redesign, it will have a rare chance to drop a new, powerful artifact item! Stay
                     tuned for further information!</p>
                 <h2>Adjustments & Fixes</h2>
+                <p><b>Kani'ani Island</b> now correctly rewards 1 quest point when completed.</p>
                 <p>Cremation experience rates for Prayer and Firemaking have been reduced. We thought the experience
                     rates were a little <i>too</i> good, so we've brought them down. This is still a very viable
                     training method as you'll earn more prayer experience than simply burying the bone.</p>
