@@ -274,6 +274,7 @@ li {
     font-size: 3em;
     font-family: "Montserrat", serif;
     padding: 15px;
+    box-sizing: border-box;
 }
 
 .souls {
