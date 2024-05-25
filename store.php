@@ -70,7 +70,7 @@ $conn->close();
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -86,7 +86,7 @@ $conn->close();
                 <a href="store">Store</a>
                 <a href="logout">Logout</a>
             </div>
-            <div id="menuexpandaccount">
+            <div id="menuexpand">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
                     fill="#FFFFFF">
                     <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />

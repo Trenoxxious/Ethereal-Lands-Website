@@ -88,7 +88,7 @@ $conn->close();
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
