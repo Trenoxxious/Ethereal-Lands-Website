@@ -605,6 +605,22 @@ li {
     background-repeat: no-repeat;
 }
 
+#slide5 {
+    background-image: url(images/pic1.png);
+    object-fit: cover;
+    background-size: 1920px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+#slide6 {
+    background-image: url(images/pic5.png);
+    object-fit: cover;
+    background-size: 1920px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
 .popup {
     display: none;
     position: fixed;
