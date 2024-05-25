@@ -400,9 +400,9 @@ li {
     background-repeat: no-repeat;
     background-position: center;
     overflow: visible;
-    height: 150px;
-    min-width: 225px;
-    background-size: 225px;
+    height: 175px;
+    min-width: 175px;
+    background-size: 175px;
 }
 
 .mainbar a {
