@@ -2,8 +2,6 @@ let topLogo = document.getElementById('toplogo');
 let expandMenuButton = document.getElementById('menuexpand');
 let closeMenuButton = document.getElementById('menuclose');
 let expandedMenu = document.getElementById('expandedmenu');
-let expandMenuButtonAccount = document.getElementById('menuexpandaccount');
-let expandedMenuAccount = document.getElementById('expandedmenuaccount');
 let menuOpen = false;
 
 if (topLogo) {
