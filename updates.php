@@ -7,8 +7,7 @@
     <title>Ethereal Lands - Updates</title>
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
-    <!-- <script defer src="script.js?ver=<?= time(); ?>"></script> -->
-    <script defer src="script.js"></script>
+    <script defer src="script.js?ver=<?= time(); ?>"></script>
 </head>
 
 <body>
