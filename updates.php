@@ -35,7 +35,7 @@
     <div class="updatelist">
         <div class="updatebox">
             <div class="updatetop">
-                <div class="updateimage"><img src="images/LumbridgeBG.png" alt="update image"></div>
+                <div class="updateimage"><img src="images/pic4.png" alt="update image"></div>
                 <div class="updatebartop">
                     <div class="updatetitle">Cosmetic Crates & Crypt of Dread</div>
                     <div class="patchnumber">Patch 1.0.3</div>
@@ -49,15 +49,25 @@
                     them.</p>
                 <p>We've added batch-opening of cosmetic crates to our to-do list. We expect this to take a little bit
                     of time as it's not a primary focus at this time.</p>
+                <p>Frank's Mine Medium and Hard tasks have been completed and implemented with their respective rewards.
+                </p>
+                <p>The King Black Dragon spawn has been removed and is awaiting a complete redesign and relocation.
+                    Along with its redesign, it will have a rare chance to drop a new, powerful artifact item! Stay
+                    tuned for further information!</p>
+                <h2>Adjustments</h2>
+                <p>Cremation experience rates for Prayer and Firemaking have been reduced. We thought the experience
+                    rates were a little <i>too</i> good, so we've brought them down. This is still a very viable
+                    training method as you'll earn more prayer experience than simply buryig a bone.</p>
+                <p>Shattering a bounty soul now gives 1 bounty point as well as Prayer experience.</p>
+                <p>The Raptor now assigns bounties correctly. Previously, he only assigned Demon Pirate bounties.</p>
                 <h2>Ethereal Dungeons: Crypt of Dread</h2>
-                <p>The Crypt of Dread has been started, visually, leveraging the current landscape for the entrance
-                    portal.</p>
+                <p>Crypt of Dread has been started visually, leveraging the current landscape for the entrance
+                    portal with slight modifications to the map.</p>
                 <p>Several milestones have been met implementing scaling monsters. They will scale based on combat
-                    level, and only re-scale if a player of a different combat level attacks. This is to prevent
-                    cheating, and enable the ability to retreat and eat if needed.</p>
+                    level when engaged.</p>
                 <p>Anti-griefing measures have been implemented so mobs do not get repeatedly stolen or reset. The
                     information around how this works will be kept secret for obvious reasons.</p>
-                <p>The epic rewards that are obtainable from Crypt of Dread have been designed and are fully functional,
+                <p>The rewards that are obtainable from Crypt of Dread have been fully designed, are functional and
                     ready for release.</p>
             </div>
         </div>
@@ -88,10 +98,11 @@
                     and server hosting.</p>
                 <p>Several database upgrades have been made to support cosmetic item purchases and equipping.</p>
                 <h2>Server Updates</h2>
-                <p>The server has been updated to check for duplicate item_id's before processing and saving player
-                    data. This has been updated to support cosmetic item delivery.</p>
+                <p>The server has been updated to check for duplicate itemID's before processing and saving player
+                    data. This has been updated to support cosmetic item delivery from the website inventory.</p>
                 <p>We've made some adjustments to logging that will disable logging .txt files for WARN and INFO
-                    messages while the game server is running.</p>
+                    messages while the game server is running. While these events are pretty rare, we only need to log
+                    error and debug events.</p>
             </div>
         </div>
     </div>
