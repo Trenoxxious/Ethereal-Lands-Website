@@ -280,9 +280,8 @@ li {
     margin: 0 15px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: row;
-    background: #80008047;
     padding: 5px;
     box-sizing: border-box;
     border-radius: 0.5em;
@@ -297,13 +296,13 @@ li {
     user-select: none;
     margin-left: 6px;
     padding: 4px 10px;
-    border-radius: 0.1em;
+    border-radius: 0.2em;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to top, rgb(235, 149, 243), rgb(190, 52, 137));
+    background: linear-gradient(to top, rgb(235, 149, 243), rgb(240, 106, 188));
     color: white;
-    font-size: 1.25em;
+    font-size: 1em;
     font-weight: 600;
     cursor: pointer;
     font-family: "Montserrat";
@@ -311,11 +310,11 @@ li {
 }
 
 .add-souls:hover {
-    filter: brightness(1.2);
+    filter: brightness(1.1);
 }
 
 .add-souls:active {
-    filter: brightness(1.1);
+    filter: brightness(1);
 }
 
 .accountbar a {
