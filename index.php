@@ -22,8 +22,8 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <div class="logo" id="toplogo">
             </div>
             <div id="navlinks">
-                <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
                 <a href="updates">Game Updates</a>
+                <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             </div>
             <div class="button-div">
                 <?php if ($loggedIn): ?>
@@ -44,8 +44,8 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             </div>
         </nav>
         <div id="expandedmenu">
-            <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             <a href="updates">Game Updates</a>
+            <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
         </div>
     </div>
     <script>
