@@ -138,24 +138,14 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             $('#login-form').on('submit', function (event) {
                 event.preventDefault(); // Prevent the form from submitting the traditional way
                 var formData = $(this).serialize();
-                $.ajax({
-                    url: 'login.php',
-                    type: 'POST',
-                    data: formData,
-                    dataType: 'json',
-                    success: function (response) {
-                        $('#errorsuccessmessage').html(response.message);
+                $.post('login.php', formData, function (response) {
+                    // Display the response message
+                    $('#errorsuccessmessage').html(response);
 
-                        if (response.status === 'success') {
-                            setTimeout(function () {
-                                window.location.href = 'account.php';
-                            }, 2000);
-                        } else {
-                            setTimeout(function () {
-                                $('#errorsuccessmessage').html('');
-                            }, 2000);
-                        }
-                    }
+                    // Optionally, you can clear the message after a few seconds
+                    setTimeout(function () {
+                        $('#errorsuccessmessage').html('');
+                    }, 2000);
                 });
             });
         });
