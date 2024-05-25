@@ -112,6 +112,12 @@ $conn->close();
             </div>
         </nav>
         <div id="expandedmenu">
+            <div id="menuclose">
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                    fill="#FFFFFF">
+                    <path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z" />
+                </svg>
+            </div>
             <a class="button-main" href="index">Home</a>
             <a class="button-main" href="account">My Account</a>
             <?php if ($isAdmin): ?>

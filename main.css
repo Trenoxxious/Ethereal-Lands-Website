@@ -73,23 +73,6 @@ i {
     right: 0;
 }
 
-#expandedmenuaccount {
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    position: fixed;
-    padding: 30px;
-    width: auto;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid black;
-    -webkit-backdrop-filter: blur(4px) grayscale(80%);
-    backdrop-filter: blur(4px) grayscale(80%);
-    z-index: 999;
-    transform: scale(0%);
-    transition: transform 0.1s ease;
-    top: 10%;
-}
-
 .blanktop {
     height: 85px;
 }
@@ -812,10 +795,6 @@ li {
 
     #menuexpandaccount {
         display: block;
-    }
-
-    #expandedmenuaccount {
-        visibility: visible;
     }
 
     .mainbar a {
