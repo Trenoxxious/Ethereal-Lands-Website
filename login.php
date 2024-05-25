@@ -42,12 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['loggedIn'] = true;
 
             // Redirect to account.php
-            echo 'Login successful! Redirecting...';
+            echo json_encode(['status' => 'success', 'message' => 'Login successful! Redirecting...']);
         } else {
-            echo 'Invalid password.';
+            echo json_encode(['status' => 'error', 'message' => 'Invalid password.']);
         }
     } else {
-        echo 'No user found with that username.';
+        echo json_encode(['status' => 'error', 'message' => 'No user found with that username.']);
     }
 
     $stmt->close();
