@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-image: url(images/LumbridgeBG.png);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.page-header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.2em;
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
+    backdrop-filter: blur(4px) grayscale(80%);
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-account-front {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.account-stats {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
+    backdrop-filter: blur(4px) grayscale(80%);
+    border-radius: 0.2em;
+}
+
+.account-store {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
+    backdrop-filter: blur(4px) grayscale(80%);
+    border-radius: 0.2em;
+}
+
+.account-store .store-item p {
+    color: white;
+    font-size: 1em !important;
+    font-family: "Libre Baskerville", serif;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.account-stats p {
+    color: white;
+    font-size: 1em;
+    font-family: "Libre Baskerville", serif;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.main-account-front h1,
+.account-stats h1,
+.account-store h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: white;
+    font-family: "Montserrat", "Teko", serif, sans-serif;
+}
+
+.store-header {
+    width: 100%;
+    display: block;
+}
+
+.account-store h2 {
+    color: white;
+    font-size: 1.5em;
+    font-family: "Montserrat", "Teko", serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.store-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(to top, black, rgb(46, 46, 46));
+    border-radius: 0.3em;
+    border: 2px solid;
+    border-radius: 0.2em;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 15px;
+    min-width: 250px;
+    height: 250px;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.uncommon {
+    color: rgb(19, 255, 94) !important;
+}
+
+.uncommon-border {
+    border-color: rgb(19, 255, 94) !important;
+}
+
+.uncommon-background {
+    background: rgb(19, 255, 94) !important;
+    color: rgb(41, 41, 41) !important;
+    padding: 2px 6px;
+    border-radius: 0.2em;
+    font-weight: bold;
+}
+
+.rare {
+    color: rgb(19, 153, 255) !important;
+}
+
+.rare-border {
+    border-color: rgb(19, 153, 255) !important;
+}
+
+.rare-background {
+    background: rgb(19, 153, 255) !important;
+    color: rgb(41, 41, 41) !important;
+    padding: 2px 6px;
+    border-radius: 0.2em;
+    font-weight: bold;
+}
+
+.epic {
+    color: rgb(208, 19, 255) !important;
+}
+
+.epic-border {
+    border-color: rgb(208, 19, 255) !important;
+}
+
+.epic-background {
+    background: rgb(208, 19, 255) !important;
+    color: rgb(41, 41, 41) !important;
+    padding: 2px 6px;
+    border-radius: 0.2em;
+    font-weight: bold;
+}
+
+.artifact {
+    color: rgb(255, 19, 19) !important;
+}
+
+.artifact-border {
+    border-color: rgb(255, 19, 19) !important;
+}
+
+.artifact-background {
+    background: rgb(255, 19, 19) !important;
+    color: rgb(41, 41, 41) !important;
+    padding: 2px 6px;
+    border-radius: 0.2em;
+    font-weight: bold;
+}
+
+.purchase-message {
+    visibility: hidden;
+    color: white;
+    z-index: 1000;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5em;
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
+    backdrop-filter: blur(4px) grayscale(80%);
+    box-sizing: border-box;
+    font-size: 1.5em;
+    font-family: "Montserrat", serif, sans-serif;
+    max-width: 66%;
+}
+
+.store-item span {
+    font-size: 1em;
+}
+
+.store-item .button-main {
+    color: rgb(232, 255, 232);
+    border: 1px solid #6ffd6f;
+    background: #41b441;
+    text-shadow: 0px 1px 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.store-item .button-main:hover {
+    -webkit-filter: brightness(1.1);
+    filter: brightness(1.1);
+}
+
+.store-item .button-main:disabled {
+    color: rgb(232, 255, 232) !important;
+    opacity: 0.5;
+    background: rgb(22, 22, 22);
+    cursor: default;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-account-front {
+        align-items: center;
+    }
+
+    .account-stats,
+    .account-store {
+        width: 100%;
+    }
+
+    .account-store {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .account-stats h1 {
+        font-size: 1.5em;
+    }
+}

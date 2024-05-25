@@ -1,9 +1,5 @@
 <?php
-// Database credentials
-$servername = "localhost"; //3306 is the port if needed
-$username = "playethe_root";
-$password = "imthebestmany0";
-$dbname = "playethe_ethereallands";
+require 'globals.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
