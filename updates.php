@@ -37,6 +37,34 @@
             <div class="updatetop">
                 <div class="updateimage"><img src="images/LumbridgeBG.png" alt="update image"></div>
                 <div class="updatebartop">
+                    <div class="updatetitle">Cosmetic Crates & Crypt of Dread</div>
+                    <div class="patchnumber">Patch 1.0.3</div>
+                    <p class="updatesummary">We've made some updates to cosmetic crates and progress on our first
+                        Ethereal Dungeon, Crypt of Dread.</p>
+                </div>
+            </div>
+            <div class="updatecontent">
+                <h2>General</h2>
+                <p>We've adjusted cosmetic crates so they can be sent to the bank by using the "Send to Bank" option on
+                    them.</p>
+                <p>We've added batch-opening of cosmetic crates to our to-do list. We expect this to take a little bit
+                    of time as it's not a primary focus at this time.</p>
+                <h2>Ethereal Dungeons: Crypt of Dread</h2>
+                <p>The Crypt of Dread has been started, visually, leveraging the current landscape for the entrance
+                    portal.</p>
+                <p>Several milestones have been met implementing scaling monsters. They will scale based on combat
+                    level, and only re-scale if a player of a different combat level attacks. This is to prevent
+                    cheating, and enable the ability to retreat and eat if needed.</p>
+                <p>Anti-griefing measures have been implemented so mobs do not get repeatedly stolen or reset. The
+                    information around how this works will be kept secret for obvious reasons.</p>
+                <p>The epic rewards that are obtainable from Crypt of Dread have been designed and are fully functional,
+                    ready for release.</p>
+            </div>
+        </div>
+        <div class="updatebox">
+            <div class="updatetop">
+                <div class="updateimage"><img src="images/LumbridgeBG.png" alt="update image"></div>
+                <div class="updatebartop">
                     <div class="updatetitle">Website & Database Upgrades</div>
                     <div class="patchnumber">Website Update | Database Update</div>
                     <p class="updatesummary">This update focuses on website and database upgrades in order to prepare
