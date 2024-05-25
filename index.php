@@ -130,7 +130,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <input type="password" id="password" name="password" placeholder="Password" required>
             <input type="submit" value="Login">
         </form>
-        <div class="loginmessage" id="errorsuccessmessage"></div>
+        <div class="loginmessage" id="errorsuccessmessagelogin"></div>
     </div>
 
     <script>
@@ -140,11 +140,11 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 var formData = $(this).serialize();
                 $.post('login.php', formData, function (response) {
                     // Display the response message
-                    $('#errorsuccessmessage').html(response);
+                    $('#errorsuccessmessagelogin').html(response);
 
                     // Optionally, you can clear the message after a few seconds
                     setTimeout(function () {
-                        $('#errorsuccessmessage').html('');
+                        $('#errorsuccessmessagelogin').html('');
                     }, 2000);
                 });
             });
