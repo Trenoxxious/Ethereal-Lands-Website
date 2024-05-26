@@ -56,6 +56,7 @@ $conn->close();
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
 </head>
 
 <body>
@@ -77,7 +78,7 @@ $conn->close();
                     <img src="images/199souls.png" alt="Ethereal Soul">
                     <p>Equivalent to <b class="uncommon">1 Uncommon Cosmetic</b></p>
                     <p class="soulamount">200</p>
-                    <div class="button-main" id="buy-200">$1.99</div>
+                    <div class="button-main" id="paypal-button-200">$1.99</div>
                 </div>
             </div>
             <div class="container">
@@ -86,7 +87,7 @@ $conn->close();
                     <p>Equivalent to <b class="uncommon">2 Uncommon Cosmetics</b> or <b class="rare">1 Rare Cosmetic</b>
                     </p>
                     <p class="soulamount">400</p>
-                    <div class="button-main" id="buy-400">$3.49</div>
+                    <div class="button-main" id="paypal-button-400">$3.49</div>
                 </div>
             </div>
             <div class="container">
@@ -95,7 +96,7 @@ $conn->close();
                     <p>Equivalent to <b class="rare">2 Rare Cosmetics</b> or <b class="epic">1 Epic Cosmetic</b>
                     </p>
                     <p class="soulamount">800</p>
-                    <div class="button-main" id="buy-800">$5.99</div>
+                    <div class="button-main" id="paypal-button-800">$5.99</div>
                 </div>
             </div>
             <div class="container">
@@ -104,7 +105,7 @@ $conn->close();
                     <p>Equivalent to <b class="rare">4 Rare Cosmetics</b> or <b class="epic">2 Epic Cosmetics</b>
                     </p>
                     <p class="soulamount">1,600</p>
-                    <div class="button-main" id="buy-1600">$9.99</div>
+                    <div class="button-main" id="paypal-button-1600">$9.99</div>
                 </div>
             </div>
             <div class="container">
@@ -114,7 +115,7 @@ $conn->close();
                             Cosmetic</b>
                     </p>
                     <p class="soulamount">3,600</p>
-                    <div class="button-main" id="buy-3600">$19.99</div>
+                    <div class="button-main" id="paypal-button-3600">$19.99</div>
                 </div>
             </div>
             <div class="container">
@@ -124,12 +125,225 @@ $conn->close();
                     <p>Equivalent to <b class="epic">13 Epic Cosmetics</b> or <b class="artifact">3 Artifact
                             Cosmetics</b>
                     </p>
-                    <p class="soulamount">10,200</p>
-                    <div class="button-main" id="buy-10200">$49.99</div>
+                    <p class="soulamount">10,800</p>
+                    <div class="button-main" id="paypal-button-10800">$49.99</div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        // PayPal button for 200 souls package
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '1.99'
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    // Call your server to save the transaction
+                    fetch('/buysoulstransaction.php', {
+                        method: 'post',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            orderID: data.orderID,
+                            amount: 200
+                        })
+                    }).then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert('Transaction completed by ' + details.payer.name.given_name);
+                            } else {
+                                alert('Transaction failed');
+                            }
+                        });
+                });
+            }
+        }).render('#paypal-button-200');
+
+        // PayPal button for 400 souls package
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '3.49'
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    // Call your server to save the transaction
+                    fetch('/buysoulstransaction.php', {
+                        method: 'post',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            orderID: data.orderID,
+                            amount: 400
+                        })
+                    }).then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert('Transaction completed by ' + details.payer.name.given_name);
+                            } else {
+                                alert('Transaction failed');
+                            }
+                        });
+                });
+            }
+        }).render('#paypal-button-400');
+
+        // PayPal button for 800 souls package
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '5.99'
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    // Call your server to save the transaction
+                    fetch('/buysoulstransaction.php', {
+                        method: 'post',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            orderID: data.orderID,
+                            amount: 800
+                        })
+                    }).then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert('Transaction completed by ' + details.payer.name.given_name);
+                            } else {
+                                alert('Transaction failed');
+                            }
+                        });
+                });
+            }
+        }).render('#paypal-button-800');
+
+        // PayPal button for 1600 souls package
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '9.99'
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    // Call your server to save the transaction
+                    fetch('/buysoulstransaction.php', {
+                        method: 'post',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            orderID: data.orderID,
+                            amount: 1600
+                        })
+                    }).then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert('Transaction completed by ' + details.payer.name.given_name);
+                            } else {
+                                alert('Transaction failed');
+                            }
+                        });
+                });
+            }
+        }).render('#paypal-button-1600');
+
+        // PayPal button for 3600 souls package
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '19.99'
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    // Call your server to save the transaction
+                    fetch('/buysoulstransaction.php', {
+                        method: 'post',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            orderID: data.orderID,
+                            amount: 3600
+                        })
+                    }).then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert('Transaction completed by ' + details.payer.name.given_name);
+                            } else {
+                                alert('Transaction failed');
+                            }
+                        });
+                });
+            }
+        }).render('#paypal-button-3600');
+
+        // PayPal button for 3600 souls package
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '49.99'
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (details) {
+                    // Call your server to save the transaction
+                    fetch('/buysoulstransaction.php', {
+                        method: 'post',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            orderID: data.orderID,
+                            amount: 10800
+                        })
+                    }).then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                alert('Transaction completed by ' + details.payer.name.given_name);
+                            } else {
+                                alert('Transaction failed');
+                            }
+                        });
+                });
+            }
+        }).render('#paypal-button-10800');
+
+        // Repeat for other packages with different amounts and prices
+    </script>
 </body>
 
 </html>
