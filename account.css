@@ -320,7 +320,7 @@ body {
 }
 
 .card_box:hover {
-    transform: scale(0.95);
+    transform: scale(105%);
 }
 
 .card_box span {
