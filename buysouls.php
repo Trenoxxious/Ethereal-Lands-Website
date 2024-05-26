@@ -83,7 +83,8 @@ $conn->close();
             <div class="container">
                 <div class="card_box rare">
                     <img src="images/349souls.png" alt="Ethereal Soul">
-                    <p>Equivalent to <b class="rare">2 Rare Cosmetics</b></p>
+                    <p>Equivalent to <b class="uncommon">2 Uncommon Cosmetics</b> or <b class="rare">1 Rare Cosmetic</b>
+                    </p>
                     <p class="soulamount">400</p>
                     <div class="button-main" id="buy-400">$3.49</div>
                 </div>
