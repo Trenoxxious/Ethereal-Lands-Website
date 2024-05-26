@@ -35,7 +35,7 @@ if ($user_status && $user_status['online'] == 1) {
 
 $stmt->close();
 
-if ($store_is_active != true) {
+if ($store_is_active == false) {
     echo "The store is not enabled right now. Check back soon!";
     $conn->close();
     exit;

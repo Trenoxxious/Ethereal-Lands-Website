@@ -30,3 +30,7 @@ if (closeMenuButton) {
     }
   });
 }
+
+document.getElementById('buysouls').addEventListener('click', function () {
+  window.location.href = 'buysouls';
+});

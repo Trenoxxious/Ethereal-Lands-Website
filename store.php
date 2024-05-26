@@ -74,41 +74,7 @@ $conn->close();
 </head>
 
 <body>
-    <div class="topbar">
-        <nav class="accountbar">
-            <h1 class="accountname"><?php echo $username; ?></h1>
-            <div id="navlinks">
-                <a href="index">Home</a>
-                <a href="account">My Account</a>
-                <?php if ($isAdmin): ?>
-                    <a href="#">Admin Dashboard</a>
-                <?php endif; ?>
-                <a href="store">Store</a>
-                <a href="logout">Logout</a>
-            </div>
-            <div id="menuexpand">
-                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
-                    fill="#FFFFFF">
-                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-                </svg>
-            </div>
-        </nav>
-        <div id="expandedmenu">
-            <div id="menuclose">
-                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
-                    fill="#FFFFFF">
-                    <path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z" />
-                </svg>
-            </div>
-            <a class="button-main" href="index">Home</a>
-            <a class="button-main" href="account">My Account</a>
-            <?php if ($isAdmin): ?>
-                <a class="button-main" href="#">Admin Dashboard</a>
-            <?php endif; ?>
-            <a class="button-main" href="store">Store</a>
-            <a class="button-main" href="logout">Logout</a>
-        </div>
-    </div>
+    <?php include 'topbar.php'; ?>
     <div class="accountmain">
         <div class="blanktop"></div>
         <div class="souls">
@@ -117,7 +83,6 @@ $conn->close();
             </div>
             <span class="add-souls" id="buysouls">Buy Souls</span>
         </div>
-        <div id="message" class="purchase-message"></div>
     </div>
     <div class="main-account-front">
         <div class="store-header">
@@ -159,6 +124,22 @@ $conn->close();
                 event.preventDefault(); // Prevent the form from submitting the traditional way
                 var formData = $(this).serialize();
                 $.post('purchase.php', formData, function (response) {
+                    // Display the response message
+                    $('#message').html(response);
+                    $('.purchase-message').css('visibility', 'visible');
+
+                    // Optionally, you can clear the message after a few seconds
+                    setTimeout(function () {
+                        $('#message').html('');
+                        $('.purchase-message').css('visibility', 'hidden');
+                    }, 2000);
+                });
+            });
+
+            $('#soul-purchase-form').on('submit', function (event) {
+                event.preventDefault(); // Prevent the form from submitting the traditional way
+                var formData = $(this).serialize();
+                $.post('purchase_souls.php', formData, function (response) {
                     // Display the response message
                     $('#message').html(response);
                     $('.purchase-message').css('visibility', 'visible');

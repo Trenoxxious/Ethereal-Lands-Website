@@ -309,6 +309,33 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         </div>
         <div class="slide-fade"></div>
     </div>
+    <div class="slide" id="slide5">
+        <div class="slide-content">
+            <h1>Quest Overhaul</h1>
+            <p>Within our universe, some quests remain, but many new ones have appeared. Some quest-givers have closed
+                up shop as their quests have been fulfilled. All quests available are either built masterfully, or have
+                been remastered for a perfect experience. Along with these changes, most items, examine texts and dialog
+                has been remastered to improve grammatic clarity.
+            </p>
+        </div>
+        <div class="slide-fade"></div>
+    </div>
+    <div class="slide" id="slide6">
+        <div class="slide-content">
+            <h1>Ethereal Dungeons</h1>
+            <p>As a seasonal activity, rotating about every three months or so, Ethereal Dungeons are small, bite-sized
+                dungeon-delving
+                experiences that scale to your character's combat level. Starting at level 20, you can complete these
+                dungeons, each containing a varying amount of
+                bosses that drop <b>epic</b> loot to enhance your gameplay! For example, <b><span
+                        class="epicfont">Harpoon of
+                        the
+                        Deep</span></b> has
+                a 50% chance to cook any fish that you catch while you carry it!
+            </p>
+        </div>
+        <div class="slide-fade"></div>
+    </div>
 </body>
 
 </html>

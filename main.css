@@ -100,19 +100,23 @@ body {
 }
 
 .redfont {
-    color: rgb(214, 72, 62);
+    color: rgb(214, 72, 62) !important;
+    font-size: inherit;
 }
 
 .epicfont {
-    color: rgb(201, 144, 248);
+    color: rgb(201, 144, 248) !important;
+    font-size: inherit;
 }
 
 .rarefont {
-    color: rgb(144, 201, 248);
+    color: rgb(144, 201, 248) !important;
+    font-size: inherit;
 }
 
 .uncommonfont {
-    color: rgb(186, 248, 144);
+    color: rgb(186, 248, 144) !important;
+    font-size: inherit;
 }
 
 hr {
@@ -598,10 +602,28 @@ li {
 }
 
 #slide4 {
-    background-image: url(images/pic2.png);
+    background-image: url(images/pic6.png);
     object-fit: cover;
     background-size: 1920px;
-    background-position: bottom;
+    background-position: center;
+    background-position-y: -100px;
+    background-repeat: no-repeat;
+}
+
+#slide5 {
+    background-image: url(images/pic7.png);
+    object-fit: cover;
+    background-size: 1920px;
+    background-position: center;
+    background-position-y: -100px;
+    background-repeat: no-repeat;
+}
+
+#slide6 {
+    background-image: url(images/pic8.png);
+    object-fit: cover;
+    background-size: 1920px;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
