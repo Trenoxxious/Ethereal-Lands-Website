@@ -21,6 +21,13 @@ body {
     justify-content: center;
 }
 
+.accountmain {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .main-account-front {
     display: flex;
     align-items: center;
@@ -368,6 +375,10 @@ body {
 @media only screen and (max-width: 600px) {
     .main-account-front {
         align-items: center;
+        width: 100%;
+    }
+
+    .accountmain {
         width: 100%;
     }
 
