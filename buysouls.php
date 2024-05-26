@@ -146,7 +146,7 @@ $conn->close();
             onApprove: function (data, actions) {
                 return actions.order.capture().then(function (details) {
                     // Call your server to save the transaction
-                    fetch('/buysouls.php', {
+                    fetch('/buysoulstransaction.php', {
                         method: 'post',
                         headers: {
                             'content-type': 'application/json'
@@ -181,7 +181,7 @@ $conn->close();
             onApprove: function (data, actions) {
                 return actions.order.capture().then(function (details) {
                     // Call your server to save the transaction
-                    fetch('/buysouls.php', {
+                    fetch('/buysoulstransaction.php', {
                         method: 'post',
                         headers: {
                             'content-type': 'application/json'
@@ -216,7 +216,7 @@ $conn->close();
             onApprove: function (data, actions) {
                 return actions.order.capture().then(function (details) {
                     // Call your server to save the transaction
-                    fetch('/buysouls.php', {
+                    fetch('/buysoulstransaction.php', {
                         method: 'post',
                         headers: {
                             'content-type': 'application/json'
@@ -251,7 +251,7 @@ $conn->close();
             onApprove: function (data, actions) {
                 return actions.order.capture().then(function (details) {
                     // Call your server to save the transaction
-                    fetch('/buysouls.php', {
+                    fetch('/buysoulstransaction.php', {
                         method: 'post',
                         headers: {
                             'content-type': 'application/json'
@@ -286,7 +286,7 @@ $conn->close();
             onApprove: function (data, actions) {
                 return actions.order.capture().then(function (details) {
                     // Call your server to save the transaction
-                    fetch('/buysouls.php', {
+                    fetch('/buysoulstransaction.php', {
                         method: 'post',
                         headers: {
                             'content-type': 'application/json'
@@ -321,7 +321,7 @@ $conn->close();
             onApprove: function (data, actions) {
                 return actions.order.capture().then(function (details) {
                     // Call your server to save the transaction
-                    fetch('/buysouls.php', {
+                    fetch('/buysoulstransaction.php', {
                         method: 'post',
                         headers: {
                             'content-type': 'application/json'
