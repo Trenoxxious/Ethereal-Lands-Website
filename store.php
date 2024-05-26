@@ -74,41 +74,7 @@ $conn->close();
 </head>
 
 <body>
-    <div class="topbar">
-        <nav class="accountbar">
-            <h1 class="accountname"><?php echo $username; ?></h1>
-            <div id="navlinks">
-                <a href="index">Home</a>
-                <a href="account">My Account</a>
-                <?php if ($isAdmin): ?>
-                    <a href="adminpanel">Admin Dashboard</a>
-                <?php endif; ?>
-                <a href="store">Store</a>
-                <a href="logout">Logout</a>
-            </div>
-            <div id="menuexpand">
-                <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
-                    fill="#FFFFFF">
-                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-                </svg>
-            </div>
-        </nav>
-        <div id="expandedmenu">
-            <div id="menuclose">
-                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
-                    fill="#FFFFFF">
-                    <path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z" />
-                </svg>
-            </div>
-            <a class="button-main" href="index">Home</a>
-            <a class="button-main" href="account">My Account</a>
-            <?php if ($isAdmin): ?>
-                <a class="button-main" href="#">Admin Dashboard</a>
-            <?php endif; ?>
-            <a class="button-main" href="store">Store</a>
-            <a class="button-main" href="logout">Logout</a>
-        </div>
-    </div>
+    <?php include 'topbar.php'; ?>
     <div class="accountmain">
         <div class="blanktop"></div>
         <div class="souls">
@@ -118,11 +84,6 @@ $conn->close();
             <span class="add-souls" id="buysouls">Buy Souls</span>
         </div>
     </div>
-    <script>
-        document.getElementById('buysouls').addEventListener('click', function () {
-            document.getElementById('soulspurchasewindow').style.display = 'flex';
-        });
-    </script>
     <div class="main-account-front">
         <div class="store-header">
             <h1 class="page-header">Ethereal Lands Shop</h1>
@@ -156,80 +117,6 @@ $conn->close();
             <?php endwhile; ?>
         </div>
     </div>
-
-    <div class="ethereal-souls-purchase" id="soulspurchasewindow">
-        <div class="ethereal-souls-purchase-top-bar">
-            <h2>Buy Ethereal Souls</h2>
-            <div id="closesoulswindow">
-                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
-                    fill="#FFFFFF">
-                    <path
-                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
-                </svg>
-            </div>
-        </div>
-        <div class="souls-packages-list">
-            <div class="container">
-                <div class="card_box rare">
-                    <img src="images/199souls.png" alt="Ethereal Soul">
-                    <p>Equivalent to <b class="rare">1 Rare Cosmetic</b>!</p>
-                    <p class="soulamount">200</p>
-                    <div class="button-main" id="buy-200">$1.99</div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="card_box rare">
-                    <img src="images/349souls.png" alt="Ethereal Soul">
-                    <p>Equivalent to <b class="rare">2 Rare Cosmetics</b>!</p>
-                    <p class="soulamount">400</p>
-                    <div class="button-main" id="buy-400">$3.49</div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="card_box epic">
-                    <img src="images/599souls.png" alt="Ethereal Soul">
-                    <p>Equivalent to <b class="rare">2 Rare Cosmetics</b> or <b class="epic">1 Epic Cosmetic</b>!</p>
-                    <p class="soulamount">800</p>
-                    <div class="button-main" id="buy-800">$5.99</div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="card_box epic">
-                    <img src="images/999souls.png" alt="Ethereal Soul">
-                    <p>Equivalent to <b class="rare">4 Rare Cosmetics</b> or <b class="epic">2 Epic Cosmetics</b>!</p>
-                    <p class="soulamount">1,600</p>
-                    <div class="button-main" id="buy-1600">$9.99</div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="card_box artifact">
-                    <img src="images/1999souls.png" alt="Ethereal Soul">
-                    <p>Equivalent to <b class="epic">4 Epic Cosmetics</b> or <b class="artifact">1 Artifact
-                            Cosmetic</b>!
-                    </p>
-                    <p class="soulamount">3,600</p>
-                    <div class="button-main" id="buy-3600">$19.99</div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="card_box artifact">
-                    <span></span>
-                    <img src="images/4999souls.png" alt="Ethereal Soul">
-                    <p>Equivalent to <b class="epic">13 Epic Cosmetics</b> or <b class="artifact">3 Artifact
-                            Cosmetics</b>!
-                    </p>
-                    <p class="soulamount">10,200</p>
-                    <div class="button-main" id="buy-10200">$49.99</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.getElementById('closesoulswindow').addEventListener('click', function () {
-            document.getElementById('soulspurchasewindow').style.display = 'none';
-        });
-    </script>
 
     <script>
         $(document).ready(function () {
