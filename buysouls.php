@@ -43,54 +43,6 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 
 $amount_stmt->close();
 $conn->close();
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Read POST data
-    $json = file_get_contents('php://input');
-    $data = json_decode($json);
-
-    if (isset($data->orderID) && isset($data->amount)) {
-        // Validate the PayPal order
-        $orderID = $data->orderID;
-        $amount = intval($data->amount);
-
-        $clientId = 'ASRQTl6GfLMQ8w4GmkRrZKsGz4NdDpJWMPazJl1aaOsRDQWyjU1YzlzDg_8giPUYw8N1b4xLe5dxxbZ4';
-        $clientSecret = 'EK3tMgDeslaXxMNU2tDBqcOr4Jgy3j5WC1MMPgfSfjoKk1SywDE0z--MQ-rAD4P5Dha0ClD6lzEDkXkp';
-
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://api-m.sandbox.paypal.com/v2/checkout/orders/$orderID");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            'Content-Type: application/json',
-            'Authorization: Basic ' . base64_encode("$clientId:$clientSecret")
-        ]);
-        $response = curl_exec($ch);
-        curl_close($ch);
-
-        $response = json_decode($response);
-
-        if ($response && $response->status === 'COMPLETED') {
-            // Prepare an SQL statement to insert or update the etherealsouls table
-            $stmt = $conn->prepare("INSERT INTO etherealsouls (id, amount) VALUES (?, ?) 
-                                    ON DUPLICATE KEY UPDATE amount = amount + VALUES(amount)");
-            $stmt->bind_param("ii", $user_id, $amount);
-
-            if ($stmt->execute()) {
-                echo json_encode(['success' => true]);
-            } else {
-                echo json_encode(['success' => false, 'error' => $stmt->error]);
-            }
-
-            $stmt->close();
-        } else {
-            echo json_encode(['success' => false, 'error' => 'Invalid PayPal order.']);
-        }
-    } else {
-        echo json_encode(['success' => false, 'error' => 'Invalid request.']);
-    }
-} else {
-    echo json_encode(['success' => false, 'error' => 'Invalid request method.']);
-}
 ?>
 
 <!DOCTYPE html>
