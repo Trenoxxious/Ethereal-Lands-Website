@@ -211,7 +211,8 @@ body {
     font-size: 1em;
 }
 
-.store-item .button-main {
+.store-item .button-main,
+.card_box .button-main {
     color: rgb(232, 255, 232);
     border: 1px solid #6ffd6f;
     background: #41b441;
@@ -233,9 +234,181 @@ body {
     cursor: default;
 }
 
+.ethereal-souls-purchase {
+    z-index: 1001;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 0.2em;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.ethereal-souls-purchase-top-bar {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+#closesoulswindow {
+    cursor: pointer;
+}
+
+.ethereal-souls-purchase h2 {
+    font-size: 2em;
+    color: var(--middle-grad-color);
+    font-family: "Montserrat", serif, sans-serif;
+}
+
+.souls-packages-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.soul-pack {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.soulprice {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.soulamount {
+    display: flex;
+    font-size: 2em;
+    align-items: center;
+    color: rgb(255, 199, 252) !important;
+}
+
+.soulamount::after {
+    content: url(images/soul.png);
+}
+
+.soul-package-item {
+    margin: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.2em;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 15px;
+}
+
+.card_box {
+    font-family: "Montserrat", serif, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    background: linear-gradient(170deg, rgba(58, 56, 56, 1) 0%, rgb(31, 31, 31) 100%);
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+    cursor: pointer;
+    transition: all .3s;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid;
+}
+
+.card_box p {
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+.card_box:hover {
+    transform: scale(0.95);
+}
+
+.card_box span {
+    position: absolute;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    top: -10px;
+    left: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_box span::before {
+    content: 'Best Deal!';
+    position: absolute;
+    width: 150%;
+    height: 40px;
+    background-image: linear-gradient(45deg, #ff47ed 0%, #e344ff 51%, #ff53e8 100%);
+    transform: rotate(-45deg) translateY(-20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
+}
+
+.card_box span::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    z-index: -1;
+    box-shadow: 140px -140px #cc3fad;
+    background-image: linear-gradient(45deg, #ff2fd5 0%, #f019cc 51%, #ce2fff 100%);
+}
+
 @media only screen and (max-width: 600px) {
     .main-account-front {
         align-items: center;
+    }
+
+    .ethereal-souls-purchase {
+        width: 100%;
+    }
+
+    .souls-packages-list {
+        flex-direction: column;
+    }
+
+    .container {
+        margin: 5px;
+    }
+
+    .card_box {
+        transform: scale(0.75);
     }
 
     .account-stats,

@@ -117,8 +117,12 @@ $conn->close();
             </div>
             <span class="add-souls" id="buysouls">Buy Souls</span>
         </div>
-        <div id="message" class="purchase-message"></div>
     </div>
+    <script>
+        document.getElementById('buysouls').addEventListener('click', function () {
+            document.getElementById('soulspurchasewindow').style.display = 'flex';
+        });
+    </script>
     <div class="main-account-front">
         <div class="store-header">
             <h1 class="page-header">Ethereal Lands Shop</h1>
@@ -153,12 +157,102 @@ $conn->close();
         </div>
     </div>
 
+    <div class="ethereal-souls-purchase" id="soulspurchasewindow">
+        <div class="ethereal-souls-purchase-top-bar">
+            <h2>Buy Ethereal Souls</h2>
+            <div id="closesoulswindow">
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px"
+                    fill="#FFFFFF">
+                    <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                </svg>
+            </div>
+        </div>
+        <div class="souls-packages-list">
+            <div class="container">
+                <div class="card_box rare">
+                    <img src="images/199souls.png" alt="Ethereal Soul">
+                    <p>Equivalent to <b class="rare">1 Rare Cosmetic</b>!</p>
+                    <p class="soulamount">200</p>
+                    <div class="button-main" id="buy-200">$1.99</div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card_box rare">
+                    <img src="images/349souls.png" alt="Ethereal Soul">
+                    <p>Equivalent to <b class="rare">2 Rare Cosmetics</b>!</p>
+                    <p class="soulamount">400</p>
+                    <div class="button-main" id="buy-400">$3.49</div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card_box epic">
+                    <img src="images/599souls.png" alt="Ethereal Soul">
+                    <p>Equivalent to <b class="rare">2 Rare Cosmetics</b> or <b class="epic">1 Epic Cosmetic</b>!</p>
+                    <p class="soulamount">800</p>
+                    <div class="button-main" id="buy-800">$5.99</div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card_box epic">
+                    <img src="images/999souls.png" alt="Ethereal Soul">
+                    <p>Equivalent to <b class="rare">4 Rare Cosmetics</b> or <b class="epic">2 Epic Cosmetics</b>!</p>
+                    <p class="soulamount">1,600</p>
+                    <div class="button-main" id="buy-1600">$9.99</div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card_box artifact">
+                    <img src="images/1999souls.png" alt="Ethereal Soul">
+                    <p>Equivalent to <b class="epic">4 Epic Cosmetics</b> or <b class="artifact">1 Artifact
+                            Cosmetic</b>!
+                    </p>
+                    <p class="soulamount">3,600</p>
+                    <div class="button-main" id="buy-3600">$19.99</div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card_box artifact">
+                    <span></span>
+                    <img src="images/4999souls.png" alt="Ethereal Soul">
+                    <p>Equivalent to <b class="epic">13 Epic Cosmetics</b> or <b class="artifact">3 Artifact
+                            Cosmetics</b>!
+                    </p>
+                    <p class="soulamount">10,200</p>
+                    <div class="button-main" id="buy-10200">$49.99</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('closesoulswindow').addEventListener('click', function () {
+            document.getElementById('soulspurchasewindow').style.display = 'none';
+        });
+    </script>
+
     <script>
         $(document).ready(function () {
             $('.purchase-form').on('submit', function (event) {
                 event.preventDefault(); // Prevent the form from submitting the traditional way
                 var formData = $(this).serialize();
                 $.post('purchase.php', formData, function (response) {
+                    // Display the response message
+                    $('#message').html(response);
+                    $('.purchase-message').css('visibility', 'visible');
+
+                    // Optionally, you can clear the message after a few seconds
+                    setTimeout(function () {
+                        $('#message').html('');
+                        $('.purchase-message').css('visibility', 'hidden');
+                    }, 2000);
+                });
+            });
+
+            $('#soul-purchase-form').on('submit', function (event) {
+                event.preventDefault(); // Prevent the form from submitting the traditional way
+                var formData = $(this).serialize();
+                $.post('purchase_souls.php', formData, function (response) {
                     // Display the response message
                     $('#message').html(response);
                     $('.purchase-message').css('visibility', 'visible');

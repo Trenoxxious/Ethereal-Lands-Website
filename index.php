@@ -327,7 +327,10 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 dungeon-delving
                 experiences that scale to your character's combat level. Starting at level 20, you can complete these
                 dungeons, each containing a varying amount of
-                bosses that drop <b>epic</b> loot to enhance your gameplay! For example, <b>Harpoon of the Deep</b> has
+                bosses that drop <b>epic</b> loot to enhance your gameplay! For example, <b><span
+                        class="epicfont">Harpoon of
+                        the
+                        Deep</span></b> has
                 a 50% chance to cook any fish that you catch while you carry it!
             </p>
         </div>
