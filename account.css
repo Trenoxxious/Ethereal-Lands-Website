@@ -381,10 +381,6 @@ body {
         margin: 5px;
     }
 
-    .card_box {
-        transform: scale(0.75);
-    }
-
     .account-stats,
     .account-store {
         width: 100%;
