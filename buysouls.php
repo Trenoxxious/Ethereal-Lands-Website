@@ -73,9 +73,9 @@ $conn->close();
         <h1 class="page-header">Buy Ethereal Souls</h1>
         <div class="souls-packages-list">
             <div class="container">
-                <div class="card_box rare">
+                <div class="card_box uncommon">
                     <img src="images/199souls.png" alt="Ethereal Soul">
-                    <p>Equivalent to <b class="rare">1 Rare Cosmetic</b>!</p>
+                    <p>Equivalent to <b class="uncommon">1 Uncommon Cosmetic</b>!</p>
                     <p class="soulamount">200</p>
                     <div class="button-main" id="buy-200">$1.99</div>
                 </div>
