@@ -101,13 +101,13 @@ $conn->close();
             </div>
             <span class="add-souls" id="buysouls">Buy Souls</span>
         </div>
-    </div>
-    <div class="main-account-front">
-        <h1 class="page-header">Character Stats (<?php echo $username; ?>)</h1>
-        <div class="account-stats">
-            <?php foreach ($stats as $statName => $statValue): ?>
-                <p><?php echo htmlspecialchars($statName . ': ' . $statValue); ?></p>
-            <?php endforeach; ?>
+        <div class="main-account-front">
+            <h1 class="page-header">Character Stats (<?php echo $username; ?>)</h1>
+            <div class="account-stats">
+                <?php foreach ($stats as $statName => $statValue): ?>
+                    <p><?php echo htmlspecialchars($statName . ': ' . $statValue); ?></p>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 </body>
