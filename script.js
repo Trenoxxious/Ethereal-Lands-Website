@@ -32,9 +32,5 @@ if (closeMenuButton) {
 }
 
 document.getElementById('buysouls').addEventListener('click', function () {
-  if (loggedIn) {
-    window.location.href = 'buysouls';
-  } else {
-    window.location.href = 'index';
-  }
+  window.location.href = 'buysouls';
 });
