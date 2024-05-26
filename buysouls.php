@@ -75,7 +75,7 @@ $conn->close();
             <div class="container">
                 <div class="card_box uncommon">
                     <img src="images/199souls.png" alt="Ethereal Soul">
-                    <p>Equivalent to <b class="uncommon">1 Uncommon Cosmetic</b>!</p>
+                    <p>Equivalent to <b class="uncommon">1 Uncommon Cosmetic</b></p>
                     <p class="soulamount">200</p>
                     <div class="button-main" id="buy-200">$1.99</div>
                 </div>
@@ -83,7 +83,7 @@ $conn->close();
             <div class="container">
                 <div class="card_box rare">
                     <img src="images/349souls.png" alt="Ethereal Soul">
-                    <p>Equivalent to <b class="rare">2 Rare Cosmetics</b>!</p>
+                    <p>Equivalent to <b class="rare">2 Rare Cosmetics</b></p>
                     <p class="soulamount">400</p>
                     <div class="button-main" id="buy-400">$3.49</div>
                 </div>
@@ -91,7 +91,7 @@ $conn->close();
             <div class="container">
                 <div class="card_box epic">
                     <img src="images/599souls.png" alt="Ethereal Soul">
-                    <p>Equivalent to <b class="rare">2 Rare Cosmetics</b> or <b class="epic">1 Epic Cosmetic</b>!
+                    <p>Equivalent to <b class="rare">2 Rare Cosmetics</b> or <b class="epic">1 Epic Cosmetic</b>
                     </p>
                     <p class="soulamount">800</p>
                     <div class="button-main" id="buy-800">$5.99</div>
@@ -100,7 +100,7 @@ $conn->close();
             <div class="container">
                 <div class="card_box epic">
                     <img src="images/999souls.png" alt="Ethereal Soul">
-                    <p>Equivalent to <b class="rare">4 Rare Cosmetics</b> or <b class="epic">2 Epic Cosmetics</b>!
+                    <p>Equivalent to <b class="rare">4 Rare Cosmetics</b> or <b class="epic">2 Epic Cosmetics</b>
                     </p>
                     <p class="soulamount">1,600</p>
                     <div class="button-main" id="buy-1600">$9.99</div>
@@ -110,7 +110,7 @@ $conn->close();
                 <div class="card_box artifact">
                     <img src="images/1999souls.png" alt="Ethereal Soul">
                     <p>Equivalent to <b class="epic">4 Epic Cosmetics</b> or <b class="artifact">1 Artifact
-                            Cosmetic</b>!
+                            Cosmetic</b>
                     </p>
                     <p class="soulamount">3,600</p>
                     <div class="button-main" id="buy-3600">$19.99</div>
@@ -121,7 +121,7 @@ $conn->close();
                     <span></span>
                     <img src="images/4999souls.png" alt="Ethereal Soul">
                     <p>Equivalent to <b class="epic">13 Epic Cosmetics</b> or <b class="artifact">3 Artifact
-                            Cosmetics</b>!
+                            Cosmetics</b>
                     </p>
                     <p class="soulamount">10,200</p>
                     <div class="button-main" id="buy-10200">$49.99</div>
