@@ -21,16 +21,9 @@ body {
     justify-content: center;
 }
 
-.accountmain {
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .main-account-front {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     padding: 10px;
@@ -375,10 +368,6 @@ body {
 @media only screen and (max-width: 600px) {
     .main-account-front {
         align-items: center;
-        width: 100%;
-    }
-
-    .accountmain {
         width: 100%;
     }
 
