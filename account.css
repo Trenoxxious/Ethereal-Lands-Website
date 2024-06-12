@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-image: url(images/LumbridgeBG.png);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.page-header {
+    border-radius: 0.2em;
+    box-sizing: border-box;
+    font-size: 2em;
+    color: white;
+    text-shadow: 0 2px 0 black;
+}
+
+.page-info {
+    text-align: center;
+    color: white;
+    font-family: "Libre Baskerville", sans-serif;
+    margin-bottom: 10px;
+}
+
+.main-account-front {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.account-stats {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
+    backdrop-filter: blur(4px) grayscale(80%);
+    border-radius: 0.2em;
+}
+
+.account-store {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.2em;
+}
+
+.account-support {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.2em;
+}
+
+.store-item p {
+    color: white;
+    font-size: 1em !important;
+    font-family: "Libre Baskerville", serif;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.challenge-info {
+    color: var(--middle-grad-color) !important;
+    text-align: center;
+    text-transform: none !important;
+}
+
+.challenge-stats {
+    text-transform: uppercase;
+    font-family: "Montserrat", "Teko", serif, sans-serif !important;
+}
+
+.account-stats p {
+    color: white;
+    font-size: 1em;
+    font-family: "Libre Baskerville", serif;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.main-account-front h1,
+.account-stats h1,
+.account-store h1,
+.account-support h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: white;
+    font-family: "Montserrat", "Teko", serif, sans-serif;
+}
+
+.store-header {
+    width: 100%;
+    display: block;
+}
+
+.account-store h2 {
+    color: white;
+    font-size: 1.5em;
+    font-family: "Montserrat", "Teko", serif;
+    font-weight: 400;
+    text-align: center;
+}
+
+.store-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background: linear-gradient(to top, black, rgb(46, 46, 46));
+    border-radius: 0.3em;
+    border: 2px solid;
+    border-radius: 0.2em;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 15px;
+    width: 250px;
+    height: auto;
+}
+
+.store-item h3 {
+    font-family: "Montserrat", "Teko", serif;
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    text-wrap: wrap !important;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.uncommon {
+    color: rgb(19, 255, 94) !important;
+}
+
+.uncommon-border {
+    border-color: rgb(19, 255, 94) !important;
+}
+
+.uncommon-background {
+    background: rgb(19, 255, 94) !important;
+    color: rgb(41, 41, 41) !important;
+    padding: 2px 6px;
+    border-radius: 0.2em;
+    font-weight: bold;
+}
+
+.rare {
+    color: rgb(19, 153, 255) !important;
+}
+
+.rare-border {
+    border-color: rgb(19, 153, 255) !important;
+}
+
+.rare-background {
+    background: rgb(19, 153, 255) !important;
+    color: rgb(41, 41, 41) !important;
+    padding: 2px 6px;
+    border-radius: 0.2em;
+    font-weight: bold;
+}
+
+.epic {
+    color: rgb(208, 19, 255) !important;
+}
+
+.epic-border {
+    border-color: rgb(208, 19, 255) !important;
+}
+
+.epic-background {
+    background: rgb(208, 19, 255) !important;
+    color: rgb(41, 41, 41) !important;
+    padding: 2px 6px;
+    border-radius: 0.2em;
+    font-weight: bold;
+}
+
+.artifact {
+    color: rgb(255, 19, 19) !important;
+}
+
+.artifact-border {
+    border-color: rgb(255, 19, 19) !important;
+}
+
+.artifact-background {
+    background: rgb(255, 19, 19) !important;
+    color: rgb(41, 41, 41) !important;
+    padding: 2px 6px;
+    border-radius: 0.2em;
+    font-weight: bold;
+}
+
+.important-message {
+    width: 60%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 72, 72);
+    border: 1px dashed rgb(255, 72, 72);
+    border-radius: 0.2em;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.purchase-message {
+    visibility: hidden;
+    color: white;
+    z-index: 1000;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5em;
+    -webkit-backdrop-filter: blur(4px) grayscale(80%);
+    backdrop-filter: blur(4px) grayscale(80%);
+    box-sizing: border-box;
+    font-size: 1.5em;
+    font-family: "Montserrat", serif, sans-serif;
+    max-width: 66%;
+}
+
+.store-item span {
+    font-size: 1em;
+}
+
+.store-item .button-main,
+.card_box .button-main,
+.button-main-green {
+    color: rgb(232, 255, 232);
+    border: 1px solid #6ffd6f;
+    background: #41b441;
+    text-shadow: 0px 1px 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.store-item .button-main:hover,
+.button-main-green:hover {
+    -webkit-filter: brightness(1.1);
+    filter: brightness(1.1);
+}
+
+.store-item .button-main:active,
+.button-main-green:active {
+    -webkit-filter: brightness(1.3);
+    filter: brightness(1.3);
+}
+
+.store-item .button-main:disabled,
+.button-main-green:disabled {
+    filter:grayscale(1);
+    -webkit-filter: grayscale(1);
+    opacity: 0.5;
+    background: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+}
+
+#closesoulswindow {
+    cursor: pointer;
+}
+
+.ethereal-souls-purchase h2 {
+    font-size: 2em;
+    color: var(--middle-grad-color);
+    font-family: "Montserrat", serif, sans-serif;
+}
+
+.souls-packages-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+}
+
+.soul-pack {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.soulprice {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.soulamount {
+    display: flex;
+    font-size: 2em;
+    align-items: center;
+    color: rgb(255, 199, 252) !important;
+}
+
+.soulamount::after {
+    content: url(images/soul.png);
+}
+
+.soul-package-item {
+    margin: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.2em;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 15px;
+}
+
+.card_box {
+    font-family: "Montserrat", serif, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    background: linear-gradient(170deg, rgba(58, 56, 56, 1) 0%, rgb(31, 31, 31) 100%);
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+    cursor: pointer;
+    transition: all .3s;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid;
+}
+
+.card_box p {
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+.card_box:hover {
+    transform: scale(105%);
+}
+
+.card_box span {
+    position: absolute;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    top: -10px;
+    left: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_box span::before {
+    content: 'Best Deal!';
+    position: absolute;
+    width: 150%;
+    height: 40px;
+    background-image: linear-gradient(45deg, #ff47ed 0%, #e344ff 51%, #ff53e8 100%);
+    transform: rotate(-45deg) translateY(-20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.23);
+}
+
+.card_box span::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    z-index: -1;
+    box-shadow: 140px -140px #cc3fad;
+    background-image: linear-gradient(45deg, #ff2fd5 0%, #f019cc 51%, #ce2fff 100%);
+}
+
+#buttons-container .buttons-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 15px !important;
+}
+
+#countdown-label {
+    font-family: "Montserrat", serif, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+#countdown-timer {
+    font-size: inherit !important;
+}
+
+.account-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+    #menuexpand {
+        display: block;
+    }
+
+    #expandedmenu {
+        visibility: visible;
+    }
+
+    .button-main-green {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .store-item {
+        width: 100%;
+    }
+
+    .account-stats,
+    .account-store,
+    .account-support {
+        align-items: center;
+        width: 100%;
+    }
+
+    .important-message {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main-account-front {
+        align-items: center;
+    }
+
+    .account-top {
+        align-items: center;
+        margin-left: 0;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .ethereal-souls-purchase {
+        width: 100%;
+    }
+
+    .souls-packages-list {
+        flex-direction: column;
+    }
+
+    .container {
+        margin: 5px;
+    }
+
+    .account-store,
+    .account-support {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .account-stats h1 {
+        font-size: 1.5em;
+    }
+}
