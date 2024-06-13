@@ -103,7 +103,7 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
                 url: 'scripts/server_offline.php',
                 type: 'POST',
                 success: function (response) {
-                    $('#support-message-response').html(xhr.responseText);
+                    $('#support-message-response').html(response.message);
                     $('.support-message').css('visibility', 'visible');
                     setTimeout(() => {
                         $('.support-message').css('visibility', 'hidden');
