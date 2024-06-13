@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $message = "The server has been reported as being offline. Please address this issue in PuTTY to restore server access for Ethereal Lands.
             ";
         if (mail($to, $subject, $message, $headers)) {
+            $last_run = @filemtime(__FILE__);
             echo json_encode(['status' => 'error', 'message' => 'Thank you for reporting the server as offline. A notification has been sent to the support team to get it back online as soon as possible.']);
         } else {
             echo json_encode(['status' => 'error', 'message' => 'There was an issue reporting the server. Please try again later.']);
