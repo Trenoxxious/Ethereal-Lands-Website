@@ -42,6 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo json_encode(['status' => 'error', 'message' => 'There was an issue reporting the server. Please try again later.']);
         }
     } else {
-        echo json_encode(['status' => 'error', 'message' => 'The server has been reported as offline less than 10 minutes ago. Our support team is currently aware of the issue and working to resolve it as soon as possible.']);
+        echo json_encode(['status' => 'error', 'message' => 'The server has been reported as offline less than 10 minutes ago. Our support team is currently aware of the issue and working to resolve it as soon as possible. Remaining: ' . $time_diff]);
     }
 }
