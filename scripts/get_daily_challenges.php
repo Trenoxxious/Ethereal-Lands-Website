@@ -20,6 +20,23 @@ if ($conn->connect_error) {
 
 $user_id = $_SESSION['user_id'];
 
+// Check if the user is 'online' in the players table
+$query = "SELECT online FROM players WHERE id = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$user_status = $result->fetch_assoc();
+
+if ($user_status && $user_status['online'] == 1) {
+    echo "You cannot accept daily challenges while online. Please log off your character first.";
+    $stmt->close();
+    $conn->close();
+    exit;
+}
+
+$stmt->close();
+
 // Ensure the player has not already accepted daily challenges
 $query = "SELECT has_accepted_daily_challenges FROM etherealsouls WHERE id = ?";
 $stmt = $conn->prepare($query);
