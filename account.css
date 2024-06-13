@@ -17,7 +17,7 @@ body {
     text-shadow: 0 2px 0 black;
 }
 
-.void-merchant {
+#void-merchant {
     font-family: "Water Brush", inherit;
     color: rgb(230, 111, 194);
 }
