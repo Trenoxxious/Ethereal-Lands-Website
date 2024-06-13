@@ -62,7 +62,7 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 
                 <input class="button-main" type="submit" name="submit" value="Submit">
             </form>
-            <div id="message-box" class="support-message"></div>
+            <div id="message" class="support-message"></div>
         </div>
     </div>
     <script>
@@ -74,15 +74,17 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
                     type: 'POST',
                     data: $(this).serialize(),
                     success: function(response) {
-                        $('#message-box').html(response).css('visibility', 'visible');
+                        $('#message').html(response);
+                        $('.support-message').css('visibility', 'visible');
                         setTimeout(() => {
-                            $('#message-box').css('visibility', 'hidden');
+                            $('.support-message').css('visibility', 'hidden');
                         }, 2000); // Hide the message box after 2 seconds
                     },
                     error: function(xhr, status, error) {
-                        $('#message-box').html('An error occurred: ' + xhr.responseText).css('visibility', 'visible');
+                        $('#message').html('An error occurred: ' + xhr.responseText);
+                        $('.support-message').css('visibility', 'visible');
                         setTimeout(() => {
-                            $('#message-box').css('visibility', 'hidden');
+                            $('.support-message').css('visibility', 'hidden');
                         }, 2000); // Hide the message box after 2 seconds
                     }
                 });

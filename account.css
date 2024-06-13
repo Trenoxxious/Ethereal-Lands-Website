@@ -234,7 +234,8 @@ body {
     justify-content: center;
 }
 
-.purchase-message {
+.purchase-message,
+.support-message {
     visibility: hidden;
     color: white;
     z-index: 1000;
