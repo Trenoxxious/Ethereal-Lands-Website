@@ -21,7 +21,7 @@ body {
     font-weight: normal;
     font-family: "Water Brush" !important;
     color: rgb(235, 123, 170) !important;
-    border-color: rgb(219, 115, 188) !important;
+    border-color: rgb(219, 115, 188);
 }
 
 #void-merchant {
