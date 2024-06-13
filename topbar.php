@@ -7,7 +7,8 @@
             <?php if ($isAdmin): ?>
                 <a href="adminpanel">Admin Dashboard</a>
             <?php endif; ?>
-            <a href="store void-font" style="color: transparent; animation: rotate-hue-color 3s infinite linear;">The
+            <a href="store" class="void-font"
+                style="color: transparent; animation: rotate-hue-color 3s infinite linear;">The
                 Void
                 Merchant</a>
             <a href="index">Game Page</a>
