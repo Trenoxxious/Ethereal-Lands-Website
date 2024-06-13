@@ -71,7 +71,8 @@ $conn->close();
     </div>
     <div class="main-account-front">
         <div class="adminpanel">
-            Admin control panel is under construction...
+            <p class="important-message">Admin control panel is under construction and is not available at this time.
+            </p>
         </div>
     </div>
 </body>
