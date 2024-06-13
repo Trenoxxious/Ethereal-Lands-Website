@@ -138,6 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Commit transaction
         $conn->commit();
         echo json_encode(['status' => 'success', 'message' => "New character created successfully! We'll see you soon!"]);
+
         // Send an email to the player using their email
         $to = $email;
         $headers = "MIME-Version: 1.0\r\n";
