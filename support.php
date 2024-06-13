@@ -100,7 +100,7 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
         $('#report-server-offline').on('click', function (event) {
             event.preventDefault();
             $.ajax({
-                url: 'server_offline.php',
+                url: 'scripts/server_offline.php',
                 type: 'POST',
                 success: function (response) {
                     $('#support-message-response').html('Reported successfully');
