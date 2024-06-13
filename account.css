@@ -20,7 +20,7 @@ body {
 .void-font {
     font-weight: normal;
     font-family: "Water Brush" !important;
-    color: rgb(235, 123, 170) !important;
+    color: rgb(235, 123, 170);
     border-color: rgb(219, 115, 188);
 }
 
