@@ -70,6 +70,14 @@ $conn->close();
         </div>
     </div>
     <div class="main-account-front">
+        <div class="account-top">
+            <h1 class="page-header">Admin Control Panel</h1>
+            <af class="page-info">Use the Admin Control Panel to address character or account issues.</p>
+                <p>You are unable to
+                    grant items through the website. If a player is missing an item that is restricted to grant in-game,
+                    please reach out to senior staff for assistance.
+                </p>
+        </div>
         <div class="adminpanel">
             <p class="important-message">Admin control panel is under construction and is not available at this time.
             </p>
