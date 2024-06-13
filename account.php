@@ -90,7 +90,7 @@ $conn->close();
     <style>
         .account-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
         }
         .stat {
@@ -128,7 +128,11 @@ $conn->close();
         <div class="account-stats">
             <?php foreach ($stats as $statName => $statValue): ?>
                 <div class="stat">
-                    <img src="icons/<?php echo htmlspecialchars($statName); ?>.webp" alt="<?php echo htmlspecialchars($statName); ?>">
+                    <picture>
+                        <source srcset="icons/<?php echo htmlspecialchars($statName); ?>.webp" type="image/webp">
+                        <source srcset="icons/<?php echo htmlspecialchars($statName); ?>.png" type="image/png">
+                        <img src="icons/<?php echo htmlspecialchars($statName); ?>.png" alt="<?php echo htmlspecialchars($statName); ?>">
+                    </picture>
                     <p><?php echo htmlspecialchars($statValue); ?></p>
                 </div>
             <?php endforeach; ?>

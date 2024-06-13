@@ -33,10 +33,6 @@ body {
 
 .account-stats {
     margin-left: 20px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
     padding: 15px;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.5);
