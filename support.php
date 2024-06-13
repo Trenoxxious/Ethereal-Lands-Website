@@ -80,8 +80,9 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
                     type: 'POST',
                     data: $(this).serialize(),
                     success: function (response) {
-                        $('#message').html(response);
+                        $('#message').html('Ticket submitted successfully!');
                         $('.support-message').css('visibility', 'visible');
+                        $('#support-form').hide();
                         setTimeout(() => {
                             $('.support-message').css('visibility', 'hidden');
                         }, 2000); // Hide the message box after 2 seconds
