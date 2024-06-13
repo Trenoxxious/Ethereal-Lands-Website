@@ -73,14 +73,14 @@ $conn->close();
         </div>
     </div>
     <div class="main-account-front">
-        <div class="account-top">
+        <div class="section-header">
             <h1 class="page-header">Buy Ethereal Souls</h1>
-        </div>
-        <div class="souls-packages-list">
             <?php if ($soul_purchase_is_active == false): ?>
                 <p class="important-message">The ability to purchase Ethereal Souls has been disabled. The purchase of Ethereal
                     Souls will not be enabled until Ethereal Lands launches later this year.</p>
             <?php else: ?>
+        </div>
+        <div class="souls-packages-list">
                 <div class="container">
                     <div class="card_box uncommon">
                         <img src="images/199souls.png" alt="Ethereal Soul">

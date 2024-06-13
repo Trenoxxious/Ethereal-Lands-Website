@@ -87,7 +87,7 @@ $conn->close();
     </div>
     <div class="purchase-message" id="message"></div>
     <div class="main-account-front">
-        <div class="store-header">
+        <div class="section-header">
             <h1 class="page-header">Ethereal Lands Shop</h1>
             <?php if ($store_is_active == false): ?>
                 <p class="important-message">The store has been disabled. The purchase of cosmetic items will not be enabled
