@@ -41,11 +41,11 @@
         <style>
             @keyframes rotate-hue {
                 0% {
-                    border-color: #8b00ff;
+                    border-color: #b154ff;
                 }
 
                 25% {
-                    border-color: #6a00ff;
+                    border-color: #8d69bf;
                 }
 
                 50% {
@@ -57,7 +57,7 @@
                 }
 
                 100% {
-                    border-color: #8b00ff;
+                    border-color: #b154ff;
                 }
             }
 
@@ -71,11 +71,11 @@
                 }
 
                 50% {
-                    color: #6a00ff;
+                    color: #8d69bf;
                 }
 
                 75% {
-                    color: #8b00ff;
+                    color: #b154ff;
 
                 }
 
