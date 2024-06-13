@@ -97,6 +97,27 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
                 });
             });
         });
+        $('#report-server-offline').on('click', function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: 'server_offline.php',
+                type: 'POST',
+                success: function (response) {
+                    $('#support-message-response').html('Reported successfully');
+                    $('.support-message').css('visibility', 'visible');
+                    setTimeout(() => {
+                        $('.support-message').css('visibility', 'hidden');
+                    }, 2000);
+                },
+                error: function (xhr, status, error) {
+                    $('#support-message-response').html('An error occurred: ' + xhr.responseText);
+                    $('.support-message').css('visibility', 'visible');
+                    setTimeout(() => {
+                        $('.support-message').css('visibility', 'hidden');
+                    }, 2000);
+                }
+            });
+        });
     </script>
 </body>
 
