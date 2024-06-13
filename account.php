@@ -90,7 +90,7 @@ $conn->close();
     <style>
         .account-stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             gap: 10px;
         }
         .stat {
