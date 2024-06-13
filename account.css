@@ -469,7 +469,6 @@ body {
         width: 100%;
     }
 
-    .account-stats,
     .account-store,
     .account-support {
         align-items: center;
@@ -477,6 +476,7 @@ body {
     }
 
     .account-stats {
+        grid-template-columns: repeat(5, 1fr) !important;
         margin-left: 0;
     }
 
