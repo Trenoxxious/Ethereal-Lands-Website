@@ -97,9 +97,7 @@ $conn->close();
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #f9f9f9;
             padding: 10px;
-            border: 1px solid #ddd;
             border-radius: 5px;
             text-align: center;
         }
