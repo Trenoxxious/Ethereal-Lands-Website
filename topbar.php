@@ -29,9 +29,36 @@
         <?php if ($isAdmin): ?>
             <a class="button-main" href="adminpanel">Admin Dashboard</a>
         <?php endif; ?>
-        <a class="button-main void-font" href="store">The Void</a>
+        <a class="button-main void-font" href="store"
+            style="border: 1px solid transparent; animation: rotate-hue 5s infinite linear;">The
+            Void</a>
         <a class="button-main" href="index">Game Page</a>
         <a class="button-main" href="support" id="support-button">Character Support</a>
         <a class="button-main" href="scripts/logout">Logout</a>
+
+        <style>
+            @keyframes rotate-hue {
+                0% {
+                    border-color: #8b00ff;
+                }
+
+                25% {
+                    border-color: #6a00ff;
+                }
+
+                50% {
+                    border-color: #9370db;
+                }
+
+                75% {
+                    border-color: #ba55d3;
+                }
+
+                100% {
+                    border-color: #8b00ff;
+                }
+            }
+        </style>
+
     </div>
 </div>
