@@ -55,7 +55,6 @@ body {
     max-width: 100%;
     box-sizing: border-box;
     border-radius: 0.2em;
-    margin-left: 20px;
 }
 
 .account-support {
@@ -68,7 +67,6 @@ body {
     max-width: 100%;
     box-sizing: border-box;
     border-radius: 0.2em;
-    margin-left: 20px;
 }
 
 .store-item p {
@@ -480,6 +478,9 @@ body {
     .account-support {
         align-items: center;
         width: 100%;
+    }
+
+    .account-stats {
         margin-left: 0;
     }
 
