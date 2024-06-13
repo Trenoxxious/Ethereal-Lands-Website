@@ -80,7 +80,7 @@
                 }
 
                 100% {
-                    color: #8b00ff;
+                    color: #ba55d3;
                 }
             }
         </style>
