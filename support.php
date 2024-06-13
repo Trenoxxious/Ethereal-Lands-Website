@@ -29,6 +29,7 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Ethereal Lands - Support</title>
@@ -38,6 +39,7 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
     <script defer src="script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
+
 <body>
     <?php include 'topbar.php'; ?>
     <div class="accountmain">
@@ -45,9 +47,13 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
     </div>
     <div class="main-account-front">
         <div class="account-top">
-            <h1 class="page-header">Character Support (<?php echo htmlspecialchars($username); ?>)</h1>
-            <p class="page-info">Submit a support ticket to get assistance with a character or account issue. Tickets are usually answered within 30 minutes, but can sometimes take up to 24 hours.</p>
-            <p class="page-info">Your character name and player ID is automatically provided in the ticket, so it is not necessary to include.</p>
+            <h1 class="page-header">Ethereal Support (<?php echo htmlspecialchars($username); ?>)</h1>
+            <button class="button-main button-main-red" id="report-server-offline">Report Game Server Offline</button>
+            <p class="page-info">Submit a support ticket to get assistance with a character-specific issue, account
+                issue or in-game issue. Tickets
+                are usually answered within 30 minutes, but can sometimes take up to 24 hours.</p>
+            <p class="page-info">Your character name and player ID is automatically provided in the ticket, so it is not
+                necessary to include.</p>
         </div>
         <div class="account-store">
             <form id="support-form" method="post" class="ticket-form" action="scripts/send_support_ticket.php">
@@ -66,21 +72,21 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
         </div>
     </div>
     <script>
-        $(document).ready(function() {
-            $('#support-form').on('submit', function(event) {
+        $(document).ready(function () {
+            $('#support-form').on('submit', function (event) {
                 event.preventDefault(); // Prevent the default form submission
                 $.ajax({
                     url: 'scripts/send_support_ticket.php',
                     type: 'POST',
                     data: $(this).serialize(),
-                    success: function(response) {
+                    success: function (response) {
                         $('#message').html(response);
                         $('.support-message').css('visibility', 'visible');
                         setTimeout(() => {
                             $('.support-message').css('visibility', 'hidden');
                         }, 2000); // Hide the message box after 2 seconds
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         $('#message').html('An error occurred: ' + xhr.responseText);
                         $('.support-message').css('visibility', 'visible');
                         setTimeout(() => {
@@ -92,4 +98,5 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
         });
     </script>
 </body>
+
 </html>

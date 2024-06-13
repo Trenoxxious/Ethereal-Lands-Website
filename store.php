@@ -66,7 +66,7 @@ $conn->close();
 <html>
 
 <head>
-    <title>Ethereal Lands - My Account</title>
+    <title>Ethereal Lands - Void Merchant</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
@@ -88,10 +88,10 @@ $conn->close();
     <div class="purchase-message" id="message"></div>
     <div class="main-account-front">
         <div class="section-header">
-            <h1 class="page-header">Ethereal Lands Shop</h1>
+            <h1 class="page-header void-merchant">The Void Merchant</h1>
             <?php if ($store_is_active == false): ?>
-                <p class="important-message">The store has been disabled. The purchase of cosmetic items will not be enabled
-                    until Ethereal Lands launches later this year.</p>
+                <p class="important-message">The Void Merchant has left town. The purchase of cosmetic items will not be
+                    enabled until Ethereal Lands launches later this year.</p>
             <?php endif; ?>
         </div>
         <div class="account-store">
