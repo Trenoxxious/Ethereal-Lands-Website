@@ -107,14 +107,14 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
                     $('.support-message').css('visibility', 'visible');
                     setTimeout(() => {
                         $('.support-message').css('visibility', 'hidden');
-                    }, 2000);
+                    }, 4000);
                 },
                 error: function (xhr, status, error) {
                     $('#support-message-response').html('An error occurred: ' + xhr.responseText);
                     $('.support-message').css('visibility', 'visible');
                     setTimeout(() => {
                         $('.support-message').css('visibility', 'hidden');
-                    }, 2000);
+                    }, 4000);
                 }
             });
         });
