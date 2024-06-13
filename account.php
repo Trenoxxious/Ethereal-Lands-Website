@@ -52,25 +52,25 @@ $stats = [];
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $stats = [
-        'Attack level' => $row['attack'],
-        'Defense level' => $row['defense'],
-        'Hits level' => $row['hits'],
-        'Strength level' => $row['strength'],
-        'Ranged level' => $row['ranged'],
-        'Prayer level' => $row['prayer'],
-        'Magic level' => $row['magic'],
-        'Cooking level' => $row['cooking'],
-        'Woodcutting level' => $row['woodcut'],
-        'Fletching level' => $row['fletching'],
-        'Fishing level' => $row['fishing'],
-        'Firemaking level' => $row['firemaking'],
-        'Crafting level' => $row['crafting'],
-        'Smithing level' => $row['smithing'],
-        'Mining level' => $row['mining'],
-        'Herblaw level' => $row['herblaw'],
-        'Agility level' => $row['agility'],
-        'Thieving level' => $row['thieving'],
-        'Huntsman level' => $row['huntsman']
+        'attack' => $row['attack'],
+        'defense' => $row['defense'],
+        'hits' => $row['hits'],
+        'strength' => $row['strength'],
+        'ranged' => $row['ranged'],
+        'prayer' => $row['prayer'],
+        'magic' => $row['magic'],
+        'cooking' => $row['cooking'],
+        'woodcut' => $row['woodcut'],
+        'fletching' => $row['fletching'],
+        'fishing' => $row['fishing'],
+        'firemaking' => $row['firemaking'],
+        'crafting' => $row['crafting'],
+        'smithing' => $row['smithing'],
+        'mining' => $row['mining'],
+        'herblaw' => $row['herblaw'],
+        'agility' => $row['agility'],
+        'thieving' => $row['thieving'],
+        'huntsman' => $row['huntsman']
     ];
 }
 
@@ -79,9 +79,7 @@ $conn->close();
 ?>
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
     <title>Ethereal Lands - My Account</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,8 +87,28 @@ $conn->close();
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .account-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+        }
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .stat img {
+            max-width: 50px;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
-
 <body>
     <?php include 'topbar.php'; ?>
     <div class="accountmain">
@@ -104,15 +122,17 @@ $conn->close();
     </div>
     <div class="main-account-front">
         <div class="account-top">
-            <h1 class="page-header">Character Stats (<?php echo $username; ?>)</h1>
+            <h1 class="page-header">Character Stats (<?php echo htmlspecialchars($username); ?>)</h1>
             <p class="page-info">View stats about your character below.</p>
         </div>
         <div class="account-stats">
             <?php foreach ($stats as $statName => $statValue): ?>
-                <p><?php echo htmlspecialchars($statName . ': ' . $statValue); ?></p>
+                <div class="stat">
+                    <img src="icons/<?php echo htmlspecialchars($statName); ?>.png" alt="<?php echo htmlspecialchars($statName); ?>">
+                    <p><?php echo htmlspecialchars($statValue); ?></p>
+                </div>
             <?php endforeach; ?>
         </div>
     </div>
 </body>
-
 </html>
