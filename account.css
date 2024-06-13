@@ -17,10 +17,13 @@ body {
     text-shadow: 0 2px 0 black;
 }
 
-#void-merchant {
+.void-font {
     font-family: "Water Brush" !important;
-    font-size: inherit;
-    color: rgb(241, 137, 210);
+    color: rgb(241, 137, 210) !important;
+}
+
+#void-merchant {
+    font-size: 3em;
 }
 
 .page-info {

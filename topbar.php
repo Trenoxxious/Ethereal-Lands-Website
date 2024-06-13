@@ -7,7 +7,7 @@
             <?php if ($isAdmin): ?>
                 <a href="adminpanel">Admin Dashboard</a>
             <?php endif; ?>
-            <a href="store">Store</a>
+            <a href="store void-font">The Void</a>
             <a href="index">Game Page</a>
             <a href="support">Support</a>
             <a href="scripts/logout">Logout</a>
@@ -29,7 +29,7 @@
         <?php if ($isAdmin): ?>
             <a class="button-main" href="adminpanel">Admin Dashboard</a>
         <?php endif; ?>
-        <a class="button-main" href="store">Store</a>
+        <a class="button-main void-font" href="store">The Void</a>
         <a class="button-main" href="index">Game Page</a>
         <a class="button-main" href="support" id="support-button">Character Support</a>
         <a class="button-main" href="scripts/logout">Logout</a>
