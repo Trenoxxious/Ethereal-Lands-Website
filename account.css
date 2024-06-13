@@ -476,7 +476,7 @@ body {
     }
 
     .account-stats {
-        grid-template-columns: repeat(5, 1fr) !important;
+        grid-template-columns: repeat(4, 1fr) !important;
         margin-left: 0;
     }
 
