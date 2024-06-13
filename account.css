@@ -306,16 +306,18 @@ body {
 .button-main-red:active {
     -webkit-filter: brightness(1.3);
     filter: brightness(1.3);
+    border-color: rgb(194, 194, 194);
+    color: rgb(194, 194, 194);
 }
 
 .store-item .button-main:disabled,
 .button-main-green:disabled,
 .button-main-red:disabled {
+    pointer-events: none;
     filter: grayscale(1);
     -webkit-filter: grayscale(1);
     opacity: 0.5;
     background: rgba(255, 255, 255, 0.3);
-    pointer-events: none;
 }
 
 #closesoulswindow {
