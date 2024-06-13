@@ -109,7 +109,9 @@ body {
 
 .store-header {
     width: 100%;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .account-store h2 {
