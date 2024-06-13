@@ -7,7 +7,9 @@
             <?php if ($isAdmin): ?>
                 <a href="adminpanel">Admin Dashboard</a>
             <?php endif; ?>
-            <a href="store void-font">The Void Merchant</a>
+            <a href="store void-font" style="color: transparent; animation: rotate-hue-color 3s infinite linear;">The
+                Void
+                Merchant</a>
             <a href="index">Game Page</a>
             <a href="support">Support</a>
             <a href="scripts/logout">Logout</a>
@@ -30,7 +32,7 @@
             <a class="button-main" href="adminpanel">Admin Dashboard</a>
         <?php endif; ?>
         <a class="button-main void-font" href="store"
-            style="border: 1px solid transparent; animation: rotate-hue 5s infinite linear;">The
+            style="border: 1px solid transparent; animation: rotate-hue 5s infinite linear, rotate-hue-color 3s infinite linear;">The
             Void Merchant</a>
         <a class="button-main" href="index">Game Page</a>
         <a class="button-main" href="support" id="support-button">Character Support</a>
@@ -56,6 +58,29 @@
 
                 100% {
                     border-color: #8b00ff;
+                }
+            }
+
+            @keyframes rotate-hue-color {
+                0% {
+                    color: #ba55d3;
+                }
+
+                25% {
+                    color: #9370db;
+                }
+
+                50% {
+                    color: #6a00ff;
+                }
+
+                75% {
+                    color: #8b00ff;
+
+                }
+
+                100% {
+                    color: #8b00ff;
                 }
             }
         </style>
