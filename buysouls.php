@@ -78,7 +78,7 @@ $conn->close();
         </div>
         <div class="souls-packages-list">
             <?php if ($soul_purchase_is_active == false): ?>
-                <p class="store-message">The ability to purchase Ethereal Souls has been disabled. The purchase of Ethereal
+                <p class="important-message">The ability to purchase Ethereal Souls has been disabled. The purchase of Ethereal
                     Souls will not be enabled until Ethereal Lands launches later this year.</p>
             <?php else: ?>
                 <div class="container">
