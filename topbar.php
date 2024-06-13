@@ -7,7 +7,7 @@
             <?php if ($isAdmin): ?>
                 <a href="adminpanel">Admin Dashboard</a>
             <?php endif; ?>
-            <a href="store void-font">The Void</a>
+            <a href="store void-font">The Void Merchant</a>
             <a href="index">Game Page</a>
             <a href="support">Support</a>
             <a href="scripts/logout">Logout</a>
@@ -31,7 +31,7 @@
         <?php endif; ?>
         <a class="button-main void-font" href="store"
             style="border: 1px solid transparent; animation: rotate-hue 5s infinite linear;">The
-            Void</a>
+            Void Merchant</a>
         <a class="button-main" href="index">Game Page</a>
         <a class="button-main" href="support" id="support-button">Character Support</a>
         <a class="button-main" href="scripts/logout">Logout</a>
