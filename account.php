@@ -128,7 +128,7 @@ $conn->close();
         <div class="account-stats">
             <?php foreach ($stats as $statName => $statValue): ?>
                 <div class="stat">
-                    <img src="icons/<?php echo htmlspecialchars($statName); ?>.png" alt="<?php echo htmlspecialchars($statName); ?>">
+                    <img src="icons/<?php echo htmlspecialchars($statName); ?>.webp" alt="<?php echo htmlspecialchars($statName); ?>">
                     <p><?php echo htmlspecialchars($statValue); ?></p>
                 </div>
             <?php endforeach; ?>
