@@ -19,7 +19,8 @@ body {
 
 #void-merchant {
     font-family: "Water Brush" !important;
-    color: rgb(230, 111, 194);
+    font-size: inherit;
+    color: rgb(241, 137, 210);
 }
 
 .page-info {
