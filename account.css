@@ -529,7 +529,7 @@ body {
     padding: 10px;
     box-sizing: border-box;
     border-radius: 0.2em;
-    width: 66%;
+    min-width: 250px;
 }
 
 .form-sec form {
@@ -582,7 +582,7 @@ body {
     }
 
     .form-sec {
-        width: 85%;
+        min-width: auto;
     }
 
     .account-top {
