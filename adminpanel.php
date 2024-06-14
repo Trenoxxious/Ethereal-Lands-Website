@@ -88,12 +88,13 @@ $amount_stmt->close();
     </div>
     <div class="account-support">
         <div class="form-sec">
+            <h2>Player Cache Adjustment (player_cache db table)</h2>
             <form method="post" action="scripts/insert_player_cache.php">
-                <label for="playerID">Player ID:</label>
+                <label for="playerID">Player ID</label>
                 <input type="number" id="playerID" name="playerID" required><br>
-                <label for="key">Key:</label>
+                <label for="key">Key (lowercase eg. tutorial_island)</label>
                 <input type="text" id="key" name="key" required><br>
-                <label for="value">Value:</label>
+                <label for="value">Value (numerical only)</label>
                 <input type="number" id="value" name="value" required><br>
                 <input type="hidden" name="type" value="0">
                 <input class="button-main" type="submit" value="Insert player_cache Data">
