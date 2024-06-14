@@ -11,23 +11,6 @@ if (!isset($_SESSION['user_id'])) {
 // Include database connection details
 require 'globals.php';
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Query to count the number of accounts
-$countSql = "SELECT COUNT(*) as total FROM players WHERE online = 1";
-$countResult = $conn->query($countSql);
-$countRow = $countResult->fetch_assoc();
-$totalOnline = $countRow['total'];
-
-// Close connection
-$conn->close();
-
 // Fetch user information from session
 $user_id = $_SESSION['user_id'];
 $username = $_SESSION['username'];
@@ -57,9 +40,7 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
     <div class="main-account-front">
         <div class="account-top">
             <h1 class="page-header">Ethereal Support (<?php echo htmlspecialchars($username); ?>)</h1>
-            <?php if ($totalOnline <= 0): ?>
-                <button class="button-main button-main-red" id="report-server-offline">Report Game Server Offline</button>
-            <?php endif; ?>
+            <button class="button-main button-main-red" id="report-server-offline">Report Game Server Offline</button>
             <p class="page-info">Submit a support ticket to get assistance with a character-specific issue, account
                 issue or in-game issue. Tickets
                 are usually answered within 30 minutes, but can sometimes take up to 24 hours.</p>
