@@ -524,7 +524,7 @@ body {
     }
 }
 
-.admin-panel-sec {
+.form-sec {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px;
     box-sizing: border-box;
@@ -532,7 +532,7 @@ body {
     width: auto;
 }
 
-.admin-panel-sec form {
+.form-sec form {
     display: flex;
     align-items: center;
     justify-content: center;

@@ -67,18 +67,20 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
                 necessary to include.</p>
         </div>
         <div class="account-support">
-            <form id="support-form" method="post" class="ticket-form" action="scripts/send_support_ticket.php">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required><br><br>
+            <div class="form-sec">
+                <form id="support-form" method="post" class="ticket-form" action="scripts/send_support_ticket.php">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required><br><br>
 
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required><br><br>
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required><br><br>
 
-                <label for="message">Describe the issue:</label>
-                <textarea id="message" name="message" required></textarea><br><br>
+                    <label for="message">Describe the issue:</label>
+                    <textarea id="message" name="message" required></textarea><br><br>
 
-                <input class="button-main" type="submit" name="submit" value="Submit">
-            </form>
+                    <input class="button-main" type="submit" name="submit" value="Submit">
+                </form>
+            </div>
             <div id="support-message-response" class="support-message"></div>
         </div>
     </div>

@@ -87,7 +87,7 @@ $amount_stmt->close();
         </div>
     </div>
     <div class="account-support">
-        <div class="admin-panel-sec">
+        <div class="form-sec">
             <form method="post" action="scripts/insert_player_cache.php">
                 <label for="playerID">Player ID:</label>
                 <input type="number" id="playerID" name="playerID" required><br>
