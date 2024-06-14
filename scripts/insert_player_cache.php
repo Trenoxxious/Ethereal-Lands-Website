@@ -10,7 +10,7 @@ $accstatus = $_SESSION['accstatus'];
 $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 
 if ($isAdmin == false) {
-    header("Location: account");
+    header("Location: ../account");
     exit;
 }
 
