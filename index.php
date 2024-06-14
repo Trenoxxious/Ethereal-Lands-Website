@@ -154,7 +154,10 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                                 window.location.href = 'account';
                             }, 2000);
                         } else {
-                            $('#errorsuccessmessagelogin').html('');
+                            $('#errorsuccessmessagelogin').html(response.message);
+                            setTimeout(function () {
+                                $('#errorsuccessmessagelogin').html('');
+                            }, 3000);
                         }
                     }
                 });
