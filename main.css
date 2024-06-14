@@ -724,7 +724,7 @@ label {
 input[type="text"],
 input[type="email"],
 textarea {
-    width: 100%;
+    width: auto;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ffc74f;
