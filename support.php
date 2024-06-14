@@ -55,7 +55,7 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
             <p class="page-info">Your character name and player ID is automatically provided in the ticket, so it is not
                 necessary to include.</p>
         </div>
-        <div class="account-store">
+        <div class="account-support">
             <form id="support-form" method="post" class="ticket-form" action="scripts/send_support_ticket.php">
                 <label for="email">Email Address:</label>
                 <input type="email" id="email" name="email" required><br><br>
@@ -107,14 +107,14 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
                     $('.support-message').css('visibility', 'visible');
                     setTimeout(() => {
                         $('.support-message').css('visibility', 'hidden');
-                    }, 4000);
+                    }, 5000);
                 },
                 error: function (xhr, status, error) {
                     $('#support-message-response').html('An error occurred: ' + xhr.responseText);
                     $('.support-message').css('visibility', 'visible');
                     setTimeout(() => {
                         $('.support-message').css('visibility', 'hidden');
-                    }, 4000);
+                    }, 5000);
                 }
             });
         });
