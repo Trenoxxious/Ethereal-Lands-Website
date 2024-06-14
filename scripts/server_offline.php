@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $headers .= 'From: noreply@playethereallands.com' . "\r\n" .
                 'Reply-To: support@playethereallands.com' . "\r\n" .
                 'X-Mailer: PHP/' . phpversion();
-            $subject = 'Report of Server Offline!';
+            $subject = 'WARNING: Report of Server Offline';
             $message = "The server has been reported as being offline. Please address this issue in PuTTY to restore server access for Ethereal Lands.";
 
             if (mail($to, $subject, $message, $headers)) {

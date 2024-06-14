@@ -78,11 +78,11 @@ if ($player['has_accepted_daily_challenges'] == 0) {
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
-            // Row was inserted successfully
+            // Row was inserted successfully - Do nothing
         } else {
             // Row was not inserted, possibly due to a unique constraint violation
             $error = $stmt->error;
-            // Handle the error or perform any necessary actions
+            error_log("Error updating player_cache: " . $stmt->error);
         }
     }
 

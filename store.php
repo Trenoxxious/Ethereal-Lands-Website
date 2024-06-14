@@ -88,7 +88,8 @@ $conn->close();
     <div class="purchase-message" id="message"></div>
     <div class="main-account-front">
         <div class="section-header">
-            <h1 class="page-header void-font" id="void-merchant" style="color: rgb(235, 123, 170);">The Void Merchant
+            <h1 class="page-header void-font" id="void-merchant"
+                style="color: transparent; animation: rotate-hue-color 3s infinite linear;">The Void Merchant
             </h1>
             <?php if ($store_is_active == false): ?>
                 <p class="important-message">The Void Merchant has left town. The purchase of cosmetic items will not be

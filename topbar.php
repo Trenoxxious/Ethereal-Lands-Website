@@ -38,53 +38,5 @@
         <a class="button-main" href="index">Game Page</a>
         <a class="button-main" href="support" id="support-button">Character Support</a>
         <a class="button-main" href="scripts/logout">Logout</a>
-
-        <style>
-            @keyframes rotate-hue {
-                0% {
-                    border-color: #b154ff;
-                }
-
-                25% {
-                    border-color: #8d69bf;
-                }
-
-                50% {
-                    border-color: #9370db;
-                }
-
-                75% {
-                    border-color: #ba55d3;
-                }
-
-                100% {
-                    border-color: #b154ff;
-                }
-            }
-
-            @keyframes rotate-hue-color {
-                0% {
-                    color: #ba55d3;
-                }
-
-                25% {
-                    color: #9370db;
-                }
-
-                50% {
-                    color: #8d69bf;
-                }
-
-                75% {
-                    color: #b154ff;
-
-                }
-
-                100% {
-                    color: #ba55d3;
-                }
-            }
-        </style>
-
     </div>
 </div>
