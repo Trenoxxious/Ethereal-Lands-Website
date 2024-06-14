@@ -86,7 +86,7 @@ $amount_stmt->close();
             </p>
         </div>
     </div>
-    <div class="account-support">
+    <div class="account-store">
         <div class="form-sec">
             <h2>Player Cache Adjustment (player_cache db table)</h2>
             <form method="post" action="scripts/insert_player_cache.php">
