@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require '../globals.php';
 $conn = new mysqli($servername, $username, $password, $dbname);
 
