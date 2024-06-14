@@ -524,6 +524,19 @@ body {
     }
 }
 
+.admin-panel-sec {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 0.2em;
+    width: auto;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
 @media only screen and (max-width: 900px) {
     #menuexpand {
         display: block;

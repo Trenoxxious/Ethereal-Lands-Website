@@ -86,18 +86,19 @@ $amount_stmt->close();
             </p>
         </div>
     </div>
-    <div class="adminpanel">
-        <form method="post" action="scripts/insert_player_cache.php">
-            <label for="playerID">Player ID:</label>
-            <input type="text" id="playerID" name="playerID" required>
-            <label for="key">Key:</label>
-            <input type="text" id="key" name="key" required>
-            <label for="value">Value:</label>
-            <input type="text" id="value" name="value" required>
-            <input type="hidden" name="type" value="0">
-            <input class="button-main" type="submit" value="Insert Player Cache Data">
-        </form>
-    </div>
+    <div class="account-support">
+        <div class="admin-panel-sec">
+            <form method="post" action="scripts/insert_player_cache.php">
+                <label for="playerID">Player ID:</label>
+                <input type="text" id="playerID" name="playerID" required>
+                <label for="key">Key:</label>
+                <input type="text" id="key" name="key" required>
+                <label for="value">Value:</label>
+                <input type="text" id="value" name="value" required>
+                <input type="hidden" name="type" value="0">
+                <input class="button-main" type="submit" value="Insert Player Cache Data">
+            </form>
+        </div>
     </div>
 </body>
 
