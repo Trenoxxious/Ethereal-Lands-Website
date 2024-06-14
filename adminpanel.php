@@ -41,8 +41,14 @@ if ($amount_result->num_rows > 0) {
 $formatted_esouls = number_format($esouls);
 $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 
+if ($isAdmin == false) {
+    header("Location: account");
+    exit;
+}
+
 $amount_stmt->close();
 $conn->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +79,7 @@ $conn->close();
         <div class="account-top">
             <h1 class="page-header">Admin Control Panel</h1>
             <p class="page-info">Use the Admin Control Panel to address character or account issues.</p>
-            <p>You are unable to
+            <p class="page-info">You are unable to
                 grant items through the website. If a player is missing an item that is restricted to grant in-game,
                 please reach out to senior staff for assistance.
             </p>
