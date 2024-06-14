@@ -540,6 +540,8 @@ body {
 }
 
 .form-sec h2 {
+    font-size: 1.25em;
+    margin-bottom: 10px;
     color: white;
     text-align: center;
 }
