@@ -27,23 +27,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $check_result = $conn->query($check_sql);
 
     if ($check_result->num_rows > 0) {
-        echo "Key already exists. Do you want to override the value? (y/n)";
-        $override = trim(fgets(STDIN));
-        if ($override == 'y') {
-            $update_sql = "UPDATE player_cache SET value = '$value', type = '$type' WHERE playerID = '$playerID' AND `key` = '$key'";
-            if ($conn->query($update_sql) === TRUE) {
-                echo "Value updated successfully";
-            } else {
-                echo "Error updating value: " . $conn->error;
-            }
+        // Automatically update the value if the key exists
+        $update_sql = "UPDATE player_cache SET value = '$value', type = '$type' WHERE playerID = '$playerID' AND `key` = '$key'";
+        if ($conn->query($update_sql) === TRUE) {
+            echo "The player already had the cache key specified. The value has been updated successfully.";
         } else {
-            echo "Value not updated";
+            echo "Error updating value: " . $conn->error;
         }
     } else {
         $sql = "INSERT INTO player_cache (playerID, `key`, value, type) VALUES ('$playerID', '$key', '$value', '$type')";
 
         if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
+            echo "New record created successfully. The cache key has been successfully inserted.";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
