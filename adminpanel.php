@@ -112,7 +112,7 @@ $amount_stmt->close();
                 <input class="button-main button-main-green" style="width: auto;" type="submit"
                     value="Insert player_cache Data">
             </form>
-            <div class="button-main" style="margin-top: 10px;" id="player_cache_submission">Wiki Help</div>
+            <div class="button-main" style="margin-top: 10px;" id="player_cache_insertion">Wiki Help</div>
         </div>
         <script>
             $(document).ready(function () {
@@ -130,11 +130,8 @@ $amount_stmt->close();
                     });
                     $('input, textarea').blur();
                 });
-                $('#player_cache_submission').on('click', function (event) {
-                    window.location.href = 'help/player_cache_submission';
-                });
-                $('#player_id_lookup').on('click', function (event) {
-                    window.location.href = 'help/player_id_lookup';
+                $('#player_cache_insertion, #player_id_lookup').on('click', function (event) {
+                    window.location.href = 'help/' + this.id.replace('_', '_');
                 });
             });
         </script>
