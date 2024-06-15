@@ -123,7 +123,7 @@ $amount_stmt->close();
                         success: function (response) {
                             $('#playerIDResults').html(response.message);
                         },
-                        error: function (xhr, status, error) {
+                        error: function (response, xhr, status, error) {
                             $('#playerIDResults').html('ERROR: ' + response.message);
                         }
                     });

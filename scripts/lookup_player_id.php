@@ -18,9 +18,9 @@ if ($isAdmin == false) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $playerUsername = $_POST['playerUsername'];
+    $playerUsername = strtolower($_POST['playerUsername']);
 
-    $sql = "SELECT id FROM players WHERE username = '$playerUsername'";
+    $sql = "SELECT id FROM players WHERE LOWER(username) = '$playerUsername'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
