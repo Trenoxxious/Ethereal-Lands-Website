@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="help.css">
+    <title>Player Cache Help</title>
+</head>
+
+<body>
+    <div class="section">
+        <h1>Ethereal Admin Dashboard Wiki</h1>
+        <hr>
+        <h2>The Player Cache (Insertion)</h2>
+        <hr>
+        <h3 class="query">INSERT INTO player_cache (playerID, `key`, value, type) VALUES ('$playerID', '$key', '$value',
+            '$type')</h3>
+        <hr>
+        <p class="ooo">The order of operations for this web-query is as follows:</p>
+        <h3 class="process">Query the insert into the `player_cache` database table.</h3>
+        <div class="arrow-down"></div>
+        <h3 class="process">If the `key` exists, overwrite `value` data in the row.</h3>
+        <div class="arrow-down"></div>
+        <h3 class="process">If the `key` does not exist, insert the data into a new row.</h3>
+        <hr>
+        <p>Changing the cache of a player in the `player_cache` database table is fairly simple. The `player_cache`
+            table of the database holds various information, such as quest progress, ethereal dungeon progress, etc. The
+            table includes the following data:</p>
+        <ul style="text-align: left;">
+            <li>playerID (int)</li>
+            <li>type (int)</li>
+            <li>key (str/text)</li>
+            <li>value (int)</li>
+        </ul>
+        <p>The `key` portion of our data should usually always be lowercase, and instead of using camelCase, we use '_'
+            to denote the next word. There are some cases where old game code may have a key in camelCase. For example,
+            if a player is missing an Ethereal Item to claim from an in-game vendor that they've purchased, we can add
+            `ethereal_item_1559` as the key. The value for `ethereal_item` keys does not matter as the game only looks
+            for the key and not a value, with the <span>player.hasCacheKey()</span> function.
+        </p>
+        <p>The `type` field for our query is always going to be '0' through the Admin Dashboard web
+            interface.</p>
+        <hr>
+        <h2>Common Cache Keys</h2>
+        <h3>Daily Challenges</h3>
+        <ul>
+            <li>dcs_kill_...<span class="value-span">0</span></li>
+            <li>dcs_mine_ore<span class="value-span">0</span></li>
+            <li>dcs_catch_fish<span class="value-span">0</span></li>
+        </ul>
+        <h3>The Void Merchant Items</h3>
+        <ul>
+            <li>ethereal_item_...<span class="value-span">0</span></li>
+        </ul>
+    </div>
+    <footer>
+        The Ethereal Lands DB Wiki is a reference point for all administrators using the Admin Dashboard.
+    </footer>
+</body>
+
+</html>

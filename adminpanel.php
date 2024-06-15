@@ -75,13 +75,13 @@ $amount_stmt->close();
     </div>
     <div class="main-account-front">
         <div class="account-top">
-            <h1 class="page-header">Admin Control Panel</h1>
-            <p class="page-info">Use the Admin Control Panel to address character or account issues.</p>
+            <h1 class="page-header">Admin Dashboard</h1>
+            <p class="page-info">Use the Admin Dashboard to address character or account issues.</p>
             <p class="page-info">You are unable to
                 grant items through the website. If a player is missing an item that is restricted to grant via
                 `::item`, please reach out to Senior Support Staff for assistance.
             </p>
-            <p class="important-message">Admin control panel is under construction and not all tools are available at
+            <p class="important-message">Admin Dashboard is under construction and not all tools are available at
                 this time.
             </p>
         </div>
@@ -90,14 +90,15 @@ $amount_stmt->close();
         <div class="form-sec">
             <h2>Player Cache Adjustment (player_cache db table)</h2>
             <form method="post" action="scripts/insert_player_cache.php">
-                <label for="playerID">Player ID</label>
+                <label for="playerID">Player ID (num)</label>
                 <input type="number" id="playerID" name="playerID" required><br>
-                <label for="key">Key (lowercase eg. tutorial_island)</label>
+                <label for="key">Key (eg. tutorial_island)</label>
                 <input type="text" id="key" name="key" required><br>
-                <label for="value">Value (numerical only)</label>
+                <label for="value">Value (num)</label>
                 <input type="number" id="value" name="value" required><br>
                 <input type="hidden" name="type" value="0">
-                <input class="button-main" type="submit" value="Insert player_cache Data">
+                <input class="button-main button-main-green" type="submit" value="Insert player_cache Data">
+                <button class="button-main" href="help/player_cache_submission">Wiki Help</button>
             </form>
         </div>
     </div>
