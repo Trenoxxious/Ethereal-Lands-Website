@@ -154,7 +154,7 @@ $amount_stmt->close();
                     });
                     $('input, textarea').blur();
                 });
-                $('#player_cache_insertion, #player_id_lookup').on('click', function (event) {
+                $('#player_cache_insertion, #player_id_lookup, #reset_player_challenges').on('click', function (event) {
                     window.location.href = 'help/' + this.id.replace('_', '_');
                 });
             });

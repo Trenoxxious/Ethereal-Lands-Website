@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "DELETE FROM player_daily_challenges WHERE `user_id` = $playerID";
     mysqli_query($conn, $query);
 
-    $response = ['status' => 'success', 'message' => "The daily challenges for $playerID have been reset."];
+    $response = ['status' => 'success', 'message' => "The daily challenges for playerID $playerID have been reset."];
     echo json_encode($response);
 }
 $conn->close();
