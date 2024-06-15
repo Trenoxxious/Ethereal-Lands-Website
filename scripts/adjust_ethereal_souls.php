@@ -32,11 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $currentSouls = $row['amount'];
 
         if ($soulsAmount < 0) {
-            $soulsAmount = abs($_POST['souls_amount']);
-            $newSouls = $currentSouls - $soulsAmount;
-            if ($newSouls <= 0) {
-                $newSouls = 0;
-            }
+            $newSouls = max(0, $currentSouls + $soulsAmount);
         } else if ($soulsAmount == 0) {
             $newSouls = $currentSouls;
         } else {
