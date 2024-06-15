@@ -114,18 +114,20 @@ $amount_stmt->close();
         </div>
         <script>
             $(document).ready(function () {
-                event.preventDefault();
-                var formData = $(this).serialize();
-                $.ajax({
-                    url: 'scripts/lookup_player_id.php',
-                    type: 'POST',
-                    data: formData,
-                    dataType: 'json',
-                    success: function (response) {
-                        $('#playerIDResults').html(response.message);
-                    }
+                $('#player-lookup').on('submit', function (event) {
+                    event.preventDefault();
+                    var formData = $(this).serialize();
+                    $.ajax({
+                        url: 'scripts/lookup_player_id.php',
+                        type: 'POST',
+                        data: formData,
+                        dataType: 'json',
+                        success: function (response) {
+                            $('#playerIDResults').html(response.message);
+                        }
+                    });
+                    $('input, textarea').blur();
                 });
-                $('input, textarea').blur();
             });
         </script>
 </body>
