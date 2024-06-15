@@ -17,9 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     foreach ($challenge_keys as $challenge) {
         $cache_key = $challenge['cache_key'];
-        $query = "DELETE FROM player_cache WHERE `key` = ? AND `type` = 4 AND `playerID` = $playerID";
+        $query = "DELETE FROM player_cache WHERE `key` = ? AND `type` = 4 AND `playerID` = ?";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("s", $cache_key);
+        $stmt->bind_param("si", $cache_key, $playerID);
         $stmt->execute();
         if ($stmt->error) {
             $response = ['status' => 'error', 'message' => "Error deleting player cache: " . $stmt->error];
