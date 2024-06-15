@@ -88,6 +88,16 @@ $amount_stmt->close();
     </div>
     <div class="account-store">
         <div class="form-sec">
+            <h2>Player Lookup (Username to ID)</h2>
+            <form method="post" id="player-lookup">
+                <label for="playerUsername">Player Username:</label>
+                <input type="text" id="playerUsername" name="playerUsername" required><br>
+                <input class="button-main button-main-green" style="width: auto;" type="submit"
+                    value="Lookup Player ID">
+            </form>
+            <div class="results" id="playerIDResults"></div>
+        </div>
+        <div class="form-sec">
             <h2>Player Cache Adjustment (player_cache db table)</h2>
             <form method="post" action="scripts/insert_player_cache.php">
                 <label for="playerID">Player ID (num)</label>
@@ -97,11 +107,30 @@ $amount_stmt->close();
                 <label for="value">Value (num)</label>
                 <input type="number" id="value" name="value" required><br>
                 <input type="hidden" name="type" value="0">
-                <input class="button-main button-main-green" type="submit" value="Insert player_cache Data">
-                <button class="button-main" href="help/player_cache_submission">Wiki Help</button>
+                <input class="button-main button-main-green" style="width: auto;" type="submit"
+                    value="Insert player_cache Data">
             </form>
+            <button class="button-main" href="help/player_cache_submission">Wiki Help</button>
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+            $('#player-lookup').on('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                $.ajax({
+                    url: 'scripts/lookup_player_id.php',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        $('#playerIDResults').html(response.message);
+                    },
+                    error: function (xhr, status, error) {
+                        $('#playerIDResults').html('ERROR: ' + response.message);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
