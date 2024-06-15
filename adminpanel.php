@@ -90,8 +90,8 @@ $amount_stmt->close();
         <div class="form-sec">
             <h2>Player ID Lookup</h2>
             <form method="post" action="scripts/lookup_player_id.php" id="player-lookup">
-                <label for="playerUsername">Player Username:</label>
-                <input type="text" id="playerUsername" name="playerUsername" required><br>
+                <label for="playerUsername">Player Username (str)</label>
+                <input type="text" maxlength="12" id="playerUsername" name="playerUsername" required><br>
                 <input class="button-main button-main-green" style="width: auto;" type="submit"
                     value="Lookup Player ID">
             </form>
@@ -101,7 +101,7 @@ $amount_stmt->close();
         <div class="form-sec">
             <h2>Reset Player Daily Challenges</h2>
             <form method="post" action="scripts/reset_challenges_player.php" id="reset-player-challenges">
-                <label for="playerID">Player ID:</label>
+                <label for="playerID">Player ID (num)</label>
                 <input type="number" id="playerID" name="playerID" required><br>
                 <input class="button-main button-main-green" style="width: auto;" type="submit"
                     value="Reset Challenges">
@@ -124,44 +124,72 @@ $amount_stmt->close();
             </form>
             <div class="button-main" style="margin-top: 10px;" id="player_cache_insertion">Wiki Help</div>
         </div>
-        <script>
-            $(document).ready(function () {
-                $('#player-lookup').on('submit', function (event) {
-                    event.preventDefault();
-                    var formData = $(this).serialize();
-                    $.ajax({
-                        url: 'scripts/lookup_player_id.php',
-                        type: 'POST',
-                        data: formData,
-                        dataType: 'json',
-                        success: function (response) {
-                            $('#playerIDResults').html(response.message);
-                        }
-                    });
-                    $('input, textarea').blur();
+        <div class="form-sec">
+            <h2>Add/Remove Ethereal Souls</h2>
+            <form method="post" action="scripts/adjust_ethereal_souls.php" id="adjust-ethereal-souls">
+                <label for="playerID">Player ID (num)</label>
+                <input type="number" id="playerID" name="playerID" required><br>
+                <label for="soulsAmount">Souls (num/-num)</label>
+                <input type="number" id="soulsAmount" name="soulsAmount" required><br>
+                <input class="button-main button-main-green" style="width: auto;" type="submit"
+                    value="Adjust Ethereal Souls">
+            </form>
+            <div class="results" style="margin-top: 10px;" id="adjustEtherealSoulsResults">Awaiting action...</div>
+            <div class="button-main" style="margin-top: 10px;" id="adjust_ethereal_souls">Wiki Help</div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#player-lookup').on('submit', function (event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    url: 'scripts/lookup_player_id.php',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    success: function (response) {
+                        $('#playerIDResults').html(response.message);
+                    }
                 });
-                $('#reset-player-challenges').on('submit', function (event) {
-                    event.preventDefault();
-                    var formData = $(this).serialize();
-                    $.ajax({
-                        url: 'scripts/reset_challenges_player.php',
-                        type: 'POST',
-                        data: formData,
-                        dataType: 'json',
-                        success: function (response) {
-                            $('#resetPlayerChallengesResults').html(response.message);
-                            setTimeout(() => {
-                                $('#resetPlayerChallengesResults').html('Awaiting action...');
-                            }, 5000);
-                        }
-                    });
-                    $('input, textarea').blur();
-                });
-                $('#player_cache_insertion, #player_id_lookup, #reset_player_challenges').on('click', function (event) {
-                    window.location.href = 'help/' + this.id.replace('_', '_');
-                });
+                $('input, textarea').blur();
             });
-        </script>
+            $('#reset-player-challenges').on('submit', function (event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    url: 'scripts/reset_challenges_player.php',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    success: function (response) {
+                        $('#resetPlayerChallengesResults').html(response.message);
+                        setTimeout(() => {
+                            $('#resetPlayerChallengesResults').html('Awaiting action...');
+                        }, 5000);
+                    }
+                });
+                $('input, textarea').blur();
+            });
+            $('#adjust-ethereal-souls').on('submit', function (event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    url: 'scripts/adjust_ethereal_souls.php',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    success: function (response) {
+                        $('#adjustEtherealSoulsResults').html(response.message);
+                    }
+                });
+                $('input, textarea').blur();
+            });
+            $('#player_cache_insertion, #player_id_lookup, #reset_player_challenges, #adjust_ethereal_souls').on('click', function (event) {
+                window.location.href = 'help/' + this.id.replace('_', '_');
+            });
+        });
+    </script>
 </body>
 
 </html>
