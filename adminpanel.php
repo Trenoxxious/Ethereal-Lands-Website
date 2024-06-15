@@ -99,6 +99,17 @@ $amount_stmt->close();
             <div class="button-main" style="margin-top: 10px;" id="player_id_lookup">Wiki Help</div>
         </div>
         <div class="form-sec">
+            <h2>Reset Player Daily Challenges</h2>
+            <form method="post" action="scripts/reset_challenges_player.php" id="reset-player-challenges">
+                <label for="playerID">Player ID:</label>
+                <input type="number" id="playerID" name="playerID" required><br>
+                <input class="button-main button-main-green" style="width: auto;" type="submit"
+                    value="Reset Challenges">
+            </form>
+            <div class="results" style="margin-top: 10px;" id="resetPlayerChallengesResults">Awaiting action...</div>
+            <div class="button-main" style="margin-top: 10px;" id="reset_player_challenges">Wiki Help</div>
+        </div>
+        <div class="form-sec">
             <h2>Player Cache Insertion</h2>
             <form method="post" action="scripts/insert_player_cache.php">
                 <label for="playerID">Player ID (num)</label>
@@ -125,6 +136,20 @@ $amount_stmt->close();
                         dataType: 'json',
                         success: function (response) {
                             $('#playerIDResults').html(response.message);
+                        }
+                    });
+                    $('input, textarea').blur();
+                });
+                $('#reset-player-challenges').on('submit', function (event) {
+                    event.preventDefault();
+                    var formData = $(this).serialize();
+                    $.ajax({
+                        url: 'scripts/reset_challenges_player.php',
+                        type: 'POST',
+                        data: formData,
+                        dataType: 'json',
+                        success: function (response) {
+                            $('#resetPlayerChallengesResults').html(response.message);
                         }
                     });
                     $('input, textarea').blur();

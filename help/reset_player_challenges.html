@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="help.css">
+    <title>Wiki: Player Cache Insertion</title>
+</head>
+
+<body>
+    <div class="section">
+        <h1>Ethereal Admin Dashboard Wiki</h1>
+        <hr>
+        <h2>The Player Cache (Insertion)</h2>
+        <hr>
+        <h3 class="query">SELECT cache_key FROM daily_challenges</h3>
+        <h3 class="query">DELETE FROM player_cache WHERE `key` = ? AND `type` = 4 AND `playerID` = $playerID</h3>
+        <h3 class="query">UPDATE etherealsouls SET has_accepted_daily_challenges = 0 WHERE `id` = $playerID</h3>
+        <h3 class="query">DELETE FROM player_daily_challenges WHERE `user_id` = $playerID</h3>
+        <hr>
+        <p class="ooo">The order of operations for this web-query is as follows:</p>
+        <h3 class="process">Query the delete from the `player_cache` table where the `key` matches a daily challenge
+            key.</h3>
+        <div class="arrow-down"></div>
+        <h3 class="process">If the `playerID` exists and the `key` exists, remove it.</h3>
+        <div class="arrow-down"></div>
+        <h3 class="process">From the `etherealsouls` table, set `has_accepted_daily_challenges` to 0.</h3>
+        <div class="arrow-down"></div>
+        <h3 class="process">From the `player_daily_challenges` table, delete the row where `playerID` equals `user_id`.
+        </h3>
+        <hr>
+        <p>Resetting daily challenges for a player is a process that involves finding all of the appropriate daily
+            challenge cache keys and then parsing through data in various tables (listed below) to find and remove
+            any information associated with that `playerID` having accepted their daily challenges.</p>
+        <ul style="text-align: left;">
+            <li>daily_challenges</li>
+            <li>player_cache</li>
+            <li>etherealsouls</li>
+            <li>player_daily_challenges</li>
+        </ul>
+        <p>We simply input a playerID into the field in which we want to reset the daily challenges for. The queries
+            that are created and parsed by the server should find and remove or change all needed data to reset the
+            daily challenges for that player.
+        </p>
+    </div>
+    <footer>
+        The Ethereal Lands DB Wiki is a reference point for all administrators using the Admin Dashboard.
+    </footer>
+</body>
+
+</html>
