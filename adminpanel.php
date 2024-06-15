@@ -150,6 +150,9 @@ $amount_stmt->close();
                         dataType: 'json',
                         success: function (response) {
                             $('#resetPlayerChallengesResults').html(response.message);
+                            setTimeout(() => {
+                                $('#resetPlayerChallengesResults').html('Awaiting action...');
+                            }, 5000);
                         }
                     });
                     $('input, textarea').blur();
