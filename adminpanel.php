@@ -86,7 +86,7 @@ $amount_stmt->close();
             </p>
         </div>
     </div>
-    <div class="account-store">
+    <div class="account-support">
         <div class="form-sec">
             <h2>Player ID Lookup</h2>
             <form method="post" action="scripts/lookup_player_id.php" id="player-lookup">

@@ -572,13 +572,12 @@ body {
         width: 100%;
     }
 
-    .store-item {
+    .account-store {
+        align-items: center;
         width: 100%;
     }
 
-    .account-store,
-    .account-support {
-        align-items: center;
+    .store-item {
         width: 100%;
     }
 
@@ -599,6 +598,11 @@ body {
 
     .form-sec {
         min-width: auto;
+    }
+
+    .account-support {
+        align-items: center;
+        width: 100%;
     }
 
     .account-top {
