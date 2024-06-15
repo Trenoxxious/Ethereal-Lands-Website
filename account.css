@@ -528,11 +528,16 @@ body {
 }
 
 .form-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     background: rgba(0, 0, 0, 0.5);
     padding: 10px;
     box-sizing: border-box;
     border-radius: 0.2em;
     width: 250px;
+    margin-bottom: 15px;
 }
 
 .form-sec form {

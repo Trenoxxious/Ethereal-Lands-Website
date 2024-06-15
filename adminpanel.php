@@ -89,7 +89,7 @@ $amount_stmt->close();
     <div class="account-store">
         <div class="form-sec">
             <h2>Player Lookup (Username to ID)</h2>
-            <form method="post" id="player-lookup">
+            <form method="post" action="scripts/lookup_player_id.php" id="player-lookup">
                 <label for="playerUsername">Player Username:</label>
                 <input type="text" id="playerUsername" name="playerUsername" required><br>
                 <input class="button-main button-main-green" style="width: auto;" type="submit"
