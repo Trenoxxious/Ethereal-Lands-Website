@@ -19,11 +19,11 @@ if ($isAdmin == false) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $playerUsername = $_POST['playerUsername'];
-    $sql = "SELECT id as playerID FROM players WHERE username = '$playerUsername'";
+    $sql = "SELECT id as playerID FROM players WHERE `name` = '$playerUsername'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $playerUsername = $row['username'];
+        $playerUsername = $row['name'];
         $playerId = $row['id'];
         echo json_encode(['status' => 'success', 'message' => "The player ID for $playerUsername is: $playerId"]);
     } else {
