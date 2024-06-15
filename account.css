@@ -538,7 +538,7 @@ body {
     box-sizing: border-box;
     border-radius: 0.2em;
     width: 250px;
-    margin-bottom: 15px;
+    margin: 15px;
 }
 
 .form-sec form {

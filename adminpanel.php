@@ -95,8 +95,7 @@ $amount_stmt->close();
                 <input class="button-main button-main-green" style="width: auto;" type="submit"
                     value="Lookup Player ID">
             </form>
-            <div class="results" style="margin-top: 10px;" id="playerIDResults">Look up a username to find the player's
-                ID.</div>
+            <div class="results" style="margin-top: 10px;" id="playerIDResults">Awaiting username lookup...</div>
             <div class="button-main" style="margin-top: 10px;" id="player_id_lookup">Wiki Help</div>
         </div>
         <div class="form-sec">
