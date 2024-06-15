@@ -25,7 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $playerUsername = $row['username'];
         $playerId = $row['id'];
         echo json_encode(['status' => 'success', 'message' => "The player ID for $playerUsername is: $playerId"]);
     } else {

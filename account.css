@@ -481,6 +481,7 @@ body {
 
 .results {
     color: white;
+    text-align: center;
 }
 
 @keyframes rotate-hue {
