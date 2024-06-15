@@ -32,7 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $currentSouls = $row['etherealsouls'];
 
         if ($soulsAmount < 0) {
-            $newSouls = max(0, $currentSouls + $soulsAmount);
+            $soulsAmount = abs($_POST['souls_amount']);
+            $newSouls = $currentSouls - $soulsAmount;
+            if ($newSouls <= 0) {
+                $newSouls = 0;
+            }
+        } else if ($soulsAmount == 0) {
+            $newSouls = $currentSouls;
         } else {
             $newSouls = $currentSouls + $soulsAmount;
         }
@@ -41,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $updateStmt = $conn->prepare($updateSql);
         $updateStmt->bind_param("ii", $newSouls, $playerID);
         if ($updateStmt->execute()) {
-            $response = ['status' => 'success', 'message' => "Success! New ethereal souls amount for player $playerID: $newSouls"];
+            $response = ['status' => 'success', 'message' => "Souls adjusted. The new amount of ethereal souls for Player ID $playerID is $newSouls."];
         } else {
             $response = ['status' => 'error', 'message' => "Error updating ethereal souls: " . $conn->error];
         }
