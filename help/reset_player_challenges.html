@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="help.css">
-    <title>Wiki: Player Cache Insertion</title>
+    <title>Wiki: Reset Player Challenges</title>
 </head>
 
 <body>
     <div class="section">
         <h1>Ethereal Admin Dashboard Wiki</h1>
         <hr>
-        <h2>The Player Cache (Insertion)</h2>
+        <h2>The Player Daily Challenge (Reset)</h2>
         <hr>
         <h3 class="query">SELECT cache_key FROM daily_challenges</h3>
         <h3 class="query">DELETE FROM player_cache WHERE `key` = ? AND `type` = 4 AND `playerID` = $playerID</h3>
