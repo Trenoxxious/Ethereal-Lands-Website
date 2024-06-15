@@ -26,10 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $playerId = $row['id'];
-        echo json_encode(['status' => 'success', 'message' => "The player ID for $playerUsername is: $playerId"]);
+        $response = ['status' => 'success', 'message' => "The player ID for $playerUsername is: $playerId"];
     } else {
-        echo json_encode(['status' => 'error', 'message' => "No such player with that username."]);
+        $response = ['status' => 'error', 'message' => "No such player with that username."];
     }
+    echo json_encode($response);
 }
 
 $conn->close();
