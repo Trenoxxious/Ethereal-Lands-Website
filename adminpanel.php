@@ -95,7 +95,7 @@ $amount_stmt->close();
                 <input class="button-main button-main-green" style="width: auto;" type="submit"
                     value="Lookup Player ID">
             </form>
-            <div class="results" id="playerIDResults"></div>
+            <div class="results" id="playerIDResults">Look up a username to find the player's ID.</div>
         </div>
         <div class="form-sec">
             <h2>Player Cache Adjustment (player_cache db table)</h2>
