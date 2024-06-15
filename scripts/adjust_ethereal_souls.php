@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $currentSouls = $row['etherealsouls'];
+        $currentSouls = $row['amount'];
 
         if ($soulsAmount < 0) {
             $soulsAmount = abs($_POST['souls_amount']);
