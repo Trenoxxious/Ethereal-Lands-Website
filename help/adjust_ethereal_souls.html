@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="help.css">
+    <title>Wiki: Adjust Ethereal Souls</title>
+</head>
+
+<body>
+    <div class="section">
+        <h1>Ethereal Admin Dashboard Wiki</h1>
+        <hr>
+        <h2>The Ethereal Soul</h2>
+        <hr>
+        <h3 class="query">UPDATE etherealsouls SET amount = `$newSouls` WHERE id = `$playerID`</h3>
+        <hr>
+        <p class="ooo">The order of operations for this web-query is as follows:</p>
+        <h3 class="process">Query the `ehterealsouls` database table for a row matching `playerID`.</h3>
+        <div class="arrow-down"></div>
+        <h3 class="process">If a row is found, we update the `amount` in the table to be `$newSouls`.</h3>
+        <div class="arrow-down"></div>
+        <h3 class="process">If a row is not found, send an error.</h3>
+        <hr>
+        <p>Adjusting Ethereal Souls for the player is a very simple query. We will take the amount entered by the
+            player, find the amount of souls the player has in the database and alter it using the entered data. There
+            are two columns used for this query in the `etherealsouls` database table:</p>
+        <ul style="text-align: left;">
+            <li>id (int)</li>
+            <li>amount (int)</li>
+        </ul>
+        <p>A positive integer (eg. 100) will add Ethereal Souls to the player's current amount. A negative integer (eg.
+            -100) will subtract Ethereal Souls from the player's current amount. The amount of Ethereal Souls will not
+            go below 0 under any circumstances.
+        </p>
+    </div>
+    <footer>
+        The Ethereal Lands DB Wiki is a reference point for all administrators using the Admin Dashboard.
+    </footer>
+</body>
+
+</html>
