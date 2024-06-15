@@ -110,27 +110,26 @@ $amount_stmt->close();
                 <input class="button-main button-main-green" style="width: auto;" type="submit"
                     value="Insert player_cache Data">
             </form>
-            <button class="button-main" href="help/player_cache_submission">Wiki Help</button>
+            <div class="button-main" href="help/player_cache_submission">Wiki Help</div>
         </div>
-    </div>
-    <script>
-        $(document).ready(function () {
-            $('#player-lookup').on('submit', function (event) {
-                event.preventDefault(); // Prevent the default form submission
-                $.ajax({
-                    url: 'scripts/lookup_player_id.php',
-                    type: 'POST',
-                    data: $(this).serialize(),
-                    success: function (response) {
-                        $('#playerIDResults').html(response.message);
-                    },
-                    error: function (xhr, status, error) {
-                        $('#playerIDResults').html('ERROR: ' + response.message);
-                    }
+        <script>
+            $(document).ready(function () {
+                $('#player-lookup').on('submit', function (event) {
+                    event.preventDefault();
+                    $.ajax({
+                        url: 'scripts/lookup_player_id.php',
+                        type: 'POST',
+                        data: $(this).serialize(),
+                        success: function (response) {
+                            $('#playerIDResults').html(response.message);
+                        },
+                        error: function (xhr, status, error) {
+                            $('#playerIDResults').html('ERROR: ' + response.message);
+                        }
+                    });
                 });
             });
-        });
-    </script>
+        </script>
 </body>
 
 </html>
