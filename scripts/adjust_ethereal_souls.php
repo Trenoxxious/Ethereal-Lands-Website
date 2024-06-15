@@ -42,8 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $updateSql = "UPDATE etherealsouls SET amount = ? WHERE id = ?";
         $updateStmt = $conn->prepare($updateSql);
         $updateStmt->bind_param("ii", $newSouls, $playerID);
+
+        $formatted_newSouls = number_format($newSouls);
         if ($updateStmt->execute()) {
-            $response = ['status' => 'success', 'message' => "Souls adjusted. The new amount of Ethereal Souls for Player ID $playerID is $newSouls."];
+            $response = ['status' => 'success', 'message' => "Souls adjusted. The new amount of Ethereal Souls for Player ID $playerID is $formatted_newSouls."];
         } else {
             $response = ['status' => 'error', 'message' => "Error updating ethereal souls: " . $conn->error];
         }
