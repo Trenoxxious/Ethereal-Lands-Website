@@ -88,17 +88,19 @@ $amount_stmt->close();
     </div>
     <div class="account-store">
         <div class="form-sec">
-            <h2>Player Lookup (Username to ID)</h2>
+            <h2>Player ID Lookup</h2>
             <form method="post" action="scripts/lookup_player_id.php" id="player-lookup">
                 <label for="playerUsername">Player Username:</label>
                 <input type="text" id="playerUsername" name="playerUsername" required><br>
                 <input class="button-main button-main-green" style="width: auto;" type="submit"
                     value="Lookup Player ID">
             </form>
-            <div class="results" id="playerIDResults">Look up a username to find the player's ID.</div>
+            <div class="results" style="margin-top: 10px;" id="playerIDResults">Look up a username to find the player's
+                ID.</div>
+            <div class="button-main" style="margin-top: 10px;" id="player_id_lookup">Wiki Help</div>
         </div>
         <div class="form-sec">
-            <h2>Player Cache Adjustment (player_cache db table)</h2>
+            <h2>Player Cache Insertion</h2>
             <form method="post" action="scripts/insert_player_cache.php">
                 <label for="playerID">Player ID (num)</label>
                 <input type="number" id="playerID" name="playerID" required><br>
@@ -110,7 +112,7 @@ $amount_stmt->close();
                 <input class="button-main button-main-green" style="width: auto;" type="submit"
                     value="Insert player_cache Data">
             </form>
-            <div class="button-main" href="help/player_cache_submission">Wiki Help</div>
+            <div class="button-main" style="margin-top: 10px;" id="player_cache_submission">Wiki Help</div>
         </div>
         <script>
             $(document).ready(function () {
@@ -127,6 +129,12 @@ $amount_stmt->close();
                         }
                     });
                     $('input, textarea').blur();
+                });
+                $('#player_cache_submission').on('click', function (event) {
+                    window.location.href = 'help/player_cache_submission';
+                });
+                $('#player_id_lookup').on('click', function (event) {
+                    window.location.href = 'help/player_id_lookup';
                 });
             });
         </script>
