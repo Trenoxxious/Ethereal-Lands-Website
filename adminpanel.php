@@ -121,10 +121,10 @@ $amount_stmt->close();
                         type: 'POST',
                         data: $(this).serialize(),
                         success: function (response) {
-                            $('#playerIDResults').html(response.message);
+                            $('#playerIDResults').html(response);
                         },
-                        error: function (response, xhr, status, error) {
-                            $('#playerIDResults').html('ERROR: ' + response.message);
+                        error: function (xhr, status, error) {
+                            $('#playerIDResults').html('ERROR: ' + xhr.responseText);
                         }
                     });
                 });
