@@ -121,7 +121,7 @@ $amount_stmt->close();
                         type: 'POST',
                         data: $(this).serialize(),
                         success: function (response) {
-                            $('#playerIDResults').html(response);
+                            $('#playerIDResults').html(response.message);
                         },
                         error: function (xhr, status, error) {
                             $('#playerIDResults').html('ERROR: ' + xhr.responseText);
