@@ -128,3 +128,16 @@ footer {
 .value-span::before {
     content: "default value: "
 }
+
+.type-span {
+    color: white;
+    margin-left: 5px;
+    border-left: 2px dotted rgb(0, 45, 82);
+    background: rgb(105, 109, 139);
+    box-sizing: border-box;
+    padding: 2px 3px;
+}
+
+.type-span::before {
+    content: "type: "
+}

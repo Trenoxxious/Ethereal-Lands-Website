@@ -118,7 +118,8 @@ $amount_stmt->close();
                 <input type="text" id="key" name="key" required><br>
                 <label for="value">Value (num)</label>
                 <input type="number" id="value" name="value" required><br>
-                <input type="hidden" name="type" value="0">
+                <label for="type">Type (tinyint num)</label>
+                <input type="number" id="type" name="type" required><br>
                 <input class="button-main button-main-green" style="width: auto;" type="submit"
                     value="Insert player_cache Data">
             </form>

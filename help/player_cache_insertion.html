@@ -39,19 +39,25 @@
             `ethereal_item_1559` as the key. The value for `ethereal_item` keys does not matter as the game only looks
             for the key and not a value, with the <span>player.hasCacheKey()</span> function.
         </p>
-        <p>The `type` field for our query is always going to be '0' through the Admin Dashboard web
-            interface until it is updated to support other `type` values.</p>
+        <p>The `type` field for our query is always going to be '0' for an int value, except for when we assign
+            cache keys for daily challenge int values, which are a type '4' cache key. The reason for the type
+            difference is to
+            prevent accidental deletions of critical keys from player data rows. We need to use a type of '3' for cache
+            keys that have a string value instead of an int value.</p>
         <hr>
         <h2>Common Cache Keys</h2>
+        <p>Any cache key shown below with `...` is to be replaced with a relative data string to the cache key you are
+            attempting to assign to a player.</p>
         <h3>Daily Challenges</h3>
         <ul>
-            <li>dcs_kill_...<span class="value-span">0</span></li>
-            <li>dcs_mine_ore<span class="value-span">0</span></li>
-            <li>dcs_catch_fish<span class="value-span">0</span></li>
+            <li>dcs_kill_...<span class="value-span">0</span><span class="type-span">4</span></li>
+            <li>dcs_mine_ore<span class="value-span">0</span><span class="type-span">4</span></li>
+            <li>dcs_catch_fish<span class="value-span">0</span><span class="type-span">4</span></li>
+            <li>dcs_catch_fish_epic<span class="value-span">0</span><span class="type-span">4</span></li>
         </ul>
         <h3>The Void Merchant Items</h3>
         <ul>
-            <li>ethereal_item_...<span class="value-span">0</span></li>
+            <li>ethereal_item_...<span class="value-span">0</span><span class="type-span">0</span></li>
         </ul>
     </div>
     <footer>
