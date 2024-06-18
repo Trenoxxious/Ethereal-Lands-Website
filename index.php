@@ -302,11 +302,9 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         <div class="slide-content">
             <h1>Graveyards</h1>
             <p>Gone are the days of respawning in Lumbridge... at least all the time.<br><br>New to all accessible areas
-                are
-                <b>graveyards</b>; respawn points with <i>possible</i> bank access to get you back into what you were
-                doing
-                quicker! However, you may have to complete a task or two in order to get access to these new graveyard
-                banks.
+                are <b>graveyards</b>; respawn points with <i>possible</i> bank access to get you back into what you
+                were doing quicker! However, you may have to complete a task or two in order to get access to these new
+                graveyard banks.
             </p>
         </div>
         <div class="slide-fade"></div>
@@ -315,10 +313,8 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         <div class="slide-content">
             <h1>New Skill: Huntsman</h1>
             <p>Very similar to the much-beloved Slayer skill, the Huntsman skill focuses on retrieving items or
-                completing
-                specific tasks instead of simply killing creatures. Huntsman offers many awesome rewards, and also gives
-                us the
-                ability to grant players with items that can help with leveling other skills.
+                completing specific tasks instead of simply killing creatures. Huntsman offers many awesome rewards, and
+                also gives us the ability to grant players with items that can help with leveling other skills.
             </p>
         </div>
         <div class="slide-content">
@@ -333,21 +329,20 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     <div class="slide" id="slide5">
         <div class="slide-content">
             <h1>Quest Overhaul</h1>
-            <p>Within our universe, some quests remain, but many quest givers have closed up shop and moved on as their
-                quest requirements have been fulfilled. Some new quest givers have arrived as well! All quests
+            <p>Within our universe, some quests remain, but many quest givers have closed up shop and moved on. Some new
+                quest givers have arrived as well! All quests
                 available are either built masterfully, or have been remastered for a perfect experience. Along with
-                these changes most items, examine texts and dialogue has been remastered to improve grammatic clarity
-                and the overall gameplay experience.
+                these changes, most items, examine texts and dialogue has been remastered to improve grammatic clarity
+                and your overall gameplay experience.
             </p>
         </div>
         <div class="slide-content">
-            <h1>New Threats Loom</h1>
+            <h1>New Threats Loom!</h1>
             <p>Ethereal Lands is a dangerous place. Some monsters have been given special abilities, notated either by
                 NPC dialogue or chat notification that it's coming, giving you an opportunity to counter the attack.
-                Your Hero has also grown in power, though. Many items have been given auto-triggering special attacks or
-                abilities to help take out these looming threats across New Gielinor. As well as having all these new
-                special powers, new prayers have been created that will give you a greater edge at all levels than ever
-                before.
+                Your Hero has also grown in power, though! Many items have been given auto-triggering special attacks or
+                abilities to help take out these looming threats across New Gielinor. Keep an eye on your prayers too,
+                for a new and improved experience.
             </p>
         </div>
         <div class="slide-fade"></div>
