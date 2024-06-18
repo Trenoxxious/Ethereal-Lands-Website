@@ -276,6 +276,13 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 raise the maximum level to <b>77</b>.
             </p>
         </div>
+        <div class="slide-content">
+            <h1>New Gielinor</h1>
+            <p>Some areas of Gielinor will never be same. Edgeville, Lumbridge, Karamja and many, many more areas have
+                been forever-changed by the Noxious invasion. The Gielinor you know and love will feel similar, but
+                offer brand new adventuring experiences as you explore the new, sundered world.
+            </p>
+        </div>
         <div class="slide-fade"></div>
     </div>
     <div class="slide" id="slide2">

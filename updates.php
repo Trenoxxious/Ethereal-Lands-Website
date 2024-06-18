@@ -43,6 +43,51 @@
     <div class="updatelist">
         <div class="updatebox">
             <div class="updatetop">
+                <div class="updateimage"><img src="images/pic3.png" alt="update image"></div>
+                <div class="updatebartop">
+                    <p class="updatedate">06/18/2024</p>
+                    <div class="updatetitle">Various Game Updates</div>
+                    <div class="patchnumber">Pre-release Update</div>
+                    <p class="updatesummary">The game is seeing various updates and improvements this week.</p>
+                </div>
+            </div>
+            <div class="updatecontent">
+                <p>Drop rate changes and new monster abilities/attacks are being introduced this week. In the coming
+                    weeks, new prayers are going to be introduced to assist players at the lower-levels in reducing
+                    damage taken by a smaller percent or entirely if using the prayer to avoid a special attack from a
+                    lower-leveled boss or mob. We're also starting work on a cinematic trailer for Ethereal Lands.
+                </p>
+                <h2>Bosses</h2>
+                <p>Del'araz has had his drop rates reduced across the board for Noxious Scythe pieces.
+                </p>
+                <p>The drop rate of Ice Dye (for a Noxious Scythe (Ice)) has been reduced by over half, giving a 1/1000
+                    chance of dropping. (Del'araz)</p>
+                <p>Gubgub's special attack bug has been fixed and will no longer make Gubgub unattackable after Gubgub
+                    activates it.</p>
+                <h2>Administration</h2>
+                <p>Certain items have been restricted from being granted/spawned in-game. These items are mainly rares
+                    and special items that should not be spawned in under any circumstances. The only way these items
+                    will be granted is via manual database entry while the server is offline and will not occur often.
+                </p>
+                <h2>Character</h2>
+                <p>A world announcement is now made when a player reaches maximum level in a skill (66).</p>
+                <h2>Ethereal Dungeons</h2>
+                <p>Ethereal Dungeons have had their own NPC spawn files created for enabling and disabling specific
+                    dungeons, along with their previously added object spawn information.</p>
+                <h2>Website</h2>
+                <p>The Admin Dashboard has been given a few tools to assist with player issues such as Ethereal Souls
+                    or cosmetic purchases, player cache issues with quests, etc. More tools will be added soon to assist
+                    with mutes, bans, player cache removal and quest progress manipulation.</p>
+                <p>Confirmation dialogues and database logging will be enabled for all admin tool usage to prevent
+                    abuse. These tables and additions are being worked on along with the new tools that are coming and
+                    will be enabled before Ethereal Lands goes live.</p>
+                <h2>Misc</h2>
+                <p>Work has been started on a cinematic Ethereal Lands trailer. It's going to be a banger. Stay tuned!
+                </p>
+            </div>
+        </div>
+        <div class="updatebox">
+            <div class="updatetop">
                 <div class="updateimage"><img src="images/pic6.png" alt="update image"></div>
                 <div class="updatebartop">
                     <p class="updatedate">06/11/2024</p>
