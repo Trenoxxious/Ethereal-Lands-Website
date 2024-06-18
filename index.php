@@ -334,14 +334,14 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         <div class="slide-content">
             <h1>Quest Overhaul</h1>
             <p>Within our universe, some quests remain, but many quest givers have closed up shop and moved on as their
-                quests have been fulfilled. Some new quest givers have arrived as well! All quests available are either
-                built masterfully, or have
-                been remastered for a perfect experience. Along with these changes, most items, examine texts and dialog
-                has been remastered to improve grammatic clarity.
+                quest requirements have been fulfilled. Some new quest givers have arrived as well! All quests
+                available are either built masterfully, or have been remastered for a perfect experience. Along with
+                these changes most items, examine texts and dialogue has been remastered to improve grammatic clarity
+                and the overall gameplay experience.
             </p>
         </div>
         <div class="slide-content">
-            <h1>New Threats</h1>
+            <h1>New Threats Loom</h1>
             <p>Ethereal Lands is a dangerous place. Some monsters have been given special abilities, notated either by
                 NPC dialogue or chat notification that it's coming, giving you an opportunity to counter the attack.
                 Your Hero has also grown in power, though. Many items have been given auto-triggering special attacks or
