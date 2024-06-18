@@ -341,11 +341,13 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             </p>
         </div>
         <div class="slide-content">
-            <h1>Monster and Items Overhaul</h1>
+            <h1>New Threats</h1>
             <p>Ethereal Lands is a dangerous place. Some monsters have been given special abilities, notated either by
                 NPC dialogue or chat notification that it's coming, giving you an opportunity to counter the attack.
                 Your Hero has also grown in power, though. Many items have been given auto-triggering special attacks or
-                abilities to help take out these looming threats across New Gielinor.
+                abilities to help take out these looming threats across New Gielinor. As well as having all these new
+                special powers, new prayers have been created that will give you a greater edge at all levels than ever
+                before.
             </p>
         </div>
         <div class="slide-fade"></div>
