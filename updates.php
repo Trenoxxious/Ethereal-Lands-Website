@@ -69,9 +69,11 @@
                     will not cost any additional prayer points to turn a prayer off. <i>Most importantly, prayers will
                         only drain while in combat and can be kept on continually without draining your prayer while
                         outside of combat.</i> Once you enter combat, your prayer will drain as normal again. Hurrah!
-                    <b>This update (at this current moment and with no future plans to change) does not affect players
-                        while they are in the wilderness. This update is also entirely subject to change and be removed
-                        if we are not satisfied with the testing results.
+                    <b>This initial hit to your prayer (at this current moment and with no future plans to change) does
+                        not affect players while they are in the wilderness. The PvP systems in Runescape Classic are
+                        very near and dear to player's hearts, and we want to keep that as unchanged as possible. This
+                        update is also subject to change and will be reverted if we are not satisfied with the
+                        testing results.
                     </b>
                 </p>
                 <h2>General</h2>
