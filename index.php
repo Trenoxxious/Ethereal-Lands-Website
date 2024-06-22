@@ -313,15 +313,15 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         <div class="slide-content">
             <h1>New Skill: Huntsman</h1>
             <p>Very similar to the much-beloved Slayer skill, the Huntsman skill focuses on retrieving items or
-                completing specific tasks instead of simply killing creatures. Huntsman offers many awesome rewards, and
-                also gives us the ability to grant players with items that can help with leveling other skills.
+                completing specific tasks instead of simply killing creatures. Huntsman offers awesome rewards and
+                gives us the ability to grant players with itemized rewards to help with leveling other skills.
             </p>
         </div>
         <div class="slide-content">
-            <h1>New & Improved Guilds</h1>
-            <p>With some areas of New Gielinor being inaccessible, this leaves us without guilds for some skills. We've
-                re-designed some of these returning guilds and reinvented the way that you'll access and use these
-                guilds.
+            <h1>Improved Skill Guilds</h1>
+            <p>With some areas of New Gielinor being inaccessible, this left us without guilds for some skills that we
+                still wanted, so we've re-designed some of these returning guilds and reinvented the way that you'll
+                access and use these guilds.
             </p>
         </div>
         <div class="slide-fade"></div>
@@ -331,7 +331,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <h1>Quest Overhaul</h1>
             <p>Within our universe, some quests remain, but many quest givers have closed up shop and moved on. Some new
                 quest givers have arrived as well! All quests
-                available are either built masterfully, or have been remastered for a perfect experience. Along with
+                available are either crafted masterfully, or have been remastered from scratch. Along with
                 these changes, most items, examine texts and dialogue has been remastered to improve grammatic clarity
                 and your overall gameplay experience.
             </p>
@@ -340,9 +340,9 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <h1>New Threats Loom!</h1>
             <p>Ethereal Lands is a dangerous place. Some monsters have been given special abilities, notated either by
                 NPC dialogue or chat notification that it's coming, giving you an opportunity to counter the attack.
-                Your Hero has also grown in power, though! Many items have been given auto-triggering special attacks or
-                abilities to help take out these looming threats across New Gielinor. Keep an eye on your prayers too,
-                for a new and improved experience.
+                Your Hero has also grown in power, though! Many powerful items have been given auto-triggering special
+                attacks or abilities to help take out these threats across New Gielinor. Get acquainted with your
+                prayers too, as several have been added!
             </p>
         </div>
         <div class="slide-fade"></div>

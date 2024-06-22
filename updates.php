@@ -43,6 +43,68 @@
     <div class="updatelist">
         <div class="updatebox">
             <div class="updatetop">
+                <div class="updateimage"><img src="images/pic2.png" alt="update image"></div>
+                <div class="updatebartop">
+                    <p class="updatedate">06/22/2024</p>
+                    <div class="updatetitle">In-game Update Galore</div>
+                    <div class="patchnumber">Pre-release Update</div>
+                    <p class="updatesummary">The game is seeing various updates and improvements this week to ready for
+                        pre-launch testing.</p>
+                </div>
+            </div>
+            <div class="updatecontent">
+                <p>This update sees various updates to many in-game activities and items. We've also started rendering
+                    scenes from our upcoming EL trailer, so hopefully that will be finished within the month and we'll
+                    have something awesome to show for it!
+                </p>
+                <h2>Major Gameplay Updates</h2>
+                <p>Several prayers have had their drain rates tuned to drain less prayer points over time. However, the
+                    first time you activate most prayer abilities, your prayer points will take an immediate hit. The
+                    hit amount is based on whether the prayer is considered a "high level" or "low level" prayer,
+                    currently set at 2 and 3 points respectively. Not all prayers are
+                    affected by these changes (prayers unlocked at very early levels) but this may change in the future.
+                    This change was made to increase the difficulty of the game in
+                    various ways, but increase the amount of time prayers can be kept on once engaged. Prayer-flicking
+                    will now cost additional points if switching off prayers entirely and switching them back on. It
+                    will not cost any additional prayer points to turn a prayer off. <i>Most importantly, prayers will
+                        only drain while in combat and can be kept on continually without draining your prayer while
+                        outside of combat.</i> Once you enter combat, your prayer will drain as normal again. Hurrah!
+                    <b>This update (at this current moment and with no future plans to change) does not affect players
+                        while they are in the wilderness. This update is also entirely subject to change and be removed
+                        if we are not satisfied with the testing results.
+                    </b>
+                </p>
+                <h2>General</h2>
+                <p>The Ethereal Lands cinematic trailer has started rendering its first scene! We should have the
+                    cinematic up on the website's home page hopefully within the month!</p>
+                <p>Three new prayers have been designed and added to the game, two of which were designed to help with
+                    early-game leveling and dealing with lower-leveled monster/boss special attacks.</p>
+                <p>Several interface texts have been updated to reflect their differences between existing and new
+                    prayers that essentially do the same thing with slight differences.
+                </p>
+                <p>Protect from Melee was not working as intended, and now halves damage correctly when it's able to.
+                </p>
+                <p>Dragon Bars are now able to be made with many, many more dragon items by using them on the
+                    appropriate furnace. The amount of Dragon Bars made will depend on which dragon item is used in the
+                    smelting process.</p>
+                <p>Work has been started on hopefully having specific prayers show over-head of a player when active,
+                    such as Protect from Melee/Missiles.</p>
+                <p>Rapid Heal has been significantly improved and now restores HP at about 4x the normal restoration
+                    rate, but now costs significantly more in prayer drain rate.</p>
+                <h2>Items</h2>
+                <p>The Eye of Del'araz has been given updated examine information, making it clear that it can be
+                    used
+                    on a Charged Dragonstone Amulet (Amulet of Glory) to create the Eye of Glory.
+                </p>
+                <p>The Charged Dragonstone Amulet has been renamed to Amulet of Glory.</p>
+                <p>The examine information for special cosmetics has been altered to be more clear that they will
+                    never be returning to the game once deemed discontinued.</p>
+                <h2>Website</h2>
+                <p>Several updates to the index page of the website.</p>
+            </div>
+        </div>
+        <div class="updatebox">
+            <div class="updatetop">
                 <div class="updateimage"><img src="images/pic3.png" alt="update image"></div>
                 <div class="updatebartop">
                     <p class="updatedate">06/18/2024</p>
