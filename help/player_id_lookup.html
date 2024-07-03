@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="help.css">
+    <title>Wiki: Player ID Lookup</title>
+</head>
+
+<body>
+    <div class="section">
+        <h1>Ethereal Admin Dashboard Wiki</h1>
+        <hr>
+        <h2>The Player ID</h2>
+        <hr>
+        <h3 class="query">SELECT id FROM players WHERE LOWER(username) = '$playerUsername'</h3>
+        <hr>
+        <p class="ooo">The order of operations for this web-query is as follows:</p>
+        <h3 class="process">Query the selection from the `players` database table.</h3>
+        <div class="arrow-down"></div>
+        <h3 class="process">If the entered `playerUsername` field matches `username` in the `players` table, return the
+            player's `id`.</h3>
+        <div class="arrow-down"></div>
+        <h3 class="process">If the entered `playerUsername` field does not match any `username` in the `players` table,
+            send an error.</h3>
+        <hr>
+        <p>Looking up a player in the `players` table of the database is a very straightforward process. Enter a
+            player's username to find their ID. The username field is insensitive to case. The query works using only
+            the following information:</p>
+        <ul style="text-align: left;">
+            <li>Username (str/text)</li>
+            <li>id (int)</li>
+        </ul>
+        <p>The lookup field will work with numbers, letters, underscores and spaces.
+        </p>
+    </div>
+    <footer>
+        The Ethereal Lands DB Wiki is a reference point for all administrators using the Admin Dashboard.
+    </footer>
+</body>
+
+</html>

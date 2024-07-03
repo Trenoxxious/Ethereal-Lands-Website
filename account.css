@@ -479,6 +479,11 @@ body {
     width: 100%;
 }
 
+.results {
+    color: white;
+    text-align: center;
+}
+
 @keyframes rotate-hue {
     0% {
         border-color: #b154ff;
@@ -516,7 +521,6 @@ body {
 
     75% {
         color: #b154ff;
-
     }
 
     100% {
@@ -525,11 +529,16 @@ body {
 }
 
 .form-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     background: rgba(0, 0, 0, 0.5);
     padding: 10px;
     box-sizing: border-box;
     border-radius: 0.2em;
-    width: auto;
+    width: 250px;
+    margin: 15px;
 }
 
 .form-sec form {
@@ -537,6 +546,13 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.form-sec h2 {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
 }
 
 @media only screen and (max-width: 900px) {
@@ -556,13 +572,12 @@ body {
         width: 100%;
     }
 
-    .store-item {
+    .account-store {
+        align-items: center;
         width: 100%;
     }
 
-    .account-store,
-    .account-support {
-        align-items: center;
+    .store-item {
         width: 100%;
     }
 
@@ -579,6 +594,15 @@ body {
 @media only screen and (max-width: 600px) {
     .main-account-front {
         align-items: center;
+    }
+
+    .form-sec {
+        min-width: auto;
+    }
+
+    .account-support {
+        align-items: center;
+        width: 100%;
     }
 
     .account-top {

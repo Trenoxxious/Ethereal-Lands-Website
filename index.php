@@ -276,16 +276,24 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 raise the maximum level to <b>77</b>.
             </p>
         </div>
+        <div class="slide-content">
+            <h1>New Gielinor</h1>
+            <p>Some areas of Gielinor will never be same. Edgeville, Lumbridge, Karamja Island and many, many more areas
+                have been forever-changed by the noxious invasion. The Gielinor you know and love will feel similar, but
+                offer brand new adventuring experiences as you explore the new, sundered world of New Gielinor.
+            </p>
+        </div>
         <div class="slide-fade"></div>
     </div>
     <div class="slide" id="slide2">
         <div class="slide-content">
             <h1>Expanded Locations</h1>
-            <p>New and expanded areas are coming to Gielinor! Areas are built retaining the Classic touch, careful to
-                not
+            <p>New and expanded areas are coming to Gielinor! New areas are built retaining the Classic touch, careful
+                not to
                 fall into the typical "private server" feel. Unlock powerful training areas by completing tasks! Explore
                 new underground dungeons and caves! Most importantly, <b>experience a completely new tutorial island</b>
-                right from the get-go, sending you on your first quest utilizing almost every skill right on the island.
+                right from the get-go, sending you on your first quest utilizing almost every skill right on the island
+                and showing you a glimpse of what's to come in New Gielinor.
             </p>
         </div>
         <div class="slide-fade"></div>
@@ -294,11 +302,9 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         <div class="slide-content">
             <h1>Graveyards</h1>
             <p>Gone are the days of respawning in Lumbridge... at least all the time.<br><br>New to all accessible areas
-                are
-                <b>graveyards</b>, respawn points with <i>possible</i> bank access to get you back into what you were
-                doing
-                quicker! You may have to complete a task or two in order to get access to these graveyard banks,
-                however.
+                are <b>graveyards</b>; respawn points with <i>possible</i> bank access to get you back into what you
+                were doing quicker! However, you may have to complete a task or two in order to get access to these new
+                graveyard banks.
             </p>
         </div>
         <div class="slide-fade"></div>
@@ -307,10 +313,15 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         <div class="slide-content">
             <h1>New Skill: Huntsman</h1>
             <p>Very similar to the much-beloved Slayer skill, the Huntsman skill focuses on retrieving items or
-                completing
-                specific tasks instead of simply killing creatures. Huntsman offers many awesome rewards, and also gives
-                us the
-                ability to grant players with items that can help with leveling other skills.
+                completing specific tasks instead of simply killing creatures. Huntsman offers awesome rewards and
+                gives us the ability to grant players with itemized rewards to help with leveling other skills.
+            </p>
+        </div>
+        <div class="slide-content">
+            <h1>Improved Skill Guilds</h1>
+            <p>With some areas of New Gielinor being inaccessible, this left us without guilds for some skills that we
+                still wanted, so we've re-designed some of these returning guilds and reinvented the way that you'll
+                access and use these guilds.
             </p>
         </div>
         <div class="slide-fade"></div>
@@ -318,11 +329,20 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     <div class="slide" id="slide5">
         <div class="slide-content">
             <h1>Quest Overhaul</h1>
-            <p>Within our universe, some quests remain, but many quest givers have closed up shop and moved on as their
-                quests have been fulfilled. Some new quest givers have arrived as well! All quests available are either
-                built masterfully, or have
-                been remastered for a perfect experience. Along with these changes, most items, examine texts and dialog
-                has been remastered to improve grammatic clarity.
+            <p>Within our universe, some quests remain, but many quest givers have closed up shop and moved on. Some new
+                quest givers have arrived as well! All quests
+                available are either crafted masterfully, or have been remastered from scratch. Along with
+                these changes, most items, examine texts and dialogue has been remastered to improve grammatic clarity
+                and your overall gameplay experience.
+            </p>
+        </div>
+        <div class="slide-content">
+            <h1>New Threats Loom!</h1>
+            <p>Ethereal Lands is a dangerous place. Some monsters have been given special abilities, notated either by
+                NPC dialogue or chat notification that it's coming, giving you an opportunity to counter the attack.
+                Your Hero has also grown in power, though! Many powerful items have been given auto-triggering special
+                attacks or abilities to help take out these threats across New Gielinor. Get acquainted with your
+                prayers too, as several have been added!
             </p>
         </div>
         <div class="slide-fade"></div>
@@ -334,8 +354,8 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 dungeon-delving
                 experiences that scale to your character's combat level. Starting at level 20, you can complete these
                 dungeons, each containing a varying amount of
-                bosses that drop <b>epic or greater rarity loot</b> to enhance your gameplay! For example, <b><span
-                        class="epicfont">Harpoon of
+                bosses that drop <b>epic or greater rarity loot</b> to enhance your gameplay at any level! For example,
+                <b><span class="epicfont">Harpoon of
                         the
                         Deep</span></b> has
                 a 50% chance to cook any fish that you catch while you carry it! Insanity!
