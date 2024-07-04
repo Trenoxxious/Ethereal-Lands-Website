@@ -16,8 +16,8 @@
             <div class="logo" id="toplogo">
             </div>
             <div id="navlinks">
-                <a href="index.php">Home</a>
-                <a href="creatorscorridor.php">Creator's Corridor</a>
+                <a href="index">Home</a>
+                <a href="creatorscorridor">Creator's Corridor</a>
                 <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             </div>
             <div id="menuexpand">
@@ -41,8 +41,9 @@
     </div>
     <div class="blanktop"></div>
     <a href="/game_updates/kaniani_island">
-        <div class="mainupdate">
-            <img src="images/updates/mainupdate_tutisland.png" alt="Explore a new, packed tutorial island!">
+        <div class="mainupdate" style="width: 100vw; height: 56.25vw; max-width: 100%; max-height: 56.25%;">
+            <img src="images/updates/mainupdate_tutisland.png" alt="Explore a new, packed tutorial island!"
+                style="width: 100%; height: 100%; object-fit: contain;">
         </div>
     </a>
     <div class="updatelist">
@@ -208,7 +209,7 @@
         </div>
         <div class="updatebox">
             <div class="updatetop">
-                <div class="updateimage"><img src="images/updates/website.png" alt="update image"></div>
+                <div class="updateimage"><img src="images/updates/web.png" alt="update image"></div>
                 <div class="updatebartop">
                     <p class="updatedate">06/11/2024</p>
                     <div class="updatetitle">Daily Challenges & Support</div>
