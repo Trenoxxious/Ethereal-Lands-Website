@@ -16,7 +16,7 @@
             <div class="logo" id="toplogo">
             </div>
             <div id="navlinks">
-                <a href="index">Home</a>
+                <a href="https://playethereallands.com">Home</a>
                 <a href="creators_corridor">Creator's Corridor</a>
                 <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             </div>
@@ -34,7 +34,7 @@
                     <path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z" />
                 </svg>
             </div>
-            <a class="button-main" href="index">Home</a>
+            <a class="button-main" href="https://playethereallands.com">Home</a>
             <a class="button-main" href="creators_corridor">Creator's Corridor</a>
             <a class="button-main" href="https://discord.gg/d6RtsDyRZX">Discord</a>
         </div>

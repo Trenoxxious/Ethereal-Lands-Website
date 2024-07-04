@@ -11,7 +11,7 @@
                 style="color: transparent; animation: rotate-hue-color 3s infinite linear;">The
                 Void
                 Merchant</a>
-            <a href="index">Game Page</a>
+            <a href="https://playethereallands.com">Game Page</a>
             <a href="support">Support</a>
             <a href="scripts/logout">Logout</a>
         </div>
@@ -35,7 +35,7 @@
         <a class="button-main void-font" href="store"
             style="border: 1px solid transparent; animation: rotate-hue 5s infinite linear, rotate-hue-color 3s infinite linear;">The
             Void Merchant</a>
-        <a class="button-main" href="index">Game Page</a>
+        <a class="button-main" href="https://playethereallands.com">Game Page</a>
         <a class="button-main" href="support" id="support-button">Character Support</a>
         <a class="button-main" href="scripts/logout">Logout</a>
     </div>

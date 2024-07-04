@@ -23,8 +23,8 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <div class="logo" id="toplogo">
             </div>
             <div id="navlinks">
-                <a href="index">Home</a>
-                <a href="updates">Game Updates</a>
+                <a href="https://playethereallands.com">Home</a>
+                <a href="recent_updates">Game Updates</a>
                 <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             </div>
             <div class="button-div">
@@ -52,7 +52,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                     <path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z" />
                 </svg>
             </div>
-            <a class="button-main" href="index">Home</a>
+            <a class="button-main" href="https://playethereallands.com">Home</a>
             <a class="button-main" href="recent_updates">Game Updates</a>
             <a class="button-main" href="https://discord.gg/d6RtsDyRZX">Discord</a>
         </div>
