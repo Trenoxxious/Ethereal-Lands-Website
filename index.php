@@ -22,8 +22,8 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <div class="logo" id="toplogo">
             </div>
             <div id="navlinks">
-                <a href="updates">Game Updates</a>
-                <a href="creatorscorridor">Creator's Corridor</a>
+                <a href="updates.php">Game Updates</a>
+                <a href="creatorscorridor.php">Creator's Corridor</a>
                 <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             </div>
             <div class="button-div">

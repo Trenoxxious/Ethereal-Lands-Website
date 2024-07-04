@@ -16,8 +16,8 @@
             <div class="logo" id="toplogo">
             </div>
             <div id="navlinks">
-                <a href="index">Home</a>
-                <a href="creatorscorridor">Creator's Corridor</a>
+                <a href="index.php">Home</a>
+                <a href="creatorscorridor.php">Creator's Corridor</a>
                 <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             </div>
             <div id="menuexpand">
@@ -40,10 +40,11 @@
         </div>
     </div>
     <div class="blanktop"></div>
-    <div class="mainupdate">
-        <img src="images/updates/mainupdate_tutisland.png" alt="Explore a new, packed tutorial island!"
-            href="/game_updates/kaniani_island">
-    </div>
+    <a href="/game_updates/kaniani_island">
+        <div class="mainupdate">
+            <img src="images/updates/mainupdate_tutisland.png" alt="Explore a new, packed tutorial island!">
+        </div>
+    </a>
     <div class="updatelist">
         <div class="updatebox">
             <div class="updatetop">
