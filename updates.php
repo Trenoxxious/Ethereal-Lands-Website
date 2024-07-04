@@ -17,7 +17,7 @@
             </div>
             <div id="navlinks">
                 <a href="index">Home</a>
-                <a href="creatorscorridor">Creator's Corridor</a>
+                <a href="creators_corridor">Creator's Corridor</a>
                 <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             </div>
             <div id="menuexpand">

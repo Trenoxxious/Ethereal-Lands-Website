@@ -239,7 +239,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     Speaking of community...</p>
                 <h2>Creator's Corridor</h2>
                 <p>Check out Creator's Corridor, where our community creates and submits creations for Ethereal Lands. If you're
-                    a creator, consider submitting for rewards! <a href=\"https://playethereallands.com/creatorscorridor\">Learn
+                    a creator, consider submitting for rewards! <a href=\"https://playethereallands.com/creators_corridor\">Learn
                         more about Creator's Corridor here.</a>
                 </p>
             </div>
