@@ -32,7 +32,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             </div>
             <div id="navlinks">
                 <a href="index">Home</a>
-                <a href="updates">Game Updates</a>
+                <a href="recent_updates">Game Updates</a>
                 <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             </div>
             <div class="button-div">

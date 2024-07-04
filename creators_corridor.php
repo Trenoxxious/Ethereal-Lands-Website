@@ -53,7 +53,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 </svg>
             </div>
             <a class="button-main" href="index">Home</a>
-            <a class="button-main" href="updates">Game Updates</a>
+            <a class="button-main" href="recent_updates">Game Updates</a>
             <a class="button-main" href="https://discord.gg/d6RtsDyRZX">Discord</a>
         </div>
     </div>
