@@ -39,8 +39,9 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         }
 
         .carousel-inner {
-            border-radius: 1.5em;
-            border: 2px solid #f5c743;
+            border-top-left-radius: 0.5em;
+            border-top-right-radius: 0.5em;
+            box-shadow: 0px 0px 10px black;
         }
     </style>
     <div class="topbar">
@@ -54,13 +55,13 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             </div>
             <div class="button-div">
                 <?php if ($loggedIn): ?>
-                <button class="button-main" id="accountbutton">
-                    My Account
-                </button>
+                    <button class="button-main" id="accountbutton">
+                        My Account
+                    </button>
                 <?php else: ?>
-                <button class="button-main" id="accountbutton">
-                    Login
-                </button>
+                    <button class="button-main" id="accountbutton">
+                        Login
+                    </button>
                 <?php endif; ?>
             </div>
             <div id="menuexpand">
@@ -164,9 +165,9 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 rewards you can take with you and use forever! Below are the rewards you can earn.
             </p>
             <br>
-            <b>Double Bonus Huntsman XP on Kills (250 Reputation)</b>
-            <b>Iron Smelting Success Chance Increase (500 Reputation)</b>
-            <b>Pick'n'axe Blueprint (1000 Reputation)</b>
+            <b class="important">Double Bonus Huntsman XP on Kills (250 Reputation)</b>
+            <b class="important">Iron Smelting Success Chance Increase (500 Reputation)</b>
+            <b class="important">Pick'n'axe Blueprint (1000 Reputation)</b>
         </div>
     </div>
     <div class="center-slide">
