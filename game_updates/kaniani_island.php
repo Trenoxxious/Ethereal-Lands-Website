@@ -37,13 +37,13 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             </div>
             <div class="button-div">
                 <?php if ($loggedIn): ?>
-                <button class="button-main" id="accountbutton">
-                    My Account
-                </button>
+                    <button class="button-main" id="accountbutton">
+                        My Account
+                    </button>
                 <?php else: ?>
-                <button class="button-main" id="accountbutton">
-                    Login
-                </button>
+                    <button class="button-main" id="accountbutton">
+                        Login
+                    </button>
                 <?php endif; ?>
             </div>
             <div id="menuexpand">
