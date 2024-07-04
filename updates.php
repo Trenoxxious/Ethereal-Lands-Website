@@ -35,15 +35,72 @@
                 </svg>
             </div>
             <a class="button-main" href="index">Home</a>
-            <a class="button-main" href="creatorscorridor">Creator's Corridor</a>
+            <a class="button-main" href="creators_corridor">Creator's Corridor</a>
             <a class="button-main" href="https://discord.gg/d6RtsDyRZX">Discord</a>
         </div>
     </div>
     <div class="blanktop"></div>
+    <div class="mainupdate">
+        <img src="images/updates/mainupdate_tutisland.png" alt="Explore a new, packed tutorial island!"
+            href="/updates/kaniani_island">
+    </div>
     <div class="updatelist">
         <div class="updatebox">
             <div class="updatetop">
-                <div class="updateimage"><img src="images/pic2.png" alt="update image"></div>
+                <div class="updateimage"><img src="images/updates/game.png" alt="update image"></div>
+                <div class="updatebartop">
+                    <p class="updatedate">07/02/2024</p>
+                    <div class="updatetitle">Various Fixes and Improvements</div>
+                    <div class="patchnumber">Pre-release Update</div>
+                    <p class="updatesummary">A few fixes show up in this week's update, as well as some secret
+                        behind-the-scenes stuff!</p>
+                </div>
+            </div>
+            <div class="updatecontent">
+                <p>
+                    We're hard at work on implementing fixes into the game to get it ready to go live and play well.
+                    We're finishing quests, new (or returning... duh duh DUH) areas, the cinematic reveal trailer and
+                    pushing large changes to our server-side and client-side code to prepare for our tutorial island
+                    testing phase and eventual full features reveal.
+                </p>
+                <h2>Trailer</h2>
+                <p>The Ethereal Lands trailer is still very much so a work in progress and is coming along. We expect
+                    this to take more time to finish due to the vision we have for the trailer and all we expect from
+                    it.</p>
+                <h2>General</h2>
+                <p>When fishing, the think bubble overhead will now show the correct tool that the player is using and
+                    not the alternate tool. (eg. Harpoon vs Harpoon of the Deep)</p>
+                <p>The chance to fish up Gem of the Phantom Trawler has been halved (now 1/512 chance + 1/10 chance),
+                    both on the first and second rolls.</p>
+                <p>Gubgub's item reward table has been adjusted slightly.</p>
+                <p>Gubgub now has speech patterns when attacking players with his spear to make it easier to know when
+                    the attack is queued.</p>
+                <p>Several Dragonfire resistances have been adjusted. Dragonfire attacks will be getting an entire
+                    rework shortly.</p>
+                <p>The monetary gain from alchemy spells has once again been reduced significantly, with Extreme Alchemy
+                    moving from 50% of item value to 18% of item value.</p>
+                <p>A secret feature release for Prayer has been finished and is functional in our initial tests.</p>
+                <p>Prayers no longer have an initial hit to your prayer points when activated. They still function as
+                    previously mentioned and do not drain your prayer points outside of combat, but we've also made
+                    changes to drain your prayer points while the prayer is active inside the wilderness, outside of
+                    combat, as normal. There are also a few prayers that will drain points outside of combat, including
+                    Rapid Heal and Restore.</p>
+                <p>The "Protect Items" prayer has been renamed to "Soul Slot" to more closely align with the story
+                    element of Ethereal Lands. Other prayers may follow suit in a similar manner.</p>
+                <p>Tutorial Island updates/changes to various NPCs.</p>
+                <p>Work is being started to show the healing a player takes similar to damage the player takes. This
+                    will be focused into items or prayers that heal the player at first, and then move to food and other
+                    health restoring items/effects.
+                </p>
+                <h2>Website</h2>
+                <p>Updates will now have update-specific images instead of using random images from our library of
+                    images. Yay, design! These will be improved over time or more closely relate to the update the
+                    picture is tied to.</p>
+            </div>
+        </div>
+        <div class="updatebox">
+            <div class="updatetop">
+                <div class="updateimage"><img src="images/updates/game.png" alt="update image"></div>
                 <div class="updatebartop">
                     <p class="updatedate">06/22/2024</p>
                     <div class="updatetitle">In-game Update Galore</div>
@@ -89,8 +146,6 @@
                 <p>Dragon Bars are now able to be made with many, many more dragon items by using them on the
                     appropriate furnace. The amount of Dragon Bars made will depend on which dragon item is used in the
                     smelting process.</p>
-                <p>Work has been started on hopefully having specific prayers show over-head of a player when active,
-                    such as Protect from Melee/Missiles.</p>
                 <p>Rapid Heal has been significantly improved and now restores HP at about 4x the normal restoration
                     rate, but now costs significantly more in prayer drain rate.</p>
                 <h2>Items</h2>
@@ -107,7 +162,7 @@
         </div>
         <div class="updatebox">
             <div class="updatetop">
-                <div class="updateimage"><img src="images/pic3.png" alt="update image"></div>
+                <div class="updateimage"><img src="images/updates/game.png" alt="update image"></div>
                 <div class="updatebartop">
                     <p class="updatedate">06/18/2024</p>
                     <div class="updatetitle">Various Game Updates</div>
@@ -152,7 +207,7 @@
         </div>
         <div class="updatebox">
             <div class="updatetop">
-                <div class="updateimage"><img src="images/pic6.png" alt="update image"></div>
+                <div class="updateimage"><img src="images/updates/website.png" alt="update image"></div>
                 <div class="updatebartop">
                     <p class="updatedate">06/11/2024</p>
                     <div class="updatetitle">Daily Challenges & Support</div>
@@ -184,7 +239,7 @@
         </div>
         <div class="updatebox">
             <div class="updatetop">
-                <div class="updateimage"><img src="images/pic6.png" alt="update image"></div>
+                <div class="updateimage"><img src="images/updates/game.png" alt="update image"></div>
                 <div class="updatebartop">
                     <p class="updatedate">06/04/2024</p>
                     <div class="updatetitle">Gubgub, Leader of Goblins</div>
@@ -237,7 +292,7 @@
         </div>
         <div class="updatebox">
             <div class="updatetop">
-                <div class="updateimage"><img src="images/pic7.png" alt="update image"></div>
+                <div class="updateimage"><img src="images/updates/server.png" alt="update image"></div>
                 <div class="updatebartop">
                     <p class="updatedate">05/30/2024</p>
                     <div class="updatetitle">Slew of Updates & Atlanta, GA Server</div>
@@ -304,7 +359,7 @@
         </div>
         <div class="updatebox">
             <div class="updatetop">
-                <div class="updateimage"><img src="images/pic2.png" alt="update image"></div>
+                <div class="updateimage"><img src="images/updates/game.png" alt="update image"></div>
                 <div class="updatebartop">
                     <p class="updatedate">05/25/2024</p>
                     <div class="updatetitle">Cosmetic Crates & Crypt of Dread</div>
@@ -349,7 +404,7 @@
         </div>
         <div class="updatebox">
             <div class="updatetop">
-                <div class="updateimage"><img src="images/LumbridgeBG.png" alt="update image"></div>
+                <div class="updateimage"><img src="images/updates/server.png" alt="update image"></div>
                 <div class="updatebartop">
                     <p class="updatedate">05/24/2024</p>
                     <div class="updatetitle">Website & Database Upgrades</div>

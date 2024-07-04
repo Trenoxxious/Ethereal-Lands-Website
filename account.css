@@ -17,6 +17,11 @@ body {
     text-shadow: 0 2px 0 black;
 }
 
+.mainupdate:hover {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
+
 .void-font {
     font-weight: normal;
     font-family: "Water Brush" !important;
