@@ -42,7 +42,7 @@
     <div class="blanktop"></div>
     <div class="mainupdate">
         <img src="images/updates/mainupdate_tutisland.png" alt="Explore a new, packed tutorial island!"
-            href="/updates/kaniani_island">
+            href="/game_updates/kaniani_island">
     </div>
     <div class="updatelist">
         <div class="updatebox">
