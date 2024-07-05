@@ -4,12 +4,12 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: index");
+    header("Location: ../index");
     exit;
 }
 
 // Include database connection details
-require 'globals.php';
+require '../globals.php';
 
 // Fetch user information from session
 $user_id = $_SESSION['user_id'];
@@ -26,9 +26,9 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
     <meta charset="UTF-8">
     <title>Ethereal Lands - Support</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
+    <link rel="stylesheet" href="../main.css?ver=<?= time(); ?>">
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
-    <script defer src="script.js?ver=<?= time(); ?>"></script>
+    <script defer src="../script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
@@ -70,7 +70,7 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
             $('#support-form').on('submit', function (event) {
                 event.preventDefault(); // Prevent the default form submission
                 $.ajax({
-                    url: 'scripts/send_support_ticket.php',
+                    url: '../scripts/send_support_ticket.php',
                     type: 'POST',
                     data: $(this).serialize(),
                     success: function (response) {
@@ -94,7 +94,7 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
         $('#report-server-offline').on('click', function (event) {
             event.preventDefault();
             $.ajax({
-                url: 'scripts/server_offline.php',
+                url: '../scripts/server_offline.php',
                 type: 'POST',
                 success: function (response) {
                     $('#support-message-response').html(response.message);
