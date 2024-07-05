@@ -131,9 +131,9 @@ $conn->close();
             <?php foreach ($stats as $statName => $statValue): ?>
                 <div class="stat">
                     <picture>
-                        <source srcset="icons/<?php echo htmlspecialchars($statName); ?>.webp" type="image/webp">
-                        <source srcset="icons/<?php echo htmlspecialchars($statName); ?>.png" type="image/png">
-                        <img src="icons/<?php echo htmlspecialchars($statName); ?>.png"
+                        <source srcset="../icons/<?php echo htmlspecialchars($statName); ?>.webp" type="image/webp">
+                        <source srcset="../icons/<?php echo htmlspecialchars($statName); ?>.png" type="image/png">
+                        <img src="../icons/<?php echo htmlspecialchars($statName); ?>.png"
                             alt="<?php echo htmlspecialchars($statName); ?>">
                     </picture>
                     <p><?php echo htmlspecialchars($statValue); ?></p>
