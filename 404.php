@@ -12,7 +12,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethereal Lands - Error 404</title>
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
-    <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
+    <link rel="stylesheet" href="account/account.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
@@ -59,7 +59,6 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     </div>
     <div class="creatorscorridorintro">
         <div class="blanktop"></div>
-        <div class="intro-logo"></div>
         <h1>Error: 404</h1>
         <p>We're attempting to search Gielinor for the page you're looking for. It's not in the Saradomin God Book.
             Let's look elsewhere...</p>

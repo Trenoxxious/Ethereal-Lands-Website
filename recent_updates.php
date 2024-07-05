@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethereal Lands - Updates</title>
     <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
-    <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
+    <link rel="stylesheet" href="account/account.css?ver=<?= time(); ?>">
     <script defer src="script.js?ver=<?= time(); ?>"></script>
 </head>
 
