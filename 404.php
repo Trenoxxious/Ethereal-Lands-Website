@@ -58,6 +58,8 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         </div>
     </div>
     <div class="intro">
+        <div class="blanktop"></div>
+        <div class="intro-logo"></div>
         <h1>Error: 404</h1>
         <p>We're attempting to search Gielinor for the page you're looking for. It's not in the Saradomin God Book.
             Let's look elsewhere...</p>
