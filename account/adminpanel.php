@@ -145,7 +145,7 @@ $amount_stmt->close();
                 event.preventDefault();
                 var formData = $(this).serialize();
                 $.ajax({
-                    url: 'scripts/lookup_player_id.php',
+                    url: '../scripts/lookup_player_id.php',
                     type: 'POST',
                     data: formData,
                     dataType: 'json',
@@ -159,7 +159,7 @@ $amount_stmt->close();
                 event.preventDefault();
                 var formData = $(this).serialize();
                 $.ajax({
-                    url: 'scripts/reset_challenges_player.php',
+                    url: '../scripts/reset_challenges_player.php',
                     type: 'POST',
                     data: formData,
                     dataType: 'json',
@@ -176,7 +176,7 @@ $amount_stmt->close();
                 event.preventDefault();
                 var formData = $(this).serialize();
                 $.ajax({
-                    url: 'scripts/adjust_ethereal_souls.php',
+                    url: '../scripts/adjust_ethereal_souls.php',
                     type: 'POST',
                     data: formData,
                     dataType: 'json',
