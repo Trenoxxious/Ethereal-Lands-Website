@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->close();
 
         // Insert into curstats table
-        $stmt = $conn->prepare("INSERT INTO curstats (playerID, attack, defense, strength, hits, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman) VALUES (?, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
+        $stmt = $conn->prepare("INSERT INTO curstats (playerID) VALUES (?)");
         if (!$stmt) {
             throw new Exception("Prepare failed (INSERT into curstats): " . $conn->error);
         }
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->close();
 
         // Insert into experience table
-        $stmt = $conn->prepare("INSERT INTO experience (playerID, attack, defense, strength, hits, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman) VALUES (?, 0, 0, 0, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)");
+        $stmt = $conn->prepare("INSERT INTO experience (playerID) VALUES (?)");
         if (!$stmt) {
             throw new Exception("Prepare failed (INSERT into experience): " . $conn->error);
         }
@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->close();
 
         // Insert into maxstats table
-        $stmt = $conn->prepare("INSERT INTO maxstats (playerID, attack, defense, strength, hits, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman) VALUES (?, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
+        $stmt = $conn->prepare("INSERT INTO maxstats (playerID) VALUES (?)");
         if (!$stmt) {
             throw new Exception("Prepare failed (INSERT into maxstats): " . $conn->error);
         }
