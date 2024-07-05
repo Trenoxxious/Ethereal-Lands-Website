@@ -57,7 +57,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <a class="button-main" href="https://discord.gg/d6RtsDyRZX">Discord</a>
         </div>
     </div>
-    <div class="intro">
+    <div class="creatorscorridorintro">
         <h1>Error: 500</h1>
         <p>Your Thieving level is not high enough to pick this chest.</p>
     </div>

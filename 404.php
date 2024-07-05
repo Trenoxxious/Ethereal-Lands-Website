@@ -57,7 +57,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <a class="button-main" href="https://discord.gg/d6RtsDyRZX">Discord</a>
         </div>
     </div>
-    <div class="intro">
+    <div class="creatorscorridorintro">
         <div class="blanktop"></div>
         <div class="intro-logo"></div>
         <h1>Error: 404</h1>
