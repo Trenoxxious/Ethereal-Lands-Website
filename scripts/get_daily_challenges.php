@@ -96,4 +96,4 @@ if ($player['has_accepted_daily_challenges'] == 0) {
 }
 
 // Redirect back to daily challenges page
-header("Location: ../challenges");
+header("Location: ../account/challenges");

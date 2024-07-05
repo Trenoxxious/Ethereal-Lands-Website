@@ -49,7 +49,7 @@ if ($challenge) {
         $stmt->bind_param("ii", $user_id, $challenge_id);
         $stmt->execute();
 
-        header("Location: ../challenges");
+        header("Location: ../account/challenges");
     } else {
         echo "Challenge not completed!";
     }
