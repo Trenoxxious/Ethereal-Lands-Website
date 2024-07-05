@@ -4,13 +4,13 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: index");
+    header("Location: ../index");
     exit;
 }
 
 // Include database connection details
-require 'globals.php';
-require 'siteglobals.php';
+require '../globals.php';
+require '../siteglobals.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -53,9 +53,9 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethereal Lands - Control Panel</title>
-    <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
+    <link rel="stylesheet" href="../main.css?ver=<?= time(); ?>">
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
-    <script defer src="script.js?ver=<?= time(); ?>"></script>
+    <script defer src="../script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script
         src="https://www.paypal.com/sdk/js?client-id=ASRQTl6GfLMQ8w4GmkRrZKsGz4NdDpJWMPazJl1aaOsRDQWyjU1YzlzDg_8giPUYw8N1b4xLe5dxxbZ4&currency=USD&intent=capture&disable-funding=card"></script>
@@ -76,11 +76,12 @@ $conn->close();
         <div class="section-header">
             <h1 class="page-header">Buy Ethereal Souls</h1>
             <?php if ($soul_purchase_is_active == false): ?>
-                <p class="important-message">The ability to purchase Ethereal Souls has been disabled. The purchase of Ethereal
+                <p class="important-message">The ability to purchase Ethereal Souls has been disabled. The purchase of
+                    Ethereal
                     Souls will not be enabled until Ethereal Lands launches later this year.</p>
             <?php else: ?>
-        </div>
-        <div class="souls-packages-list">
+            </div>
+            <div class="souls-packages-list">
                 <div class="container">
                     <div class="card_box uncommon">
                         <img src="images/199souls.png" alt="Ethereal Soul">
@@ -174,7 +175,7 @@ $conn->close();
                     },
                     onApprove: function (data, actions) {
                         return actions.order.capture().then(function (details) {
-                            fetch('/buysoulstransaction.php', {
+                            fetch('../buysoulstransaction.php', {
                                 method: 'post',
                                 headers: {
                                     'Content-Type': 'application/json'

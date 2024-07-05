@@ -4,12 +4,12 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: index");
+    header("Location: ../index");
     exit;
 }
 
 // Include database connection details
-require 'globals.php';
+require '../globals.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -80,12 +80,13 @@ $conn->close();
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Ethereal Lands - My Account</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
+    <link rel="stylesheet" href="../main.css?ver=<?= time(); ?>">
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
-    <script defer src="script.js?ver=<?= time(); ?>"></script>
+    <script defer src="../script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
         .account-stats {
@@ -93,6 +94,7 @@ $conn->close();
             grid-template-columns: repeat(6, 1fr);
             gap: 10px;
         }
+
         .stat {
             display: flex;
             flex-direction: column;
@@ -101,12 +103,14 @@ $conn->close();
             border-radius: 5px;
             text-align: center;
         }
+
         .stat img {
             max-width: 50px;
             margin-bottom: 5px;
         }
     </style>
 </head>
+
 <body>
     <?php include 'topbar.php'; ?>
     <div class="accountmain">
@@ -129,7 +133,8 @@ $conn->close();
                     <picture>
                         <source srcset="icons/<?php echo htmlspecialchars($statName); ?>.webp" type="image/webp">
                         <source srcset="icons/<?php echo htmlspecialchars($statName); ?>.png" type="image/png">
-                        <img src="icons/<?php echo htmlspecialchars($statName); ?>.png" alt="<?php echo htmlspecialchars($statName); ?>">
+                        <img src="icons/<?php echo htmlspecialchars($statName); ?>.png"
+                            alt="<?php echo htmlspecialchars($statName); ?>">
                     </picture>
                     <p><?php echo htmlspecialchars($statValue); ?></p>
                 </div>
@@ -137,4 +142,5 @@ $conn->close();
         </div>
     </div>
 </body>
+
 </html>

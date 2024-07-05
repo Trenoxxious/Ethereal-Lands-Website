@@ -151,7 +151,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
 
                         if (response.status === 'success') {
                             setTimeout(function () {
-                                window.location.href = 'account';
+                                window.location.href = 'account/character';
                             }, 2000);
                         } else {
                             $('#errorsuccessmessagelogin').html(response.message);
@@ -180,7 +180,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
 
         document.getElementById('introaccountbutton').addEventListener('click', function () {
             if (loggedIn) {
-                window.location.href = 'account';
+                window.location.href = 'account/character';
             } else {
                 document.getElementById('popup-account').classList.add('active');
                 document.getElementById('overlay').classList.add('active');
@@ -189,7 +189,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
 
         document.getElementById('accountbutton').addEventListener('click', function () {
             if (loggedIn) {
-                window.location.href = 'account';
+                window.location.href = 'account/character';
             } else {
                 document.getElementById('popup-account').classList.add('active');
                 document.getElementById('overlay').classList.add('active');

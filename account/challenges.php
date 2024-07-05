@@ -3,12 +3,12 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: index");
+    header("Location: ../index");
     exit;
 }
 
 // Include database connection details
-require 'globals.php';
+require '../globals.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -55,9 +55,9 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 <head>
     <title>Ethereal Lands - Daily Challenges</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
+    <link rel="stylesheet" href="../main.css?ver=<?= time(); ?>">
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
-    <script defer src="script.js?ver=<?= time(); ?>"></script>
+    <script defer src="../script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
@@ -125,7 +125,7 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
     </div>
     <div class="account-store">
         <?php if ($player['has_accepted_daily_challenges'] == 0): ?>
-            <form method="post" action="scripts/get_daily_challenges.php">
+            <form method="post" action="../scripts/get_daily_challenges.php">
                 <button type="submit" class="button-main button-main-green">Get Daily Challenges</button>
             </form>
         <?php else: ?>

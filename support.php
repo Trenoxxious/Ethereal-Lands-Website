@@ -50,13 +50,13 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
         <div class="account-support">
             <div class="form-sec">
                 <form id="support-form" method="post" class="ticket-form" action="scripts/send_support_ticket.php">
-                    <label for="email">Email Address:</label>
+                    <label for="email">Your Email Address <span style="color=red;">*</span></label>
                     <input type="email" id="email" name="email" required><br><br>
 
-                    <label for="subject">Subject:</label>
+                    <label for="subject">Ticket Subject <span style="color=red;">*</span></label>
                     <input type="text" id="subject" name="subject" required><br><br>
 
-                    <label for="message">Describe the issue:</label>
+                    <label for="message">Ticket Description <span style="color=red;">*</span></label>
                     <textarea id="message" name="message" required></textarea><br><br>
 
                     <input class="button-main" type="submit" name="submit" value="Submit">

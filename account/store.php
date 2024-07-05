@@ -4,13 +4,13 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: index");
+    header("Location: ../index");
     exit;
 }
 
 // Include database connection details
-require 'globals.php';
-require 'siteglobals.php';
+require '../globals.php';
+require '../siteglobals.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -68,9 +68,9 @@ $conn->close();
 <head>
     <title>Ethereal Lands - Void Merchant</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
+    <link rel="stylesheet" href="../main.css?ver=<?= time(); ?>">
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
-    <script defer src="script.js?ver=<?= time(); ?>"></script>
+    <script defer src="../script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
