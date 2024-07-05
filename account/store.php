@@ -101,11 +101,11 @@ $conn->close();
                 <?php $purchased = in_array($item['item_id'], $purchased_items); ?>
                 <div class="store-item <?php echo strtolower($item['rarity']); ?>-border">
                     <h2><?php echo htmlspecialchars($item['name']); ?></h2>
-                    <img src="images/store-items/<?php echo $item['item_id']; ?>.png" alt="<?php echo $item['name']; ?>">
+                    <img src="../images/store-items/<?php echo $item['item_id']; ?>.png" alt="<?php echo $item['name']; ?>">
                     <p class="<?php echo strtolower($item['rarity']); ?>-background">
                         <?php echo htmlspecialchars($item['rarity']); ?> Cosmetic
                     </p>
-                    <p class="price"><?php echo htmlspecialchars($item['price']); ?> <img src="images/soul.png"
+                    <p class="price"><?php echo htmlspecialchars($item['price']); ?> <img src="../images/soul.png"
                             alt="Ethereal Souls"></p>
                     <form class="purchase-form" method="post">
                         <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
@@ -131,7 +131,7 @@ $conn->close();
             $('.purchase-form').on('submit', function (event) {
                 event.preventDefault(); // Prevent the form from submitting the traditional way
                 var formData = $(this).serialize();
-                $.post('scripts/purchase.php', formData, function (response) {
+                $.post('../scripts/purchase.php', formData, function (response) {
                     // Display the response message
                     $('#message').html(response);
                     $('.purchase-message').css('visibility', 'visible');
@@ -147,7 +147,7 @@ $conn->close();
             $('#soul-purchase-form').on('submit', function (event) {
                 event.preventDefault(); // Prevent the form from submitting the traditional way
                 var formData = $(this).serialize();
-                $.post('purchase_souls.php', formData, function (response) {
+                $.post('../purchase_souls.php', formData, function (response) {
                     // Display the response message
                     $('#message').html(response);
                     $('.purchase-message').css('visibility', 'visible');
