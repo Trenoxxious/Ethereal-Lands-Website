@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function checkProgress() {
-        // Check if the current page URL contains 'challenges'
         if (window.location.href.includes('account/challenges')) {
             $.ajax({
                 url: '../scripts/check_progress.php',
@@ -74,11 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             progressElement.text(challenge.value + ' / ' + challenge.fulfillment_amount);
                         }
                         if (buttonElement.length) {
-                            if (challenge.value >= challenge.fulfillment_amount) {
-                                buttonElement.prop('disabled', false);
-                            } else {
-                                buttonElement.prop('disabled', true);
-                            }
+                            buttonElement.prop('disabled', challenge.value < challenge.fulfillment_amount);
                         }
                     });
                 },
