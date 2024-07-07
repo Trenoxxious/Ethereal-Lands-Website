@@ -156,7 +156,7 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
                         <?php echo htmlspecialchars($accepted['value']); ?> /
                         <?php echo htmlspecialchars($accepted['fulfillment_amount']); ?>
                     </p>
-                    <p class="challenge-stats">Reward: <?php echo htmlspecialchars($accepted['reward_amount']); ?><img src="../images/soul.png" alt="Souls"></p>
+                    <p class="challenge-stats-reward">Reward: <?php echo htmlspecialchars($accepted['reward_amount']); ?><img src="../images/soul.png" alt="Souls"></p>
                     <form id="complete-challenge-form-<?php echo $accepted['id']; ?>" class="complete-challenge-form"
                         method="post">
                         <input type="hidden" name="challenge_id" value="<?php echo $accepted['id']; ?>">

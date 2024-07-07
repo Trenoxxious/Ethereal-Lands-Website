@@ -97,11 +97,16 @@ body {
     text-transform: none !important;
 }
 
-.challenge-stats {
+.challenge-stats,
+.challenge-stats-reward {
     text-transform: uppercase;
     font-family: "Montserrat", "Teko", serif, sans-serif !important;
     display: flex;
     align-items: center;
+}
+
+.challenge-stats-reward {
+    color: rgb(182, 182, 255);
 }
 
 .challenge-stats img {
