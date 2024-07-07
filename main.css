@@ -100,6 +100,10 @@ body {
     background-color: rgb(0, 0, 0);
 }
 
+.important {
+    color: rgb(253, 213, 139) !important;
+}
+
 .redfont {
     color: rgb(214, 72, 62) !important;
     font-size: inherit;
@@ -449,7 +453,8 @@ li {
     cursor: default;
 }
 
-.creatorscorridorintro {
+.creatorscorridorintro,
+.mainupdateintro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -480,7 +485,8 @@ li {
 }
 
 #intro h1,
-.creatorscorridorintro h1 {
+.creatorscorridorintro h1,
+.mainupdateintro h1 {
     background: linear-gradient(0deg, rgb(255, 176, 4) 15%, rgb(255, 240, 185) 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -495,7 +501,8 @@ li {
 }
 
 #intro h2,
-.creatorscorridorintro h2 {
+.creatorscorridorintro h2,
+.mainupdateintro h2 {
     font-weight: 400;
     padding: 0;
     margin-top: -85px;
@@ -509,7 +516,8 @@ li {
 }
 
 #intro p,
-.creatorscorridorintro p {
+.creatorscorridorintro p,
+.mainupdateintro p {
     margin: 15px;
     font-family: "Montserrat", sans-serif, serif;
     color: rgb(241, 241, 241);
@@ -520,7 +528,8 @@ li {
 }
 
 #intro .story,
-.creatorscorridorintro .story {
+.creatorscorridorintro .story,
+.mainupdateintro .story {
     margin-top: 50px;
     width: 60%;
     text-align: center;
@@ -543,6 +552,20 @@ li {
     overflow-y: hidden;
 }
 
+.center-slide {
+    padding-top: 25px;
+    box-sizing: border-box;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Oswald", "Teko", serif;
+    cursor: default;
+    color: white;
+    overflow-y: hidden;
+}
+
 .slide-fade {
     bottom: 0;
     width: 100%;
@@ -550,12 +573,12 @@ li {
     height: 75px;
 }
 
-.slide:nth-child(even) {
+.slide:nth-of-type(even) {
     align-items: flex-end;
     text-align: right;
 }
 
-.slide:nth-child(odd) {
+.slide:nth-of-type(odd) {
     align-items: flex-start;
     text-align: left;
 }
@@ -572,6 +595,19 @@ li {
     width: 33%;
 }
 
+.slide-content-mainupdate {
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 15px;
+    padding: 15px;
+    width: 75%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
+}
+
 .slide:nth-child(even) .slide-content {
     background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
 }
@@ -580,7 +616,8 @@ li {
     background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
 }
 
-.slide h1 {
+.slide h1,
+.center-slide h1 {
     background: linear-gradient(0deg, rgb(255, 176, 4) 15%, rgb(255, 240, 185) 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -589,7 +626,8 @@ li {
     font-weight: 700;
 }
 
-.slide h2 {
+.slide h2,
+.center-slide h2 {
     margin-top: 25px;
     background: linear-gradient(0deg, rgb(26, 173, 117) 35%, rgb(178, 250, 190) 100%);
     background-clip: text;
@@ -600,7 +638,8 @@ li {
     filter: drop-shadow(rgb(143, 209, 149) 0rem 0rem 3px);
 }
 
-.slide p {
+.slide p,
+.center-slide p {
     color: rgb(255, 246, 218);
     margin-top: 15px;
     font-size: 1.1em;
@@ -893,11 +932,13 @@ footer {
         font-size: 1.6em;
     }
 
-    .slide h1 {
+    .slide h1,
+    .center-slide h1 {
         font-size: 2.5em;
     }
 
-    .slide p {
+    .slide p,
+    .center-slide p {
         font-size: 1.3em;
     }
 
@@ -947,7 +988,8 @@ footer {
     }
 
     #intro h1,
-    .creatorscorridorintro h1 {
+    .creatorscorridorintro h1,
+    .mainupdateintro h1 {
         font-size: 5em;
     }
 
@@ -964,12 +1006,18 @@ footer {
         font-size: 1.2em;
     }
 
-    .slide h1 {
+    .slide h1,
+    .center-slide h1 {
         font-size: 2.5em;
     }
 
-    .slide p {
+    .slide p,
+    .center-slide p {
         font-size: 1.2em;
+    }
+
+    .slide-content-mainupdate {
+        width: auto;
     }
 }
 
@@ -982,7 +1030,8 @@ footer {
         width: 85%;
     }
 
-    .creatorscorridorintro p {
+    .creatorscorridorintro p,
+    .mainupdateintro p {
         width: auto;
     }
 
@@ -1036,7 +1085,8 @@ footer {
         width: auto;
     }
 
-    .slide p {
+    .slide p,
+    .center-slide p {
         font-size: 0.9em;
     }
 
@@ -1075,7 +1125,8 @@ footer {
     }
 
     #intro h1,
-    .creatorscorridorintro h1 {
+    .creatorscorridorintro h1,
+    .mainupdateintro h1 {
         font-size: 5em;
     }
 
@@ -1083,7 +1134,8 @@ footer {
         font-size: 1em;
     }
 
-    .slide h1 {
+    .slide h1,
+    .center-slide h1 {
         font-size: 2em;
     }
 
@@ -1121,7 +1173,8 @@ footer {
         min-width: 125px;
     }
 
-    .slide h1 {
+    .slide h1,
+    .center-slide h1 {
         font-size: 1.8em;
     }
 
@@ -1141,7 +1194,8 @@ footer {
     }
 
     #intro h1,
-    .creatorscorridorintro h1 {
+    .creatorscorridorintro h1,
+    .mainupdateintro h1 {
         font-size: 2.5em;
     }
 

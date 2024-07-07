@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // Include database connection details
-require 'globals.php';
+require '../globals.php';
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -42,7 +42,7 @@ $formatted_esouls = number_format($esouls);
 $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 
 if ($isAdmin == false) {
-    header("Location: account");
+    header("Location: character");
     exit;
 }
 
@@ -56,9 +56,9 @@ $amount_stmt->close();
 <head>
     <title>Ethereal Lands - Control Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
+    <link rel="stylesheet" href="../main.css?ver=<?= time(); ?>">
     <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
-    <script defer src="script.js?ver=<?= time(); ?>"></script>
+    <script defer src="../script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
@@ -145,7 +145,7 @@ $amount_stmt->close();
                 event.preventDefault();
                 var formData = $(this).serialize();
                 $.ajax({
-                    url: 'scripts/lookup_player_id.php',
+                    url: '../scripts/lookup_player_id.php',
                     type: 'POST',
                     data: formData,
                     dataType: 'json',
@@ -159,7 +159,7 @@ $amount_stmt->close();
                 event.preventDefault();
                 var formData = $(this).serialize();
                 $.ajax({
-                    url: 'scripts/reset_challenges_player.php',
+                    url: '../scripts/reset_challenges_player.php',
                     type: 'POST',
                     data: formData,
                     dataType: 'json',
@@ -176,7 +176,7 @@ $amount_stmt->close();
                 event.preventDefault();
                 var formData = $(this).serialize();
                 $.ajax({
-                    url: 'scripts/adjust_ethereal_souls.php',
+                    url: '../scripts/adjust_ethereal_souls.php',
                     type: 'POST',
                     data: formData,
                     dataType: 'json',

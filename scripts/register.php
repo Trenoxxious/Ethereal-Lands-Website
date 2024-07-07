@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     try {
         // Insert into players table
-        $stmt = $conn->prepare("INSERT INTO players (username, group_id, email, pass, salt, combat, skill_total, x, y, fatigue, combatstyle, block_chat, block_private, block_trade, block_duel, cameraauto, onemouse, soundoff, haircolour, topcolour, trousercolour, skincolour, headsprite, bodysprite, male, creation_date, creation_ip, login_date, login_ip, banned, offences, muted, kills, npc_kills, deaths, online, quest_points, lastRecoveryTryId, transfer, bounty_set_amount, bounty_kill_count, bounty_item_id, bounty_points, current_bounty) VALUES (?, 10, ?, ?, '', 3, 27, 311, 902, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 8, 14, 0, 1, 2, 1, UNIX_TIMESTAMP(), ?, 0, '0.0.0.0', 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0, 0, 0, 0, 0)");
+        $stmt = $conn->prepare("INSERT INTO players (username, email, pass, salt, creation_date, creation_ip) VALUES (?, ?, ?, '', UNIX_TIMESTAMP(), ?)");
         if (!$stmt) {
             throw new Exception("Prepare failed (INSERT into players): " . $conn->error);
         }
@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->close();
 
         // Insert into curstats table
-        $stmt = $conn->prepare("INSERT INTO curstats (playerID, attack, defense, strength, hits, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman) VALUES (?, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
+        $stmt = $conn->prepare("INSERT INTO curstats (playerID) VALUES (?)");
         if (!$stmt) {
             throw new Exception("Prepare failed (INSERT into curstats): " . $conn->error);
         }
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->close();
 
         // Insert into experience table
-        $stmt = $conn->prepare("INSERT INTO experience (playerID, attack, defense, strength, hits, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman) VALUES (?, 0, 0, 0, 4000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)");
+        $stmt = $conn->prepare("INSERT INTO experience (playerID) VALUES (?)");
         if (!$stmt) {
             throw new Exception("Prepare failed (INSERT into experience): " . $conn->error);
         }
@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->close();
 
         // Insert into maxstats table
-        $stmt = $conn->prepare("INSERT INTO maxstats (playerID, attack, defense, strength, hits, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman) VALUES (?, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)");
+        $stmt = $conn->prepare("INSERT INTO maxstats (playerID) VALUES (?)");
         if (!$stmt) {
             throw new Exception("Prepare failed (INSERT into maxstats): " . $conn->error);
         }
@@ -239,7 +239,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     Speaking of community...</p>
                 <h2>Creator's Corridor</h2>
                 <p>Check out Creator's Corridor, where our community creates and submits creations for Ethereal Lands. If you're
-                    a creator, consider submitting for rewards! <a href=\"https://playethereallands.com/creatorscorridor\">Learn
+                    a creator, consider submitting for rewards! <a href=\"https://playethereallands.com/creators_corridor\">Learn
                         more about Creator's Corridor here.</a>
                 </p>
             </div>

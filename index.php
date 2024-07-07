@@ -22,8 +22,8 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <div class="logo" id="toplogo">
             </div>
             <div id="navlinks">
-                <a href="updates">Game Updates</a>
-                <a href="creatorscorridor">Creator's Corridor</a>
+                <a href="recent_updates">Game Updates</a>
+                <a href="creators_corridor">Creator's Corridor</a>
                 <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             </div>
             <div class="button-div">
@@ -51,8 +51,8 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                     <path d="M673-446.67H160v-66.66h513l-240-240L480-800l320 320-320 320-47-46.67 240-240Z" />
                 </svg>
             </div>
-            <a class="button-main" href="updates">Game Updates</a>
-            <a class="button-main" href="creatorscorridor">Creator's Corridor</a>
+            <a class="button-main" href="recent_updates">Game Updates</a>
+            <a class="button-main" href="creators_corridor">Creator's Corridor</a>
             <a class="button-main" href="https://discord.gg/d6RtsDyRZX">Discord</a>
         </div>
     </div>
@@ -151,7 +151,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
 
                         if (response.status === 'success') {
                             setTimeout(function () {
-                                window.location.href = 'account';
+                                window.location.href = 'account/character';
                             }, 2000);
                         } else {
                             $('#errorsuccessmessagelogin').html(response.message);
@@ -180,7 +180,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
 
         document.getElementById('introaccountbutton').addEventListener('click', function () {
             if (loggedIn) {
-                window.location.href = 'account';
+                window.location.href = 'account/character';
             } else {
                 document.getElementById('popup-account').classList.add('active');
                 document.getElementById('overlay').classList.add('active');
@@ -189,7 +189,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
 
         document.getElementById('accountbutton').addEventListener('click', function () {
             if (loggedIn) {
-                window.location.href = 'account';
+                window.location.href = 'account/character';
             } else {
                 document.getElementById('popup-account').classList.add('active');
                 document.getElementById('overlay').classList.add('active');
