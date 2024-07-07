@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         var progressElement = $('#progress-' + challenge.id);
                         var buttonElement = $('#claim-button-' + challenge.id);
                         if (progressElement.length) {
-                            progressElement.text(challenge.value + ' / ' + challenge.fulfillment_amount);
+                            progressElement.text('Progress: ' + challenge.value + ' / ' + challenge.fulfillment_amount);
                         }
                         if (buttonElement.length) {
                             if (challenge.value >= challenge.fulfillment_amount) {
