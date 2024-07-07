@@ -152,7 +152,8 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
                         <?php echo htmlspecialchars($accepted['rarity']); ?> Challenge
                     </p>
                     <p class="challenge-info"><?php echo htmlspecialchars($accepted['mission']); ?></p>
-                    <p id="progress-<?php echo $accepted['id']; ?>" class="challenge-stats">Progress:
+                    <p id="progress-<?php echo $accepted['id']; ?>" class="challenge-stats">
+                        <span>Progress:</span>
                         <?php echo htmlspecialchars($accepted['value']); ?> /
                         <?php echo htmlspecialchars($accepted['fulfillment_amount']); ?>
                     </p>
