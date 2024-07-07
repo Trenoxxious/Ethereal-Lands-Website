@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function checkProgress() {
         // Check if the current page URL contains 'challenges.php'
-        if (window.location.href.indexOf('../account/challenges.php') > -1) {
+        if (window.location.href.indexOf('account/challenges.php') > -1) {
             $.ajax({
                 url: 'scripts/check_progress.php',
                 type: 'GET',
