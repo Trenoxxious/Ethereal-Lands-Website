@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let challengeId = form.find('input[name="challenge_id"]').val();
 
         $.ajax({
-            url: 'scripts/check_challenge.php',
+            url: '../scripts/check_challenge.php',
             type: 'POST',
             data: form.serialize(),
             success: function (response) {
