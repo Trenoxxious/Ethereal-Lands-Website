@@ -106,10 +106,10 @@ body {
 }
 
 .challenge-stats-reward {
-    color: rgb(182, 182, 255);
+    color: rgb(182, 182, 255)!important;
 }
 
-.challenge-stats img {
+.challenge-stats-reward img {
     margin-left: 5px;
 }
 
