@@ -592,10 +592,6 @@ body {
         visibility: visible;
     }
 
-    .mainupdate img {
-        width: 400px;
-    }
-
     .button-main-green,
     .button-main-red {
         display: flex;
@@ -629,7 +625,7 @@ body {
     }
 
     .mainupdate img {
-        width: 300px;
+        max-width: 100%;
     }
 
     .form-sec {
