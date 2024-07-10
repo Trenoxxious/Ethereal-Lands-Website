@@ -17,9 +17,21 @@ body {
     text-shadow: 0 2px 0 black;
 }
 
+.mainupdate {
+    height: auto;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .mainupdate:hover {
     filter: brightness(1.1);
     -webkit-filter: brightness(1.1);
+}
+
+.mainupdate img {
+    width: 700px;
 }
 
 .void-font {
@@ -580,6 +592,10 @@ body {
         visibility: visible;
     }
 
+    .mainupdate img {
+        width: 400px;
+    }
+
     .button-main-green,
     .button-main-red {
         display: flex;
@@ -610,6 +626,10 @@ body {
 @media only screen and (max-width: 600px) {
     .main-account-front {
         align-items: center;
+    }
+
+    .mainupdate img {
+        width: 300px;
     }
 
     .form-sec {
