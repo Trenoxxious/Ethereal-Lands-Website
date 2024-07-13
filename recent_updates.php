@@ -51,7 +51,7 @@
             <div class="updatetop">
                 <div class="updateimage"><img src="images/updates/game.png" alt="update image"></div>
                 <div class="updatebartop">
-                    <p class="updatedate">07/10/2024</p>
+                    <p class="updatedate">07/12/2024</p>
                     <div class="updatetitle">Ethereal Dungeons & Fixes</div>
                     <div class="patchnumber">Pre-release Update</div>
                     <p class="updatesummary">Lots of updates and fixes to the game and Ethereal Dungeons.</p>
@@ -69,10 +69,7 @@
                 <h2>Ethereal Dungeons</h2>
                 <p>Monster and Boss HP now correctly updates to the client when the NPC is scaled.</p>
                 <p>Monster and Boss scaling has been adjusted/tuned at various combat levels.</p>
-                <p>The first boss has been created and implemented.</p>
-                <p>The overall layout of Crypt of Dread has been designed and should be completed within the week.</p>
-                <p>The entrance, first room and the first boss' lair has been fully designed and is now live undergoing
-                    tests.</p>
+                <p>Crypt of Dread has been completed in terms of layout, design and dungeon functionality.</p>
                 <p>Experience now scales correctly to a player's combat level when killing a monster or boss.</p>
                 <p>Dungeon reset database information has been introduced when the last boss of a dungeon is killed to
                     clear all boss and NPC cache information, allowing the dungeon to be re-run multiple times.</p>
@@ -82,12 +79,27 @@
                 <p>Design and mechanics have been finalized for all bosses.</p>
                 <p>Character stats for the dungeon has been implemented so you can view your dungeon stats
                     on the website character stats page. This is a work in progress.</p>
+                <p>All Ethereal Dungeon item drops are in place and correctly tracking for collection logs.</p>
+                <p>The Ethereal Dungeon "Dungeon Info" command has been enabled and will now show you relevant
+                    information about the dungeon.</p>
+                <p>Plans have been started for the second Ethereal Dungeon and we may have multiple dungeons active at a
+                    time, instead of just one, for more diversity.</p>
                 <h2>General</h2>
+                <p>Daily Challenges no longer delete themselves when a player logs in while they are active.</p>
+                <p>Added the ability to draw transparent sprites to the client whilst still managing black mask alphas.
+                </p>
+                <p>Players are now given introductory tutorial/controls information upon logging in for the first time
+                    while on Kani'ani
+                    Island if they haven't started the main quest.</p>
+                <p>Fixed Del'araz retreat issue. Del'araz will now chase the player when retreated from.</p>
+                <p>Del'araz now has additional mechanics in Phase 2.</p>
+                <p>Players are now able to eat whilst in combat, but cannot do so while in the wilderness. This change
+                    does not include potions of any kind.</p>
                 <p>Greatswords have been implemented fully, and now show their stats client-side and have their special
                     attacks implemented in combat. We're still not sure how we want players to obtain these. (Looking
                     for ideas, suggestions - please submit via Discord if keeping up with updates)</p>
                 <p>Several updates to various prayers (unreleased prayers) for tuning.</p>
-                <p>Normal trees are no longer felled at 100%, and may last longer than 1 chop in some rarer cases.</p>
+                <p>Normal trees are no longer felled at 100%, and may last longer than 1 chop in rarer cases.</p>
                 <p>Players are no longer able to teleport anywhere until they've completed the tutorial.</p>
                 <p>The client has been updated to adjust overhead name visibility under certain, new conditions.</p>
                 <p>Soul Slot has had its prayer level adjusted from 35 to 27.</p>
