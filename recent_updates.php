@@ -89,18 +89,23 @@
                 <p>Added the ability to draw transparent sprites to the client whilst still managing black mask alphas.
                 </p>
                 <p>Players are now given introductory tutorial/controls information upon logging in for the first time
-                    while on Kani'ani
-                    Island if they haven't started the main quest.</p>
+                    while on Kani'ani Island if they haven't started the main quest.</p>
+                <p>Players are no longer able to teleport anywhere until they've completed the tutorial.</p>
                 <p>Fixed Del'araz retreat issue. Del'araz will now chase the player when retreated from.</p>
                 <p>Del'araz now has additional mechanics in Phase 2.</p>
                 <p>Players are now able to eat whilst in combat, but cannot do so while in the wilderness. This change
                     does not include potions of any kind.</p>
+                <p>Healing has been updated to support using the abandoned "heal()" function instead of directly
+                    changing the level of Hits. This allows us to show heal sprites on the player when they heal from
+                    something using the "heal()" method. This is going to be a slow change and is currently in testing
+                    with Noxious Scythe special attack triggers. We've revived this abandoned, never-implemented
+                    function to help players see when they are healed not only by food, but a weapon's special attack as
+                    well. This will not include heal-over-time prayers or general recovery at this time.</p>
                 <p>Greatswords have been implemented fully, and now show their stats client-side and have their special
                     attacks implemented in combat. We're still not sure how we want players to obtain these. (Looking
                     for ideas, suggestions - please submit via Discord if keeping up with updates)</p>
                 <p>Several updates to various prayers (unreleased prayers) for tuning.</p>
                 <p>Normal trees are no longer felled at 100%, and may last longer than 1 chop in rarer cases.</p>
-                <p>Players are no longer able to teleport anywhere until they've completed the tutorial.</p>
                 <p>The client has been updated to adjust overhead name visibility under certain, new conditions.</p>
                 <p>Soul Slot has had its prayer level adjusted from 35 to 27.</p>
                 <p>The "Send to Bank" option on the Year 1 Case and all Case Keys now works as intended.</p>
