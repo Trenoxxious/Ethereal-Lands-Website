@@ -566,6 +566,7 @@ body {
 }
 
 .before::after {
+    text-decoration: none;
     color: white;
     margin-left: 3px;
     margin-right: 3px;
