@@ -565,7 +565,7 @@ body {
     color: rgb(78, 226, 78);
 }
 
-.before::after {
+.after::before {
     color: rgb(250, 223, 70);
     text-decoration: none;
     margin-left: 3px;
