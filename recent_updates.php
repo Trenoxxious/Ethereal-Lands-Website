@@ -112,6 +112,8 @@
                     completed.</p>
                 <p>The testing phase of eating during combat has been completed and will remain a feature of
                     Ethereal Lands outside of The Wilderness.</p>
+                <p>Players attempting to eat whilst in the wilderness and in combat will be given a specific message
+                    saying they can't eat in combat whilst in the wilderness.</p>
                 <p>Noted drops have been implemented into monster drops and drop tables.</p>
                 <p>All monster drops that included certs/certificates (logs, ore, etc.) have been altered to drop their
                     noted counterparts in the same quantity.</p>
@@ -122,8 +124,8 @@
                     because of an oversight.</p>
                 <p>The healing power of the Noxious Scythe has been adjusted. <span class="before">Heals 3-13
                         HP</span><span class="after">Heals 3-11 HP</span></p>
-                <p>The healing chance of the Noxious Scythe has been adjusted. <span class="before">15%/8% Chance to
-                        Trigger</span><span class="after">17%/10% Chance to Trigger</span>
+                <p>The healing chance of the Noxious Scythe has been adjusted. <span class="before">17%/10% Chance to
+                        Trigger</span><span class="after">15%/8% Chance to Trigger</span>
                 </p>
             </div>
         </div>
