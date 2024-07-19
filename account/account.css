@@ -566,8 +566,8 @@ body {
 }
 
 .before::after {
+    color: rgb(250, 223, 70);
     text-decoration: none;
-    color: white;
     margin-left: 3px;
     margin-right: 3px;
     content: ">>";
