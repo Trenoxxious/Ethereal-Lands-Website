@@ -557,7 +557,7 @@ body {
 }
 
 .before {
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
     color: rgb(255, 52, 52);
 }
 
