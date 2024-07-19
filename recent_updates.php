@@ -116,8 +116,14 @@
                 <p>All monster drops that included certs/certificates (logs, ore, etc.) have been altered to drop their
                     noted counterparts in the same quantity.</p>
                 <p>Adjustments have been made to various objects/items for grammatical clarity.</p>
-                <p>The healing amount of Lava Shark has been reduced. <span class="before">18</span><span
-                        class="after">17</span>
+                <p>The healing amount of Lava Shark has been reduced. <span class="before">Heals 18</span><span
+                        class="after">Heals 17</span></p>
+                <p>Enchanting dragonstone jewelry is now possible once again. Previously, the needed level was 67
+                    because of an oversight.</p>
+                <p>The healing power of the Noxious Scythe has been adjusted. <span class="before">Heals 3-13
+                        HP</span><span class="after">Heals 3-11 HP</span></p>
+                <p>The healing chance of the Noxious Scythe has been adjusted. <span class="before">15%/8% Chance to
+                        Trigger</span><span class="after">17%/10% Chance to Trigger</span>
                 </p>
             </div>
         </div>
