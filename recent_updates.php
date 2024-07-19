@@ -51,6 +51,80 @@
             <div class="updatetop">
                 <div class="updateimage"><img src="images/updates/game.png" alt="update image"></div>
                 <div class="updatebartop">
+                    <p class="updatedate">07/19/2024</p>
+                    <div class="updatetitle">Crypt of Dread & Various Updates</div>
+                    <div class="patchnumber">Pre-release Patch</div>
+                    <p class="updatesummary">More updates to Ethereal Dungeons and other game areas.</p>
+                </div>
+            </div>
+            <div class="updatecontent">
+                <p>
+                    We're still hard at work to get our first Ethereal Dungeon live and ready. We've been spending the
+                    last week implementing systems that will make introducing more Ethereal Dungeons more
+                    streamlined in the future. We've also introduced many new systems that give us the ability to offer
+                    more visual feedback, like heal splats, into fights. Noted monster drops also make their debut to
+                    official monster drop tables! A new Fishing Guild surfaces near Port Sarim...
+                </p>
+                <h2>Ethereal Dungeons</h2>
+                <p>Scaling to dungeons has been tuned in various sectors. We've also introduced our dungeon difficulty
+                    scaling feature. Setting your dungeon difficulty higher gives your character a better chance at the
+                    loot in the dungeon, although increasing your dungeon difficulty also has a few other notable
+                    impacts.</p>
+                <p><b>Normal Difficulty</b> is the intended dungeon difficulty, providing good drop rates on the loot
+                    within.
+                    NPCs will scale with normal health and feel like a normal encounter, although the bosses
+                    still have mechanics to watch out for. The mechanics in Normal Difficulty aren't extremely
+                    punishing.</p>
+                <p><b>Heroic Difficulty</b> is the harder dungeon difficulty, providing slightly better chances at
+                    obtaining loot from bosses. NPCs still scale with combat level but are given more health, attack and
+                    strength stats. Some monsters will now use special attacks. Boss mechanics do not change.</p>
+                <p><b>Necrotic Difficulty</b> is the hardest dungeon difficulty, providing the best chance at obtaining
+                    loot. NPCs will still scale with combat level, but have significantly increased health, attack,
+                    strength and defense stats. Monsters will have some punishing special attacks. Bosses will have a
+                    higher health pool and very punishing mechanics. Bosses will also have more mechanics than their
+                    Normal and Heroic difficulty variants.</p>
+                <p>A Font of the Ether has been added to Crypt of Dread allowing players to set their difficulty level
+                    whilst inside the dungeon. Doing so resets progress.</p>
+                <p>The Font of the Ether includes an option to show all of your dungeon-related stats where the font is
+                    used.</p>
+                <p>When an Ethereal Dungeon is active, a message will be displayed to the player upon login.</p>
+                <p>Systems have been implemented to allow for further Ethereal Dungeon production with ease. Simplified
+                    methods and functions to handle dungeons have been implemented to allow for more efficient
+                    code-flow and future modifications.</p>
+                <p>To reset dungeon progress, a new reset option has been added to dungeon entrance portals.</p>
+                <p>Huntsman XP now scales with dungeon difficulty, with the most experience coming from defeating
+                    bosses.</p>
+                <p>Diaphante is now ghostly, as initially intended.</p>
+                <p>When dying in Ethereal Dungeons, a custom message is displayed instead of the normal death message
+                    (chatbox) to make it apparent no items have been lost.</p>
+                <p>Player deaths are now tracked in Ethereal Dungeons and is a viewable stat. We will be implementing
+                    these stats to your character page on the website shortly!</p>
+                <p>Crypt of Dread has been completed fully up to the final boss, where we're currently working to bring
+                    an epic ending experience to Crypt of Dread!</p>
+                <h2>General</h2>
+                <p>A 3rd option has been implemented to work with clickable objects. This gives us a total of 3
+                    possible customizable options for all objects.</p>
+                <p>A new fishing guild has been designed and the entrance is now located at Port Sarim. The old
+                    fishing guild will be decommissioned in the next expansion when that area goes live.</p>
+                <p>Healing (heal splats) have now been completed for players. Any healing outside of normal restoration
+                    will now show as a heal splat on the player. NPCs in Crypt of Dread have had the same treatment
+                    applied as a testing feature and will soon be implemented for all NPC healing once testing is
+                    completed.</p>
+                <p>The testing phase of eating during combat has been completed and will remain a feature of
+                    Ethereal Lands outside of The Wilderness.</p>
+                <p>Noted drops have been implemented into monster drops and drop tables.</p>
+                <p>All monster drops that included certs/certificates (logs, ore, etc.) have been altered to drop their
+                    noted counterparts in the same quantity.</p>
+                <p>Adjustments have been made to various objects/items for grammatical clarity.</p>
+                <p>The healing amount of Lava Shark has been reduced. <span class="before">18</span><span
+                        class="after">17</span>
+                </p>
+            </div>
+        </div>
+        <div class="updatebox">
+            <div class="updatetop">
+                <div class="updateimage"><img src="images/updates/game.png" alt="update image"></div>
+                <div class="updatebartop">
                     <p class="updatedate">07/12/2024</p>
                     <div class="updatetitle">Ethereal Dungeons & Fixes</div>
                     <div class="patchnumber">Pre-release Update</div>

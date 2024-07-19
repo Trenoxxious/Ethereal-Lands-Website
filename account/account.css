@@ -118,7 +118,7 @@ body {
 }
 
 .challenge-stats-reward {
-    color: rgb(182, 182, 255)!important;
+    color: rgb(182, 182, 255) !important;
 }
 
 .challenge-stats-reward img {
@@ -554,6 +554,22 @@ body {
     100% {
         color: #ba55d3;
     }
+}
+
+.before {
+    text-decoration: line-through;
+    color: rgb(255, 52, 52);
+}
+
+.after {
+    color: rgb(78, 226, 78);
+}
+
+.before::after {
+    color: white;
+    margin-left: 3px;
+    margin-right: 3px;
+    content: ">>";
 }
 
 .form-sec {
