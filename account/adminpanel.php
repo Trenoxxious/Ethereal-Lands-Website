@@ -111,7 +111,7 @@ $amount_stmt->close();
         </div>
         <div class="form-sec">
             <h2>Player Cache Insertion</h2>
-            <form method="post" action="scripts/insert_player_cache.php">
+            <form method="post" action="../scripts/insert_player_cache.php">
                 <label for="playerID">Player ID (num)</label>
                 <input type="number" id="playerID" name="playerID" required><br>
                 <label for="key">Key (eg. tutorial_island)</label>

@@ -23,6 +23,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $value = $_POST['value'];
     $type = $_POST['type'];
 
+    // Check if the user is 'online' in the players table
+    $query = "SELECT online FROM players WHERE id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $playerID);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user_status = $result->fetch_assoc();
+
+    if ($user_status && $user_status['online'] == 1) {
+        echo "You can not modify this user's cache while they are logged in. Please have them log out.";
+        $stmt->close();
+        $conn->close();
+        exit;
+    }
+
     $check_sql = "SELECT * FROM player_cache WHERE playerID = '$playerID' AND `key` = '$key'";
     $check_result = $conn->query($check_sql);
 
