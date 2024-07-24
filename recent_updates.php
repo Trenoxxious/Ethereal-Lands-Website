@@ -51,7 +51,7 @@
             <div class="updatetop">
                 <div class="updateimage"><img src="images/updates/game.png" alt="update image"></div>
                 <div class="updatebartop">
-                    <p class="updatedate">07/19/2024</p>
+                    <p class="updatedate">07/24/2024</p>
                     <div class="updatetitle">Crypt of Dread & Various Updates</div>
                     <div class="patchnumber">Pre-release Patch</div>
                     <p class="updatesummary">More updates to Ethereal Dungeons and other game areas.</p>
@@ -94,7 +94,8 @@
                 <p>To reset dungeon progress, a new reset option has been added to dungeon entrance portals.</p>
                 <p>Huntsman XP now scales with dungeon difficulty, with the most experience coming from defeating
                     bosses.</p>
-                <p>Diaphante is now ghostly, as initially intended.</p>
+                <p>Diaphante is now slightly ghostly, as initially intended.</p>
+                <p>Bosses now produce less to no messages in the chat box when using special attacks.</p>
                 <p>When dying in Ethereal Dungeons, a custom message is displayed instead of the normal death message
                     (chatbox) to make it apparent no items have been lost.</p>
                 <p>Player deaths are now tracked in Ethereal Dungeons and is a viewable stat. We will be implementing
@@ -102,6 +103,19 @@
                 <p>Crypt of Dread has been completed fully up to the final boss, where we're currently working to bring
                     an epic ending experience to Crypt of Dread!</p>
                 <h2>General</h2>
+                <p>Noxious Scythe pieces no longer drop from Noxious Demons, but Noxious Demons now have access to the
+                    super rare drop table.</p>
+                <p>We've implemented healing spells, allowing players to heal other players. This is a feature that is
+                    being introduced for a reason we haven't decided to announce yet. You are unable to heal players
+                    while you are in a duel or if the player being healed is in a duel. There are several other checks
+                    implemented as well.</p>
+                <p>A new rune has been introduced for healing spells, Void Rune.</p>
+                <p>Void Rune has been added to several shops and 63 NPC drop tables.</p>
+                <p>Work has been started on greyboxing the new Wilderness PvP areas. More information to come on this
+                    upon finishing. This should be completed by the end of the week.</p>
+                <p>Teleportation stones that are usable on the mainland after the tutorial have been added and enabled.
+                </p>
+                <p>The quest that is replacing Cook's Assistant has been completed.</p>
                 <p>A 3rd option has been implemented to work with clickable objects. This gives us a total of 3
                     possible customizable options for all objects.</p>
                 <p>A new fishing guild has been designed and the entrance is now located at Port Sarim. The old
