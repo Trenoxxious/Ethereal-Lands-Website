@@ -51,6 +51,51 @@
             <div class="updatetop">
                 <div class="updateimage"><img src="images/updates/game.png" alt="update image"></div>
                 <div class="updatebartop">
+                    <p class="updatedate">07/28/2024</p>
+                    <div class="updatetitle">Various Client Improvements</div>
+                    <div class="patchnumber">Pre-release Patch</div>
+                    <p class="updatesummary">General updates to the classic client.</p>
+                </div>
+            </div>
+            <div class="updatecontent">
+                <p>
+                    We're improving the client experience in this update, moving away from the traditional all-white
+                    menus and interfaces. This is a gradual change that will see various updates over the coming weeks
+                    up to Tutorial Island release. The update notes are fairly short this week, but a lot has been changed with this week's update.
+                </p>
+                <h2>Client</h2>
+                <p>Right-click menus have been given an overhaul. The color scheme has been changed drastically and
+                    allows improved readability and a fresh appearance to an old menu style.</p>
+                <p>The stats, quest, prayer and magic menus have been converted to a "dark-mode" style theme, similar to
+                    the right-click menus. These menus will eventually undergo a major overhaul to show icons instead of
+                    text for spells/prayers.</p>
+                <p>Different types of monsters now have different damage/hit splats. For instance, Fire Giants will now
+                    display a "Fire" splat instead of a normal hit splat. Poison damage will now show a "Poison" splat,
+                    etc. There are 11 different damage types so far. Weaknesses are being developed for mobs as well.
+                </p>
+                <h2>General</h2>
+                <p>Poison damage dealt by Del'araz has been reduced. <span class="before">8</span><span
+                        class="after">6</span> damage
+                </p>
+                <p>Additional work has been completed for Necrotic level Ethereal Dungeons, enabling additional
+                    mechanics in Necrotic mode when fighting normal minions and bosses both.</p>
+                <p>Heals now send updates to the HP bars of party members.</p>
+                <p>Players now have the ability to critically strike with melee weapons. The chance to critically strike
+                    depends entirely on your Agility level. So, if you didn't have a reason to level Agility before, you
+                    have one now! The chance to critically strike is around 4% at level 1 Agility.
+                </p>
+                <p>The Strength Skillcape lightly increaeses the strength of your attacks.</p>
+                <p>To allow wiggle room for potential issues exceeding 255 armour, aim, power, etc. (in rare cases),
+                    we've adjusted equipment stat packets to handle higher numbers instead of reducing the stats of
+                    items across the board.
+                </p>
+                <p>The welcome email when creating a new account has been altered to give more information on Ethereal Lands and additional, unique features.</p>
+            </div>
+        </div>
+        <div class="updatebox">
+            <div class="updatetop">
+                <div class="updateimage"><img src="images/updates/game.png" alt="update image"></div>
+                <div class="updatebartop">
                     <p class="updatedate">07/24/2024</p>
                     <div class="updatetitle">Crypt of Dread & Various Updates</div>
                     <div class="patchnumber">Pre-release Patch</div>
@@ -105,11 +150,12 @@
                 <h2>General</h2>
                 <p>Noxious Scythe pieces no longer drop from Noxious Demons, but Noxious Demons now have access to the
                     super rare drop table.</p>
-                <p>We've implemented healing spells, allowing players to heal other players. This is a feature that is
+                <p>We've implemented healing spells, allowing players to heal <i>other players</i>. This is a feature
+                    that is
                     being introduced for a reason we haven't decided to announce yet. You are unable to heal players
                     while you are in a duel or if the player being healed is in a duel. There are several other checks
                     implemented as well.</p>
-                <p>A new rune has been introduced for healing spells, Void Rune.</p>
+                <p>A new rune has been introduced for healing spells, the Void Rune.</p>
                 <p>Void Rune has been added to several shops and 63 NPC drop tables.</p>
                 <p>Work has been started on greyboxing the new Wilderness PvP areas. More information to come on this
                     upon finishing. This should be completed by the end of the week.</p>

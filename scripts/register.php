@@ -155,7 +155,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-                /* CSS styles go here */
                 body {
                     font-family: Roboto, sans-serif;
                     background-color: #303030;
@@ -223,24 +222,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     possible. Check back consistently for game updates and news on a release date!</p>
                 <p>We also recommend joining us on <a href=\"https://discord.gg/d6RtsDyRZX\">Discord</a>! Find information on our
                     website for our Discord server.</p>
-                <h2>Tutorial Island Testing Schedule</h2>
+                <h2>Tutorial Island Release</h2>
                 <p>We plan to open up Ethereal Lands for Tutorial Island testing soon. Oh yeah, it's not the normal tutorial
-                    island. It's a brand new tutorial island, built from the ground up, called <b>Kani'ani Island</b>! Kani'ani
+                    island - it's a brand new tutorial island built from the ground up called <b>Kani'ani Island</b>! Kani'ani
                     Island features a big quest
                     utilizing almost every skill, including the new <b>Huntsman</b> skill. There's a lot to uncover and learn
                     during this upcoming test. We'll let you know when it's ready!</p>
                 <p>See below for some features you may have missed about Ethereal Lands.</p>
                 <h2>Daily Challenge System</h2>
-                <p>Feel free to log into the website and have a poke around! We have a daily challenge system and cosmetic store
+                <p>Feel free to log into the website and have a poke around! We will have a daily challenge system and cosmetic store
                     that sees constant updates. You are able to claim 3 random daily challenges each day, with random rarities
                     and Ethereal Soul reward amounts. Are you lucky enough to receive 3 Artifact challenges on the same day?</p>
-                <p>Don't worry though, all paid cosmetics can be earned at a reasonable rate through the
+                <p>Don't worry, all paid cosmetics can be earned at a reasonable rate through the
                     daily challenge system, allowing anyone to enjoy the cosmetics created by the team and the community.
                     Speaking of community...</p>
                 <h2>Creator's Corridor</h2>
                 <p>Check out Creator's Corridor, where our community creates and submits creations for Ethereal Lands. If you're
                     a creator, consider submitting for rewards! <a href=\"https://playethereallands.com/creators_corridor\">Learn
                         more about Creator's Corridor here.</a>
+                </p>
+                <h2>More Unique Features!</h2>
+                <p>Experience more unique features, including a revamped user interface, new and improved hit-splats, critical striking melee attacks, other-player healing spells, new prayers and overhead indicators, a lower maximum level, new dungeons and seasonal dungeons, new wilderness areas... Phew-- and much, much more! We're going to keep our website updated with all of these new features over time and can't wait to have you on Kani'ani Island to test many of them out!
                 </p>
             </div>
         </body>
