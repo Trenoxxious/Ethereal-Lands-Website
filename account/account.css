@@ -82,6 +82,32 @@ body {
     border-radius: 0.2em;
 }
 
+p.norm {
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+p.norm + p.norm {
+    margin-top: 15px;
+}
+
+.img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.img-cap {
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
 .account-support {
     display: flex;
     align-items: flex-start;
