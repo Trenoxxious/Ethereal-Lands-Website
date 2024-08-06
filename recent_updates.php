@@ -48,7 +48,7 @@
         </div>
     </a>
     <div id="updateList" class="updatelist">
-        <!-- Updates will be loaded here dynamically -->
+        <!-- Updates loaded here -->
     </div>
     <div id="loadingIndicator" style="display: none;">Loading more updates...</div>
 
@@ -69,7 +69,7 @@
                 data: { page: page },
                 success: function(response) {
                     if (response.trim() === '') {
-                        $('#loadingIndicator').text('No more updates to load.');
+                        $('#loadingIndicator').hide();
                     } else {
                         $('#updateList').append(response);
                         page++;
@@ -96,7 +96,7 @@
             // Event delegation for update box clicks
             $('#updateList').on('click', '.updatebox', function() {
                 const updatecontent = $(this).find('.updatecontent');
-                updatecontent.slideToggle();
+                updatecontent.slideToggle("fast", "swing");
             });
         });
     </script>
