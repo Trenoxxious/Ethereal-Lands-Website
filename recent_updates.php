@@ -41,14 +41,14 @@
         </div>
     </div>
     <div class="blanktop"></div>
-    <div class="mainupdate-container" style="display: inline-block;"></div>
+    <div class="mainupdate-container" style="display: inline-block;">
         <a href="/game_updates/kaniani_island">
             <div class="mainupdate">
                 <img src="images/updates/mainupdate_tutisland.png" alt="Explore a new, packed tutorial island!"
                     style="width: 100%; height: 100%; object-fit: contain;">
             </div>
         </a>
-    <div class="mainupdate-container"></div>
+    </div>
     <div id="updateList" class="updatelist">
         <!-- Updates loaded here -->
     </div>
