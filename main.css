@@ -437,12 +437,11 @@ li {
 }
 
 #intro {
-    background-image: url(images/pic1.png);
+    background-image: url(images/Kaniani1080.png);
     object-fit: cover;
     background-size: 1920px;
     background-position: center;
     background-repeat: no-repeat;
-    background-position-y: -300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -539,13 +538,14 @@ li {
 }
 
 .slide {
+    min-height: 600px;
     padding-top: 25px;
     box-sizing: border-box;
     display: flex;
     text-align: center;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     font-family: "Oswald", "Teko", serif;
     cursor: default;
     color: white;
@@ -648,54 +648,50 @@ li {
 }
 
 #slide1 {
-    background-image: url(images/pic4.png);
+    background-image: url(images/Edgeville1080.png);
     object-fit: cover;
-    background-size: 1920px;
     background-position: top;
+    background-size: 1920px;
     background-repeat: no-repeat;
-    background-position-y: -300px;
 }
 
 #slide2 {
-    background-image: url(images/pic3.png);
+    background-image: url(images/FranksCave1080.png);
     object-fit: cover;
-    background-size: 1920px;
     background-position: top;
+    background-size: 1920px;
     background-repeat: no-repeat;
-    background-position-y: -100px;
 }
 
 #slide3 {
-    background-image: url(images/graveyards.png);
+    background-image: url(images/Lumbridge1080.png);
     object-fit: cover;
-    background-size: 1920px;
     background-position: center;
+    background-size: 1920px;
     background-repeat: no-repeat;
 }
 
 #slide4 {
-    background-image: url(images/pic6.png);
+    background-image: url(images/RaptorsCaveInside1080.png);
     object-fit: cover;
     background-size: 1920px;
     background-position: center;
-    background-position-y: -100px;
     background-repeat: no-repeat;
 }
 
 #slide5 {
-    background-image: url(images/pic7.png);
+    background-image: url(images/DraynorDungeon1080.png);
     object-fit: cover;
-    background-size: 1920px;
     background-position: center;
-    background-position-y: -100px;
+    background-size: 1920px;
     background-repeat: no-repeat;
 }
 
 #slide6 {
-    background-image: url(images/pic8.png);
+    background-image: url(images/CoD1080.png);
     object-fit: cover;
-    background-size: 1920px;
     background-position: center;
+    background-size: 1920px;
     background-repeat: no-repeat;
 }
 
@@ -1216,5 +1212,13 @@ footer {
         border-radius: 0;
         justify-content: space-between;
         background-color: rgba(16, 16, 16, 0.85);
+    }
+
+    #slide1, #slide2, #slide3, #slide4, #slide5, #slide6 {
+        background-size: 1200px;
+    }
+
+    #intro {
+        background-size: 1400px;
     }
 }

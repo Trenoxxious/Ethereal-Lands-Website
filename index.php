@@ -350,7 +350,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     <div class="slide" id="slide6">
         <div class="slide-content">
             <h1>Ethereal Dungeons</h1>
-            <p>As a seasonal activity, rotating about every three months or so, Ethereal Dungeons are small, bite-sized
+            <p>As a seasonal activity, rotating out every-so-often, Ethereal Dungeons are small, bite-sized
                 dungeon-delving
                 experiences that scale to your character's combat level. Starting at level 20, you can complete these
                 dungeons, each containing a varying amount of
