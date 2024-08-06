@@ -23,7 +23,7 @@ $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $perPage = 5; // Number of updates per page
 
 // Fetch updates from the database
-$stmt = $db->prepare("SELECT * FROM updates ORDER BY date DESC LIMIT :limit OFFSET :offset");
+$stmt = $dbname->prepare("SELECT * FROM updates ORDER BY date DESC LIMIT :limit OFFSET :offset");
 $stmt->bindValue(':limit', $perPage, PDO::PARAM_INT);
 $stmt->bindValue(':offset', ($page - 1) * $perPage, PDO::PARAM_INT);
 $stmt->execute();
