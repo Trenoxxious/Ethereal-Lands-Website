@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="blanktop"></div>
-    <div class="mainupdate-container" style="display: inline-block;">
+    <div class="mainupdate-container" style="display: flex; align-items: center; justify-content: center;">
         <a href="/game_updates/kaniani_island">
             <div class="mainupdate">
                 <img src="images/updates/mainupdate_tutisland.png" alt="Explore a new, packed tutorial island!"
