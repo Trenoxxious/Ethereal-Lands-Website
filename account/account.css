@@ -608,15 +608,16 @@ p.norm + p.norm {
     padding: 10px;
     box-sizing: border-box;
     border-radius: 0.2em;
-    width: 250px;
-    margin: 15px;
+    width: 450px;
 }
 
 .form-sec form {
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
 .form-sec h2 {
@@ -672,7 +673,7 @@ p.norm + p.norm {
     }
 
     .form-sec {
-        min-width: auto;
+        width: 100%;
     }
 
     .account-support {
