@@ -56,8 +56,10 @@
                 <p>The spell interface has been updated to show correct information for friendly spells.</p>
                 <p>Friendly spells will now show up at the bottom of the magic panel to allow for easier casting of friendly spells and to limit scrolling as much as possible when looking for a different friendly spell. This is just a temporary quality of life change we're implementing before entirely re-designing the magic and prayer interfaces sometime after launch.</p>
                 <p>Dragon Sword and Dragon 2H Sword specials have been updated respectively: <span class="before">20%/25% Bonus Damage</span><span class="aft">40%/60% Bonus Damage</span></p>
-                <h2>Game Admin</h2>
+                <h2>Website</h2>
                 <p>Admins now have the ability to find the registered email of the user to address inquiries/tickets for support. This will eventually be worked into a full ticketing system accessible to character on the support page, which is expected to be done prior to launch.</p>
+                <p>The player support form has been widened a bit and fixed on mobile displays.</p>
+                <p>Images on my main page have been updated to not include a player character and be pixel-perfect upscales to 1080p resolution. These will be tweaked over time and ready before release.</p>
             </div>
         </div>
     </div>
