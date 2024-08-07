@@ -1,9 +1,3 @@
-<?php
-session_start();
-
-$loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,17 +21,6 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 <a href="recent_updates">Game Updates</a>
                 <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
             </div>
-            <div class="button-div">
-                <?php if ($loggedIn): ?>
-                    <button class="button-main" id="accountbutton">
-                        My Account
-                    </button>
-                <?php else: ?>
-                    <button class="button-main" id="accountbutton">
-                        Login
-                    </button>
-                <?php endif; ?>
-            </div>
             <div id="menuexpand">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
                     fill="#FFFFFF">
@@ -59,7 +42,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     </div>
     <div class="creatorscorridorintro">
         <h1>Error: 500</h1>
-        <p>Your Thieving level is not high enough to pick this chest.</p>
+        <p>You'll need to complete the "Becoming An Administrator" quest before accessing this page.</p>
     </div>
     <?php include 'footer.php'; ?>
 </body>
