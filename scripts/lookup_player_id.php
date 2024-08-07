@@ -20,13 +20,14 @@ if ($isAdmin == false) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $playerUsername = $_POST['playerUsername'];
 
-    $sql = "SELECT id FROM players WHERE LOWER(username) = LOWER('$playerUsername')";
+    $sql = "SELECT id, email FROM players WHERE LOWER(username) = LOWER('$playerUsername')";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $playerId = $row['id'];
-        $response = ['status' => 'success', 'message' => "The player ID for $playerUsername is: $playerId"];
+        $emailaddress = $row['email'];
+        $response = ['status' => 'success', 'message' => "The player info for $playerUsername is: ID: $playerId, Email: $emailaddress"];
     } else {
         $response = ['status' => 'error', 'message' => "No such player with that username."];
     }

@@ -76,7 +76,7 @@ $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
                     success: function (response) {
                         $('#support-message-response').html('Ticket submitted successfully!');
                         $('.support-message').css('visibility', 'visible');
-                        $('#support-form').hide();
+                        $('.form-sec').hide();
                         setTimeout(() => {
                             $('.support-message').css('visibility', 'hidden');
                         }, 2000); // Hide the message box after 2 seconds

@@ -89,7 +89,7 @@ p.norm {
     font-size: 16px;
 }
 
-p.norm + p.norm {
+p.norm+p.norm {
     margin-top: 15px;
 }
 
@@ -609,6 +609,7 @@ p.norm + p.norm {
     box-sizing: border-box;
     border-radius: 0.2em;
     width: 450px;
+    margin-bottom: 10px;
 }
 
 .form-sec form {

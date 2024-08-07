@@ -49,6 +49,15 @@
     <div class="updatelist">
         <div class="updatebox">
             <div class="updatecontent">
+                <h2>General Changes</h2>
+                <p>Melee accuracy has been altered slightly to make fighting without a shield a little more dangerous. Players are also slightly more likely to land an attack on monsters/bosses.</p>
+                <p>Players are now able to block attacks as long as they are normal melee attacks. The block chance of the shield depends on a block chance factor built directly into the shield itself. This is notated on the shield in its examine box.</p>
+                <p>The skill guide for Magic has been updated to include all of the new friendly spells.</p>
+                <p>The spell interface has been updated to show correct information for friendly spells.</p>
+                <p>Friendly spells will now show up at the bottom of the magic panel to allow for easier casting of friendly spells and to limit scrolling as much as possible when looking for a different friendly spell. This is just a temporary quality of life change we're implementing before entirely re-designing the magic and prayer interfaces sometime after launch.</p>
+                <p>Dragon Sword and Dragon 2H Sword specials have been updated respectively: <span class="before">20%/25% Bonus Damage</span><span class="aft">40%/60% Bonus Damage</span></p>
+                <h2>Game Admin</h2>
+                <p>Admins now have the ability to find the registered email of the user to address inquiries/tickets for support. This will eventually be worked into a full ticketing system accessible to character on the support page, which is expected to be done prior to launch.</p>
             </div>
         </div>
     </div>
