@@ -74,7 +74,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     <div id="intro">
         <div class="blanktop"></div>
         <div class="character-counter">Currently, <span id="totalAccounts">#</span>
-            heroes stand at the portal to Gielinor, primed to snuff the evil that is Del'araz...</div>
+            heroes stand at the portal to New Gielinor, primed to snuff the evil that is Del'araz...</div>
         <?php if ($loggedIn): ?>
             <button class="button-main" id="introaccountbutton">
                 My Account
@@ -84,22 +84,16 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 Login
             </button>
         <?php endif; ?>
-        <!-- <h1>Ethereal Lands</h1> -->
-        <div class="intro-logo"></div>
-        <h2>A Runescape Classic Adventure</h2>
-        <p>Explore a world that's been sundered by the noxious invasion...</p>
-        <!-- <p class="story">
-            In the realm of Gielinor, a malignant force is stirring. The malevolent demon general, Del'araz, has
-            unleashed his noxious lords upon the land, spreading a virulent plague that darkens the skies and withers
-            the earth. With Lumbridge in his sights, Del'araz is amassing a terrifying demonic army, intent on sundering
-            the town to ashes to lay the foundations for a dark uprising.
-            <br><br>
-            If the relentless advance of Del'araz and his legion is not halted, the entire world risks falling into
-            chaos, with every corner of Gielinor surrendering under his tyrannical rule. The call to arms rings out
-            across the land, beckoning heroes to rise against this encroaching darkness, in a desperate bid to save
-            their world from being irrevocably conquered by the forces of Del'araz.
-        </p> -->
-        <div class="slide-fade"></div>
+        <div class="intro-intro">
+            <h1 class="white-h1">FORGE YOUR DESTINY IN NEW GIELINOR</h1>
+            <h3>Tons of new features are awaiting new adventurers.</h3>
+            <p class="story">
+            Brace yourselves for the noxious invasion of Gielinor. The world has been sundered, and new threats rise from the Void. Find a way to harness the void energy and turn the tables against Del'araz!
+            </p>
+            <!-- <div class="intro-logo"></div>
+            <h2>A Runescape Classic Adventure</h2> -->
+            <!-- <p>Explore a world that's been sundered by the noxious invasion...</p> -->
+        </div>
     </div>
     <div class="overlay" id="overlay"></div>
 
@@ -283,7 +277,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 offer brand new adventuring experiences as you explore the new, sundered world of New Gielinor.
             </p>
         </div>
-        <div class="slide-fade"></div>
+        <!-- <div class="slide-fade"></div> -->
     </div>
     <div class="slide" id="slide2">
         <div class="slide-content">
@@ -296,7 +290,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 and showing you a glimpse of what's to come in New Gielinor.
             </p>
         </div>
-        <div class="slide-fade"></div>
+        <!-- <div class="slide-fade"></div> -->
     </div>
     <div class="slide" id="slide3">
         <div class="slide-content">
@@ -307,7 +301,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 graveyard banks.
             </p>
         </div>
-        <div class="slide-fade"></div>
+        <!-- <div class="slide-fade"></div> -->
     </div>
     <div class="slide" id="slide4">
         <div class="slide-content">
@@ -324,7 +318,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 access and use these guilds.
             </p>
         </div>
-        <div class="slide-fade"></div>
+        <!-- <div class="slide-fade"></div> -->
     </div>
     <div class="slide" id="slide5">
         <div class="slide-content">
@@ -345,7 +339,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 prayers too, as several have been added!
             </p>
         </div>
-        <div class="slide-fade"></div>
+        <!-- <div class="slide-fade"></div> -->
     </div>
     <div class="slide" id="slide6">
         <div class="slide-content">
@@ -361,7 +355,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 a 50% chance to cook any fish that you catch while you carry it! Insanity!
             </p>
         </div>
-        <div class="slide-fade"></div>
+        <!-- <div class="slide-fade"></div> -->
     </div>
     <?php include 'footer.php'; ?>
 </body>

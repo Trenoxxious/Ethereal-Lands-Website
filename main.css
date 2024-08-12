@@ -79,11 +79,13 @@ i {
 }
 
 .character-counter {
+    padding: 15px;
+    box-sizing: border-box;
     color: white;
     font-family: "Teko", serif, sans-serif;
     font-size: 1.5em;
     text-align: center;
-    width: 75%;
+    margin-top: 15px;
 }
 
 #toplogo {
@@ -415,6 +417,11 @@ li {
     background-size: 175px;
 }
 
+.logo:hover {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+}
+
 .mainbar a {
     background: linear-gradient(0deg, var(--bottom-grad-color) 35%, var(--top-grad-color) 100%);
     background-clip: text;
@@ -450,6 +457,26 @@ li {
     overflow-x: hidden;
     font-family: "Libre Baskerville", serif;
     cursor: default;
+    min-height: 750px;
+    margin-bottom: 2px;
+}
+
+.intro-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 500px;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.intro-intro h3 {
+    color: yellow;
+    text-shadow: 0 3px 0px black;
+    font-size: 2em;
 }
 
 .creatorscorridorintro,
@@ -483,7 +510,6 @@ li {
     margin: 15px;
 }
 
-#intro h1,
 .creatorscorridorintro h1,
 .mainupdateintro h1 {
     background: linear-gradient(0deg, rgb(255, 176, 4) 15%, rgb(255, 240, 185) 100%);
@@ -514,7 +540,6 @@ li {
     font-family: "Teko", sans-serif, serif;
 }
 
-#intro p,
 .creatorscorridorintro p,
 .mainupdateintro p {
     margin: 15px;
@@ -526,15 +551,29 @@ li {
     text-shadow: 0px 0px 5px #171717;
 }
 
-#intro .story,
 .creatorscorridorintro .story,
 .mainupdateintro .story {
+    text-align: left;
     margin-top: 50px;
-    width: 60%;
     text-align: center;
     color: rgb(255, 213, 141);
     font-size: 1.5em;
     text-shadow: 0px 0px 5px #171717;
+}
+
+#intro .story {
+    text-align: left;
+    margin-top: 15px;
+    color: rgb(233, 213, 178);
+    font-size: 1.5em;
+    text-shadow: 0px 0px 5px #171717;
+}
+
+.white-h1 {
+    color: white !important;
+    font-weight: 400;
+    font-size: 6em;
+    font-family: "Teko", sans-serif, serif;
 }
 
 .slide {
@@ -545,11 +584,14 @@ li {
     text-align: center;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     font-family: "Oswald", "Teko", serif;
     cursor: default;
     color: white;
     overflow-y: hidden;
+    margin: 1px;
+    margin-bottom: 2px;
+    border: 1px solid rgb(46, 46, 46);
 }
 
 .center-slide {
@@ -900,6 +942,10 @@ footer {
         width: 100%;
     }
 
+    .intro-intro h3 {
+        font-size: 1.75em;
+    }
+
     .accountbar {
         height: 60px;
         width: 100%;
@@ -919,7 +965,6 @@ footer {
         font-size: 1.5em;
     }
 
-    #intro p,
     .creation-section p {
         font-size: 2em;
     }
@@ -946,6 +991,18 @@ footer {
 @media only screen and (max-width: 1024px) {
     .mainbar {
         height: 50px;
+    }
+
+    .intro-intro {
+        justify-content: flex-start;
+    }
+
+    .intro-intro h3 {
+        font-size: 1.5em;
+    }
+
+    .white-h1 {
+        font-size: 3em;
     }
 
     .blanktop {
@@ -993,13 +1050,12 @@ footer {
         font-size: 1.25em;
     }
 
-    #intro p,
     .creation-section p {
         font-size: 1.5em;
     }
 
     #intro .story {
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     .slide h1,
@@ -1123,11 +1179,11 @@ footer {
     #intro h1,
     .creatorscorridorintro h1,
     .mainupdateintro h1 {
-        font-size: 5em;
+        font-size: 4em;
     }
 
     #intro .story {
-        font-size: 1em;
+        font-size: 1.25em;
     }
 
     .slide h1,
@@ -1143,6 +1199,10 @@ footer {
 @media only screen and (max-width: 600px) {
     .updatetitle {
         font-size: 1.5em;
+    }
+
+    .intro-intro h3 {
+        font-size: 1.25em;
     }
 
     .mainbar {
