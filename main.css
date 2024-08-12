@@ -82,6 +82,7 @@ i {
     padding: 15px;
     box-sizing: border-box;
     color: white;
+    text-shadow: 0 2px 0 black;
     font-family: "Teko", serif, sans-serif;
     font-size: 1.5em;
     text-align: center;
@@ -444,7 +445,7 @@ li {
 }
 
 #intro {
-    background-image: url(images/Kaniani1080.png);
+    /* background-image: url(images/Kaniani1080.png); */
     object-fit: cover;
     background-size: 1920px;
     background-position: center;
@@ -457,7 +458,7 @@ li {
     overflow-x: hidden;
     font-family: "Libre Baskerville", serif;
     cursor: default;
-    min-height: 750px;
+    /* min-height: 750px; */
     margin-bottom: 2px;
 }
 
@@ -562,15 +563,40 @@ li {
 }
 
 #intro .story {
+    font-weight: 700;
     text-align: left;
     margin-top: 15px;
-    color: rgb(233, 213, 178);
+    color: rgb(255, 192, 83);
     font-size: 1.5em;
-    text-shadow: 0px 0px 5px #171717;
+    text-shadow: 0px 2px 1px black;
+}
+
+#intro video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1;
+    object-fit: cover;
+}
+
+.video-filter {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, rgba(0,0,0,1) 150%);
+    pointer-events: none; /* Allows clicks to pass through */
 }
 
 .white-h1 {
     color: white !important;
+    text-shadow: 0 3px 0 black;
     font-weight: 400;
     font-size: 6em;
     font-family: "Teko", sans-serif, serif;
@@ -589,7 +615,6 @@ li {
     cursor: default;
     color: white;
     overflow-y: hidden;
-    margin: 1px;
     margin-bottom: 2px;
     border: 1px solid rgb(46, 46, 46);
 }
@@ -1280,5 +1305,19 @@ footer {
 
     #intro {
         background-size: 1400px;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    #intro video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    #intro video {
+        width: auto;
+        height: 100%;
     }
 }

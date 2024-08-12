@@ -72,6 +72,11 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         });
     </script>
     <div id="intro">
+        <video autoplay loop muted playsinline>
+            <source src="video/introvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-filter"></div>
         <div class="blanktop"></div>
         <div class="character-counter">Currently, <span id="totalAccounts">#</span>
             heroes stand at the portal to New Gielinor, primed to snuff the evil that is Del'araz...</div>
@@ -88,7 +93,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <h1 class="white-h1">FORGE YOUR DESTINY IN NEW GIELINOR</h1>
             <h3>Tons of new features are awaiting new adventurers.</h3>
             <p class="story">
-            Brace yourselves for the noxious invasion of Gielinor. The world has been sundered, and new threats rise from the Void. Find a way to harness the void energy and turn the tables against Del'araz!
+            Brace yourselves for the noxious invasion of Gielinor. The world has been sundered, and new threats rise from the Void. Find a way to harness the void energy and turn the tables against Del'araz! Welcome to New Gielinor.
             </p>
             <!-- <div class="intro-logo"></div>
             <h2>A Runescape Classic Adventure</h2> -->
