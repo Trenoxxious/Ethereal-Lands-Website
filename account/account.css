@@ -83,8 +83,6 @@ body {
 }
 
 p.norm {
-    padding-left: 15px;
-    padding-right: 15px;
     box-sizing: border-box;
     font-size: 14px;
 }
@@ -670,7 +668,7 @@ p.norm+p.norm {
     }
 
     .mainupdate img {
-        max-width: 100%;
+        max-width: 85%;
     }
 
     .form-sec {

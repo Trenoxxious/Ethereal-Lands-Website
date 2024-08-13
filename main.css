@@ -127,6 +127,10 @@ body {
     font-size: inherit;
 }
 
+.img-container img {
+    width: 100%;
+}
+
 hr {
     height: 2px;
     border: none;
@@ -1102,7 +1106,7 @@ footer {
     }
 
     .updatebox {
-        width: 85%;
+        width: 90%;
     }
 
     .creatorscorridorintro p,
