@@ -39,6 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    document.getElementById('introaccountbutton').addEventListener('click', function () {
+        closeMenuButton.click();
+    });
+
     // Handle Claim Souls form submission asynchronously
     $('form.complete-challenge-form').on('submit', function (event) {
         event.preventDefault(); // Prevent the default form submission

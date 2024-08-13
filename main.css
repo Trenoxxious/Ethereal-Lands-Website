@@ -17,9 +17,9 @@
     font-size: 12px;
 }
 
-#introaccountbutton {
+/* #introaccountbutton {
     display: none;
-}
+} */
 
 #menuexpand {
     display: none;
@@ -1184,12 +1184,12 @@ footer {
         display: none;
     }
 
-    #introaccountbutton {
+    /* #introaccountbutton {
         transform: scale(1);
         margin-top: 25px;
         margin-bottom: 10px;
         display: block;
-    }
+    } */
 
     .logo {
         height: 125px;
