@@ -38,10 +38,11 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = 'buysouls';
         });
     }
-
-    document.getElementById('introaccountbutton').addEventListener('click', function () {
-        closeMenuButton.click();
-    });
+    if (document.getElementById('introaccountbutton')) {
+        document.getElementById('introaccountbutton').addEventListener('click', function () {
+            closeMenuButton.click();
+        });
+    }
 
     // Handle Claim Souls form submission asynchronously
     $('form.complete-challenge-form').on('submit', function (event) {
