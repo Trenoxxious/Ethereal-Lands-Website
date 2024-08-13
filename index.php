@@ -265,7 +265,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             $('input, textarea').blur();
         });
     </script>
-    <div class="slide" id="slide1">
+    <div class="slide-main" id="slide1">
         <div class="slide-content">
             <h1>New Maximum Level</h1>
             <p>Ethereal Lands features a new story, quests, areas, monsters and so much more. To tell this new story,
@@ -284,7 +284,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         </div>
         <!-- <div class="slide-fade"></div> -->
     </div>
-    <div class="slide" id="slide2">
+    <div class="slide-main" id="slide2">
         <div class="slide-content">
             <h1>Expanded Locations</h1>
             <p>New and expanded areas are coming to Gielinor! New areas are built retaining the Classic touch, careful
@@ -297,7 +297,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         </div>
         <!-- <div class="slide-fade"></div> -->
     </div>
-    <div class="slide" id="slide3">
+    <div class="slide-main" id="slide3">
         <div class="slide-content">
             <h1>Graveyards</h1>
             <p>Gone are the days of respawning in Lumbridge... at least all the time.<br><br>New to all accessible areas
@@ -308,7 +308,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         </div>
         <!-- <div class="slide-fade"></div> -->
     </div>
-    <div class="slide" id="slide4">
+    <div class="slide-main" id="slide4">
         <div class="slide-content">
             <h1>New Skill: Huntsman</h1>
             <p>Very similar to the much-beloved Slayer skill, the Huntsman skill focuses on retrieving items or
@@ -325,7 +325,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         </div>
         <!-- <div class="slide-fade"></div> -->
     </div>
-    <div class="slide" id="slide5">
+    <div class="slide-main" id="slide5">
         <div class="slide-content">
             <h1>Quest Overhaul</h1>
             <p>Within our universe, some quests remain, but many quest givers have closed up shop and moved on. Some new
@@ -346,7 +346,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         </div>
         <!-- <div class="slide-fade"></div> -->
     </div>
-    <div class="slide" id="slide6">
+    <div class="slide-main" id="slide6">
         <div class="slide-content">
             <h1>Ethereal Dungeons</h1>
             <p>As a seasonal activity, rotating out every-so-often, Ethereal Dungeons are small, bite-sized

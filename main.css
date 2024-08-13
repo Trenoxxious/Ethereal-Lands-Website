@@ -606,7 +606,7 @@ li {
     font-family: "Teko", sans-serif, serif;
 }
 
-.slide {
+.slide-main {
     min-height: 600px;
     padding-top: 25px;
     box-sizing: border-box;
@@ -644,17 +644,17 @@ li {
     height: 75px;
 }
 
-.slide:nth-of-type(even) {
+.slide-main:nth-of-type(even) {
     align-items: flex-end;
     text-align: right;
 }
 
-.slide:nth-of-type(odd) {
+.slide-main:nth-of-type(odd) {
     align-items: flex-start;
     text-align: left;
 }
 
-.slide-content {
+.slide-main-content {
     border-radius: 0.5em;
     box-sizing: border-box;
     display: flex;
@@ -679,15 +679,15 @@ li {
     background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
 }
 
-.slide:nth-child(even) .slide-content {
+.slide-main:nth-child(even) .slide-content {
     background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
 }
 
-.slide:nth-child(odd) .slide-content {
+.slide-main:nth-child(odd) .slide-content {
     background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
 }
 
-.slide h1,
+.slide-main h1,
 .center-slide h1 {
     background: linear-gradient(0deg, rgb(255, 176, 4) 15%, rgb(255, 240, 185) 100%);
     background-clip: text;
@@ -697,7 +697,7 @@ li {
     font-weight: 700;
 }
 
-.slide h2,
+.slide-main h2,
 .center-slide h2 {
     margin-top: 25px;
     background: linear-gradient(0deg, rgb(26, 173, 117) 35%, rgb(178, 250, 190) 100%);
@@ -709,7 +709,7 @@ li {
     filter: drop-shadow(rgb(143, 209, 149) 0rem 0rem 3px);
 }
 
-.slide p,
+.slide-main p,
 .center-slide p {
     color: rgb(255, 246, 218);
     margin-top: 15px;
@@ -1004,12 +1004,12 @@ footer {
         font-size: 1.6em;
     }
 
-    .slide h1,
+    .slide-main h1,
     .center-slide h1 {
         font-size: 2.5em;
     }
 
-    .slide p,
+    .slide-main p,
     .center-slide p {
         font-size: 1.3em;
     }
@@ -1085,12 +1085,12 @@ footer {
         font-size: 1.4em;
     }
 
-    .slide h1,
+    .slide-main h1,
     .center-slide h1 {
         font-size: 2.5em;
     }
 
-    .slide p,
+    .slide-main p,
     .center-slide p {
         font-size: 1.2em;
     }
@@ -1164,7 +1164,7 @@ footer {
         width: auto;
     }
 
-    .slide p,
+    .slide-main p,
     .center-slide p {
         font-size: 1em;
     }
@@ -1213,7 +1213,7 @@ footer {
         font-size: 1.1em;
     }
 
-    .slide h1,
+    .slide-main h1,
     .center-slide h1 {
         font-size: 2em;
     }
@@ -1256,7 +1256,7 @@ footer {
         min-width: 125px;
     }
 
-    .slide h1,
+    .slide-main h1,
     .center-slide h1 {
         font-size: 1.8em;
     }
