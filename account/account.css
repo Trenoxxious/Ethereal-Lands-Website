@@ -626,6 +626,16 @@ p.norm+p.norm {
     text-align: center;
 }
 
+.signature {
+    color: rgb(247, 194, 97);
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.signature::before {
+    content: "- ";
+}
+
 @media only screen and (max-width: 900px) {
     #menuexpand {
         display: block;
