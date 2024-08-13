@@ -907,6 +907,8 @@ textarea:focus {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .overlay.active {
