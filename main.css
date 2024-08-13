@@ -596,7 +596,7 @@ li {
 
 .white-h1 {
     color: white !important;
-    text-shadow: 0 3px 0 black;
+    text-shadow: 0 2px 0 black;
     font-weight: 400;
     font-size: 6em;
     font-family: "Teko", sans-serif, serif;
@@ -1018,10 +1018,6 @@ footer {
         height: 50px;
     }
 
-    .intro-intro {
-        justify-content: flex-start;
-    }
-
     .intro-intro h3 {
         font-size: 1.5em;
     }
@@ -1164,7 +1160,7 @@ footer {
 
     .slide p,
     .center-slide p {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .mainbar nav {
@@ -1208,7 +1204,7 @@ footer {
     }
 
     #intro .story {
-        font-size: 1.25em;
+        font-size: 1.1em;
     }
 
     .slide h1,
@@ -1227,7 +1223,7 @@ footer {
     }
 
     .intro-intro h3 {
-        font-size: 1.25em;
+        font-size: 1.1em;
     }
 
     .mainbar {
@@ -1277,7 +1273,7 @@ footer {
     #intro h1,
     .creatorscorridorintro h1,
     .mainupdateintro h1 {
-        font-size: 2.5em;
+        font-size: 2.25em;
     }
 
     .creation-section p {

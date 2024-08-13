@@ -54,6 +54,15 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <a class="button-main" href="recent_updates">Game Updates</a>
             <a class="button-main" href="creators_corridor">Creator's Corridor</a>
             <a class="button-main" href="https://discord.gg/d6RtsDyRZX">Discord</a>
+            <?php if ($loggedIn): ?>
+            <a class="button-main" id="introaccountbutton">
+                My Account
+            </a>
+        <?php else: ?>
+            <a class="button-main" id="introaccountbutton">
+                Login
+            </a>
+        <?php endif; ?>
         </div>
     </div>
     <script>
@@ -80,15 +89,6 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         <div class="blanktop"></div>
         <div class="character-counter">Currently, <span id="totalAccounts">#</span>
             heroes stand at the portal to New Gielinor, primed to snuff the evil that is Del'araz...</div>
-        <?php if ($loggedIn): ?>
-            <button class="button-main" id="introaccountbutton">
-                My Account
-            </button>
-        <?php else: ?>
-            <button class="button-main" id="introaccountbutton">
-                Login
-            </button>
-        <?php endif; ?>
         <div class="intro-intro">
             <h1 class="white-h1">FORGE YOUR DESTINY IN NEW GIELINOR</h1>
             <h3>Tons of new features are awaiting new adventurers.</h3>
