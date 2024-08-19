@@ -654,7 +654,7 @@ li {
     text-align: left;
 }
 
-.slide-main-content {
+.slide-content {
     border-radius: 0.5em;
     box-sizing: border-box;
     display: flex;
