@@ -640,8 +640,8 @@ p.norm+p.norm {
     background-size: cover;
     font-family: Open Sans, sans-serif;
     margin: 10px;
-    width: 350px;
     height: 250px;
+    box-sizing: border-box;
     border: 1px solid;
 }
 
@@ -654,6 +654,7 @@ p.norm+p.norm {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     height: 100%;
+    padding: 25px;
 }
 
 .encounter-stat {
