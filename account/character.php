@@ -75,12 +75,6 @@ if ($result->num_rows > 0) {
 }
 
 $amount_stmt->close();
-$conn->close();
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 // Prepare the SQL statement to fetch all relevant cache keys at once
 $sql = "SELECT cache_key, cache_value FROM player_cache WHERE playerID = ? AND cache_key IN (
