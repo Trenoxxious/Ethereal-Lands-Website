@@ -195,22 +195,24 @@ $conn->close();
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="encounter-stats" id="crypt-of-dread">
-            <h2>Crypt of Dread</h2>
-            <div class="crypt-stats">
-                <?php foreach ($cryptStats as $label => $value): ?>
-                    <div class="crypt-stat">
-                        <span class="stat-label"><?php echo htmlspecialchars($label); ?>:</span>
-                        <span class="stat-value"><?php echo htmlspecialchars($value); ?></span>
-                    </div>
-                <?php endforeach; ?>
+        <div class="encounter-stats crypt-of-dread-box" id="crypt-of-dread">
+            <div class="encounter-frame">
+                <h2 class="dungeon-name crypt-of-dread">Crypt of Dread</h2>
+                <div class="crypt-stats">
+                    <?php foreach ($cryptStats as $label => $value): ?>
+                        <div class="encounter-stat">
+                            <span class="stat-label"><?php echo htmlspecialchars($label); ?>:</span>
+                            <span class="stat-value"><?php echo htmlspecialchars($value); ?></span>
+                        </div>
+                    <?php endforeach; ?>
 
-                <?php if ($dungeonCompleted): ?>
-                    <div class="crypt-stat">
-                        <span class="stat-label">Dungeon Completed:</span>
-                        <span class="stat-value">Yes</span>
-                    </div>
-                <?php endif; ?>
+                    <?php if ($dungeonCompleted): ?>
+                        <div class="encounter-stat">
+                            <span class="stat-label">Dungeon Completed:</span>
+                            <span class="stat-value">Yes</span>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </div>

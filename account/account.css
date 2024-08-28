@@ -636,6 +636,59 @@ p.norm+p.norm {
     content: "- ";
 }
 
+.encounter-stats {
+    background: url(../images/CoD1080.png);
+    background-size: cover;
+    font-family: Open Sans, sans-serif;
+    margin: 10px;
+    width: 350px;
+    height: 250px;
+    border: 1px solid;
+}
+
+.encounter-frame {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.438);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    height: 100%;
+}
+
+.encounter-stat {
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    text-shadow: 0 2px 0 black;
+}
+
+.dungeon-name {
+    font-size: 1.75em;
+    text-transform: uppercase;
+}
+
+.crypt-of-dread-box {
+    box-shadow: 0px 0px 15px purple;
+    border-color: rgba(184, 85, 209, 0.418);
+}
+
+.crypt-of-dread {
+    color: rgb(133, 68, 163);
+    text-shadow: 0 2px 0 rgb(61, 0, 110);
+}
+
+.stat-label {
+    font-size: 16px;
+    color: white;
+}
+
+.stat-value {
+    color: rgb(255, 221, 68);
+    font-size: 16px;
+}
+
 @media only screen and (max-width: 900px) {
     #menuexpand {
         display: block;
