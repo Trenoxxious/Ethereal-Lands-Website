@@ -77,7 +77,7 @@ if ($result->num_rows > 0) {
 $amount_stmt->close();
 
 // Prepare the SQL statement to fetch all relevant cache keys at once
-$sql = "SELECT cache_key, cache_value FROM player_cache WHERE playerID = ? AND cache_key IN (
+$sql = "SELECT `key`, `value` FROM player_cache WHERE playerID = ? AND `key` IN (
     'edcod_cyclestotal', 'edcod_normalcycles', 'edcod_heroiccycles', 'edcod_necroticcycles',
     'edcod_bosseskilled', 'edcod_monsterskilled', 'edcod_completedonce', 'edcod_deaths'
 )";
