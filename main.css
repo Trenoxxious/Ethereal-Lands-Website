@@ -261,11 +261,11 @@ li {
     justify-content: space-around;
     box-sizing: border-box;
     margin: 10px;
-    -webkit-backdrop-filter: blur(4px) grayscale(80%);
-    backdrop-filter: blur(4px) grayscale(80%);
+    -webkit-backdrop-filter: blur(8px) grayscale(80%);
+    backdrop-filter: blur(8px) grayscale(80%);
     padding: 15px;
     height: 75px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     overflow: visible;
 }
 
@@ -713,7 +713,7 @@ li {
 .center-slide p {
     color: rgb(255, 246, 218);
     margin-top: 15px;
-    font-size: 1.1em;
+    font-size: 1.3em;
     text-shadow: 2px 2px 2px #171717;
     font-family: "Open Sans", sans-serif;
 }
