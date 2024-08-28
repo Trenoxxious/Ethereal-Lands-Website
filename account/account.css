@@ -73,7 +73,7 @@ body {
 .account-store {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 15px;
@@ -607,7 +607,7 @@ p.norm+p.norm {
     box-sizing: border-box;
     border-radius: 0.2em;
     width: 450px;
-    margin-bottom: 10px;
+    margin: 5px;
 }
 
 .form-sec form {
