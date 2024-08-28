@@ -76,6 +76,67 @@ if ($result->num_rows > 0) {
 
 $amount_stmt->close();
 $conn->close();
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Prepare the SQL statement to fetch all relevant cache keys at once
+$sql = "SELECT cache_key, cache_value FROM player_cache WHERE playerID = ? AND cache_key IN (
+    'edcod_cyclestotal', 'edcod_normalcycles', 'edcod_heroiccycles', 'edcod_necroticcycles',
+    'edcod_bosseskilled', 'edcod_monsterskilled', 'edcod_completedonce', 'edcod_deaths'
+)";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Create an associative array to store the fetched values
+$cryptStats = [
+    'Total Cycles Completed' => 0,
+    'Normal Cycles' => 0,
+    'Heroic Cycles' => 0,
+    'Necrotic Cycles' => 0,
+    'Bosses Killed' => 0,
+    'Monsters Killed' => 0,
+    'Deaths' => 0
+];
+
+$dungeonCompleted = false;
+
+while ($row = $result->fetch_assoc()) {
+    switch ($row['cache_key']) {
+        case 'edcod_cyclestotal':
+            $cryptStats['Total Cycles Completed'] = $row['cache_value'];
+            break;
+        case 'edcod_normalcycles':
+            $cryptStats['Normal Cycles'] = $row['cache_value'];
+            break;
+        case 'edcod_heroiccycles':
+            $cryptStats['Heroic Cycles'] = $row['cache_value'];
+            break;
+        case 'edcod_necroticcycles':
+            $cryptStats['Necrotic Cycles'] = $row['cache_value'];
+            break;
+        case 'edcod_bosseskilled':
+            $cryptStats['Bosses Killed'] = $row['cache_value'];
+            break;
+        case 'edcod_monsterskilled':
+            $cryptStats['Monsters Killed'] = $row['cache_value'];
+            break;
+        case 'edcod_deaths':
+            $cryptStats['Deaths'] = $row['cache_value'];
+            break;
+        case 'edcod_completedonce':
+            $dungeonCompleted = ($row['cache_value'] == 1);
+            break;
+    }
+}
+
+$stmt->close();
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -140,68 +201,6 @@ $conn->close();
                 </div>
             <?php endforeach; ?>
         </div>
-        <?php
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
-            // Prepare the SQL statement to fetch all relevant cache keys at once
-            $sql = "SELECT cache_key, cache_value FROM player_cache WHERE playerID = ? AND cache_key IN (
-                'edcod_cyclestotal', 'edcod_normalcycles', 'edcod_heroiccycles', 'edcod_necroticcycles',
-                'edcod_bosseskilled', 'edcod_monsterskilled', 'edcod_completedonce', 'edcod_deaths'
-            )";
-
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("i", $user_id);
-            $stmt->execute();
-            $result = $stmt->get_result();
-
-            // Create an associative array to store the fetched values
-            $cryptStats = [
-                'Total Cycles Completed' => 0,
-                'Normal Cycles' => 0,
-                'Heroic Cycles' => 0,
-                'Necrotic Cycles' => 0,
-                'Bosses Killed' => 0,
-                'Monsters Killed' => 0,
-                'Deaths' => 0
-            ];
-
-            $dungeonCompleted = false;
-
-            while ($row = $result->fetch_assoc()) {
-                switch ($row['cache_key']) {
-                    case 'edcod_cyclestotal':
-                        $cryptStats['Total Cycles Completed'] = $row['cache_value'];
-                        break;
-                    case 'edcod_normalcycles':
-                        $cryptStats['Normal Cycles'] = $row['cache_value'];
-                        break;
-                    case 'edcod_heroiccycles':
-                        $cryptStats['Heroic Cycles'] = $row['cache_value'];
-                        break;
-                    case 'edcod_necroticcycles':
-                        $cryptStats['Necrotic Cycles'] = $row['cache_value'];
-                        break;
-                    case 'edcod_bosseskilled':
-                        $cryptStats['Bosses Killed'] = $row['cache_value'];
-                        break;
-                    case 'edcod_monsterskilled':
-                        $cryptStats['Monsters Killed'] = $row['cache_value'];
-                        break;
-                    case 'edcod_deaths':
-                        $cryptStats['Deaths'] = $row['cache_value'];
-                        break;
-                    case 'edcod_completedonce':
-                        $dungeonCompleted = ($row['cache_value'] == 1);
-                        break;
-                }
-            }
-
-            $stmt->close();
-            $conn->close();
-        ?>
         <div class="encounter-stats" id="crypt-of-dread">
             <h2>Crypt of Dread</h2>
             <div class="crypt-stats">
