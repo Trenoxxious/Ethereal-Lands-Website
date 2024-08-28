@@ -101,30 +101,30 @@ $cryptStats = [
 $dungeonCompleted = false;
 
 while ($row = $result->fetch_assoc()) {
-    switch ($row['cache_key']) {
+    switch ($row['key']) {
         case 'edcod_cyclestotal':
-            $cryptStats['Total Cycles Completed'] = $row['cache_value'];
+            $cryptStats['Total Cycles Completed'] = $row['value'];
             break;
         case 'edcod_normalcycles':
-            $cryptStats['Normal Cycles'] = $row['cache_value'];
+            $cryptStats['Normal Cycles'] = $row['value'];
             break;
         case 'edcod_heroiccycles':
-            $cryptStats['Heroic Cycles'] = $row['cache_value'];
+            $cryptStats['Heroic Cycles'] = $row['value'];
             break;
         case 'edcod_necroticcycles':
-            $cryptStats['Necrotic Cycles'] = $row['cache_value'];
+            $cryptStats['Necrotic Cycles'] = $row['value'];
             break;
         case 'edcod_bosseskilled':
-            $cryptStats['Bosses Killed'] = $row['cache_value'];
+            $cryptStats['Bosses Killed'] = $row['value'];
             break;
         case 'edcod_monsterskilled':
-            $cryptStats['Monsters Killed'] = $row['cache_value'];
+            $cryptStats['Monsters Killed'] = $row['value'];
             break;
         case 'edcod_deaths':
-            $cryptStats['Deaths'] = $row['cache_value'];
+            $cryptStats['Deaths'] = $row['value'];
             break;
         case 'edcod_completedonce':
-            $dungeonCompleted = ($row['cache_value'] == 1);
+            $dungeonCompleted = ($row['value'] == 1);
             break;
     }
 }
