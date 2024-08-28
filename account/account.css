@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
 
 body {
@@ -136,7 +136,7 @@ p.norm+p.norm {
 .challenge-stats,
 .challenge-stats-reward {
     text-transform: uppercase;
-    font-family: "Montserrat", "Teko", serif, sans-serif !important;
+    font-family: "Open Sans", "Teko", serif, sans-serif !important;
     display: flex;
     align-items: center;
 }
@@ -165,7 +165,7 @@ p.norm+p.norm {
     font-size: 2em;
     margin-bottom: 15px;
     color: white;
-    font-family: "Montserrat", "Teko", serif, sans-serif;
+    font-family: "Open Sans", "Teko", serif, sans-serif;
 }
 
 .section-header {
@@ -179,7 +179,7 @@ p.norm+p.norm {
 .account-store h2 {
     color: white;
     font-size: 1.5em;
-    font-family: "Montserrat", "Teko", serif;
+    font-family: "Open Sans", "Teko", serif;
     font-weight: 400;
     text-align: center;
 }
@@ -201,7 +201,7 @@ p.norm+p.norm {
 }
 
 .store-item h3 {
-    font-family: "Montserrat", "Teko", serif;
+    font-family: "Open Sans", "Teko", serif;
     font-size: 1.5em;
     color: white;
     margin-bottom: 10px;
@@ -315,7 +315,7 @@ p.norm+p.norm {
     backdrop-filter: blur(4px) grayscale(80%);
     box-sizing: border-box;
     font-size: 1em;
-    font-family: "Montserrat", serif, sans-serif;
+    font-family: "Open Sans", serif, sans-serif;
     max-width: 85%;
 }
 
@@ -381,7 +381,7 @@ p.norm+p.norm {
 .ethereal-souls-purchase h2 {
     font-size: 2em;
     color: var(--middle-grad-color);
-    font-family: "Montserrat", serif, sans-serif;
+    font-family: "Open Sans", serif, sans-serif;
 }
 
 .souls-packages-list {
@@ -434,7 +434,7 @@ p.norm+p.norm {
 }
 
 .card_box {
-    font-family: "Montserrat", serif, sans-serif;
+    font-family: "Open Sans", serif, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -512,7 +512,7 @@ p.norm+p.norm {
 }
 
 #countdown-label {
-    font-family: "Montserrat", serif, sans-serif;
+    font-family: "Open Sans", serif, sans-serif;
     color: white;
     text-align: center;
     font-size: 1.5em;

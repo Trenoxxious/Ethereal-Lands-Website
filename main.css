@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
     --middle-grad-color: #ffd174;
@@ -172,7 +172,7 @@ li {
     padding: 15px;
     box-sizing: border-box;
     color: white;
-    font-family: "Montserrat", "Libre Baskerville", serif;
+    font-family: "Open Sans", "Libre Baskerville", serif;
     width: 60%;
     margin: 15px;
     margin-bottom: 10px;
@@ -291,7 +291,7 @@ li {
     -webkit-text-fill-color: transparent;
     font-size: 3em;
     font-weight: 500;
-    font-family: "Montserrat", serif;
+    font-family: "Open Sans", serif;
     padding: 15px;
     box-sizing: border-box;
 }
@@ -325,7 +325,7 @@ li {
     font-size: 1em;
     font-weight: 600;
     cursor: pointer;
-    font-family: "Montserrat";
+    font-family: "Open Sans";
     text-transform: uppercase;
 }
 
@@ -341,7 +341,7 @@ li {
     color: white;
     text-decoration: none;
     font-size: 1.5em;
-    font-family: "Montserrat", serif, sans-serif;
+    font-family: "Open Sans", serif, sans-serif;
 }
 
 .accountbar a:hover {
@@ -362,7 +362,7 @@ li {
     font-size: 1.5em;
     font-weight: bold;
     text-transform: uppercase;
-    font-family: "Montserrat", serif, sans-serif;
+    font-family: "Open Sans", serif, sans-serif;
     color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
@@ -548,7 +548,7 @@ li {
 .creatorscorridorintro p,
 .mainupdateintro p {
     margin: 15px;
-    font-family: "Montserrat", sans-serif, serif;
+    font-family: "Open Sans", sans-serif, serif;
     color: rgb(241, 241, 241);
     font-size: 1.25em;
     width: 60%;
@@ -715,7 +715,7 @@ li {
     margin-top: 15px;
     font-size: 1.1em;
     text-shadow: 2px 2px 2px #171717;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 #slide1 {
