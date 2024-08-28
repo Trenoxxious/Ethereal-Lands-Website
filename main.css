@@ -959,9 +959,9 @@ textarea:focus {
 
 footer {
     display: flex;
-    align-items: flex-end;
-    height: 50px;
+    align-items: center;
     justify-content: center;
+    height: 40px;
     font-size: 0.8em;
     color: white;
     text-align: center;
