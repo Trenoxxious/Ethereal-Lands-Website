@@ -182,37 +182,39 @@ $conn->close();
             <h1 class="page-header">Character Stats (<?php echo htmlspecialchars($username); ?>)</h1>
             <p class="page-info">View stats about your character below.</p>
         </div>
-        <div class="account-stats">
-            <?php foreach ($stats as $statName => $statValue): ?>
-                <div class="stat">
-                    <picture>
-                        <source srcset="../icons/<?php echo htmlspecialchars($statName); ?>.webp" type="image/webp">
-                        <source srcset="../icons/<?php echo htmlspecialchars($statName); ?>.png" type="image/png">
-                        <img src="../icons/<?php echo htmlspecialchars($statName); ?>.png"
-                            alt="<?php echo htmlspecialchars($statName); ?>">
-                    </picture>
-                    <p><?php echo htmlspecialchars($statValue); ?></p>
+        <div class="account-screen">
+            <div class="account-stats">
+                <?php foreach ($stats as $statName => $statValue): ?>
+                    <div class="stat">
+                        <picture>
+                            <source srcset="../icons/<?php echo htmlspecialchars($statName); ?>.webp" type="image/webp">
+                            <source srcset="../icons/<?php echo htmlspecialchars($statName); ?>.png" type="image/png">
+                            <img src="../icons/<?php echo htmlspecialchars($statName); ?>.png"
+                                alt="<?php echo htmlspecialchars($statName); ?>">
+                        </picture>
+                        <p><?php echo htmlspecialchars($statValue); ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <div class="encounter-stats crypt-of-dread-box" id="crypt-of-dread">
+                <div class="encounter-frame">
+                    <h2 class="dungeon-name crypt-of-dread">Crypt of Dread</h2>
+                    <div class="stats-container">
+                        <?php foreach ($cryptStats as $label => $value): ?>
+                            <div class="encounter-stat">
+                                <span class="stat-label"><?php echo htmlspecialchars($label); ?>:</span>
+                                <span class="stat-value"><?php echo htmlspecialchars($value); ?></span>
+                            </div>
+                        <?php endforeach; ?>
+                        <?php if ($dungeonCompleted): ?>
+                            <div class="encounter-stat completed">
+                                <span class="stat-label">Dungeon Completed:</span>
+                                <span class="stat-value">Yes</span>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <button class="toggle-stats-btn">Toggle Stats</button>
                 </div>
-            <?php endforeach; ?>
-        </div>
-        <div class="encounter-stats crypt-of-dread-box" id="crypt-of-dread">
-            <div class="encounter-frame">
-                <h2 class="dungeon-name crypt-of-dread">Crypt of Dread</h2>
-                <div class="stats-container">
-                    <?php foreach ($cryptStats as $label => $value): ?>
-                        <div class="encounter-stat">
-                            <span class="stat-label"><?php echo htmlspecialchars($label); ?>:</span>
-                            <span class="stat-value"><?php echo htmlspecialchars($value); ?></span>
-                        </div>
-                    <?php endforeach; ?>
-                    <?php if ($dungeonCompleted): ?>
-                        <div class="encounter-stat completed">
-                            <span class="stat-label">Dungeon Completed:</span>
-                            <span class="stat-value">Yes</span>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                <button class="toggle-stats-btn">Toggle Stats</button>
             </div>
         </div>
     </div>
