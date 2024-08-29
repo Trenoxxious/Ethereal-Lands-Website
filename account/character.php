@@ -197,23 +197,36 @@ $conn->close();
         </div>
         <div class="encounter-stats crypt-of-dread-box" id="crypt-of-dread">
             <div class="encounter-frame">
-            <h2 class="dungeon-name crypt-of-dread">Crypt of Dread</h2>
-            <?php foreach ($cryptStats as $label => $value): ?>
-                <div class="encounter-stat">
-                    <span class="stat-label"><?php echo htmlspecialchars($label); ?>:</span>
-                    <span class="stat-value"><?php echo htmlspecialchars($value); ?></span>
+                <h2 class="dungeon-name crypt-of-dread">Crypt of Dread</h2>
+                <div class="stats-container">
+                    <?php foreach ($cryptStats as $label => $value): ?>
+                        <div class="encounter-stat">
+                            <span class="stat-label"><?php echo htmlspecialchars($label); ?>:</span>
+                            <span class="stat-value"><?php echo htmlspecialchars($value); ?></span>
+                        </div>
+                    <?php endforeach; ?>
+                    <?php if ($dungeonCompleted): ?>
+                        <div class="encounter-stat completed">
+                            <span class="stat-label">Dungeon Completed:</span>
+                            <span class="stat-value">Yes</span>
+                        </div>
+                    <?php endif; ?>
                 </div>
-            <?php endforeach; ?>
-
-            <?php if ($dungeonCompleted): ?>
-                <div class="encounter-stat">
-                    <span class="stat-label">Dungeon Completed:</span>
-                    <span class="stat-value">Yes</span>
-                </div>
-            <?php endif; ?>
+                <button class="toggle-stats-btn">Toggle Stats</button>
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.querySelector('.toggle-stats-btn');
+            const statsContainer = document.querySelector('.stats-container');
+            
+            toggleBtn.addEventListener('click', function() {
+                statsContainer.classList.toggle('show');
+                toggleBtn.textContent = statsContainer.classList.contains('show') ? 'Hide Stats' : 'Show Stats';
+            });
+        });
+    </script>
 </body>
 
 </html>
