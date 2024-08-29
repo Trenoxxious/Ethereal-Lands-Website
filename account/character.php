@@ -103,16 +103,16 @@ $dungeonCompleted = false;
 while ($row = $result->fetch_assoc()) {
     switch ($row['key']) {
         case 'edcod_cyclestotal':
-            $cryptStats['Total Cycles Completed'] = $row['value'];
+            $cryptStats['Total Runs'] = $row['value'];
             break;
         case 'edcod_normalcycles':
-            $cryptStats['Normal Cycles'] = $row['value'];
+            $cryptStats['Normal Runs'] = $row['value'];
             break;
         case 'edcod_heroiccycles':
-            $cryptStats['Heroic Cycles'] = $row['value'];
+            $cryptStats['Heroic Runs'] = $row['value'];
             break;
         case 'edcod_necroticcycles':
-            $cryptStats['Necrotic Cycles'] = $row['value'];
+            $cryptStats['Necrotic Runs'] = $row['value'];
             break;
         case 'edcod_bosseskilled':
             $cryptStats['Bosses Killed'] = $row['value'];
