@@ -89,10 +89,10 @@ $result = $stmt->get_result();
 
 // Create an associative array to store the fetched values
 $cryptStats = [
-    'Total Cycles Completed' => 0,
-    'Normal Cycles' => 0,
-    'Heroic Cycles' => 0,
-    'Necrotic Cycles' => 0,
+    'Total Completed Runs' => 0,
+    'Normal Runs' => 0,
+    'Heroic Runs' => 0,
+    'Necrotic Runs' => 0,
     'Bosses Killed' => 0,
     'Monsters Killed' => 0,
     'Deaths' => 0
@@ -103,7 +103,7 @@ $dungeonCompleted = false;
 while ($row = $result->fetch_assoc()) {
     switch ($row['key']) {
         case 'edcod_cyclestotal':
-            $cryptStats['Total Runs'] = $row['value'];
+            $cryptStats['Total Completed Runs'] = $row['value'];
             break;
         case 'edcod_normalcycles':
             $cryptStats['Normal Runs'] = $row['value'];
