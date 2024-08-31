@@ -228,19 +228,15 @@ $conn->close();
                 let challengesHtml = '';
                 challenges.forEach(function(challenge) {
                     challengesHtml += `
-                        <div class="store-item ${challenge.rarity.toLowerCase()}-border">
-                            <h3>${challenge.title}</h3>
-                            <p class="${challenge.rarity.toLowerCase()}-background">
-                                ${challenge.rarity} Challenge
-                            </p>
+                        <div class="challenge-box ${challenge.rarity.toLowerCase()}-border">
+                            <h2 class="${challenge.rarity}>${challenge.title}</h2>
+                            <p>${challenge.rarity} Challenge</p>
                             <p class="challenge-info">${challenge.mission}</p>
-                            <p id="progress-${challenge.id}" class="challenge-stats">
-                                ${challenge.value} / ${challenge.fulfillment_amount}
-                            </p>
-                            <p class="challenge-stats-reward">Reward: ${challenge.reward_amount}<img src="../images/soul.png" alt="Souls"></p>
+                            <p id="progress-${challenge.id}" class="challenge-stats">Progress: ${challenge.value}/${challenge.fulfillment_amount}</p>
+                            <p class="challenge-reward">Reward: ${challenge.reward_amount}<img src="../images/soul.png" alt="Souls"></p>
                             <form id="complete-challenge-form-${challenge.id}" class="complete-challenge-form" method="post">
                                 <input type="hidden" name="challenge_id" value="${challenge.id}">
-                                <button id="claim-button-${challenge.id}" type="submit" class="button-main" ${parseInt(challenge.value) < parseInt(challenge.fulfillment_amount) ? 'disabled' : ''}>Claim Souls</button>
+                                <button id="claim-button-${challenge.id}" type="submit" class="button-main" ${parseInt(challenge.value) < parseInt(challenge.fulfillment_amount) ? 'disabled' : ''}>Complete Challenge</button>
                             </form>
                         </div>
                     `;

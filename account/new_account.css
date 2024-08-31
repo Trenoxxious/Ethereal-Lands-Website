@@ -30,6 +30,13 @@ button {
     box-shadow: 0 2px 0 black;
 }
 
+button:disabled {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 button:active {
     filter: brightness(1.1);
     -webkit-filter: brightness(1.1);
@@ -104,6 +111,84 @@ button:active {
 
 .menu-selection:hover {
     color: red;
+}
+
+.challenges-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.challenges-container h2 {
+    font-size: 24px;
+}
+
+.challenge-box {
+    background: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: white;
+    border-radius: 0.25em;
+    border: 1px solid transparent;
+    max-width: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.challenge-info {
+    color: rgb(255, 187, 0);
+    text-align: center;
+}
+
+.challenge-stats {
+    font-weight: bold;
+}
+
+.challenge-reward {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 5px;
+    background: rgba(248, 159, 248, 0.25);
+    border-radius: 0.25em;
+}
+
+.uncommon {
+    color: rgb(16, 211, 136);
+}
+
+.rare {
+    color: rgb(16, 149, 211);
+}
+
+.epic {
+    color: rgb(211, 16, 211);
+}
+
+.artifact {
+    color: rgb(211, 16, 42);
+}
+
+.uncommon-border {
+    border-color: rgb(16, 211, 136);
+}
+
+.rare-border {
+    border-color: rgb(16, 149, 211);
+}
+
+.epic-border {
+    border-color: rgb(211, 16, 211);
+}
+
+.artifact-border {
+    border-color: rgb(211, 16, 42);
 }
 
 @media (max-width: 650px) {
