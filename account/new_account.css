@@ -138,6 +138,7 @@ button:active {
     max-width: 300px;
     padding: 10px;
     box-sizing: border-box;
+    margin: 15px;
 }
 
 .challenge-info {
