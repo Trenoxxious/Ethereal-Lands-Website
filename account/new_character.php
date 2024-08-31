@@ -1,3 +1,138 @@
+<?php
+// Start the session
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../index");
+    exit;
+}
+
+// Include database connection details
+require '../globals.php';
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch user information from session
+$user_id = $_SESSION['user_id'];
+$username = $_SESSION['username'];
+$accstatus = $_SESSION['accstatus'];
+
+// Fetch the latest amount of ethereal souls from the database
+$amount_sql = "SELECT amount FROM etherealsouls WHERE id = ?";
+$amount_stmt = $conn->prepare($amount_sql);
+$amount_stmt->bind_param("i", $user_id);
+$amount_stmt->execute();
+$amount_result = $amount_stmt->get_result();
+
+if ($amount_result->num_rows > 0) {
+    $amount_row = $amount_result->fetch_assoc();
+    $esouls = $amount_row['amount'];
+} else {
+    $esouls = 0; // Default value if no record is found
+}
+
+$formatted_esouls = number_format($esouls);
+$isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
+
+$sql = "SELECT attack, defense, hits, strength, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman FROM maxstats WHERE playerID = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$stats = [];
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $stats = [
+        'attack' => $row['attack'],
+        'defense' => $row['defense'],
+        'hits' => $row['hits'],
+        'strength' => $row['strength'],
+        'ranged' => $row['ranged'],
+        'prayer' => $row['prayer'],
+        'magic' => $row['magic'],
+        'cooking' => $row['cooking'],
+        'woodcut' => $row['woodcut'],
+        'fletching' => $row['fletching'],
+        'fishing' => $row['fishing'],
+        'firemaking' => $row['firemaking'],
+        'crafting' => $row['crafting'],
+        'smithing' => $row['smithing'],
+        'mining' => $row['mining'],
+        'herblaw' => $row['herblaw'],
+        'agility' => $row['agility'],
+        'thieving' => $row['thieving'],
+        'huntsman' => $row['huntsman']
+    ];
+}
+
+$amount_stmt->close();
+
+// Prepare the SQL statement to fetch all relevant cache keys at once
+$sql = "SELECT `key`, `value` FROM player_cache WHERE playerID = ? AND `key` IN (
+    'edcod_cyclestotal', 'edcod_normalcycles', 'edcod_heroiccycles', 'edcod_necroticcycles',
+    'edcod_bosseskilled', 'edcod_monsterskilled', 'edcod_completedonce', 'edcod_deaths'
+)";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Create an associative array to store the fetched values
+$cryptStats = [
+    'Total Completed Runs' => 0,
+    'Normal Runs' => 0,
+    'Heroic Runs' => 0,
+    'Necrotic Runs' => 0,
+    'Bosses Killed' => 0,
+    'Monsters Killed' => 0,
+    'Deaths' => 0
+];
+
+$dungeonCompleted = false;
+
+while ($row = $result->fetch_assoc()) {
+    switch ($row['key']) {
+        case 'edcod_cyclestotal':
+            $cryptStats['Total Completed Runs'] = $row['value'];
+            break;
+        case 'edcod_normalcycles':
+            $cryptStats['Normal Runs'] = $row['value'];
+            break;
+        case 'edcod_heroiccycles':
+            $cryptStats['Heroic Runs'] = $row['value'];
+            break;
+        case 'edcod_necroticcycles':
+            $cryptStats['Necrotic Runs'] = $row['value'];
+            break;
+        case 'edcod_bosseskilled':
+            $cryptStats['Bosses Killed'] = $row['value'];
+            break;
+        case 'edcod_monsterskilled':
+            $cryptStats['Monsters Killed'] = $row['value'];
+            break;
+        case 'edcod_deaths':
+            $cryptStats['Deaths'] = $row['value'];
+            break;
+        case 'edcod_completedonce':
+            $dungeonCompleted = ($row['value'] == 1);
+            break;
+    }
+}
+
+$stmt->close();
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
