@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function checkProgress() {
-        // Check if the current page URL contains 'challenges'
-        if (window.location.href.includes('account/challenges') || window.location.href.includes('account/character')) {
+        // Check if the current page URL contains 'challenges' or 'character'
+        if (window.location.href.includes('account/challenges') || (window.location.href.includes('account') && window.location.href.includes('character'))) {
             $.ajax({
                 url: '../scripts/check_progress.php',
                 type: 'GET',
