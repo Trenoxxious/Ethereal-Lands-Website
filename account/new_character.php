@@ -182,7 +182,7 @@ $conn->close();
     </nav>
     <div class="daily-challenges-container" id="daily-challenges-container">
         <?php if ($player['has_accepted_daily_challenges'] == 0): ?>
-            <form method="post" action="../scripts/get_daily_challenges.php">
+            <form method="post" action="../scripts/get_daily_challenges.php" id="get-challenges-form">
                 <button type="submit" class="button-main button-main-green">Get Daily Challenges</button>
             </form>
         <?php else: ?>
@@ -238,48 +238,49 @@ $conn->close();
                 window.open('../scripts/logout', '_self');
             });
         }
-    </script>
-    <script>
-    $(document).ready(function() {
-        $('#get-challenges').on('click', function(e) {
-            e.preventDefault();
-            $.ajax({
-                url: '../scripts/get_daily_challenges.php',
-                type: 'POST',
-                dataType: 'json',
-                success: function(response) {
-                    if (response.success) {
-                        let challengesHtml = '';
-                        response.challenges.forEach(function(challenge) {
-                            challengesHtml += `
-                                <div class="store-item ${challenge.rarity.toLowerCase()}-border">
-                                    <h3>${challenge.title}</h3>
-                                    <p class="${challenge.rarity.toLowerCase()}-background">
-                                        ${challenge.rarity} Challenge
-                                    </p>
-                                    <p class="challenge-info">${challenge.mission}</p>
-                                    <p id="progress-${challenge.id}" class="challenge-stats">
-                                        0 / ${challenge.fulfillment_amount}
-                                    </p>
-                                    <p class="challenge-stats-reward">Reward: ${challenge.reward_amount}<img src="../images/soul.png" alt="Souls"></p>
-                                    <form id="complete-challenge-form-${challenge.id}" class="complete-challenge-form" method="post">
-                                        <input type="hidden" name="challenge_id" value="${challenge.id}">
-                                        <button id="claim-button-${challenge.id}" type="submit" class="button-main" disabled>Claim Souls</button>
-                                    </form>
-                                </div>
-                            `;
-                        });
-                        $('#daily-challenges-container').html(challengesHtml);
-                    } else {
-                        alert(response.error);
+        
+        $(document).ready(function() {
+            $('#get-challenges-form').on('submit', function(e) {
+                e.preventDefault(); // Prevent the form from submitting normally
+                
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.success) {
+                            let challengesHtml = '';
+                            response.challenges.forEach(function(challenge) {
+                                challengesHtml += `
+                                    <div class="store-item ${challenge.rarity.toLowerCase()}-border">
+                                        <h3>${challenge.title}</h3>
+                                        <p class="${challenge.rarity.toLowerCase()}-background">
+                                            ${challenge.rarity} Challenge
+                                        </p>
+                                        <p class="challenge-info">${challenge.mission}</p>
+                                        <p id="progress-${challenge.id}" class="challenge-stats">
+                                            0 / ${challenge.fulfillment_amount}
+                                        </p>
+                                        <p class="challenge-stats-reward">Reward: ${challenge.reward_amount}<img src="../images/soul.png" alt="Souls"></p>
+                                        <form id="complete-challenge-form-${challenge.id}" class="complete-challenge-form" method="post">
+                                            <input type="hidden" name="challenge_id" value="${challenge.id}">
+                                            <button id="claim-button-${challenge.id}" type="submit" class="button-main" disabled>Claim Souls</button>
+                                        </form>
+                                    </div>
+                                `;
+                            });
+                            $('#challenges-container').html(challengesHtml);
+                        } else {
+                            alert(response.error || 'An error occurred while fetching challenges.');
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error('AJAX error:', textStatus, errorThrown);
+                        alert('An error occurred while fetching challenges. Please try again.');
                     }
-                },
-                error: function() {
-                    alert('An error occurred while fetching challenges.');
-                }
+                });
             });
         });
-    });
     </script>
 </body>
 
