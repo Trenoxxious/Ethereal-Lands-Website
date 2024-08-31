@@ -44,12 +44,17 @@ if ($challenge) {
         $stmt->bind_param("ii", $challenge['reward_amount'], $user_id);
         $stmt->execute();
 
+        $query = "UPDATE etherealsouls SET total_dailies_completed = total_dailies_completed + 1 WHERE id = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+
         $query = "UPDATE player_daily_challenges SET completed = 1 WHERE user_id = ? AND challenge_id = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("ii", $user_id, $challenge_id);
         $stmt->execute();
 
-        header("Location: ../account/challenges");
+        header("Location: ../account/new_character");
     } else {
         echo "Challenge not completed!";
     }
