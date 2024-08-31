@@ -229,7 +229,7 @@ $conn->close();
                 challenges.forEach(function(challenge) {
                     challengesHtml += `
                         <div class="challenge-box ${challenge.rarity.toLowerCase()}-border">
-                            <h3 class="challenge-title ${challenge.rarity}">${challenge.title}</h3>
+                            <h3 class="challenge-title ${challenge.rarity.toLowerCase()}">${challenge.title}</h3>
                             <p>${challenge.rarity} Challenge</p>
                             <p class="challenge-info">${challenge.mission}</p>
                             <p id="progress-${challenge.id}" class="challenge-stats">Progress: ${challenge.value}/${challenge.fulfillment_amount}</p>

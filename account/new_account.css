@@ -118,7 +118,7 @@ button:active {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .challenges-container h2 {
@@ -136,6 +136,7 @@ button:active {
     border-radius: 0.25em;
     border: 1px solid transparent;
     max-width: 300px;
+    min-height: 350px;
     padding: 10px;
     box-sizing: border-box;
     margin: 15px;
@@ -144,6 +145,7 @@ button:active {
 .challenge-info {
     color: rgb(255, 187, 0);
     text-align: center;
+    min-height: 130px;
 }
 
 .challenge-stats {
