@@ -227,22 +227,26 @@ $conn->close();
 
             function displayChallenges(challenges) {
                 let challengesHtml = '';
-                challenges.forEach(function(challenge) {
-                    challengesHtml += `
-                        <div class="challenge-box ${challenge.rarity.toLowerCase()}-border">
-                            <h3 class="challenge-title ${challenge.rarity.toLowerCase()}">${challenge.title}</h3>
-                            <p>${challenge.rarity} Challenge</p>
-                            <p class="challenge-info">${challenge.mission}</p>
-                            <p id="progress-${challenge.id}" class="challenge-stats">Progress: ${challenge.value}/${challenge.fulfillment_amount}</p>
-                            <p class="challenge-reward">Reward: ${challenge.reward_amount}<img src="../images/soul.png" alt="Souls"></p>
-                            <form id="complete-challenge-form-${challenge.id}" class="complete-challenge-form" method="post">
-                                <input type="hidden" name="challenge_id" value="${challenge.id}">
-                                <button id="claim-button-${challenge.id}" type="submit" class="button-main" ${parseInt(challenge.value) < parseInt(challenge.fulfillment_amount) ? 'disabled' : ''}>Complete Challenge</button>
-                            </form>
-                        </div>
-                    `;
-                });
-                $('#challenges-container').html(challengesHtml);
+                if (challenges.length < 1) {
+                    challengesHtml = '<h2>You\'ve completed all your daily challenges! Check back soon for more!</h2>';
+                } else {
+                    challenges.forEach(function(challenge) {
+                        challengesHtml += `
+                            <div class="challenge-box ${challenge.rarity.toLowerCase()}-border">
+                                <h3 class="challenge-title ${challenge.rarity.toLowerCase()}">${challenge.title}</h3>
+                                <p>${challenge.rarity} Challenge</p>
+                                <p class="challenge-info">${challenge.mission}</p>
+                                <p id="progress-${challenge.id}" class="challenge-stats">Progress: ${challenge.value}/${challenge.fulfillment_amount}</p>
+                                <p class="challenge-reward">Reward: ${challenge.reward_amount}<img src="../images/soul.png" alt="Souls"></p>
+                                <form id="complete-challenge-form-${challenge.id}" class="complete-challenge-form" method="post">
+                                    <input type="hidden" name="challenge_id" value="${challenge.id}">
+                                    <button id="claim-button-${challenge.id}" type="submit" class="button-main" ${parseInt(challenge.value) < parseInt(challenge.fulfillment_amount) ? 'disabled' : ''}>Complete Challenge</button>
+                                </form>
+                            </div>
+                        `;
+                    });
+                    $('#challenges-container').html(challengesHtml);
+                }
             }
 
             // Fetch challenges on page load
