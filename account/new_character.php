@@ -181,7 +181,11 @@ $conn->close();
             <button id="logout-btn">Logout</button>
         </div>
     </nav>
-    <div id="challenges-container" class="challenges-container"></div>
+    <div id="challenges-container" class="challenges-container">
+        <form id="get-challenges-form" action="../scripts/get_daily_challenges.php" method="post">
+            <button type="submit" class="button-main button-main-green">Get Daily Challenges</button>
+        </form>
+    </div>
     <!-- <div class="character-dialogue">
         <div class="selections">
             <span id="get-challenges" class="menu-selection">I need my daily challenges.</span>
