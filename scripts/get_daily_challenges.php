@@ -1,21 +1,18 @@
 <?php
 session_start();
+header('Content-Type: application/json');
 
-// Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../index");
+    echo json_encode(['error' => 'User not logged in']);
     exit;
 }
 
-// Include database connection details
 require '../globals.php';
-
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    echo json_encode(['error' => 'Database connection failed']);
+    exit;
 }
 
 $user_id = $_SESSION['user_id'];
@@ -29,12 +26,11 @@ $result = $stmt->get_result();
 $user_status = $result->fetch_assoc();
 
 if ($user_status && $user_status['online'] == 1) {
-    echo "You cannot accept daily challenges while online. Please log off your character first.";
+    echo json_encode(['error' => 'You cannot accept daily challenges while online. Please log off your character first.']);
     $stmt->close();
     $conn->close();
     exit;
 }
-
 $stmt->close();
 
 // Ensure the player has not already accepted daily challenges
@@ -47,53 +43,33 @@ $player = $result->fetch_assoc();
 
 if ($player['has_accepted_daily_challenges'] == 0) {
     // Fetch 3 random daily challenges
-    $query = "SELECT id FROM daily_challenges ORDER BY RAND() LIMIT 3";
+    $query = "SELECT id, title, mission, rarity, reward_amount, fulfillment_amount, cache_key FROM daily_challenges ORDER BY RAND() LIMIT 3";
     $result = $conn->query($query);
-    $challenge_ids = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $challenges = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    foreach ($challenge_ids as $challenge) {
-        $challenge_id = $challenge['id'];
-
+    foreach ($challenges as $challenge) {
         // Insert the selected challenges into player_daily_challenges
         $query = "INSERT INTO player_daily_challenges (user_id, challenge_id) VALUES (?, ?)";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("ii", $user_id, $challenge_id);
-        if (!$stmt->execute()) {
-            error_log("Error inserting into player_daily_challenges: " . $stmt->error);
-        }
-
-        // Fetch the cache_key for the selected challenge
-        $query = "SELECT cache_key FROM daily_challenges WHERE id = ?";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("i", $challenge_id);
+        $stmt->bind_param("ii", $user_id, $challenge['id']);
         $stmt->execute();
-        $result = $stmt->get_result();
-        $challenge_data = $result->fetch_assoc();
-        $cache_key = $challenge_data['cache_key'];
 
         // Insert into player_cache
         $query = "INSERT INTO player_cache (playerID, type, `key`, `value`) VALUES (?, 4, ?, '0') ON DUPLICATE KEY UPDATE `value` = '0'";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("is", $user_id, $cache_key);
+        $stmt->bind_param("is", $user_id, $challenge['cache_key']);
         $stmt->execute();
-
-        if ($stmt->affected_rows > 0) {
-            // Row was inserted successfully - Do nothing
-        } else {
-            // Row was not inserted, possibly due to a unique constraint violation
-            $error = $stmt->error;
-            error_log("Error updating player_cache: " . $stmt->error);
-        }
     }
 
-    // Update the etherealsouls table to indicate the player has accepted daily challenges
+    // Update the etherealsouls table
     $query = "UPDATE etherealsouls SET has_accepted_daily_challenges = 1 WHERE id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i", $user_id);
-    if (!$stmt->execute()) {
-        error_log("Error updating etherealsouls: " . $stmt->error);
-    }
+    $stmt->execute();
+
+    echo json_encode(['success' => true, 'challenges' => $challenges]);
+} else {
+    echo json_encode(['error' => 'Daily challenges already accepted']);
 }
 
-// Redirect back to daily challenges page
-header("Location: ../account/challenges");
+$conn->close();
