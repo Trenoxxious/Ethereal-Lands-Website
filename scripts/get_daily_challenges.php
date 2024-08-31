@@ -55,7 +55,7 @@ if ($player['has_accepted_daily_challenges'] == 1) {
     $result = $stmt->get_result();
     $challenges = mysqli_fetch_all($result, MYSQLI_ASSOC);
     
-    echo json_encode(['success' => true, 'challenges' => $challenges, 'message' => 'Existing challenges fetched']);
+    echo json_encode(['success' => true, 'challenges' => $challenges]);
 } else {
     // Fetch 3 random daily challenges
     $query = "SELECT id, title, mission, rarity, reward_amount, fulfillment_amount, cache_key FROM daily_challenges ORDER BY RAND() LIMIT 3";
