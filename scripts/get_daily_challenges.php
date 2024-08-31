@@ -41,7 +41,22 @@ $stmt->execute();
 $result = $stmt->get_result();
 $player = $result->fetch_assoc();
 
-if ($player['has_accepted_daily_challenges'] == 0) {
+if ($player['has_accepted_daily_challenges'] == 1) {
+    // Fetch existing challenges
+    $query = "
+        SELECT dc.id, dc.title, dc.mission, dc.rarity, dc.reward_amount, dc.fulfillment_amount, pc.value
+        FROM daily_challenges dc
+        JOIN player_cache pc ON dc.cache_key = pc.key
+        JOIN player_daily_challenges pdc ON dc.id = pdc.challenge_id
+        WHERE pdc.user_id = ? AND pc.playerID = ? AND pdc.completed = 0";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("ii", $user_id, $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $challenges = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    
+    echo json_encode(['success' => true, 'challenges' => $challenges, 'message' => 'Existing challenges fetched']);
+} else {
     // Fetch 3 random daily challenges
     $query = "SELECT id, title, mission, rarity, reward_amount, fulfillment_amount, cache_key FROM daily_challenges ORDER BY RAND() LIMIT 3";
     $result = $conn->query($query);
@@ -67,9 +82,7 @@ if ($player['has_accepted_daily_challenges'] == 0) {
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
 
-    echo json_encode(['success' => true, 'challenges' => $challenges]);
-} else {
-    echo json_encode(['error' => 'Daily challenges already accepted']);
+    echo json_encode(['success' => true, 'challenges' => $challenges, 'message' => 'Existing challenges fetched']);
 }
 
 $conn->close();
