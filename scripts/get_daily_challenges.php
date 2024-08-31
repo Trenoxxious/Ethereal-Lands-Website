@@ -82,7 +82,7 @@ if ($player['has_accepted_daily_challenges'] == 1) {
     $stmt->bind_param("i", $user_id);
     $stmt->execute();
 
-    echo json_encode(['success' => true, 'challenges' => $challenges, 'message' => 'Existing challenges fetched']);
+    echo json_encode(['success' => true, 'challenges' => $challenges]);
 }
 
 $conn->close();
