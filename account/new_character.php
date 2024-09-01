@@ -236,7 +236,7 @@ $conn->close();
                                 <h3 class="challenge-title ${challenge.rarity.toLowerCase()}">${challenge.title}</h3>
                                 <p>${challenge.rarity} Challenge</p>
                                 <p class="challenge-info">${challenge.mission}</p>
-                                <p id="progress-${challenge.id}" class="challenge-stats">Progress: ${challenge.value}/${challenge.fulfillment_amount}</p>
+                                <p id="progress-${challenge.id}" class="challenge-stats">Loading progress...</p>
                                 <p class="challenge-reward">Reward: ${challenge.reward_amount}<img src="../images/soul.png" alt="Souls"></p>
                                 <form id="complete-challenge-form-${challenge.id}" class="complete-challenge-form" method="post">
                                     <input type="hidden" name="challenge_id" value="${challenge.id}">
