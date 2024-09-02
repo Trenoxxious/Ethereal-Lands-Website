@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Handle Claim Souls form submission asynchronously
     $(document).on('submit', 'form.complete-challenge-form', function (event) {
         event.preventDefault();
         let form = $(this);
@@ -59,6 +58,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (response.success) {
                     form.closest('.challenge-box').fadeOut(500, function() {
                         $(this).remove();
+
+                        if ($('.challenge-box').length === 0) {
+                            fetchChallenges();
+                        }
                     });
 
                     if (response.total_dailies_completed !== undefined) {
@@ -69,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         $('#ethereal-souls-amount').text(response.formatted_souls);
                     }
                 } else {
-                    // Challenge not completed
                     alert(response.message);
                 }
             },
@@ -81,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function checkProgress() {
-        // Check if the current page URL contains 'challenges' or 'character'
         if (window.location.href.includes('account/challenges') || (window.location.href.includes('account') && window.location.href.includes('character'))) {
             $.ajax({
                 url: '../scripts/check_progress.php',
