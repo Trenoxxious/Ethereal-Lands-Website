@@ -169,14 +169,14 @@ $conn->close();
     <nav class="nav-bar">
         <div class="nav-start">
             <div class="logo"></div>
-            <span class="greeting">Welcome, Noxxious</span>
+            <span class="greeting">Welcome, <?php echo htmlspecialchars($username); ?></span>
         </div>
         <div class="nav-end">
             <div class="nav-stats">
-                <span class="stat-span">Total Level: <span class="stat-level">944</span></span>
-                <span class="stat-span">Bounty Points: <span class="stat-level">38</span></span>
-                <span class="stat-span">Quests Completed: <span class="stat-level">4</span></span>
-                <span class="stat-span">Daily Challenges Completed: <span class="stat-level">20</span></span>
+                <span class="stat-span">Total Level: <span class="stat-level"><?php echo htmlspecialchars($skill_total); ?></span></span>
+                <span class="stat-span">Bounty Points: <span class="stat-level"><?php echo htmlspecialchars($bounty_points); ?></span></span>
+                <span class="stat-span">Combat Level: <span class="stat-level"><?php echo htmlspecialchars($combat_level); ?></span></span>
+                <span class="stat-span">Daily Challenges Completed: <span class="stat-level"><?php echo htmlspecialchars($total_dailies_completed); ?></span></span>
             </div>
             <button id="logout-btn">Logout</button>
         </div>
@@ -240,7 +240,7 @@ $conn->close();
                                 <p class="challenge-reward">Reward: ${challenge.reward_amount}<img src="../images/soul.png" alt="Souls"></p>
                                 <form id="complete-challenge-form-${challenge.id}" class="complete-challenge-form" method="post">
                                     <input type="hidden" name="challenge_id" value="${challenge.id}">
-                                    <button id="claim-button-${challenge.id}" type="submit" disabled>Complete Challenge</button>
+                                    <button id="claim-button-${challenge.id}" type="submit" class="challenge-button" disabled>Complete Challenge</button>
                                 </form>
                             </div>
                         `;

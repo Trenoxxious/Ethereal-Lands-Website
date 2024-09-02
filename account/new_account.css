@@ -37,9 +37,18 @@ button:disabled {
     opacity: 0.5;
 }
 
+button:hover {
+    -webkit-filter: brightness(1.05);
+    filter: brightness(1.05);
+}
+
 button:active {
     filter: brightness(1.1);
     -webkit-filter: brightness(1.1);
+}
+
+.challenge-button {
+    background: rgb(79, 209, 79) !important;
 }
 
 .nav-bar {

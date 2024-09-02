@@ -23,8 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Fetch user from database
-    $sql = "SELECT id, username, group_id, pass FROM players WHERE username = ?";
+    $sql = "SELECT p.id, p.username, p.group_id, p.skill_total, p.bounty_points, p.combat_level, p.pass, 
+    e.total_dailies_completed
+    FROM players p
+    LEFT JOIN etherealsouls e ON p.id = e.id
+    WHERE p.username = ?";
+
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -38,8 +42,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Password is correct, store user information in session
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
+            $_SESSION['skill_total'] = $row['skill_total'];
+            $_SESSION['bounty_points'] = $row['bounty_points'];
+            $_SESSION['combat_level'] = $row['combat_level'];
             $_SESSION['accstatus'] = $row['group_id'];
             $_SESSION['loggedIn'] = true;
+            
+            // Add the total_dailies_completed to the session
+            $_SESSION['total_dailies_completed'] = $row['total_dailies_completed'] ?? 0;
 
             // Check if user has an entry in etherealsouls table, if not, make one
             $sql = "SELECT id FROM etherealsouls WHERE id = ?";
