@@ -57,8 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
             dataType: 'json',
             success: function (response) {
                 if (response.success) {
-                    alert(`Challenge completed! You earned ${response.reward} souls.`);
-                    
                     form.closest('.challenge-box').fadeOut(500, function() {
                         $(this).remove();
                     });
