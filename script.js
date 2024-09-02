@@ -57,18 +57,19 @@ document.addEventListener('DOMContentLoaded', function () {
             dataType: 'json',
             success: function (response) {
                 if (response.success) {
-                    // Challenge completed successfully
                     alert(`Challenge completed! You earned ${response.reward} souls.`);
                     
-                    // Remove the completed challenge from the DOM
                     form.closest('.challenge-box').fadeOut(500, function() {
                         $(this).remove();
                     });
-                    
-                    // Update the total souls (if you have an element displaying this)
-                    // For example, if you have an element with id "total-souls":
-                    // let currentSouls = parseInt($('#total-souls').text());
-                    // $('#total-souls').text(currentSouls + response.reward);
+
+                    if (response.total_dailies_completed !== undefined) {
+                        $('#total-dailies-completed').text(response.total_dailies_completed);
+                    }
+
+                    if (response.formatted_souls !== undefined) {
+                        $('#ethereal-souls-amount').text(response.formatted_souls);
+                    }
                 } else {
                     // Challenge not completed
                     alert(response.message);

@@ -51,7 +51,25 @@ if ($challenge) {
         $stmt->bind_param("ii", $user_id, $challenge_id);
         $stmt->execute();
 
-        echo json_encode(['success' => true, 'message' => 'Challenge completed!', 'reward' => $challenge['reward_amount']]);
+        if (isset($_SESSION['total_dailies_completed'])) {
+            $_SESSION['total_dailies_completed']++;
+        } else {
+            $_SESSION['total_dailies_completed'] = 1;
+        }
+
+        if (isset($_SESSION['amount_of_souls'])) {
+            $_SESSION['amount_of_souls'] += $challenge['reward_amount'];
+        } else {
+            $_SESSION['amount_of_souls'] = $challenge['reward_amount'];
+        }
+
+        echo json_encode([
+            'success' => true, 
+            'message' => 'Challenge completed!', 
+            'reward' => $challenge['reward_amount'],
+            'total_dailies_completed' => $_SESSION['total_dailies_completed'],
+            'formatted_souls' => number_format($_SESSION['amount_of_souls'])
+        ]);
     } else {
         echo json_encode(['success' => false, 'message' => 'Challenge not completed!']);
     }

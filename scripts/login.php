@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     $sql = "SELECT p.id, p.username, p.group_id, p.skill_total, p.bounty_points, p.combat, p.pass, 
-    e.total_dailies_completed
+    e.total_dailies_completed, e.amount
     FROM players p
     LEFT JOIN etherealsouls e ON p.id = e.id
     WHERE p.username = ?";
@@ -50,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             // Add the total_dailies_completed to the session
             $_SESSION['total_dailies_completed'] = $row['total_dailies_completed'] ?? 0;
+            $_SESSION['amount_of_souls'] = $row['amount'] ?? 0;
 
             // Check if user has an entry in etherealsouls table, if not, make one
             $sql = "SELECT id FROM etherealsouls WHERE id = ?";

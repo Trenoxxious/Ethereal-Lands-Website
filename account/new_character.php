@@ -26,6 +26,7 @@ $combat_level = $_SESSION['combat_level'];
 $skill_total = $_SESSION['skill_total'];
 $bounty_points = $_SESSION['bounty_points'];
 $total_dailies_completed = $_SESSION['total_dailies_completed'];
+$amount_of_souls = $_SESSION['amount_of_souls'];
 $accstatus = $_SESSION['accstatus'];
 
 // Fetch the latest amount of ethereal souls from the database
@@ -35,14 +36,7 @@ $amount_stmt->bind_param("i", $user_id);
 $amount_stmt->execute();
 $amount_result = $amount_stmt->get_result();
 
-if ($amount_result->num_rows > 0) {
-    $amount_row = $amount_result->fetch_assoc();
-    $esouls = $amount_row['amount'];
-} else {
-    $esouls = 0; // Default value if no record is found
-}
-
-$formatted_esouls = number_format($esouls);
+$formatted_souls = number_format($amount_of_souls);
 $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
 
 $sql = "SELECT attack, defense, hits, strength, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman FROM maxstats WHERE playerID = ?";
@@ -180,7 +174,8 @@ $conn->close();
                 <span class="stat-span">Total Level: <span class="stat-level"><?php echo htmlspecialchars($skill_total); ?></span></span>
                 <span class="stat-span">Bounty Points: <span class="stat-level"><?php echo htmlspecialchars($bounty_points); ?></span></span>
                 <span class="stat-span">Combat Level: <span class="stat-level"><?php echo htmlspecialchars($combat_level); ?></span></span>
-                <span class="stat-span">Daily Challenges Completed: <span class="stat-level"><?php echo htmlspecialchars($total_dailies_completed); ?></span></span>
+                <span class="stat-span">Daily Challenges Completed: <span class="stat-level" id="total_dailies_completed"><?php echo htmlspecialchars($total_dailies_completed); ?></span></span>
+                <span class="stat-span">Ethereal Souls: <span class="stat-level" id="ethereal-souls-amount"><?php echo htmlspecialchars($formatted_souls); ?></span></span>
             </div>
             <button id="logout-btn">Logout</button>
         </div>
