@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Handle Claim Souls form submission asynchronously
     $('form.complete-challenge-form').on('submit', function (event) {
+        debugger;
         event.preventDefault(); // Prevent the default form submission
 
         let form = $(this);

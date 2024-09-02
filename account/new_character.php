@@ -240,7 +240,7 @@ $conn->close();
                                 <p class="challenge-reward">Reward: ${challenge.reward_amount}<img src="../images/soul.png" alt="Souls"></p>
                                 <form id="complete-challenge-form-${challenge.id}" class="complete-challenge-form" method="post">
                                     <input type="hidden" name="challenge_id" value="${challenge.id}">
-                                    <button id="claim-button-${challenge.id}" type="submit" class="button-main" ${parseInt(challenge.value) < parseInt(challenge.fulfillment_amount) ? 'disabled' : ''}>Complete Challenge</button>
+                                    <button id="claim-button-${challenge.id}" type="submit" ${parseInt(challenge.value) < parseInt(challenge.fulfillment_amount) ? 'disabled' : ''}>Complete Challenge</button>
                                 </form>
                             </div>
                         `;
