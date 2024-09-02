@@ -45,13 +45,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Handle Claim Souls form submission asynchronously
-    $('form.complete-challenge-form').on('submit', function (event) {
+    $(document).on('submit', 'form.complete-challenge-form', function (event) {
         debugger;
         event.preventDefault(); // Prevent the default form submission
-
         let form = $(this);
         let challengeId = form.find('input[name="challenge_id"]').val();
-
+        
         $.ajax({
             url: '../scripts/check_challenge.php',
             type: 'POST',
@@ -99,5 +98,5 @@ document.addEventListener('DOMContentLoaded', function () {
     checkProgress();
 
     // Check progress every 5 seconds
-    setInterval(checkProgress, 5000);
+    setInterval(checkProgress, 2000);
 });

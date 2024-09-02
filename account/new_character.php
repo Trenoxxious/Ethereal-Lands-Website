@@ -140,7 +140,7 @@ $conn->close();
     <title>Ethereal Lands - My Account</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="new_account.css?ver=<?= time(); ?>">
-    <script src="../script.js?ver=<?= time(); ?>"></script>
+    <script defer src="../script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
         .account-stats {
@@ -245,6 +245,7 @@ $conn->close();
                             </div>
                         `;
                     });
+
                     $('#challenges-container').html(challengesHtml);
                 }
             }
