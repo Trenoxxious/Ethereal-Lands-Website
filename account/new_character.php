@@ -174,7 +174,7 @@ $conn->close();
                 <span class="stat-span">Total Level: <span class="stat-level"><?php echo htmlspecialchars($skill_total); ?></span></span>
                 <span class="stat-span">Bounty Points: <span class="stat-level"><?php echo htmlspecialchars($bounty_points); ?></span></span>
                 <span class="stat-span">Combat Level: <span class="stat-level"><?php echo htmlspecialchars($combat_level); ?></span></span>
-                <span class="stat-span">Daily Challenges Completed: <span class="stat-level" id="total_dailies_completed"><?php echo htmlspecialchars($total_dailies_completed); ?></span></span>
+                <span class="stat-span">Daily Challenges Completed: <span class="stat-level" id="total-dailies-completed"><?php echo htmlspecialchars($total_dailies_completed); ?></span></span>
                 <span class="stat-span">Ethereal Souls: <span class="stat-level" id="ethereal-souls-amount"><?php echo htmlspecialchars($formatted_souls); ?></span></span>
             </div>
             <button id="logout-btn">Logout</button>
