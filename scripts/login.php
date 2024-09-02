@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT p.id, p.username, p.group_id, p.skill_total, p.bounty_points, p.combat_level, p.pass, 
+    $sql = "SELECT p.id, p.username, p.group_id, p.skill_total, p.bounty_points, p.combat, p.pass, 
     e.total_dailies_completed
     FROM players p
     LEFT JOIN etherealsouls e ON p.id = e.id
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $row['username'];
             $_SESSION['skill_total'] = $row['skill_total'];
             $_SESSION['bounty_points'] = $row['bounty_points'];
-            $_SESSION['combat_level'] = $row['combat_level'];
+            $_SESSION['combat_level'] = $row['combat'];
             $_SESSION['accstatus'] = $row['group_id'];
             $_SESSION['loggedIn'] = true;
             
