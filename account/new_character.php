@@ -183,7 +183,7 @@ $conn->close();
     </nav>
     <div id="challenges-container" class="challenges-container">
         <form id="get-challenges-form" action="../scripts/get_daily_challenges.php" method="post">
-            <button type="submit" class="button-main button-main-green">Get Daily Challenges</button>
+            <h2>You have completed all your daily challenges. Check back tomorrow for more!</h2>
         </form>
     </div>
     <!-- <div class="character-dialogue">
