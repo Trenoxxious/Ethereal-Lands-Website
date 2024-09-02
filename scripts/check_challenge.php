@@ -39,27 +39,24 @@ if ($challenge) {
     $player_cache = $result->fetch_assoc();
 
     if ($player_cache && $player_cache['value'] >= $challenge['fulfillment_amount']) {
-        $query = "UPDATE etherealsouls SET amount = amount + ? WHERE id = ?";
+        // Update etherealsouls
+        $query = "UPDATE etherealsouls SET amount = amount + ?, total_dailies_completed = total_dailies_completed + 1 WHERE id = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("ii", $challenge['reward_amount'], $user_id);
         $stmt->execute();
 
-        $query = "UPDATE etherealsouls SET total_dailies_completed = total_dailies_completed + 1 WHERE id = ?";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("i", $user_id);
-        $stmt->execute();
-
+        // Mark challenge as completed
         $query = "UPDATE player_daily_challenges SET completed = 1 WHERE user_id = ? AND challenge_id = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("ii", $user_id, $challenge_id);
         $stmt->execute();
 
-        header("Location: ../account/new_character");
+        echo json_encode(['success' => true, 'message' => 'Challenge completed!', 'reward' => $challenge['reward_amount']]);
     } else {
-        echo "Challenge not completed!";
+        echo json_encode(['success' => false, 'message' => 'Challenge not completed!']);
     }
 } else {
-    echo "Challenge not found. Contact support for assistance.";
+    echo json_encode(['success' => false, 'message' => 'Challenge not found. Contact support for assistance.']);
 }
 
 $stmt->close();

@@ -46,8 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Handle Claim Souls form submission asynchronously
     $(document).on('submit', 'form.complete-challenge-form', function (event) {
-        debugger;
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault();
         let form = $(this);
         let challengeId = form.find('input[name="challenge_id"]').val();
         
@@ -55,11 +54,29 @@ document.addEventListener('DOMContentLoaded', function () {
             url: '../scripts/check_challenge.php',
             type: 'POST',
             data: form.serialize(),
+            dataType: 'json',
             success: function (response) {
-                window.location.reload(); // Refresh the page
+                if (response.success) {
+                    // Challenge completed successfully
+                    alert(`Challenge completed! You earned ${response.reward} souls.`);
+                    
+                    // Remove the completed challenge from the DOM
+                    form.closest('.challenge-box').fadeOut(500, function() {
+                        $(this).remove();
+                    });
+                    
+                    // Update the total souls (if you have an element displaying this)
+                    // For example, if you have an element with id "total-souls":
+                    // let currentSouls = parseInt($('#total-souls').text());
+                    // $('#total-souls').text(currentSouls + response.reward);
+                } else {
+                    // Challenge not completed
+                    alert(response.message);
+                }
             },
             error: function (xhr, status, error) {
                 console.error('Error completing challenge:', status, error);
+                alert('An error occurred while completing the challenge. Please try again.');
             }
         });
     });
