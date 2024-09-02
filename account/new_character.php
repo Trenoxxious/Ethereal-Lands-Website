@@ -22,6 +22,10 @@ if ($conn->connect_error) {
 // Fetch user information from session
 $user_id = $_SESSION['user_id'];
 $username = $_SESSION['username'];
+$combat_level = $_SESSION['combat_level'];
+$skill_total = $_SESSION['skill_total'];
+$bounty_points = $_SESSION['bounty_points'];
+$total_dailies_completed = $_SESSION['total_dailies_completed'];
 $accstatus = $_SESSION['accstatus'];
 
 // Fetch the latest amount of ethereal souls from the database
