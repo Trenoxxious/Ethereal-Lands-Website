@@ -39,37 +39,46 @@ if ($challenge) {
     $player_cache = $result->fetch_assoc();
 
     if ($player_cache && $player_cache['value'] >= $challenge['fulfillment_amount']) {
-        // Update etherealsouls
-        $query = "UPDATE etherealsouls SET amount = amount + ?, total_dailies_completed = total_dailies_completed + 1 WHERE id = ?";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("ii", $challenge['reward_amount'], $user_id);
-        $stmt->execute();
+        $delete_query = "DELETE FROM player_cache WHERE playerID = ? AND `key` = ?";
+        $delete_stmt = $conn->prepare($delete_query);
+        $delete_stmt->bind_param("is", $user_id, $challenge['cache_key']);
+        $delete_stmt->execute();
 
-        // Mark challenge as completed
-        $query = "UPDATE player_daily_challenges SET completed = 1 WHERE user_id = ? AND challenge_id = ?";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("ii", $user_id, $challenge_id);
-        $stmt->execute();
+        if ($delete_stmt->affected_rows > 0) {
+            // Update etherealsouls
+            $query = "UPDATE etherealsouls SET amount = amount + ?, total_dailies_completed = total_dailies_completed + 1 WHERE id = ?";
+            $stmt = $conn->prepare($query);
+            $stmt->bind_param("ii", $challenge['reward_amount'], $user_id);
+            $stmt->execute();
 
-        if (isset($_SESSION['total_dailies_completed'])) {
-            $_SESSION['total_dailies_completed']++;
+            // Mark challenge as completed
+            $query = "UPDATE player_daily_challenges SET completed = 1 WHERE user_id = ? AND challenge_id = ?";
+            $stmt = $conn->prepare($query);
+            $stmt->bind_param("ii", $user_id, $challenge_id);
+            $stmt->execute();
+
+            if (isset($_SESSION['total_dailies_completed'])) {
+                $_SESSION['total_dailies_completed']++;
+            } else {
+                $_SESSION['total_dailies_completed'] = 1;
+            }
+
+            if (isset($_SESSION['amount_of_souls'])) {
+                $_SESSION['amount_of_souls'] += $challenge['reward_amount'];
+            } else {
+                $_SESSION['amount_of_souls'] = $challenge['reward_amount'];
+            }
+
+            echo json_encode([
+                'success' => true, 
+                'message' => 'Challenge completed!', 
+                'reward' => $challenge['reward_amount'],
+                'total_dailies_completed' => $_SESSION['total_dailies_completed'],
+                'formatted_souls' => number_format($_SESSION['amount_of_souls'])
+            ]);
         } else {
-            $_SESSION['total_dailies_completed'] = 1;
+            echo json_encode(['success' => false, 'message' => 'Unable to alter player cache. Challenge not completed!']);
         }
-
-        if (isset($_SESSION['amount_of_souls'])) {
-            $_SESSION['amount_of_souls'] += $challenge['reward_amount'];
-        } else {
-            $_SESSION['amount_of_souls'] = $challenge['reward_amount'];
-        }
-
-        echo json_encode([
-            'success' => true, 
-            'message' => 'Challenge completed!', 
-            'reward' => $challenge['reward_amount'],
-            'total_dailies_completed' => $_SESSION['total_dailies_completed'],
-            'formatted_souls' => number_format($_SESSION['amount_of_souls'])
-        ]);
     } else {
         echo json_encode(['success' => false, 'message' => 'Challenge not completed!']);
     }
