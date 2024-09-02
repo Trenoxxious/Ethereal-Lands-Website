@@ -58,10 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (response.success) {
                     form.closest('.challenge-box').fadeOut(500, function() {
                         $(this).remove();
-
-                        if ($('.challenge-box').length === 0) {
-                            fetchChallenges();
-                        }
                     });
 
                     if (response.total_dailies_completed !== undefined) {
@@ -71,6 +67,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (response.formatted_souls !== undefined) {
                         $('#ethereal-souls-amount').text(response.formatted_souls);
                     }
+
+                    setTimeout(() => {
+                        if ($('.challenge-box').length === 0) {
+                            const finishedChallenges = document.createElement('h2');
+                            finishedChallenges.textContent = 'You\'ve completed all your daily challenges! Check back soon for more!';
+                            document.getElementById('challenges-container').appendChild(finishedChallenges);
+                        }
+                    }, 500);
                 } else {
                     alert(response.message);
                 }
