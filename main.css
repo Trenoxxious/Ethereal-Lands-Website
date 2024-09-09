@@ -967,6 +967,32 @@ footer {
     text-align: center;
 }
 
+.server-name {
+    background: #ffa633;
+    padding: 3px 14px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.server-bar {
+    display: flex;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 4px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#response-time {
+    margin-left: 10px;
+    margin-right: 3px;
+}
+
 @media only screen and (max-width: 1600px) {
     .mainbar {
         height: 60px;
