@@ -88,7 +88,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         </video>
         <div class="video-filter"></div>
         <div class="blanktop"></div>
-        <div id="server-status">
+        <div id="server-status" style="color: white;">
             <div id="delaraz" class="server-bar"><span class="server-name" id="server-name"><img style="margin-right: 5px;" src="assets/icons8-usa-flag-24.png" alt="US">Del'araz&nbsp;-&nbsp;<span id="status-text">...</span></span><span id="response-time"></span></div>
         </div>
         <div class="character-counter">Currently, <span id="totalAccounts">#</span>

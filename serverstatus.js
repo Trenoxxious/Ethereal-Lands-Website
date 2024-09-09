@@ -9,7 +9,7 @@ function updateServerStatus() {
 
     const startTime = Date.now();
 
-    fetch(`http://${SERVER_IP}:${SERVER_PORT}/status`)
+    fetch(`//${SERVER_IP}:${SERVER_PORT}/status`)
         .then(response => response.json())
         .then(data => {
             const endTime = Date.now();
