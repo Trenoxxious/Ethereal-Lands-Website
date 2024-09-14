@@ -28,6 +28,10 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         crossorigin="anonymous"></script>
     
     <style>
+        :root {
+            --update-image: url('../../../images/CoD1080.png');
+        }
+
         body {
             user-select: text;
         }
@@ -44,9 +48,10 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                     rgba(0, 0, 0, 0) 0%,
                     rgba(0, 0, 0, 0) 18%,
                     rgba(0, 0, 0, 1) 25%),
-                url('../../../images/CoD1080.png');
-            background-size: cover;
-            background-position: center;
+                var(--update-image);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top;
             box-shadow: 0 0 15px rgb(31, 31, 31, 0.5);
         }
 
@@ -81,9 +86,26 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             height: 300px;
         }
 
-        @media screen and (max-width: 900px) {
+        @media screen and (max-width: 1300px) {
+            .update-window {
+                background-image: 
+                linear-gradient(to bottom, 
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0) 15%,
+                    rgba(0, 0, 0, 1) 20%),
+                    var(--update-image);
+            }
+        }
+
+        @media screen and (max-width: 1100px) {
             .update-window {
                 margin: 15px 10%;
+                background-image: 
+                linear-gradient(to bottom, 
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0) 5%,
+                    rgba(0, 0, 0, 1) 8%),
+                    var(--update-image);
             }
 
             .updatecontent {
@@ -94,6 +116,16 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         @media screen and (max-width: 600px) {
             .update-window {
                 margin: 15px 5%;
+            }
+
+            .update-window {
+                margin: 15px 10%;
+                background-image: 
+                linear-gradient(to bottom, 
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0) 5%,
+                    rgba(0, 0, 0, 1) 8%),
+                    var(--update-image);
             }
 
             .updatecontent {
