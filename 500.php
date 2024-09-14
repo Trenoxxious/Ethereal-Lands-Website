@@ -14,7 +14,7 @@
 <body>
     <div class="topbar">
         <nav class="mainbar">
-            <div class="logo" id="toplogo">
+            <div class="logo" id="toplogo" style="height: 100px;">
             </div>
             <div id="navlinks">
                 <a href="https://playethereallands.com">Home</a>

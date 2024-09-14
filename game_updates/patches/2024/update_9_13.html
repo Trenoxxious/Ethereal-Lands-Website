@@ -1,24 +1,97 @@
+<?php
+session_start();
+
+$loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethereal Lands - Updates</title>
-    <link rel="stylesheet" href="main.css?ver=<?= time(); ?>">
-    <link rel="stylesheet" href="account/account.css?ver=<?= time(); ?>">
-    <script defer src="script.js?ver=<?= time(); ?>"></script>
+    <title>Ethereal Lands</title>
+    <link rel="stylesheet" href="../../../main.css?ver=<?= time(); ?>">
+    <link rel="stylesheet" href="../../../account/account.css?ver=<?= time(); ?>">
+    <script defer src="/script.js?ver=<?= time(); ?>"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+    
+    <style>
+        body {
+            user-select: text;
+        }
+        .update-window {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            box-sizing: border-box;
+            color: white;
+            margin: 15px 15%;
+            border-radius: 0.5em;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        @media screen and (max-width: 900px) {
+            .update-window {
+                margin: 15px 10%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .update-window {
+                margin: 15px 5%;
+            }
+        }
+
+        h1 {
+            color: rgb(255, 215, 142);
+            text-align: center;
+        }
+
+        .update-info {
+            font-weight: bold;
+            text-align: center;
+            color: rgb(255, 199, 96);
+        }
+
+        .update-summary {
+            font-style: italic;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="topbar">
         <nav class="mainbar">
-            <div class="logo" id="toplogo" style="height: 100px;">
-            </div>
+            <div class="logo" id="toplogo" style="height: 100px;"></div>
             <div id="navlinks">
                 <a href="https://playethereallands.com">Home</a>
-                <a href="creators_corridor">Creator's Corridor</a>
+                <a href="recent_updates">Game Updates</a>
                 <a href="https://discord.gg/d6RtsDyRZX">Discord</a>
+            </div>
+            <div class="button-div">
+                <?php if ($loggedIn): ?>
+                    <button class="button-main" id="accountbutton">
+                        My Account
+                    </button>
+                <?php else: ?>
+                    <button class="button-main" id="accountbutton">
+                        Login
+                    </button>
+                <?php endif; ?>
             </div>
             <div id="menuexpand">
                 <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"
@@ -35,22 +108,18 @@
                 </svg>
             </div>
             <a class="button-main" href="https://playethereallands.com">Home</a>
-            <a class="button-main" href="creators_corridor">Creator's Corridor</a>
+            <a class="button-main" href="recent_updates">Game Updates</a>
             <a class="button-main" href="https://discord.gg/d6RtsDyRZX">Discord</a>
         </div>
     </div>
     <div class="blanktop"></div>
-    <a href="/game_updates/kaniani_island">
-        <div class="mainupdate">
-            <img src="images/updates/mainupdate_tutisland.png" alt="Explore a new, packed tutorial island!"
-                style="width: 100%; height: 100%; object-fit: contain;">
-        </div>
-    </a>
-    <div class="updatelist">
-        <div class="updatebox">
-            <div class="updatecontent">
+    <div class="update-window">
+        <div class="updatecontent" style="display: block;">
+            <h1>Introducing: Game Launcher, Instancing for Raids and Dungeons</h1>
+            <p class="update-info">09/13/2024 - Pre-release Update</p>
+            <p class="update-summary">We have implemented a system into Ethereal Lands that allows us to instance certain areas of the map so you can play solo or with a group of players through a dungeon or a raid without being impacted by other players and groups. We're also working on a "queueing" system, allowing you to queue up to complete a dungeon or raid with random players. We're super excited with how it's going so far, and during testing we found a few bugs which we've squashed with swift justice. In the coming weeks we'll be making improvements and sweeps over the system to make sure it won't negatively impact other gameplay areas, although in its current iteration, it doesn't seem to be affecting anything else at all, which is great news. We also have other updates coming this week, like remastering of quests and bringing back previous requirements that were stripped out until we've done this.</p>
             <h2>Systems & Other</h2>
-            <p>A game launcher has been developed as a distributible file for installing and maintaining version updates at the client level. This is an early rendition of our game launcher and more features are planned for future versions.</p>
+            <p>A game launcher has been developed as a distributable file for installing and maintaining version updates at the client level. This is an early rendition of our game launcher and more features are planned for future versions.</p>
             <p>We're currently implementing and testing instanced areas on the DTE (developer test environment), which would allow us to create more robust experiences for players in dungeon and raid environments. This is a massive upgrade that will take time to properly test and implement, but I can confirm we do have working instancing, allowing players to run dungeons or raids without being impacted by other players in the same dungeon or raid. Players within an instanced area are only able to see their own party members and NPCs assigned to that instance ID. Over the coming weeks, the developer team will be testing these instancing features in Crypt of Dread and our first raid that is yet to be announced. We look forward to the feedback from the community on these systems once they're implemented and used.</p>
             <p>Pre-release Fixes: Players who are in a party can no longer create an instance unless they are the party leader. When joining an instance, it will first check for the party leaders created instances.</p>
             <h2>General Updates</h2>
@@ -85,22 +154,9 @@
             <p>It is again a requirement to complete the Dragon Slayer quest in order to equip all Rune Platebody variants.</p>
             <p>A new requirement has been introduced for Dragon Square Shields that now requires the completion of the Dragon Slayer quest in order to be equipped. The requirement for Legend's Quest has been lifted.</p>
             <p>Grammatical sweeps have been made to the equipment/stat check messages sent to players on failed equip checks.</p>
-            </div>
         </div>
     </div>
     <?php include 'footer.php'; ?>
-    <script>
-        document.querySelectorAll('.updatebox').forEach((updatebox) => {
-            updatebox.addEventListener('click', () => {
-                const updatecontent = updatebox.querySelector('.updatecontent');
-                if (updatecontent.style.display === 'block') {
-                    updatecontent.style.display = 'none';
-                } else {
-                    updatecontent.style.display = 'block';
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
