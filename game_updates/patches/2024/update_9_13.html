@@ -34,6 +34,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
 
         body {
             user-select: text;
+            font-family: "Open Sans", "Libre Baskerville", serif;
         }
 
         .update-window {
@@ -83,7 +84,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            height: 300px;
+            min-height: 300px;
         }
 
         @media screen and (max-width: 1100px) {
