@@ -49,8 +49,8 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                     rgba(0, 0, 0, 0) 18%,
                     rgba(0, 0, 0, 1) 25%),
                 var(--update-image);
-            background-size: 100%;
             background-repeat: no-repeat;
+            background-size: cover;
             background-position: top;
             box-shadow: 0 0 15px rgb(31, 31, 31, 0.5);
         }
@@ -86,26 +86,9 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             height: 300px;
         }
 
-        @media screen and (max-width: 1300px) {
-            .update-window {
-                background-image: 
-                linear-gradient(to bottom, 
-                    rgba(0, 0, 0, 0) 0%,
-                    rgba(0, 0, 0, 0) 15%,
-                    rgba(0, 0, 0, 1) 20%),
-                    var(--update-image);
-            }
-        }
-
         @media screen and (max-width: 1100px) {
             .update-window {
                 margin: 15px 10%;
-                background-image: 
-                linear-gradient(to bottom, 
-                    rgba(0, 0, 0, 0) 0%,
-                    rgba(0, 0, 0, 0) 5%,
-                    rgba(0, 0, 0, 1) 8%),
-                    var(--update-image);
             }
 
             .updatecontent {
@@ -120,12 +103,6 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
 
             .update-window {
                 margin: 15px 10%;
-                background-image: 
-                linear-gradient(to bottom, 
-                    rgba(0, 0, 0, 0) 0%,
-                    rgba(0, 0, 0, 0) 5%,
-                    rgba(0, 0, 0, 1) 8%),
-                    var(--update-image);
             }
 
             .updatecontent {
