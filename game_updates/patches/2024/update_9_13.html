@@ -31,6 +31,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
         body {
             user-select: text;
         }
+
         .update-window {
             background: rgba(0, 0, 0, 0.5);
             padding: 15px;
@@ -38,13 +39,55 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             color: white;
             margin: 15px 15%;
             border-radius: 0.5em;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background-image: 
+                linear-gradient(to bottom, 
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0) 18%,
+                    rgba(0, 0, 0, 1) 25%),
+                url('../../../images/CoD1080.png');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 0 15px rgb(31, 31, 31, 0.5);
+        }
+
+        h1 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        .updatecontent {
+            margin: 25px;
+        }
+
+        .update-info {
+            font-weight: bold;
+            text-align: center;
+            color: rgb(235, 235, 235);
+            font-size: 18px;
+        }
+
+        .update-summary {
+            font-style: italic;
+            color: white;
+            font-size: 14px;
+            text-indent: 25px;
+        }
+
+        .title-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 300px;
         }
 
         @media screen and (max-width: 900px) {
             .update-window {
                 margin: 15px 10%;
+            }
+
+            .updatecontent {
+                margin: 15px;
             }
         }
 
@@ -52,23 +95,10 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             .update-window {
                 margin: 15px 5%;
             }
-        }
 
-        h1 {
-            color: rgb(255, 215, 142);
-            text-align: center;
-        }
-
-        .update-info {
-            font-weight: bold;
-            text-align: center;
-            color: rgb(255, 199, 96);
-        }
-
-        .update-summary {
-            font-style: italic;
-            color: white;
-            font-size: 14px;
+            .updatecontent {
+                margin: 7.5px;
+            }
         }
     </style>
 </head>
@@ -115,20 +145,22 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     <div class="blanktop"></div>
     <div class="update-window">
         <div class="updatecontent" style="display: block;">
-            <h1>Introducing: Game Launcher, Instancing for Raids and Dungeons</h1>
-            <p class="update-info">09/13/2024 - Pre-release Update</p>
+            <div class="title-area">
+                <h1>Introducing: The Game Launcher, Instancing Systems Implementation</h1>
+                <p class="update-info">09/13/2024 - Pre-release Update</p>
+            </div>
             <p class="update-summary">We have implemented a system into Ethereal Lands that allows us to instance certain areas of the map so you can play solo or with a group of players through a dungeon or a raid without being impacted by other players and groups. We're also working on a "queueing" system, allowing you to queue up to complete a dungeon or raid with random players. We're super excited with how it's going so far, and during testing we found a few bugs which we've squashed with swift justice. In the coming weeks we'll be making improvements and sweeps over the system to make sure it won't negatively impact other gameplay areas, although in its current iteration, it doesn't seem to be affecting anything else at all, which is great news. We also have other updates coming this week, like remastering of quests and bringing back previous requirements that were stripped out until we've done this.</p>
             <h2>Systems & Other</h2>
-            <p>A game launcher has been developed as a distributable file for installing and maintaining version updates at the client level. This is an early rendition of our game launcher and more features are planned for future versions.</p>
+            <p>A game launcher has been developed as a distributable file for installing and maintaining version updates at the client level. This is an early rendition of our game launcher and more features are planned for future versions. This will become available to install shortly before our Tutorial Island/Kani'ani Island testing phase.</p>
             <p>We're currently implementing and testing instanced areas on the DTE (developer test environment), which would allow us to create more robust experiences for players in dungeon and raid environments. This is a massive upgrade that will take time to properly test and implement, but I can confirm we do have working instancing, allowing players to run dungeons or raids without being impacted by other players in the same dungeon or raid. Players within an instanced area are only able to see their own party members and NPCs assigned to that instance ID. Over the coming weeks, the developer team will be testing these instancing features in Crypt of Dread and our first raid that is yet to be announced. We look forward to the feedback from the community on these systems once they're implemented and used.</p>
             <p>Pre-release Fixes: Players who are in a party can no longer create an instance unless they are the party leader. When joining an instance, it will first check for the party leaders created instances.</p>
             <h2>General Updates</h2>
-            <p>When attacking creatures in Crypt of Dread (or any Ethereal Dungeon) the player who initiated the attack will now correctly be the one to attack.
+            <p>When attacking creatures in Crypt of Dread (or any Ethereal Dungeon) the player who initiated the attack will now correctly be the one to attack. During internal testing we found an issue that caused the last player of a "party loop" to attack the monster during the mob scaling process, and not the player that initiated the attack. This has been fixed.
             <p>A new daily challenge has been added for cremating remains.</p>
             <p>A new design is being made for the normal account dashboard for characters. Daily challenges, character stats, etc. will all be displayed on this single page. The admin panel will remain the same, and the account/character support page will be receiving an update as well in the near future.</p>
             <p>Prayer experience has been increased for burying regular bones and bat bones.</p>
             <p>Prayer experience has been increased for scattering regular ashes.</p>
-            <p>Firemaking experience has been doubled when cremating remains. We want cremation to be a great way to train prayer outside of burying bones, scattering ashes or shattering souls.</p>
+            <p>Firemaking experience has been doubled when cremating remains. We want cremation to be a great way to train both firemaking and prayer outside of burying bones or burning logs. The amount of firemaking experience granted is based on the bone cremated.</p>
             <p>Quests that are not able to be started or completed in Ethereal Lands have been disabled and now reflect as such in the quest log.</p>
             <p>The overhead prayer icon for one of our newly introduced prayers has been designed and implemented. This new prayer also respects overhead bubbles.</p>
             <p>Players making wine now have a chance to instantly ferment the wine if it's considered perfect wine.</p>
@@ -141,7 +173,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <p>Some items have been given a grammatical clarity sweep during the adjustments to wine mentioned above.</p>
             <p>Mine carts will now display a "Nothing interesting happens." message if attempting to use ore/gems on random mine carts in the world that isn't Frank's Mine Cart.</p>
             <p>Holy Shield will now correctly show it has been broken if the remaining shield amount is 0. A new sprite will be introduced for this specific niche-case scenario indicating that you have not taken damage, but the shield has been removed from damage.</p>
-            <p>Holy Shield now dissolves after a short amount of time. <span class="before">Infinite</span><span class="aft">~30 seconds</span></p>
+            <p>Holy Shield now dissolves after a short amount of time. <span class="before">Infinite</span><span class="after">~30 seconds</span></p>
             <p>The rune pane on the Magic interface now shortens runes over 1,000 to show 1K, 1M, 1B, etc.</p>
             <p>Additional sprites have been created and added to the game for consistency-sake.</p>
             <p>Server-sided rune names have been adjusted to remove the '-'s between them. Eg. <span class="before">Air-Rune</span><span class="after">Air Rune</span></p>
