@@ -100,6 +100,8 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <p>With the above system implementations mentioned, we do plan on putting permanent dungeons in the game that require 3 players to complete. We should have an early implementation of such a dungeon once we have our first raid completed and released. We plan on making these similar to Ethereal Dungeons, but require specific levels to join and complete instead of being a scaled experience.</p>
             <h2>General Updates</h2>
             <p>When attacking creatures in Crypt of Dread (or any Ethereal Dungeon) the player who initiated the attack will now correctly be the one to attack. During internal testing we found an issue that caused the last player of a "party loop" to attack the monster during the mob scaling process, and not the player that initiated the attack. This has been fixed.
+            <p>There are no longer griefing checks in Ethereal Dungeons as they are instanced content now and griefing is no longer an issue.</p>
+            <p>To improve performance, monsters in Ethereal Dungeons will no longer check the party ID of a player for scaling as its use has been deprecated.</p>
             <p>Players will no longer continue to bleed when visiting bankers or after they die, as originally intended.</p>
             <p>The damage sprite for Air Damage has been adjusted.</p>
             <p>A new daily challenge has been added for cremating remains.</p>
