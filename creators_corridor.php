@@ -59,6 +59,11 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     </div>
     <div class="creatorscorridorintro">
         <h1>Introducing Creator's Corridor</h1>
+        <p>Runescape communities are rightfully passionate about the way their favorite games are developed.
+            We here at Ethereal Lands feels there is no exception to this concept when it comes to our development
+            process.
+            One way for people to be directly involved in a game's direction is to create. Stories, items and ideas are
+            all accepted here.</p>
         <p>The Creator's Corridor focuses on providing resources for our community to create awesome items to be
             implemented into Ethereal Lands. Not only will your name be forever-ingrained into the examine text of the
             item (for cosmetics), but you'll be rewarded for your creation!</p>
@@ -71,6 +76,15 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
                 There may be months, or even longer, where we don't choose or approve a creation to be implemented. Your
                 creation is yours until it's chosen.
             </p>
+            <p>Our development team has been hard at work to create new systems that enable us to implement the ideas we
+                have for Runescape Classic and the future of Ethereal Lands. While the submission ideas, items, etc.
+                should be within current game system capabilities, we do urge people to think outside of the box about
+                how we can take these systems and turn them on their head. We're also not opposed to modifying or
+                creating new systems to implement such ideas. However, we also want to stray away from implementing
+                "generic" features. This includes things like Clue Scrolls. We like those systems and events, but they
+                already have their places in Gielinor. We're looking for fresh, new ideas. Huntsman was our take on the
+                much beloved Slayer skill, and we think we may have nailed it. This is an example of evolving a skill we
+                like, but making it fit our vision of how we wish it could've been done. We urge you to do the same!</p>
         </div>
         <div class="qabox">
             <p class="question">Where will my creation end up?</p>
