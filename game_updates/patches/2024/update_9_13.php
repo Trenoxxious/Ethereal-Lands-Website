@@ -16,16 +16,11 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     <link rel="stylesheet" href="../../updatesstyles.css?ver=<?= time(); ?>">
     <script defer src="/script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
         crossorigin="anonymous"></script>
     <style>
         :root {
@@ -96,9 +91,12 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <p>Pre-release Fixes: Players who are in a party can no longer create an instance unless they are the party leader. When joining an instance, it will first check for the party leaders created instances.</p>
             <p>We've designed a queue system for raids. When looking for a raid, if you don't have enough people in your current party, you can join the queue for a raid. When queueing, you will be prompted to select a role: Tank, Ranged DPS or Healer. Raids joined through the random queue requires 3 players, one of each role, and will have mechanics for all roles to fulfill during the encounter. Although not explicitly required, your raid will want to try and fill these roles for varying reasons if you are joining a raid with a pre-made party. Each raid boss will drop plenty of loot, with many drops enhancing your ability to perform well whilst inside a raid. The first raid you'll be able to join and queue for is the "King Black Dragon: The Eternal" raid, where we've redesigned the King Black Dragon into a fully-fledged raid boss that will drop epic raid-oriented loot.</p>
             <p>Queue System Notes: Currently, we're in the testing phase and ironing out any issues we find with the queueing system. We're also in the process of working out the finer details, such as entering the Wilderness whilst queued for a raid. Raids will be instanced content, allowing the queueing system to join all players in the queue into a party, teleport them into an instanced raid, and spawn the raid boss specifically for that instance of players and no one else. It is not currently possible to join a queue as a party of two players. This is on our list to be implemented in a future patch that should allow two players to queue together and be put into the same random group. Declining an invite for a raid will put you on a 2.5 minute cooldown from queueing for that specific raid again.</p>
-            <p>Work has begun on an official debuff system, a visual look into the things affecting your character. This allows you to see your poisons, bleeds and other stat-affecting events on your character with additional information in the form of an icon that shows on the screen. When hovered, this icon should display information such as the debuff name and what the debuff does. This is very early in development and will take time to get fully implemented.</p>
+            <p>Work has begun on an official debuff system, a visual look into the things affecting your character. This allows you to see your poisons, bleeds and other stat-affecting events on your character with additional information in the form of an icon that shows on the screen. When hovered, this icon should display information such as the debuff name and what the debuff does. This is very early in development and will take time to get fully implemented, but we currently have working debuffs for poisons, dragonfire burn and melee bleed events.</p>
             <p>With the above system implementations mentioned, we do plan on putting permanent dungeons in the game that require 3 players to complete. We should have an early implementation of such a dungeon once we have our first raid completed and released. We plan on making these similar to Ethereal Dungeons, but require specific levels to join and complete instead of being a scaled experience.</p>
             <h2>General Updates</h2>
+            <p>We've begun production on loot and the landscape for the first raid.</p>
+            <p>A missing reward from Crypt of Dread has been added to Thessalia's Clothes Shop recovery.</p>
+            <p>Fixes have been applied to Wizard's Hat server-side.</p>
             <p>When cooking, fish that are considered "like-fish" are now grouped. We are currently grouping fish based on the pools they are fished from. For example, cooking Trout will now also check for any Salmon in the inventory and add that to your batch cooking and vice versa. This has been implemented for Trout/Salmon, Pike/Herring and Swordfish/Tuna. This is a QoL feature and also paves the way for planned systems we will implement in the future.</p>
             <p>When attacking creatures in Crypt of Dread (or any Ethereal Dungeon) the player who initiated the attack will now correctly be the one to attack. During internal testing we found an issue that caused the last player of a "party loop" to attack the monster during the mob scaling process, and not the player that initiated the attack. This has been fixed.</p>
             <p>The idle timer for logging players out after a period of inactivity has been adjusted. <span class="before">5 Minutes</span><span class="after">15 Minutes</span></p>
@@ -106,6 +104,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
             <p>To improve performance, monsters in Ethereal Dungeons will no longer check the party ID of a player for scaling as its use has been deprecated.</p>
             <p>Players will no longer continue to bleed when visiting bankers or after they die, as originally intended.</p>
             <p>The damage sprite for Air Damage has been adjusted.</p>
+            <p>Players will now be prompted with a warning if they attempt to alchemize an item with a value of over 250,000 coins.</p>
             <p>A new daily challenge has been added for cremating remains.</p>
             <p>A new design is being made for the normal account dashboard for characters. Daily challenges, character stats, etc. will all be displayed on this single page. The admin panel will remain the same, and the account/character support page will be receiving an update as well in the near future.</p>
             <p>Prayer experience has been increased for burying regular bones and bat bones.</p>
