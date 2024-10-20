@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,9 +11,15 @@
     <div id="container"></div>
 
     <script>
-        cheerpjInit();
-        cheerpjCreateDisplay(800, 600);
-        cheerpjRunJar("../downloads/EtherealLands.jar");
+        cheerpjInit().then(function() {
+            console.log("CheerpJ initialized successfully");
+            cheerpjCreateDisplay(800, 600);
+            return cheerpjRunJar("/downloads/EtherealLands.jar");
+        }).then(function() {
+            console.log("Game started successfully");
+        }).catch(function(error) {
+            console.error("Error:", error);
+        });
     </script>
 </body>
 </html>
