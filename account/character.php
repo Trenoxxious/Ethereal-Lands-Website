@@ -22,6 +22,11 @@ if ($conn->connect_error) {
 // Fetch user information from session
 $user_id = $_SESSION['user_id'];
 $username = $_SESSION['username'];
+$combat_level = $_SESSION['combat_level'];
+$skill_total = $_SESSION['skill_total'];
+$bounty_points = $_SESSION['bounty_points'];
+$total_dailies_completed = $_SESSION['total_dailies_completed'];
+$amount_of_souls = $_SESSION['amount_of_souls'];
 $accstatus = $_SESSION['accstatus'];
 
 // Fetch the latest amount of ethereal souls from the database
@@ -31,15 +36,10 @@ $amount_stmt->bind_param("i", $user_id);
 $amount_stmt->execute();
 $amount_result = $amount_stmt->get_result();
 
-if ($amount_result->num_rows > 0) {
-    $amount_row = $amount_result->fetch_assoc();
-    $esouls = $amount_row['amount'];
-} else {
-    $esouls = 0; // Default value if no record is found
-}
-
-$formatted_esouls = number_format($esouls);
+$formatted_souls = number_format($amount_of_souls);
 $isAdmin = isset($_SESSION['accstatus']) && $_SESSION['accstatus'] == 0;
+
+$amount_stmt->close();
 
 $sql = "SELECT attack, defense, hits, strength, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman FROM maxstats WHERE playerID = ?";
 $stmt = $conn->prepare($sql);
@@ -74,9 +74,39 @@ if ($result->num_rows > 0) {
     ];
 }
 
-$amount_stmt->close();
+$sql = "SELECT attack, defense, hits, strength, ranged, prayer, magic, cooking, woodcut, fletching, fishing, firemaking, crafting, smithing, mining, herblaw, agility, thieving, huntsman FROM curstats WHERE playerID = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
 
-// Prepare the SQL statement to fetch all relevant cache keys at once
+$curStats = [];
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $curStats = [
+        'attack' => $row['attack'],
+        'defense' => $row['defense'],
+        'hits' => $row['hits'],
+        'strength' => $row['strength'],
+        'ranged' => $row['ranged'],
+        'prayer' => $row['prayer'],
+        'magic' => $row['magic'],
+        'cooking' => $row['cooking'],
+        'woodcut' => $row['woodcut'],
+        'fletching' => $row['fletching'],
+        'fishing' => $row['fishing'],
+        'firemaking' => $row['firemaking'],
+        'crafting' => $row['crafting'],
+        'smithing' => $row['smithing'],
+        'mining' => $row['mining'],
+        'herblaw' => $row['herblaw'],
+        'agility' => $row['agility'],
+        'thieving' => $row['thieving'],
+        'huntsman' => $row['huntsman']
+    ];
+}
+
 $sql = "SELECT `key`, `value` FROM player_cache WHERE playerID = ? AND `key` IN (
     'edcod_cyclestotal', 'edcod_normalcycles', 'edcod_heroiccycles', 'edcod_necroticcycles',
     'edcod_bosseskilled', 'edcod_monsterskilled', 'edcod_completedonce', 'edcod_deaths'
@@ -139,8 +169,7 @@ $conn->close();
 <head>
     <title>Ethereal Lands - My Account</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../main.css?ver=<?= time(); ?>">
-    <link rel="stylesheet" href="account.css?ver=<?= time(); ?>">
+    <link rel="stylesheet" href="new_account.css?ver=<?= time(); ?>">
     <script defer src="../script.js?ver=<?= time(); ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
@@ -167,65 +196,98 @@ $conn->close();
 </head>
 
 <body>
-    <?php include 'topbar.php'; ?>
-    <div class="accountmain">
-        <div class="blanktop"></div>
-        <div class="souls">
-            <div class="souls-display">
-                <?php echo htmlspecialchars($formatted_esouls); ?>
-            </div>
-            <span class="add-souls" id="buysouls">Buy Souls</span>
+    <nav class="nav-bar">
+        <div class="nav-start">
+            <div class="logo"></div>
+            <span class="greeting">Welcome, <?php echo htmlspecialchars($username); ?></span>
         </div>
+        <div class="nav-end">
+            <div class="nav-stats">
+                <span class="stat-span">Total Level: <span class="stat-level"><?php echo htmlspecialchars($skill_total); ?></span></span>
+                <span class="stat-span">Bounty Points: <span class="stat-level"><?php echo htmlspecialchars($bounty_points); ?></span></span>
+                <span class="stat-span">Combat Level: <span class="stat-level"><?php echo htmlspecialchars($combat_level); ?></span></span>
+                <span class="stat-span">Daily Challenges Completed: <span class="stat-level" id="total-dailies-completed"><?php echo htmlspecialchars($total_dailies_completed); ?></span></span>
+                <span class="stat-span">Ethereal Souls: <span class="stat-level" id="ethereal-souls-amount"><?php echo htmlspecialchars($formatted_souls); ?></span></span>
+            </div>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </nav>
+    <div id="challenges-container" class="challenges-container">
+        <form id="get-challenges-form" action="../scripts/get_daily_challenges.php" method="post">
+            <h2>You've completed all your daily challenges! Check back soon for more!</h2>
+        </form>
     </div>
-    <div class="main-account-front">
-        <div class="account-top">
-            <h1 class="page-header">Character Stats (<?php echo htmlspecialchars($username); ?>)</h1>
-            <p class="page-info">View stats about your character below.</p>
+    <!-- <div class="character-dialogue">
+        <div class="selections">
+            <span id="get-challenges" class="menu-selection">I need my daily challenges.</span>
+            <span id="void-market" class="menu-selection">What's available in the Void Market?</span>
+            <span id="support" class="menu-selection">I'm looking for character support.</span>
         </div>
-        <div class="account-screen">
-            <div class="account-stats">
-                <?php foreach ($stats as $statName => $statValue): ?>
-                    <div class="stat">
-                        <picture>
-                            <source srcset="../icons/<?php echo htmlspecialchars($statName); ?>.webp" type="image/webp">
-                            <source srcset="../icons/<?php echo htmlspecialchars($statName); ?>.png" type="image/png">
-                            <img src="../icons/<?php echo htmlspecialchars($statName); ?>.png"
-                                alt="<?php echo htmlspecialchars($statName); ?>">
-                        </picture>
-                        <p><?php echo htmlspecialchars($statValue); ?></p>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-            <div class="encounter-stats crypt-of-dread-box" id="crypt-of-dread">
-                <div class="encounter-frame">
-                    <h2 class="dungeon-name crypt-of-dread">Crypt of Dread</h2>
-                    <div class="stats-container">
-                        <?php foreach ($cryptStats as $label => $value): ?>
-                            <div class="encounter-stat">
-                                <span class="stat-label"><?php echo htmlspecialchars($label); ?>:</span>
-                                <span class="stat-value"><?php echo htmlspecialchars($value); ?></span>
-                            </div>
-                        <?php endforeach; ?>
-                        <?php if ($dungeonCompleted): ?>
-                            <div class="encounter-stat completed">
-                                <span class="stat-label">Dungeon Completed:</span>
-                                <span class="stat-value">Yes</span>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                    <button class="toggle-stats-btn">Toggle Stats</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    </div> -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggleBtn = document.querySelector('.toggle-stats-btn');
-            const statsContainer = document.querySelector('.stats-container');
-            
-            toggleBtn.addEventListener('click', function() {
-                statsContainer.classList.toggle('show');
-                toggleBtn.textContent = statsContainer.classList.contains('show') ? 'Hide Stats' : 'Show Stats';
+        const logoutBtn = document.getElementById('logout-btn');
+
+        if (logoutBtn) {
+            logoutBtn.addEventListener("click", function () {
+                window.open('../scripts/logout', '_self');
+            });
+        }
+        
+        $(document).ready(function() {
+            function fetchChallenges() {
+                $.ajax({
+                    url: $('#get-challenges-form').attr('action'),
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.success) {
+                            displayChallenges(response.challenges);
+                            if (response.message) {
+                                alert(response.message);
+                            }
+                        } else {
+                            alert(response.error || 'An error occurred while fetching challenges.');
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error('AJAX error:', textStatus, errorThrown);
+                        alert('An error occurred while fetching challenges. Please try again.');
+                    }
+                });
+            }
+
+            function displayChallenges(challenges) {
+                let challengesHtml = '';
+                if (challenges.length < 1) {
+                    challengesHtml = '<h2>You\'ve completed all your daily challenges! Check back soon for more!</h2>';
+                } else {
+                    challenges.forEach(function(challenge) {
+                        challengesHtml += `
+                            <div class="challenge-box ${challenge.rarity.toLowerCase()}-border">
+                                <h3 class="challenge-title ${challenge.rarity.toLowerCase()}">${challenge.title}</h3>
+                                <p>${challenge.rarity} Challenge</p>
+                                <p class="challenge-info">${challenge.mission}</p>
+                                <p id="progress-${challenge.id}" class="challenge-stats">Loading progress...</p>
+                                <p class="challenge-reward">Reward: ${challenge.reward_amount}<img src="../images/soul.png" alt="Souls"></p>
+                                <form id="complete-challenge-form-${challenge.id}" class="complete-challenge-form" method="post">
+                                    <input type="hidden" name="challenge_id" value="${challenge.id}">
+                                    <button id="claim-button-${challenge.id}" type="submit" class="challenge-button" disabled>Complete Challenge</button>
+                                </form>
+                            </div>
+                        `;
+                    });
+
+                    $('#challenges-container').html(challengesHtml);
+                }
+            }
+
+            // Fetch challenges on page load
+            fetchChallenges();
+
+            // Handle form submission
+            $('#get-challenges-form').on('submit', function(e) {
+                e.preventDefault();
+                fetchChallenges();
             });
         });
     </script>

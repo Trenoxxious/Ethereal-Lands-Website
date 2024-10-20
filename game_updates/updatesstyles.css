@@ -1,0 +1,68 @@
+body {
+    user-select: text;
+    font-family: "Open Sans", "Libre Baskerville", serif;
+}
+
+.update-window {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    box-sizing: border-box;
+    color: white;
+    margin: 15px 15%;
+    border-radius: 0.5em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    box-shadow: 0 0 15px rgb(31, 31, 31, 0.5);
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.updatecontent {
+    margin: 25px;
+}
+
+.update-info {
+    font-weight: bold;
+    text-align: center;
+    color: rgb(235, 235, 235);
+    font-size: 18px;
+}
+
+.update-summary {
+    font-style: italic;
+    color: white;
+    font-size: 14px;
+    text-indent: 25px;
+}
+
+.title-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 300px;
+}
+
+@media screen and (max-width: 900px) {
+    .update-window {
+        margin: 15px 7.5%;
+    }
+
+    .updatecontent {
+        margin: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .update-window {
+        margin: 10px 1.5%;
+    }
+
+    .updatecontent {
+        margin: 7.5px;
+    }
+}

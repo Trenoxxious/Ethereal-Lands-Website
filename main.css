@@ -206,7 +206,8 @@ li {
 }
 
 .updatecontent h2~p {
-    margin-bottom: 10px;
+    font-size: 13px;
+    margin-bottom: 12.5px;
 }
 
 .patchnumber {

@@ -46,7 +46,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     </style>
     <div class="topbar">
         <nav class="mainbar">
-            <div class="logo" id="toplogo">
+            <div class="logo" id="toplogo" style="height: 100px;">
             </div>
             <div id="navlinks">
                 <a href="https://playethereallands.com">Home</a>
@@ -108,7 +108,7 @@ $loggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'];
     <div class="center-slide">
         <div class="slide-content-mainupdate">
             <h1>Utilize Most Skills</h1>
-            <p>On the island, you'll find yourself using the following skills to complete your quest: Agility, Huntsman,
+            <p>On the island, you'll find yourself using the following skills to complete your quest: Agility, Thieving, Huntsman,
                 Combat, Woodcutting, Herblore, Fletching, Fishing,
                 Cooking and Crafting! The usage of these skills isn't implemented in an "introductory" way; you'll
                 actually use these skills to complete your quest, and give some background on how they may be used once
