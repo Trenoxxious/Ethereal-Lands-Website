@@ -6,11 +6,18 @@
     <title>Ethereal Lands</title>
     <script src="https://cjrtnc.leaningtech.com/2.3/loader.js"></script>
 </head>
-
 <body>
     <div id="container"></div>
+    <pre id="output"></pre>
 
     <script>
+        var originalConsoleLog = console.log;
+        console.log = function() {
+            originalConsoleLog.apply(console, arguments);
+            var output = document.getElementById("output");
+            output.innerHTML += Array.prototype.slice.call(arguments).join(" ") + "\n";
+        };
+
         cheerpjInit().then(function() {
             console.log("CheerpJ initialized successfully");
             cheerpjCreateDisplay(800, 600);
