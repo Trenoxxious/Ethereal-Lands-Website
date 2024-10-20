@@ -12,15 +12,26 @@
 
     <script>
         var originalConsoleLog = console.log;
+        var originalConsoleError = console.error;
         console.log = function() {
             originalConsoleLog.apply(console, arguments);
             var output = document.getElementById("output");
             output.innerHTML += Array.prototype.slice.call(arguments).join(" ") + "\n";
         };
+        console.error = function() {
+            originalConsoleError.apply(console, arguments);
+            var output = document.getElementById("output");
+            output.innerHTML += "ERROR: " + Array.prototype.slice.call(arguments).join(" ") + "\n";
+        };
 
         cheerpjInit().then(function() {
             console.log("CheerpJ initialized successfully");
-            cheerpjCreateDisplay(800, 600);
+            return cheerpjCreateDisplay(800, 600);
+        }).then(function() {
+            console.log("Display created successfully");
+            return cheerpjAddStringFile("/Cache/", "/downloads/Cache/");
+        }).then(function() {
+            console.log("Cache folder mounted successfully");
             return cheerpjRunJar("/downloads/EtherealLands.jar");
         }).then(function() {
             console.log("Game started successfully");
