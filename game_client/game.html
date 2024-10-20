@@ -29,10 +29,10 @@
             return cheerpjCreateDisplay(800, 600);
         }).then(function() {
             console.log("Display created successfully");
-            return cheerpjAddStringFile("/Cache/", "/downloads/Cache/");
+            return cheerpjAddStringFile("/str/downloads/", "/downloads/");
         }).then(function() {
-            console.log("Cache folder mounted successfully");
-            return cheerpjRunJar("/downloads/EtherealLands.jar");
+            console.log("Downloads folder mounted successfully");
+            return cheerpjRunJar("/str/downloads/EtherealLands.jar");
         }).then(function() {
             console.log("Game started successfully");
         }).catch(function(error) {
